@@ -34,16 +34,16 @@ details of exactly how to import and export data and the
 [details of data types](#datatypediffs).
 
 
-The data
---------
+Dataset Description
+-------------------
 
-This is data on a small mammal community in southern Arizona over the last 35
-years.  This is part of a larger project studying the effects of rodents and
-ants on the plant community.  The rodents are sampled on a series of 24 plots,
-with different experimental manipulations of which rodents are allowed to access
-the plots.
+The data we will be using is time-series for a a small mammal community in
+southern Arizona. This part of a project studying the effects of rodents and
+ants on the plant community that has been running for almost 40 years.  The
+rodents are sampled on a series of 24 plots, with different experimental
+manipulations controlling which rodents are allowed to access which plots.
 
-This is a real dataset that has been used in over 100 publications.  I've
+This is a real dataset that has been used in over 100 publications. We've
 simplified it just a little bit for the workshop, but you can download the
 [full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
 exactly the same tools we'll learn about today.
