@@ -292,9 +292,8 @@ using a GROUP BY clause
 GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
-***EXERCISE: Write queries that return:***
-***1. How many individuals were counted in each year***
-***2. Average weight of each species in each year**
+***EXERCISE: Write queries that return: 1. How many individuals were counted in
+   each year. 2. Average weight of each species in each year**
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
