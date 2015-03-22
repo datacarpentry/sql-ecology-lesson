@@ -37,23 +37,24 @@ Why use relational databases
 Database Management Systems
 ---------------------------
 
-There are a number of different database management systems for working with relational
-data. We're going to use SQLite today, but basically everything we teach you
-will apply to the other database systems as well (e.g., MySQL, PostgreSQL, MS
-Access, Filemaker Pro). The only things that will differ are the details of
-exactly how to import and export data and the [details of data types](#datatypediffs).
+There are a number of different database management systems for working with
+relational data. We're going to use SQLite today, but basically everything we
+teach you will apply to the other database systems as well (e.g., MySQL,
+PostgreSQL, MS Access, Filemaker Pro). The only things that will differ are the
+details of exactly how to import and export data and the
+[details of data types](#datatypediffs).
 
 
-The data
---------
+Dataset Description
+-------------------
 
-This is data on a small mammal community in southern Arizona over the last 35
-years.  This is part of a larger project studying the effects of rodents and
-ants on the plant community.  The rodents are sampled on a series of 24 plots,
-with different experimental manipulations of which rodents are allowed to access
-the plots.
+The data we will be using is a time-series for a small mammal community in
+southern Arizona. This is part of a project studying the effects of rodents and
+ants on the plant community that has been running for almost 40 years.  The
+rodents are sampled on a series of 24 plots, with different experimental
+manipulations controlling which rodents are allowed to access which plots.
 
-This is a real dataset that has been used in over 100 publications.  I've
+This is a real dataset that has been used in over 100 publications. We've
 simplified it just a little bit for the workshop, but you can download the
 [full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
 exactly the same tools we'll learn about today.
@@ -62,13 +63,12 @@ exactly the same tools we'll learn about today.
 Database Design
 ---------------
 
-1. Order doesn't matter
-2. Every row-column combination contains a single *atomic* value, i.e., not
+1. Every row-column combination contains a single *atomic* value, i.e., not
    containing parts we might want to work with separately.
-3. One field per type of information
-4. No redundant information
+2. One field per type of information
+3. No redundant information
      * Split into separate tables with one table per class of information
-	 * Needs an identifier in common between tables – shared column - to
+	   * Needs an identifier in common between tables – shared column - to
        reconnect (foreign key).
 
 
@@ -189,7 +189,7 @@ which have species codes DM, DO, and DS we could combine the tests using OR:
     SELECT * FROM surveys WHERE (species = "DM") OR (species = "DO") OR (species = "DS");
 
 ***EXERCISE: Write a query that returns
-   The day, month, year, species ID, and weight (in kg) for
+   the day, month, year, species ID, and weight (in kg) for
    individuals caught on Plot 1 that weigh more than 75 g***
 
 
@@ -316,9 +316,8 @@ using a GROUP BY clause
 GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
-***EXERCISE: Write queries that return:***
-***1. How many individuals were counted in each year***
-***2. Average weight of each species in each year**
+***EXERCISE: Write queries that return: 1. How many individuals were counted in
+   each year. 2. Average weight of each species in each year***
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
