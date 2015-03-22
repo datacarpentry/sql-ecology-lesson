@@ -52,13 +52,12 @@ exactly the same tools we'll learn about today.
 Database Design
 ---------------
 
-1. Order doesn't matter
-2. Every row-column combination contains a single *atomic* value, i.e., not
+1. Every row-column combination contains a single *atomic* value, i.e., not
    containing parts we might want to work with separately.
-3. One field per type of information
-4. No redundant information
+2. One field per type of information
+3. No redundant information
      * Split into separate tables with one table per class of information
-	 * Needs an identifier in common between tables – shared column - to
+	   * Needs an identifier in common between tables – shared column - to
        reconnect (foreign key).
 
 
