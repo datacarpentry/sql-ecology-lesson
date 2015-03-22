@@ -5,10 +5,13 @@ Setup
 -----
 
 1. Install Firefox
-2. Install the SQLite Manager add on **Tools -> Add-ons -> Search -> SQLite
-Manager -> Install -> Restart**
+2. Install the SQLite Manager add on: **Menu (the three horizontal lines near the
+top right corner of Firefox) -> Add-ons -> Search -> SQLite
+Manager -> Install -> Restart now**
 3. Download the [Portal Database](https://github.com/datacarpentry/sql-ecology/tree/master/data/portal_mammals.sqlite)
-4. Open SQLite Manage **Firefox Button -> Web Developer -> SQLite Manager**
+4. Add SQLite Manager to the menu: **Menu -> Customize, then drag the SQLite
+   Manager icon to one of the empty menu squares on the right, Exit Customize**
+5. Open SQLite Manager: **Menu -> SQLite Manager**
 
 
 Relational databases
