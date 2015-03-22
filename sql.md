@@ -37,8 +37,8 @@ details of exactly how to import and export data and the
 Dataset Description
 -------------------
 
-The data we will be using is time-series for a a small mammal community in
-southern Arizona. This part of a project studying the effects of rodents and
+The data we will be using is a time-series for a small mammal community in
+southern Arizona. This is part of a project studying the effects of rodents and
 ants on the plant community that has been running for almost 40 years.  The
 rodents are sampled on a series of 24 plots, with different experimental
 manipulations controlling which rodents are allowed to access which plots.
@@ -292,7 +292,7 @@ GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
 ***EXERCISE: Write queries that return: 1. How many individuals were counted in
-   each year. 2. Average weight of each species in each year**
+   each year. 2. Average weight of each species in each year***
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
