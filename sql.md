@@ -19,8 +19,19 @@ Relational databases
 * Data in tables has types, just like in Python, and all values in a field have
   the same type ([list of data types](#datatypes))
 * Queries let us look up data or make calculations based on columns
-* The queries are distinct from the data, so if we change the data we can just
-  rerun the query
+
+
+Why use relational databases
+----------------------------
+
+* Data separate from analysis.
+  * No risk of accidentally changing data when analyzing it
+  * If we change the data we can just rerun the query
+* Fast for large amounts of data
+* Improve quality control of data entry (type constraints and use of forms in
+  Access, Filemaker, etc.)
+* The concepts of relational database querying are core to understanding how to
+  do similar things in R and Python
 
 
 Database Management Systems
