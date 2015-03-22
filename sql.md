@@ -92,6 +92,9 @@ If we want to write a query, we click on the Execute SQL tab.
 Import
 ------
 
+We won't walk through the details of importing data into SQLite today, but it is
+fairly straightforward. To do this we would:
+
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
@@ -101,8 +104,6 @@ Import
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
 9. Set the data types for each field
-
-***EXERCISE: Import the plots and species tables***
 
 You can also use this same approach to append new data to an existing table.
 
