@@ -53,7 +53,7 @@ To ensure a consistent formatting of the lessons, we recommend the following
 guidelines:
 * No trailing white space
 * Wrap lines at 80 characters (unless it breaks URLs)
-* Use unclosed atx style headers (see below)
+* Use unclosed `#` symbols for headers, e.g. `# Heading 1`
 
 ## FAQ
 
