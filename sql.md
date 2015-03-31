@@ -114,6 +114,7 @@ You can also use this same approach to append new data to an existing table.
 
 Basic queries
 -------------
+
 Let's start by using the **surveys** table.
 Here we have data on every individual that was captured at the site,
 including when they were captured, what plot they were captured on,
@@ -278,6 +279,7 @@ The computer is basically doing this:
 
 Order of clauses
 ----------------
+
 The order of the clauses when we write a query is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
 
@@ -291,6 +293,7 @@ and we often write each of them on their own line for readability.
 
 
 **BREAK**
+
 
 Aggregation
 -----------
@@ -313,7 +316,7 @@ We can also find out how much all of those individuals weigh.
     SELECT ROUND(SUM(weight)/1000.0, 3) FROM surveys
 
 There are many other aggregate functions included in SQL including
-MAX, MIN, and AVG.
+`MAX`, `MIN`, and `AVG`.
 
 ***From the surveys table, can we use one query to output the total weight,
    average weight, and the min and max weights? How about the range of weight?***
@@ -348,23 +351,23 @@ captured, ordered by the count
 Joins
 -----
 
-To combine data from two tables we use the SQL JOIN command, which comes after
-the FROM command.
+To combine data from two tables we use the SQL `JOIN` command, which comes after
+the `FROM` command.
 
 We also need to tell the computer which columns provide the link between the two
-tables using the word ON.  What we want is to join the data with the same
+tables using the word `ON`.  What we want is to join the data with the same
 species codes.
 
     SELECT *
     FROM surveys
     JOIN species ON surveys.species_id = species.species_id
 
-ON is like WHERE, it filters things out according to a test condition.  We use
-the table.colname format to tell the manager what column in which table we are
+ON is like `WHERE`, it filters things out according to a test condition.  We use
+the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
 We often won't want all of the fields from both tables, so anywhere we would
-have used a field name in a non-join query, we can use *table.colname*
+have used a field name in a non-join query, we can use `table.colname`.
 
 For example, what if we wanted information on when individuals of each
 species were captured, but instead of their species ID we wanted their
