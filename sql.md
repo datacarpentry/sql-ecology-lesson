@@ -163,8 +163,9 @@ example, we could round the values to make them easier to read.
 
     SELECT plot, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
-***EXERCISE: Write a query that returns
-             The year, month, day, speciesID and weight in mg***
+> ## Challenge
+>
+> Write a query that returns The year, month, day, species_id and weight in mg
 
 Filtering
 ---------
@@ -196,9 +197,10 @@ which have species codes DM, DO, and DS we could combine the tests using OR:
 
     SELECT * FROM surveys WHERE (species_id = "DM") OR (species_id = "DO") OR (species_id = "DS");
 
-***EXERCISE: Write a query that returns
-   the day, month, year, species ID, and weight (in kg) for
-   individuals caught on Plot 1 that weigh more than 75 g***
+> ### Challenge
+>
+> Write a query that returns the day, month, year, species_id, and
+> weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
 
 
 Saving & Exporting queries
@@ -249,9 +251,10 @@ To truly be alphabetical, we might want to order by genus then species.
 
     SELECT * FROM species ORDER BY genus ASC, species ASC;
 
-***Exercise: Write a query that returns
-             year, species, and weight in kg from the surveys table, sorted with
-             the largest weights at the top***
+> ### Challenge
+>
+> Write a query that returns year, species, and weight in kg from
+> the surveys table, sorted with the largest weights at the top.
 
 
 Order of execution
@@ -279,11 +282,12 @@ The order of the clauses when we write a query is dictated by SQL: SELECT, FROM,
 and we often write each of them on their own line for readability.
 
 
-***Exercise: Let's try to combine what we've learned so far in a single query.
-Using the surveys table write a query to display the three date
-fields, species ID, and weight in kilograms (rounded to two decimal places), for
-rodents captured in 1999, ordered alphabetically by the species ID.***
-
+> ### Challenge
+>
+> Let's try to combine what we've learned so far in a single
+> query.  Using the surveys table write a query to display the three date fields,
+> species_id, and weight in kilograms (rounded to two decimal places), for
+> rodents captured in 1999, ordered alphabetically by the species_id.
 
 
 **BREAK**
@@ -324,8 +328,12 @@ using a GROUP BY clause
 GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
-***EXERCISE: Write queries that return: 1. How many individuals were counted in
-   each year. 2. Average weight of each species in each year***
+> ### Challenge
+>
+> Write queries that return:
+>
+> 1. How many individuals were counted in each year.
+> 2. Average weight of each species in each year*
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
