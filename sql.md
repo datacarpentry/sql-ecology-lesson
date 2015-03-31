@@ -10,7 +10,6 @@ _Note: this should have been done by participants before the start of the worksh
 2. Install the SQLite Manager add on: **Menu (the three horizontal lines near the
 top right corner of Firefox) -> Add-ons -> Search -> SQLite
 Manager -> Install -> Restart now**
-3. Download the [Portal Database](http://files.figshare.com/1919743/portal_mammals.sqlite)
 4. Add SQLite Manager to the menu: **Menu -> Customize, then drag the SQLite
    Manager icon to one of the empty menu squares on the right, Exit Customize**
 5. Open SQLite Manager: **Menu -> SQLite Manager**
@@ -94,6 +93,7 @@ If we want to write a query, we click on the Execute SQL tab.
 Import
 ------
 
+1. Download the three CSV file from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
