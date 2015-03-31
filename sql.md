@@ -98,12 +98,14 @@ Import
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
-4. Give the table a name (or use the default)
+4. Give the table a name that match the file name (surveys, species, plots), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are correct
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field
+9. Set the data types for each field: choose TEXT for fields with text
+   (`species_id`, `genus`, `sex`, etc.) and INT for fields with numbers (`day`,
+   `month`, `year`, `weight`, etc.)
 
 ***EXERCISE: Import the plots and species tables***
 
