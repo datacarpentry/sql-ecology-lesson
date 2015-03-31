@@ -141,7 +141,7 @@ Or we can select all of the columns in a table using the wildcard *
 If we want only the unique values so that we can quickly see what species have
 been sampled we use ``DISTINCT``
 
-    SELECT DISTINCT species FROM surveys;
+    SELECT DISTINCT species_id FROM surveys;
 
 If we select more than one column, then the distinct pairs of values are
 returned
