@@ -94,11 +94,11 @@ exactly the same tools we'll learn about today.
 Import
 ------
 
-1. Download the three CSV file from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+1. Download the three CSV files from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
-4. Give the table a name that match the file name (surveys, species, plots), or use the default
+4. Give the table a name that matches the file name (surveys, species, plots), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are correct
 7. Press **OK**
@@ -107,7 +107,9 @@ Import
    (`species_id`, `genus`, `sex`, etc.) and INT for fields with numbers (`day`,
    `month`, `year`, `weight`, etc.)
 
-***EXERCISE: Import the plots and species tables***
+> ### Challenge
+>
+> Import the plots and species tables
 
 You can also use this same approach to append new data to an existing table.
 
@@ -336,7 +338,7 @@ If we want to group by multiple fields, we give GROUP BY a comma separated list.
 > Write queries that return:
 >
 > 1. How many individuals were counted in each year.
-> 2. Average weight of each species in each year*
+> 2. Average weight of each species in each year
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
