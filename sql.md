@@ -4,6 +4,8 @@ Databases using SQL
 Setup
 -----
 
+_Note: this should have been done by participants before the start of the workshop._
+
 1. Install Firefox
 2. Install the SQLite Manager add on: **Menu (the three horizontal lines near the
 top right corner of Firefox) -> Add-ons -> Search -> SQLite
