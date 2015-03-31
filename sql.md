@@ -154,7 +154,7 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-    SELECT year, month, day, weight/1000.0 from surveys
+    SELECT year, month, day, weight/1000.0 from surveys;
 
 When we run the query, the expression `weight / 1000.0` is evaluated for each row
 and appended to that row, in a new column.  Expressions can use any fields, any
