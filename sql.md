@@ -170,8 +170,8 @@ Filtering
 ---------
 
 Databases can also filter data – selecting only the data meeting certain
-criteria.  For example, let’s say we only want data for the species Dipodomys
-merriami, which has a species code of DM.  We need to add a WHERE clause to our
+criteria.  For example, let’s say we only want data for the species _Dipodomys
+merriami_, which has a species code of DM.  We need to add a WHERE clause to our
 query:
 
     SELECT * FROM surveys WHERE species_id="DM";
@@ -182,7 +182,7 @@ Here, we only want the data since 2000:
     SELECT * FROM surveys WHERE year >= 2000;
 
 We can use more sophisticated conditions by combining tests with AND and OR.
-For example, suppose we want the data on Dipodomys merriami starting in the year
+For example, suppose we want the data on _Dipodomys merriami_ starting in the year
 2000:
 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species_id = "DM");
@@ -191,7 +191,7 @@ Note that the parentheses aren’t needed, but again, they help with readability
 They also ensure that the computer combines AND and OR in the way that we
 intend.
 
-If we wanted to get data for any of the Dipodomys species,
+If we wanted to get data for any of the _Dipodomys_ species,
 which have species codes DM, DO, and DS we could combine the tests using OR:
 
     SELECT * FROM surveys WHERE (species_id = "DM") OR (species_id = "DO") OR (species_id = "DS");
@@ -211,7 +211,7 @@ Saving & Exporting queries
 Building more complex queries
 -----------------------------
 
-Now, lets combine the above queries to get data for the 3 Dipodomys species from
+Now, lets combine the above queries to get data for the 3 _Dipodomys_ species from
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = "DM") OR (species_id
 = "DO") OR (species_id = "DS")`, but reads more neatly:
