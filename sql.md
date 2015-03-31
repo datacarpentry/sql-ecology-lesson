@@ -4,11 +4,12 @@ Databases using SQL
 Setup
 -----
 
+_Note: this should have been done by participants before the start of the workshop._
+
 1. Install Firefox
 2. Install the SQLite Manager add on: **Menu (the three horizontal lines near the
 top right corner of Firefox) -> Add-ons -> Search -> SQLite
 Manager -> Install -> Restart now**
-3. Download the [Portal Database](http://files.figshare.com/1919743/portal_mammals.sqlite)
 4. Add SQLite Manager to the menu: **Menu -> Customize, then drag the SQLite
    Manager icon to one of the empty menu squares on the right, Exit Customize**
 5. Open SQLite Manager: **Menu -> SQLite Manager**
@@ -48,21 +49,6 @@ details of exactly how to import and export data and the
 [details of data types](#datatypediffs).
 
 
-Dataset Description
--------------------
-
-The data we will be using is a time-series for a small mammal community in
-southern Arizona. This is part of a project studying the effects of rodents and
-ants on the plant community that has been running for almost 40 years.  The
-rodents are sampled on a series of 24 plots, with different experimental
-manipulations controlling which rodents are allowed to access which plots.
-
-This is a real dataset that has been used in over 100 publications. We've
-simplified it just a little bit for the workshop, but you can download the
-[full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
-exactly the same tools we'll learn about today.
-
-
 Database Design
 ---------------
 
@@ -89,26 +75,48 @@ and search tab in the right hand section of the screen.
 
 If we want to write a query, we click on the Execute SQL tab.
 
+
+Dataset Description
+-------------------
+
+The data we will be using is a time-series for a small mammal community in
+southern Arizona. This is part of a project studying the effects of rodents and
+ants on the plant community that has been running for almost 40 years.  The
+rodents are sampled on a series of 24 plots, with different experimental
+manipulations controlling which rodents are allowed to access which plots.
+
+This is a real dataset that has been used in over 100 publications. We've
+simplified it just a little bit for the workshop, but you can download the
+[full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
+exactly the same tools we'll learn about today.
+
+
 Import
 ------
 
+1. Download the three CSV files from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the file to import
-4. Give the table a name (or use the default)
+4. Give the table a name that matches the file name (surveys, species, plots), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are correct
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field
+9. Set the data types for each field: choose TEXT for fields with text
+   (`species_id`, `genus`, `sex`, etc.) and INT for fields with numbers (`day`,
+   `month`, `year`, `weight`, etc.)
 
-***EXERCISE: Import the plots and species tables***
+> ### Challenge
+>
+> Import the plots and species tables
 
 You can also use this same approach to append new data to an existing table.
 
 
 Basic queries
 -------------
+
 Let's start by using the **surveys** table.
 Here we have data on every individual that was captured at the site,
 including when they were captured, what plot they were captured on,
@@ -136,7 +144,7 @@ Or we can select all of the columns in a table using the wildcard *
 If we want only the unique values so that we can quickly see what species have
 been sampled we use ``DISTINCT``
 
-    SELECT DISTINCT species FROM surveys;
+    SELECT DISTINCT species_id FROM surveys;
 
 If we select more than one column, then the distinct pairs of values are
 returned
@@ -149,7 +157,7 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-    SELECT year, month, day, weight/1000.0 from surveys
+    SELECT year, month, day, weight/1000.0 from surveys;
 
 When we run the query, the expression `weight / 1000.0` is evaluated for each row
 and appended to that row, in a new column.  Expressions can use any fields, any
@@ -158,15 +166,16 @@ example, we could round the values to make them easier to read.
 
     SELECT plot, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
-***EXERCISE: Write a query that returns
-             The year, month, day, speciesID and weight in mg***
+> ## Challenge
+>
+> Write a query that returns The year, month, day, species_id and weight in mg
 
 Filtering
 ---------
 
 Databases can also filter data – selecting only the data meeting certain
-criteria.  For example, let’s say we only want data for the species Dipodomys
-merriami, which has a species code of DM.  We need to add a WHERE clause to our
+criteria.  For example, let’s say we only want data for the species _Dipodomys
+merriami_, which has a species code of DM.  We need to add a WHERE clause to our
 query:
 
     SELECT * FROM surveys WHERE species_id="DM";
@@ -177,7 +186,7 @@ Here, we only want the data since 2000:
     SELECT * FROM surveys WHERE year >= 2000;
 
 We can use more sophisticated conditions by combining tests with AND and OR.
-For example, suppose we want the data on Dipodomys merriami starting in the year
+For example, suppose we want the data on _Dipodomys merriami_ starting in the year
 2000:
 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species_id = "DM");
@@ -186,14 +195,15 @@ Note that the parentheses aren’t needed, but again, they help with readability
 They also ensure that the computer combines AND and OR in the way that we
 intend.
 
-If we wanted to get data for any of the Dipodomys species,
+If we wanted to get data for any of the _Dipodomys_ species,
 which have species codes DM, DO, and DS we could combine the tests using OR:
 
     SELECT * FROM surveys WHERE (species_id = "DM") OR (species_id = "DO") OR (species_id = "DS");
 
-***EXERCISE: Write a query that returns
-   the day, month, year, species ID, and weight (in kg) for
-   individuals caught on Plot 1 that weigh more than 75 g***
+> ### Challenge
+>
+> Write a query that returns the day, month, year, species_id, and
+> weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
 
 
 Saving & Exporting queries
@@ -206,7 +216,7 @@ Saving & Exporting queries
 Building more complex queries
 -----------------------------
 
-Now, lets combine the above queries to get data for the 3 Dipodomys species from
+Now, lets combine the above queries to get data for the 3 _Dipodomys_ species from
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = "DM") OR (species_id
 = "DO") OR (species_id = "DS")`, but reads more neatly:
@@ -244,19 +254,20 @@ To truly be alphabetical, we might want to order by genus then species.
 
     SELECT * FROM species ORDER BY genus ASC, species ASC;
 
-***Exercise: Write a query that returns
-             year, species, and weight in kg from the surveys table, sorted with
-             the largest weights at the top***
+> ### Challenge
+>
+> Write a query that returns year, species, and weight in kg from
+> the surveys table, sorted with the largest weights at the top.
 
 
 Order of execution
 ------------------
 
 Another note for ordering. We don’t actually have to display a column to sort by
-it.  For example, let’s say we want to order by the species ID, but we only want
-to see genus and species.
+it.  For example, let’s say we want to order the birds by their species ID, but
+we only want to see genus and species.
 
-    SELECT genus, species FROM species ORDER BY taxon ASC;
+    SELECT genus, species FROM species WHERE taxa = "Bird" ORDER BY species_id ASC;
 
 We can do this because sorting occurs earlier in the computational pipeline than
 field selection.
@@ -270,18 +281,21 @@ The computer is basically doing this:
 
 Order of clauses
 ----------------
+
 The order of the clauses when we write a query is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
 and we often write each of them on their own line for readability.
 
 
-***Exercise: Let's try to combine what we've learned so far in a single query.
-Using the surveys table write a query to display the three date
-fields, species ID, and weight in kilograms (rounded to two decimal places), for
-rodents captured in 1999, ordered alphabetically by the species ID.***
-
+> ### Challenge
+>
+> Let's try to combine what we've learned so far in a single
+> query.  Using the surveys table write a query to display the three date fields,
+> species_id, and weight in kilograms (rounded to two decimal places), for
+> rodents captured in 1999, ordered alphabetically by the species_id.
 
 
 **BREAK**
+
 
 Aggregation
 -----------
@@ -304,7 +318,7 @@ We can also find out how much all of those individuals weigh.
     SELECT ROUND(SUM(weight)/1000.0, 3) FROM surveys
 
 There are many other aggregate functions included in SQL including
-MAX, MIN, and AVG.
+`MAX`, `MIN`, and `AVG`.
 
 ***From the surveys table, can we use one query to output the total weight,
    average weight, and the min and max weights? How about the range of weight?***
@@ -319,8 +333,12 @@ using a GROUP BY clause
 GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
-***EXERCISE: Write queries that return: 1. How many individuals were counted in
-   each year. 2. Average weight of each species in each year***
+> ### Challenge
+>
+> Write queries that return:
+>
+> 1. How many individuals were counted in each year.
+> 2. Average weight of each species in each year
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
@@ -335,23 +353,23 @@ captured, ordered by the count
 Joins
 -----
 
-To combine data from two tables we use the SQL JOIN command, which comes after
-the FROM command.
+To combine data from two tables we use the SQL `JOIN` command, which comes after
+the `FROM` command.
 
 We also need to tell the computer which columns provide the link between the two
-tables using the word ON.  What we want is to join the data with the same
+tables using the word `ON`.  What we want is to join the data with the same
 species codes.
 
     SELECT *
     FROM surveys
     JOIN species ON surveys.species_id = species.species_id
 
-ON is like WHERE, it filters things out according to a test condition.  We use
-the table.colname format to tell the manager what column in which table we are
+ON is like `WHERE`, it filters things out according to a test condition.  We use
+the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
 We often won't want all of the fields from both tables, so anywhere we would
-have used a field name in a non-join query, we can use *table.colname*
+have used a field name in a non-join query, we can use `table.colname`.
 
 For example, what if we wanted information on when individuals of each
 species were captured, but instead of their species ID we wanted their
