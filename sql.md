@@ -291,7 +291,7 @@ and we often write each of them on their own line for readability.
 > Let's try to combine what we've learned so far in a single
 > query.  Using the surveys table write a query to display the three date fields,
 > species_id, and weight in kilograms (rounded to two decimal places), for
-> rodents captured in 1999, ordered alphabetically by the species_id.
+> individuals captured in 1999, ordered alphabetically by the species_id.
 
 
 **BREAK**
@@ -379,17 +379,19 @@ actual species names.
     FROM surveys
     JOIN species ON surveys.species_id = species.species_id
 
-***Exercise: Write a query that returns the genus, the species, and the weight
-   of every individual captured at the site***
+> ### Challenge:
+>
+> Write a query that returns the genus, the species, and the weight
+> of every individual captured at the site
 
 Joins can be combined with sorting, filtering, and aggregation.  So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
 
-    SELECT plots.plot_type, AVG(surveys.wgt)
+    SELECT plots.plot_type, AVG(surveys.weight)
     FROM surveys
     JOIN plots
-    ON surveys.plot = plots.plot_id
+    ON surveys.plot_id = plots.plot_id
     GROUP BY plots.plot_type
 
 
