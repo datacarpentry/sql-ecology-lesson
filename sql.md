@@ -362,7 +362,7 @@ species codes.
 
     SELECT *
     FROM surveys
-    JOIN species ON surveys.species_id = species.species_id
+    JOIN species ON surveys.species = species.species_id
 
 ON is like `WHERE`, it filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
