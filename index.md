@@ -1,51 +1,55 @@
 ---
 layout: lesson
 root: .
-lastupdated: April 16, 2015
-contributors: ["First Last", "First Last", "Pls Add Others"]
-maintainers: ["First Last", "First Last"] 
-domain: Domain Name
-topic: Topic
-dataurl: 
-
 ---
 
 <!-- USING THIS LESSON TEMPLATE -->
 
 <!--
-1. UPDATE THE INFORMATION ABOVE
-2. UPDATE THE INDEX OF LESSONS IN _includes/lesson-index.html
+1. UPDATE THE INFORMATION IN _data/info.yml
+2. UPDATE THE INDEX OF LESSONS IN _data/lessons.yml
 -->
 
+<!-- THE LESSON INFORMATION -->
 
-#Data Carpentry {{page.topic %}} for {{page.domain %}}
+{% for info in site.data.info %}
 
-<!-- This block displays the contributors' names if they are available. -->
-{% if page.contributors %}
-  **Content Contributors:**
-  {{page.contributors | join: ', ' %}}
-{% endif %}
-
-<!-- This block displays the lesson maintainers' names if they are available. -->
-{% if page.maintainers %}
-  **Lesson Maintainers:**
-  {{page.maintainers | join: ', ' %}}
-{% endif %}
+#Data Carpentry {{ info.topic }} for {{ info.domain }}
 
 Data Carpentry's aim is to teach researchers basic concepts, skills,
 and tools for working with data so that they can get more done in less
 time, and with less pain. The lessons below were designed for those interested 
-in working with {{page.domain %}} data in {{page.topic %}}. 
+in working with {{info.domain %}} data in {{info.topic %}}. 
+
+<!-- This block displays the contributors' names. -->
+
+**Content Contributors: {{info.contributors | join: ', ' %}}**
+
+
+<!-- This block displays the lesson maintainers' names. -->
+
+**Lesson Maintainers: {{info.maintainers | join: ', ' %}}**
+
+<br> 
+
+####Lesson status: {{ info.status }} 
+  [Information on Lesson Status Categories]()
 
 <!-- INDEX OF LESSONS ON THIS TOPIC -->
 
 ## Lessons:
 
-{% include lesson-index.html %}
+{% for lesson in site.data.lessons %}
 
-Data files for the workshop are available at: ({{page.dataurl %}})[{{page.dataurl %}}]
+- [{{ lesson.name }}]({{ lesson.url }})
 
-<em>Updates will be posted to this website as they become available.</em>
+{% endfor %}
+
+
+## Data
+
+Data files for the workshop are available at: ({{info.dataurl %}})[{{info.dataurl %}}]
+
 
 <p>&nbsp;
 
@@ -70,6 +74,8 @@ To most effectively use these materials, please make sure to install everything
 
 <p><strong>Twitter</strong>: @datacarpentry
 
+
+{% endfor %}
 
 
 
