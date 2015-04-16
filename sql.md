@@ -266,6 +266,15 @@ To truly be alphabetical, we might want to order by genus then species.
 Order of execution
 ------------------
 
+It is important to consider the ORDER which operations will be applied when writing
+more complex SQL queries. For example:
+
+    SELECT * FROM surveys
+    WHERE sex='F' AND species='RO' OR species='RX'
+    ORDER BY Sex
+    
+What happens when we add parenthesis around the `OR` statements in the example query above?
+
 Another note for ordering. We don’t actually have to display a column to sort by
 it.  For example, let’s say we want to order the birds by their species ID, but
 we only want to see genus and species.
