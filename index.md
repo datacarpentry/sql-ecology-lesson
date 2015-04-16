@@ -6,12 +6,14 @@ root: .
 <!-- USING THIS LESSON TEMPLATE -->
 
 <!--
+All the lesson specific information is in the following two files.
 1. UPDATE THE INFORMATION IN _data/info.yml
 2. UPDATE THE INDEX OF LESSONS IN _data/lessons.yml
 -->
 
 <!-- THE LESSON INFORMATION -->
 
+<!-- Get the information from _data/info.yml -->
 {% for info in site.data.info %}
 
 #Data Carpentry {{ info.topic }} for {{ info.domain }}
@@ -21,12 +23,9 @@ and tools for working with data so that they can get more done in less
 time, and with less pain. The lessons below were designed for those interested 
 in working with {{info.domain %}} data in {{info.topic %}}. 
 
-<!-- This block displays the contributors' names. -->
 
 **Content Contributors: {{info.contributors | join: ', ' %}}**
 
-
-<!-- This block displays the lesson maintainers' names. -->
 
 **Lesson Maintainers: {{info.maintainers | join: ', ' %}}**
 
@@ -35,9 +34,12 @@ in working with {{info.domain %}} data in {{info.topic %}}.
 ####Lesson status: {{ info.status }} 
   [Information on Lesson Status Categories]()
 
-<!-- INDEX OF LESSONS ON THIS TOPIC -->
+
+<!-- ###### INDEX OF LESSONS ON THIS TOPIC ###### -->
 
 ## Lessons:
+
+<!-- Get information from _data/lessons.yml -->
 
 {% for lesson in site.data.lessons %}
 
@@ -45,13 +47,14 @@ in working with {{info.domain %}} data in {{info.topic %}}.
 
 {% endfor %}
 
+<!-- End information from _data/lessons.yml -->
 
 ## Data
 
 Data files for the workshop are available at: ({{info.dataurl %}})[{{info.dataurl %}}]
 
 
-<p>&nbsp;
+<br>
 
 <h2>Requirements</h2>
 
