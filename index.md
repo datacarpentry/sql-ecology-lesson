@@ -31,9 +31,11 @@ in working with {{info.domain %}} data in {{info.topic %}}.
 
 <br> 
 
-####Lesson status: {{ info.status }} 
-  [Information on Lesson Status Categories]()
 
+####Lesson status: {{ info.status }} 
+<!--
+  [Information on Lesson Status Categories]()
+-->
 
 <!-- ###### INDEX OF LESSONS ON THIS TOPIC ###### -->
 
@@ -41,17 +43,19 @@ in working with {{info.domain %}} data in {{info.topic %}}.
 
 <!-- Get information from _data/lessons.yml -->
 
+
 {% for lesson in site.data.lessons %}
 
-- [{{ lesson.name }}]({{ lesson.url }})
+1. [{{ lesson.name }}]({{ lesson.url }})
 
 {% endfor %}
+
 
 <!-- End information from _data/lessons.yml -->
 
 ## Data
 
-Data files for the workshop are available at: ({{info.dataurl %}})[{{info.dataurl %}}]
+Data files for the workshop are available here: ({{info.dataurl %}})[{{info.dataurl %}}]
 
 
 <br>
@@ -69,8 +73,12 @@ To most effectively use these materials, please make sure to install everything
 
 
 
-{% if page.topic == "Python" %}
+{% if info.topic == "Python" %}
 {% include pythonSetup.html %}
+{% elsif info.topic == "Spreadsheets" %}
+{% include spreadsheetSetup.html %}
+{% elsif info.topic == "R" %}
+{% include rSetup.html %}
 {% else %}
 {% include anySetup.html %}
 {% endif %}
