@@ -21,14 +21,14 @@ under [these licenses](LICENSE.md).
 
 2.  Clone that repository to your own machine.
 
-3.  Create a branch from `master` for your changes.
+3.  Create a branch from `gh-pages` for your changes.
     Give your branch a meaningful name,
-    such as `fixing-typos-in-novice-shell-lesson`
-    or `adding-tutorial-on-visualization`.
+    such as `fix-typos-in-select-query`
+    or `add-groupby`.
 
 4.  Make your changes, commit them, and push them to your repository on GitHub.
 
-5.  Send a pull request to the `master` branch of the repository
+5.  Send a pull request to the `gh-pages` branch of the repository
 
 If it is easier for you to send them to us some other way,
 please mail us at
@@ -43,8 +43,7 @@ Every lesson has its own repository, with individual files for each topic. We
 use two digits followed by a one-word topic key to ensure files appear in the
 right order when listed.
 
-Lessons should be written in Markdown, as IPython Notebooks, or in other
-formats.
+Lessons should be written in Markdown.
 
 
 ## Formatting of the material
