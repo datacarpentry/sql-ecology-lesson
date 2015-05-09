@@ -395,6 +395,31 @@ could do something like
     GROUP BY plots.plot_type
 
 
+Aliases
+-------
+
+As queries get more complex names can get long and unwieldy. To help make things
+clearer we can use aliases to assign new names to things in the query.
+
+We can alias both table names:
+
+  SELECT surv.year, surv.month, surv.day, surv.genus, sp.species
+  FROM surveys AS surv
+  JOIN species AS sp ON surv.species_id = sp.species_id
+
+And column names:
+
+  SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, surv.genus AS gen, sp.species AS sp
+  FROM surveys AS surv
+  JOIN species AS sp ON surv.species_id = sp.species_id
+
+The `AS` isn't technically required, so you could do
+
+  SELECT surv.year yr
+  FROM surveys surv
+
+but using `AS` is much clearer so it's good style to include it.
+
 Adding data to existing tables
 ------------------------------
 
