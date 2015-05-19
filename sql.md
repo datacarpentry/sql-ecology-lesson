@@ -164,7 +164,7 @@ and appended to that row, in a new column.  Expressions can use any fields, any
 arithmetic operators (+ - * /) and a variety of built-in functions (). For
 example, we could round the values to make them easier to read.
 
-    SELECT plot, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
+    SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000.0, 2) FROM surveys;
 
 > ## Challenge
 >
@@ -409,7 +409,7 @@ We can alias both table names:
 
 And column names:
 
-  SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, surv.genus AS gen, sp.species AS sp
+  SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
   FROM surveys AS surv
   JOIN species AS sp ON surv.species_id = sp.species_id
 
