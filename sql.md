@@ -1,12 +1,9 @@
 ---
 layout: lesson
 root: .
-title: Lesson Title
+title: Databases using SQL
 minutes: 60
 ---
-
-Databases using SQL
-===================
 
 Setup
 -----
