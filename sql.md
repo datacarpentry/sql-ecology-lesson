@@ -1,5 +1,9 @@
-Databases using SQL
-===================
+---
+layout: lesson
+root: .
+title: Databases using SQL
+minutes: 60
+---
 
 Setup
 -----
