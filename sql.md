@@ -1,3 +1,10 @@
+---
+layout: lesson
+root: .
+title: Lesson Title
+minutes: 60
+---
+
 Databases using SQL
 ===================
 
