@@ -44,7 +44,11 @@ in working with {{page.domain %}} data in {{page.topic %}}.
 ## Lessons:
 
 
-1. [Lesson on managing data with SQL](sql.html)
+{% for lesson in site.data.lessons %}
+
+1. [{{ lesson.name }}]({{ lesson.url }})
+
+{% endfor %}
 
 
 
