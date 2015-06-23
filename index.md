@@ -1,38 +1,42 @@
 ---
+
 layout: lesson
-root: .
+lastupdated: April 16, 2015
+contributors: ["First Last", "First Last", "Pls Add Others"]
+maintainers: ["First Last", "First Last"]
+domain: Domain Name
+topic: Topic
+software: 
+dataurl:
+status: Under Development
+
+
 ---
 
 <!-- USING THIS LESSON TEMPLATE -->
-
-<!--
-All the lesson specific information is in the following two files.
-1. UPDATE THE INFORMATION IN _data/info.yml
-2. UPDATE THE INDEX OF LESSONS IN _data/lessons.yml
--->
+<!-- Lesson specific information is taken from the YAML header at the top of the page -->
 
 <!-- THE LESSON INFORMATION -->
 
 <!-- Get the information from _data/info.yml -->
-{% for info in site.data.info %}
 
-#Data Carpentry {{ info.topic }} for {{ info.domain }}
+#Data Carpentry {{ page.topic }} for {{ page.domain }}
 
 Data Carpentry's aim is to teach researchers basic concepts, skills,
 and tools for working with data so that they can get more done in less
 time, and with less pain. The lessons below were designed for those interested 
-in working with {{info.domain %}} data in {{info.topic %}}. 
+in working with {{page.domain %}} data in {{page.topic %}}. 
 
 
-**Content Contributors: {{info.contributors | join: ', ' %}}**
+**Content Contributors: {{page.contributors | join: ', ' %}}**
 
 
-**Lesson Maintainers: {{info.maintainers | join: ', ' %}}**
+**Lesson Maintainers: {{page.maintainers | join: ', ' %}}**
 
 <br> 
 
 
-####Lesson status: {{ info.status }} 
+####Lesson status: {{ page.status }} 
 <!--
   [Information on Lesson Status Categories]()
 -->
@@ -41,21 +45,14 @@ in working with {{info.domain %}} data in {{info.topic %}}.
 
 ## Lessons:
 
-<!-- Get information from _data/lessons.yml -->
 
+1. [Lesson 00 Name](00-lesson-00-name.html)
+2. [Lesson 01 Name](01-lesson-01-name.html)
 
-{% for lesson in site.data.lessons %}
-
-1. [{{ lesson.name }}]({{ lesson.url }})
-
-{% endfor %}
-
-
-<!-- End information from _data/lessons.yml -->
 
 ## Data
 
-Data files for the workshop are available here: ({{info.dataurl %}})[{{info.dataurl %}}]
+Data files for the workshop are available here: ({{page.dataurl %}})[{{page.dataurl %}}]
 
 
 <br>
@@ -73,11 +70,11 @@ To most effectively use these materials, please make sure to install everything
 
 
 
-{% if info.topic == "Python" %}
+{% if page.software == "Python" %}
 {% include pythonSetup.html %}
-{% elsif info.topic == "Spreadsheets" %}
+{% elsif page.software == "Spreadsheets" %}
 {% include spreadsheetSetup.html %}
-{% elsif info.topic == "R" %}
+{% elsif page.software == "R" %}
 {% include rSetup.html %}
 {% else %}
 {% include anySetup.html %}
@@ -86,7 +83,6 @@ To most effectively use these materials, please make sure to install everything
 <p><strong>Twitter</strong>: @datacarpentry
 
 
-{% endfor %}
 
 
 
