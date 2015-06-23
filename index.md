@@ -2,13 +2,13 @@
 layout: lesson
 root: .
 lastupdated: April 16, 2015
-contributors: ["First Last", "First Last", "Pls Add Others"]
-maintainers: ["First Last", "First Last"]
-domain: Domain Name
-topic: Topic
-software: 
-dataurl:
-status: Under Development
+contributors: ["Ethan White","Greg Wilson","Josh Herr","Sophie Clayton","Tracy Teal"]
+maintainers: []
+domain: Ecology
+topic: SQL
+software: SQL
+dataurl: http://dx.doi.org/10.6084/m9.figshare.1314459
+status: Teaching
 ---
 
 <!-- USING THIS LESSON TEMPLATE -->
@@ -44,13 +44,13 @@ in working with {{page.domain %}} data in {{page.topic %}}.
 ## Lessons:
 
 
-1. [Lesson 00 Name](00-lesson-00-name.html)
-2. [Lesson 01 Name](01-lesson-01-name.html)
+1. [Lesson on managing data with SQL](sql.html)
+
 
 
 ## Data
 
-Data files for the workshop are available here: ({{page.dataurl %}})[{{page.dataurl %}}]
+Data files for the workshop are available here: [{{page.dataurl %}}]({{page.dataurl %}})
 
 
 <br>
@@ -74,6 +74,8 @@ To most effectively use these materials, please make sure to install everything
 {% include spreadsheetSetup.html %}
 {% elsif page.software == "R" %}
 {% include rSetup.html %}
+{% elsif page.software == "SQL" %}
+{% include sqlSetup.html %}
 {% else %}
 {% include anySetup.html %}
 {% endif %}
