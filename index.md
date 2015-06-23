@@ -1,6 +1,6 @@
 ---
-
 layout: lesson
+root: .
 lastupdated: April 16, 2015
 contributors: ["First Last", "First Last", "Pls Add Others"]
 maintainers: ["First Last", "First Last"]
@@ -9,8 +9,6 @@ topic: Topic
 software: 
 dataurl:
 status: Under Development
-
-
 ---
 
 <!-- USING THIS LESSON TEMPLATE -->
