@@ -24,7 +24,7 @@ Relational databases
 
 * Relational databases store data in tables with fields (columns) and records
   (rows)
-* Data in tables has types, just like in Python, and all values in a field have
+* Data in tables has types, and all values in a field have
   the same type ([list of data types](#datatypes))
 * Queries let us look up data or make calculations based on columns
 
@@ -38,8 +38,7 @@ Why use relational databases
 * Fast for large amounts of data
 * Improve quality control of data entry (type constraints and use of forms in
   Access, Filemaker, etc.)
-* The concepts of relational database querying are core to understanding how to
-  do similar things in R and Python
+* The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
 
 Database Management Systems
@@ -298,7 +297,7 @@ and we often write each of them on their own line for readability.
 > individuals captured in 1999, ordered alphabetically by the species_id.
 
 
-**BREAK**
+
 
 
 Aggregation
