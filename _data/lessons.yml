@@ -1,2 +1,6 @@
-- url: sql.html
-  name: Lesson 01 Managing data with SQL
+- url: 00-sql-introduction.html
+  name: Lesson 00 Introduction to SQL
+- url: 01-sql-basic-queries.html
+  name: Lesson 01 Basic queries
+- url: 02-sql-aggregation-join.html
+  name: Lesson 02 Aggregation and join
