@@ -2,7 +2,7 @@
 layout: lesson
 root: .
 lastupdated: April 16, 2015
-contributors: ["Ethan White","Greg Wilson","Josh Herr","Sophie Clayton","Tracy Teal"]
+contributors: ["Ethan White","Greg Wilson","Josh Herr","Sophie Clayton","Tracy Teal", "Aleksandra Pawlik"]
 maintainers: []
 domain: Ecology
 topic: SQL
