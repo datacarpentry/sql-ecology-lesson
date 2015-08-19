@@ -2,7 +2,7 @@
 layout: lesson
 root: .
 title: Basic queries
-minutes: 60
+minutes: 30
 ---
 
 
@@ -193,5 +193,5 @@ and we often write each of them on their own line for readability.
 
 
 
-Previous: [SQL Introduction](00-sql-introduction.html) Next: [Aggregation and joins.](02-sql-aggregation-joins.html)
+Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)
 

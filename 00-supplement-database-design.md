@@ -1,9 +1,10 @@
 ---
 layout: lesson
 root: .
-title: Supplement: Database design
+title: Supplement - Database design
 minutes: 30
 ---
+
 
 Q & A on Database Design (review if time)
 -----------------------------------------
