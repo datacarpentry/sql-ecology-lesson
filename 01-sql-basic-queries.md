@@ -187,11 +187,10 @@ and we often write each of them on their own line for readability.
 >
 > Let's try to combine what we've learned so far in a single
 > query.  Using the surveys table write a query to display the three date fields,
-> species_id, and weight in kilograms (rounded to two decimal places), for
-> individuals captured in 1999, ordered alphabetically by the species_id.
+> species\_id, and weight in kilograms (rounded to two decimal places), for
+> individuals captured in 1999, ordered alphabetically by the species\_id.
 
 
 
 
 Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)
-
