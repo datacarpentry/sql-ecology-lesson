@@ -21,7 +21,7 @@ Write a query that returns the year, month, day, species and weight in mg
 
 	SELECT year, month, day, species, wgt/100 
 	FROM surveys 
-	WHERE (plot ="1") AND (wgt > "75")
+	WHERE (plot = 1) AND (wgt >  75)
 
 
 **EXERCISE**  
@@ -31,7 +31,7 @@ Write a query that returns the year, month, day, species and weight in mg
  	SELECT surveys.month, surveys.day, surveys.year, surveys.wgt/1000.0, species.species_id 
  	FROM surveys  
  	JOIN species ON surveys.species = species.species_id 
- 	WHERE (surveys.wgt >"75") AND (surveys.plot ="1")
+ 	WHERE (surveys.wgt > 75) AND (surveys.plot = 1)
  
 **EXERCISE**   
 Write a query that returns day, month, year, species for individuals caught  in January, May and July  
@@ -39,7 +39,7 @@ Write a query that returns day, month, year, species for individuals caught  in 
 
 	SELECT year, month, day, species, wgt/100 
 	FROM surveys 
-	WHERE (month IN ("1", "5", "7"));
+	WHERE (month IN (1, 5, 7));
  
 
 
@@ -56,7 +56,7 @@ Write a query that returns day, month, year, species for individuals caught  in 
  
 	 SELECT year, month, day, species, ROUND(wgt/100,2) 
 	 FROM surveys 
-	 WHERE  (year="1999") 
+	 WHERE (year=1999) 
 	 ORDER BY species ASC
  
  
