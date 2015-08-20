@@ -46,14 +46,14 @@ If we want to group by multiple fields, we give GROUP BY a comma separated list.
 >
 > Write queries that return:
 >
-> 1. How many individuals were counted in each year.  
-a) in total;  
+> 1. How many individuals were counted in each year.
+a) in total;
 b) per each species.
-> 2. Average weight of each species in each year.  
-Can you modify the above queries combining them into one? 
+> 2. Average weight of each species in each year.
+Can you modify the above queries combining them into one?
 
 
-##### Ordering arrgregated results.
+##### Ordering aggregated results.
 
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
@@ -63,13 +63,12 @@ captured, ordered by the count
     FROM surveys
     GROUP BY species_id
     ORDER BY COUNT(species_id)
-    
+
 > ### Challenge
 >
->   Write a query that returns the number of each species caught in each year sorted from most often caught species to the least occurring ones within each year starting from the most recent records.    
+>   Write a query that returns the number of each species caught in each year sorted from most often caught species to the least occurring ones within each year starting from the most recent records.
 
 
 
 
 Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and aliases.](03-sql-joins-aliases.html)
-
