@@ -103,7 +103,7 @@ Import
 3. Select the file to import
 4. Give the table a name that matches the file name (surveys, species, plots), or use the default
 5. If the first row has column headings, check the appropriate box
-6. Make sure the delimiter and quotation options are correct
+6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
 9. Set the data types for each field: choose TEXT for fields with text
