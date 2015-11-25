@@ -12,18 +12,18 @@ calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
 Using the wildcard simply counts the number of records (rows)
-```sql
+
     SELECT COUNT(*) FROM surveys
-```
+
 We can also find out how much all of those individuals weigh.
-```sql
+
     SELECT COUNT(*), SUM(weight) FROM surveys
-```
+
 We can output this value in kilograms, rounded to 3 decimal
    places:
-```sql
+
     SELECT ROUND(SUM(weight)/1000.0, 3) FROM surveys
-```
+
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
 
@@ -34,11 +34,11 @@ There are many other aggregate functions included in SQL including
 
 Now, let's see how many individuals were counted in each species. We do this
 using a GROUP BY clause
-```sql
+
     SELECT species_id, COUNT(*)
     FROM surveys
     GROUP BY species_id
-```
+
 GROUP BY tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give GROUP BY a comma separated list.
 
@@ -58,12 +58,12 @@ Can you modify the above queries combining them into one?
 We can order the results of our aggregation by a specific column, including the
 aggregated column.  Let’s count the number of individuals of each species
 captured, ordered by the count
-```sql
+
     SELECT species_id, COUNT(*)
     FROM surveys
     GROUP BY species_id
     ORDER BY COUNT(species_id)
-```
+
 > ### Challenge
 >
 >   Write a query that returns the number of each species caught in each year sorted from most often caught species to the least occurring ones within each year starting from the most recent records.
