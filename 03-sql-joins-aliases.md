@@ -16,9 +16,11 @@ We also need to tell the computer which columns provide the link between the two
 tables using the word `ON`.  What we want is to join the data with the same
 species codes.
 
+```sql
     SELECT *
     FROM surveys JOIN species
     ON surveys.species_id = species.species_id
+```
 
 ON is like `WHERE`, it filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
@@ -31,9 +33,11 @@ For example, what if we wanted information on when individuals of each
 species were captured, but instead of their species ID we wanted their
 actual species names.
 
+```sql
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
     FROM surveys JOIN species
     ON surveys.species_id = species.species_id
+```
 
 > ### Challenge:
 >
@@ -44,10 +48,12 @@ Joins can be combined with sorting, filtering, and aggregation.  So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
 
+```sql
     SELECT plots.plot_type, AVG(surveys.weight)
     FROM surveys JOIN plots
     ON surveys.plot_id = plots.plot_id
     GROUP BY plots.plot_type
+```
 
 > ### Challenge:
 >
@@ -63,20 +69,26 @@ clearer we can use aliases to assign new names to things in the query.
 
 We can alias both table names:
 
+```sql
     SELECT surv.year, surv.month, surv.day, surv.genus, sp.species
     FROM surveys AS surv JOIN species AS sp
     ON surv.species_id = sp.species_id
+```
 
 And column names:
 
+```sql
     SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
     FROM surveys AS surv JOIN species AS sp
     ON surv.species_id = sp.species_id
+```
 
 The `AS` isn't technically required, so you could do
 
+```sql
     SELECT surv.year yr
     FROM surveys surv
+```
 
 but using `AS` is much clearer so it's good style to include it.
 
