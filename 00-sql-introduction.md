@@ -18,6 +18,11 @@ Manager -> Install -> Restart now**
    Manager icon to one of the empty menu squares on the right, Exit Customize**
 5. Open SQLite Manager: **Menu -> SQLite Manager**
 
+Alternative
+-----------
+
+1. Download and extract [SQLiteStudio](http://sqlitestudio.pl/?act=download) (Windows, MacOSX and Linux versions available).
+2. Run SQLite studio.
 
 Relational databases
 --------------------
@@ -78,6 +83,16 @@ and search tab in the right hand section of the screen.
 
 If we want to write a query, we click on the Execute SQL tab.
 
+Introduction to SQLiteStudio
+----------------------------
+
+We can open the database files (.sqlite) by clicking **Database -> Add a
+database** and selecting the files downloaded. The database will appear in the
+panel in the left. Double click on the database name to view existing tables.
+Double click on a table and select **Data** to display the content of the table.
+
+If we want to write a query, click **Tools -> Open SQL editor**, and then click
+**Execute query**.
 
 Dataset Description
 -------------------
@@ -94,8 +109,8 @@ simplified it just a little bit for the workshop, but you can download the
 exactly the same tools we'll learn about today.
 
 
-Import
-------
+Import to SQLite Manager
+------------------------
 
 1. Download the three CSV files from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 1. Start a New Database **Database -> New Database**
@@ -109,6 +124,16 @@ Import
 9. Set the data types for each field: choose TEXT for fields with text
    (`species_id`, `genus`, `sex`, etc.) and INT for fields with numbers (`day`,
    `month`, `year`, `weight`, etc.)
+
+Import to SQLite Studio
+----------------------
+
+1. Download the three CSV files from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+2. Start a new database **Database -> Add a database -> create a new database
+file -> Ok**
+3. Double click to open the newly created database.
+4. Create a new table (surveys, species, plots): **Right-click -> Import**,
+enter table name **Next >** select the file to import, **Finish**.
 
 > ### Challenge
 >
