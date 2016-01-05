@@ -63,7 +63,7 @@ clearer we can use aliases to assign new names to things in the query.
 
 We can alias both table names:
 
-    SELECT surv.year, surv.month, surv.day, surv.genus, sp.species
+    SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
     FROM surveys AS surv JOIN species AS sp
     ON surv.species_id = sp.species_id
 
