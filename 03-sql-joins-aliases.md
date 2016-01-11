@@ -40,10 +40,6 @@ actual species names.
 > Write a query that returns the genus, the species, and the weight
 > of every individual captured at the site
 
-> ### Challenge:
->
-> Write a query that find average weight of each species ONLY Rodent in taxa
-
 Joins can be combined with sorting, filtering, and aggregation.  So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
@@ -57,6 +53,9 @@ could do something like
 >
 > Write a query that returns the number of genus of the animals caught in each plot in descending order.
 
+> ### Challenge:
+>
+> Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
 
 
 Aliases
