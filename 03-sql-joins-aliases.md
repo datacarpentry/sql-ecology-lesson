@@ -53,6 +53,9 @@ could do something like
 >
 > Write a query that returns the number of genus of the animals caught in each plot in descending order.
 
+> ### Challenge:
+>
+> Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
 
 
 Aliases
