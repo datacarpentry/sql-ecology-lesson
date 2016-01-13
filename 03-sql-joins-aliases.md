@@ -83,5 +83,18 @@ The `AS` isn't technically required, so you could do
 
 but using `AS` is much clearer so it's good style to include it.
 
-Previous: [SQL Aggregation](02-sql-aggregation.html) 
+> ### Challenge (optional):
+>
+> SQL queries help us *ask* specific *questions* which we want to answer about our data. The real skill with SQL is to know how to translate our scientific questions into a sensible SQL query (and subsequently visualize and interpret our results).
+>
+> Have a look at the following questions; these questions are written in plain English. Can you translate them to *SQL queries* and give a suitable answer?
+> - How many plots from each type are there?
+> - How many specimens are of each gender are there for each year?
+> - How many specimens of each species were captured in each type of plot?
+> - What is the average weight of each taxa?
+> - What is the percentage of specimens in each taxa?
+> - What are the minimum, maximum and average weight for each species of Rodent?
+> - What is the hindfoot length for male and female rodent of each species? Is there a Male / Female difference?
+> - What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?
 
+Previous: [SQL Aggregation](02-sql-aggregation.html)
