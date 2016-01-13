@@ -83,7 +83,7 @@ The `AS` isn't technically required, so you could do
 
 but using `AS` is much clearer so it's good style to include it.
 
-> ### Challenge:
+> ### Challenge (optional):
 >
 > SQL queries help us *ask* specific *questions* which we want to answer about our data. The real skill with SQL is to know how to translate our scientific questions into a sensible SQL query (and subsequently visualize and interpret our results).
 >
@@ -94,7 +94,7 @@ but using `AS` is much clearer so it's good style to include it.
 > - What is the average weight of each taxa?
 > - What is the percentage of specimens in each taxa?
 > - What are the minimum, maximum and average weight for each species of Rodent?
-> - What is the hindfoot_length for male and female rodent of each species? Is there a Male / Female difference?
-> - What is the average weight of each rodent species over the course of the years? Is there any noticeable trend on the species?
+> - What is the hindfoot length for male and female rodent of each species? Is there a Male / Female difference?
+> - What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?
 
 Previous: [SQL Aggregation](02-sql-aggregation.html)
