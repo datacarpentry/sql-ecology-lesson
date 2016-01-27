@@ -89,23 +89,37 @@ but using `AS` is much clearer so it's good style to include it.
 >
 > Have a look at the following questions; these questions are written in plain English. Can you translate them to *SQL queries* and give a suitable answer?  
 > 1. How many plots from each type are there?  
+
 > 2. How many specimens are of each gender are there for each year?  
+
 > 3. How many specimens of each species were captured in each type of plot?  
+
 > 4. What is the average weight of each taxa?  
+
 > 5. What is the percentage of each species in each taxa?  
+
 > 6. What are the minimum, maximum and average weight for each species of Rodent?  
+
 > 7. What is the hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
+
 > 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
-> 
+>
 > Proposed solutions:
-> 
-> 1. Solution: ```SELECT plot_type, count(*) AS howmany  FROM plots  GROUP BY plot_type  ORDER BY howmany DESC```
+>
+> 1. Solution: ```SELECT plot_type, count(*) AS howmany  FROM plots  GROUP BY plot_type  ORDER BY howmany DESC```  
+
 > 2. Solution: ```SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year```
+
 > 3. Solution: ```SELECT species_id, plot_type, count(*) FROM surveys JOIN plots USING (plot_id) WHERE species_id IS NOT null GROUP BY species_id, plot_type```
+
 > 4. Solution: ```SELECT taxa, AVG(weight) FROM species JOIN surveys USING(species_id) GROUP BY taxa```
+
 > 5. Solution: ```SELECT taxa, 100*count(*)/(SELECT cast(count(*) as float) FROM surveys) FROM surveys JOIN species USING (species_id ) GROUP BY taxa```
+
 > 6. Solution: ```SELECT species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species USING (species_id ) WHERE taxa = 'Rodent' GROUP BY species_id```
+
 > 7. Solution: ```SELECT species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species USING (species_id ) WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY species_id, sex```
+
 > 8. Solution: ```SELECT species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species USING (species_id ) WHERE taxa = 'Rodent' GROUP BY species_id, year```
 
 
