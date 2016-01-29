@@ -13,20 +13,8 @@ To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
 We also need to tell the computer which columns provide the link between the two
-tables using the word `USING`.  We give the manager the name of the common column
-between the two tables we want to join.  What we want is to join the data with
-the same species codes.
-
-    SELECT *
-    FROM surveys JOIN species
-    USING (species_id)
-
-Here we are telling the manager that we want to combine `surveys` with `species`
-and that the common column is `species_id`.
-
-Alternatively, we can use the word `ON`.  This is particularly useful if the
-names of the common columns does not match (e.g. if the columns were called
-`surveys.species_id` and `species.id`).
+tables using the word `ON`.  What we want is to join the data with the same
+species codes.
 
     SELECT *
     FROM surveys JOIN species
@@ -35,6 +23,15 @@ names of the common columns does not match (e.g. if the columns were called
 `ON` is like `WHERE`, it filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
+
+Alternatively, we can use the word `USING`, as a short-hand.  In this case we are 
+telling the manager that we want to combine `surveys` with `species` and that 
+the common column is `species_id`.
+
+    SELECT *
+    FROM surveys JOIN species
+    USING (species_id)
+
 
 We often won't want all of the fields from both tables, so anywhere we would
 have used a field name in a non-join query, we can use `table.colname`.
