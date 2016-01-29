@@ -106,7 +106,7 @@ but using `AS` is much clearer so it's good style to include it.
 >
 > Proposed solutions:
 >
-> 1. Solution: ```SELECT plot_type, count(*) AS howmany  FROM plots  GROUP BY plot_type  ORDER BY howmany DESC```  
+> 1. Solution: ```SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC```  
 
 > 2. Solution: ```SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year```
 
@@ -114,7 +114,7 @@ but using `AS` is much clearer so it's good style to include it.
 
 > 4. Solution: ```SELECT taxa, AVG(weight) FROM species JOIN surveys USING(species_id) GROUP BY taxa```
 
-> 5. Solution: ```SELECT taxa, 100*count(*)/(SELECT cast(count(*) as float) FROM surveys) FROM surveys JOIN species USING (species_id ) GROUP BY taxa```
+> 5. Solution: ```SELECT taxa, 100.0*count(*)/(SELECT count(*) FROM surveys) FROM surveys JOIN species USING (species_id ) GROUP BY taxa```
 
 > 6. Solution: ```SELECT species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species USING (species_id ) WHERE taxa = 'Rodent' GROUP BY species_id```
 
