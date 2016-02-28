@@ -92,6 +92,11 @@ The `AS` isn't technically required, so you could do
 
 but using `AS` is much clearer so it's good style to include it.
 
+> ### Challenge:
+> Try to come up with a query that computates an aggregation,
+> like in the last chapter. Then add a filter ("WHERE") on the computed value.
+> Why does it make sense to use an alias here?
+
 > ### Challenge (optional):
 >
 > SQL queries help us *ask* specific *questions* which we want to answer about our data. The real skill with SQL is to know how to translate our scientific questions into a sensible SQL query (and subsequently visualize and interpret our results).
