@@ -119,7 +119,7 @@ to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (specie
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
 
     SELECT * FROM surveys WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
-
+     
     SELECT *
     FROM surveys
     WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
@@ -130,11 +130,25 @@ to make sure you are getting what you want.  Sometimes it might help to take a
 subset of the data that you can easily see in a temporary database to practice
 your queries on before working on a larger or more complicated database.
 
+When the queries become more complex, it can be useful to add comments. In SQL, 
+comments are started by `--`, and end at the end of the line. For example, a 
+commented version of the above query can be written as:
+
+    -- Get post 2000 data on Dipodomys' species
+    -- These are in the surveys table, and we are interested in all columns
+    SELECT * FROM surveys
+    -- Sampling year is in the column `year`, and we want to include 2000
+    WHERE (year >= 2000)
+    -- Dipodomys' species have the `species_id` DM, DO, and DS
+    AND (species_id IN ('DM', 'DO', 'DS'));
+
+Although SQL queries often read like plain English, it is *always* useful to add
+comments; this is especially true of more complex queries.
 
 Sorting
 -------
 
-We can also sort the results of our queries by using ORDER BY.
+We can also sort the results of our queries by using `ORDER BY`.
 For simplicity, let’s go back to the species table and alphabetize it by taxa.
 
     SELECT * FROM species ORDER BY taxa ASC;
