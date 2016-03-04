@@ -118,13 +118,11 @@ the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
 
-```
-SELECT * FROM surveys WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
-
-SELECT *
-FROM surveys
-WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
-```
+    SELECT * FROM surveys WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
+     
+    SELECT *
+    FROM surveys
+    WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
 
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy,
@@ -136,15 +134,13 @@ When the queries become more complex, it can be useful to add comments. In SQL,
 comments are started by `--`, and end at the end of the line. For example, a 
 commented version of the above query can be written as:
 
-```
--- Get post 2000 data on Dipodomys' species
--- These are in the surveys table, and we are interested in all columns
-SELECT * FROM surveys
--- Sampling year is in the column `year`, and we want to include 2000
-WHERE (year >= 2000)
--- Dipodomys' species have the `species_id` DM, DO, and DS
-AND (species_id IN ('DM', 'DO', 'DS'));
-```
+    -- Get post 2000 data on Dipodomys' species
+    -- These are in the surveys table, and we are interested in all columns
+    SELECT * FROM surveys
+    -- Sampling year is in the column `year`, and we want to include 2000
+    WHERE (year >= 2000)
+    -- Dipodomys' species have the `species_id` DM, DO, and DS
+    AND (species_id IN ('DM', 'DO', 'DS'));
 
 Although SQL queries often read like plain English, it is *always* useful to add
 comments; this is especially true of more complex queries.
