@@ -52,23 +52,32 @@ b) per each species.
 > 2. Average weight of each species in each year.
 Can you modify the above queries combining them into one?
 
+##### Saving queries for future use
+
+It is not uncommon to repeat the same operation more than once, for example
+for monitoring or reporting purposes. SQL comes with a very powerful mechanism
+to do this: views. Views are a form of query that is saved in the database,
+and can be used to look at, filter, and even update information. One way to
+think of views is as a table, that can read, aggregate, and filter information
+from several places before showing it to you.
+
+<!-- TODO example 1 -->
 
 ##### Ordering aggregated results.
 
-We can order the results of our aggregation by a specific column, including the
-aggregated column.  Let’s count the number of individuals of each species
-captured, ordered by the count
+We can order the results of our aggregation by a specific column, including
+the aggregated column.  Let’s count the number of individuals of each
+species captured, ordered by the count
 
-    SELECT species_id, COUNT(*)
-    FROM surveys
-    GROUP BY species_id
-    ORDER BY COUNT(species_id)
+    SELECT species_id, COUNT(*) FROM surveys GROUP BY species_id ORDER BY
+    COUNT(species_id)
 
-> ### Challenge
->
->   Write a query that returns the number of each species caught in each year sorted from most often caught species to the least occurring ones within each year starting from the most recent records.
+> ### Challenge > >   Write a query that returns the number of each species
+caught in each year sorted from most often caught species to the least
+occurring ones within each year starting from the most recent records.
 
 
 
 
-Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and aliases.](03-sql-joins-aliases.html)
+Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and
+aliases.](03-sql-joins-aliases.html)
