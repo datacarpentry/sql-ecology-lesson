@@ -20,7 +20,7 @@ We can also find out how much all of those individuals weigh.
     SELECT COUNT(*), SUM(weight) FROM surveys
 
 We can output this value in kilograms, rounded to 3 decimal
-   places:
+places:
 
     SELECT ROUND(SUM(weight)/1000.0, 3) FROM surveys
 
@@ -33,14 +33,14 @@ There are many other aggregate functions included in SQL including
 
 
 Now, let's see how many individuals were counted in each species. We do this
-using a GROUP BY clause
+using a `GROUP BY` clause
 
     SELECT species_id, COUNT(*)
     FROM surveys
     GROUP BY species_id
 
-GROUP BY tells SQL what field or fields we want to use to aggregate the data.
-If we want to group by multiple fields, we give GROUP BY a comma separated list.
+`GROUP BY` tells SQL what field or fields we want to use to aggregate the data.
+If we want to group by multiple fields, we give `GROUP BY` a comma separated list.
 
 > ### Challenge
 >
