@@ -5,8 +5,8 @@ title: Aggregation
 minutes: 30
 ---
 
-COUNT and GROUP BY
-----
+## COUNT and GROUP BY
+
 Aggregation allows us to combine results by grouping records based on value and
 calculating combined values in groups.
 
@@ -52,7 +52,7 @@ b) per each species.
 > 2. Average weight of each species in each year.
 Can you modify the above queries combining them into one?
 
-##### Saving queries for future use
+## Saving queries for future use
 
 It is not uncommon to repeat the same operation more than once, for example
 for monitoring or reporting purposes. SQL comes with a very powerful mechanism
@@ -61,9 +61,25 @@ and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
 
-<!-- TODO example 1 -->
+Creating a view from a query requires to add `CREATE VIEW viewname AS`
+before the query itself. For example, if we want to save the query giving
+the number of individuals in a view, we can write
 
-##### Ordering aggregated results.
+    CREATE VIEW species_count AS
+    SELECT species_id, COUNT(*)
+    FROM surveys
+    GROUP BY species_id
+
+Now, we will be able to access these results with a much shorter notation:
+
+    SELECT * FROM species_count
+
+Assuming we do not need this view anymore, we can remove it from the database
+almost as we would a table:
+
+    DROP VIEW species_count
+
+## Ordering aggregated results.
 
 We can order the results of our aggregation by a specific column, including
 the aggregated column.  Let’s count the number of individuals of each
