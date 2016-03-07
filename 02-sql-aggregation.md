@@ -52,6 +52,18 @@ b) per each species.
 > 2. Average weight of each species in each year.
 Can you modify the above queries combining them into one?
 
+## Ordering aggregated results.
+
+We can order the results of our aggregation by a specific column, including
+the aggregated column.  Let’s count the number of individuals of each
+species captured, ordered by the count
+
+    SELECT species_id, COUNT(*)
+    FROM surveys
+    GROUP BY species_id
+    ORDER BY COUNT(species_id)
+
+
 ## Saving queries for future use
 
 It is not uncommon to repeat the same operation more than once, for example
@@ -80,23 +92,11 @@ almost as we would a table:
 
     DROP VIEW species_count
 
-## Ordering aggregated results.
-
-We can order the results of our aggregation by a specific column, including
-the aggregated column.  Let’s count the number of individuals of each
-species captured, ordered by the count
-
-    SELECT species_id, COUNT(*)
-    FROM surveys
-    GROUP BY species_id
-    ORDER BY COUNT(species_id)
-
-> ### Challenge > >   Write a query that returns the number of each species
+> ### Challenge
+>
+> Write a query that returns the number of each species
 caught in each year sorted from most often caught species to the least
-occurring ones within each year starting from the most recent records.
+occurring ones within each year starting from the most recent records. Save
+this query as a `VIEW`.
 
-
-
-
-Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and
-aliases.](03-sql-joins-aliases.html)
+Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and aliases.](03-sql-joins-aliases.html)
