@@ -86,8 +86,10 @@ We can order the results of our aggregation by a specific column, including
 the aggregated column.  Let’s count the number of individuals of each
 species captured, ordered by the count
 
-    SELECT species_id, COUNT(*) FROM surveys GROUP BY species_id ORDER BY
-    COUNT(species_id)
+    SELECT species_id, COUNT(*)
+    FROM surveys
+    GROUP BY species_id
+    ORDER BY COUNT(species_id)
 
 > ### Challenge > >   Write a query that returns the number of each species
 caught in each year sorted from most often caught species to the least
