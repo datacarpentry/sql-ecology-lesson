@@ -72,7 +72,8 @@ the number of individuals in a view, we can write
 
 Now, we will be able to access these results with a much shorter notation:
 
-    SELECT * FROM species_count
+    SELECT *
+    FROM species_count
 
 Assuming we do not need this view anymore, we can remove it from the database
 almost as we would a table:
