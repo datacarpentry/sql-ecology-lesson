@@ -95,6 +95,9 @@ almost as we would a table:
 
     DROP VIEW species_count
 
+You can also add a view using *Create View* in the *View* menu and see the
+results in the *Views* tab just like a table
+
 > ### Challenge
 >
 > Write a query that returns the number of each species
