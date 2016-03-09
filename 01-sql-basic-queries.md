@@ -106,6 +106,7 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 > Write a query that returns the day, month, year, species_id, and
 > weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
 
+
 ## Building more complex queries
 
 Now, lets combine the above queries to get data for the 3 _Dipodomys_ species from
