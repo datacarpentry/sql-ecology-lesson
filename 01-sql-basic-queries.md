@@ -94,22 +94,6 @@ which have species codes DM, DO, and DS we could combine the tests using OR:
 > Write a query that returns the day, month, year, species_id, and
 > weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
 
-
-Saving & Exporting queries
---------------------------
-
-* Exporting:  **Actions** button and choosing **Save Result to File**.
-* Save: **View** drop down and **Create View**
-
-
-Saving queries
---------------------------------------
-To enable saving queries from the main menu select **Tools** -> **Use Table for Extension Data**:
-
-![Saving queries](img/saving_query.png)
-
-You will see additional 4 icons - "Previous query from the history", "Next query from the history", "Save query by name" and "Clear query history". When you click the query, it will then be available under the list of queries ("Select a Query").
-
 Building more complex queries
 -----------------------------
 
