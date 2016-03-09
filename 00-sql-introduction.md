@@ -5,8 +5,7 @@ title: Databases using SQL
 minutes: 60
 ---
 
-Setup
------
+## Setup
 
 _Note: this should have been done by participants before the start of the workshop._
 
@@ -19,8 +18,7 @@ Manager -> Install -> Restart now**
 5. Open SQLite Manager: **Menu -> SQLite Manager**
 
 
-Relational databases
---------------------
+## Relational databases
 
 * Relational databases store data in tables with fields (columns) and records
   (rows)
@@ -29,20 +27,18 @@ Relational databases
 * Queries let us look up data or make calculations based on columns
 
 
-Why use relational databases
-----------------------------
+## Why use relational databases
 
 * Data separate from analysis.
-  * No risk of accidentally changing data when analyzing it
-  * If we change the data we can just rerun the query
+    * No risk of accidentally changing data when analyzing it
+    * If we change the data we can just rerun the query
 * Fast for large amounts of data
 * Improve quality control of data entry (type constraints and use of forms in
   Access, Filemaker, etc.)
 * The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
 
-Database Management Systems
----------------------------
+## Database Management Systems
 
 There are a number of different database management systems for working with
 relational data. We're going to use SQLite today, but basically everything we
@@ -52,20 +48,18 @@ details of exactly how to import and export data and the
 [details of data types](#datatypediffs).
 
 
-Database Design
----------------
+## Database Design
 
-1. Every row-column combination contains a single *atomic* value, i.e., not
+* Every row-column combination contains a single *atomic* value, i.e., not
    containing parts we might want to work with separately.
-2. One field per type of information
-3. No redundant information
-     * Split into separate tables with one table per class of information
-	   * Needs an identifier in common between tables – shared column - to
+* One field per type of information
+* No redundant information
+    * Split into separate tables with one table per class of information
+    * Needs an identifier in common between tables – shared column - to
        reconnect (foreign key).
 
 
-Introduction to SQLite Manager
-------------------------------
+## Introduction to SQLite Manager
 
 Let's all open the database we downloaded in SQLite Manager by clicking on the
 open file icon.
@@ -79,8 +73,7 @@ and search tab in the right hand section of the screen.
 If we want to write a query, we click on the Execute SQL tab.
 
 
-Dataset Description
--------------------
+## Dataset Description
 
 The data we will be using is a time-series for a small mammal community in
 southern Arizona. This is part of a project studying the effects of rodents and
@@ -94,8 +87,7 @@ simplified it just a little bit for the workshop, but you can download the
 exactly the same tools we'll learn about today.
 
 
-Import
-------
+## Import
 
 1. Download the three CSV files from the [Portal Database](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 1. Start a New Database **Database -> New Database**
@@ -117,61 +109,54 @@ Import
 You can also use this same approach to append new data to an existing table.
 
 
+## Adding data to existing tables
+
+1. Browse & Search -> Add
+1. Enter data into a csv file and append
 
 
-Adding data to existing tables
-------------------------------
+## <a name="datatypes"></a> Data types
 
-* Browse & Search -> Add
-* Enter data into a csv file and append
-
-
-<a name="datatypes"></a> Data types
------------------------------------
-
-| Data type  | Description |
-| :------------- | :------------- |
-| CHARACTER(n)  | Character string. Fixed-length n  |
-| VARCHAR(n) or CHARACTER VARYING(n) |	Character string. Variable length. Maximum length n |
-| BINARY(n) |	Binary string. Fixed-length n |
-| BOOLEAN	| Stores TRUE or FALSE values |
-| VARBINARY(n) or BINARY VARYING(n) |	Binary string. Variable length. Maximum length n |
-| INTEGER(p) |	Integer numerical (no decimal). |
-| SMALLINT | 	Integer numerical (no decimal). |
-| INTEGER |	Integer numerical (no decimal). |
-| BIGINT |	Integer numerical (no decimal). |
-| DECIMAL(p,s) |	Exact numerical, precision p, scale s. |
-| NUMERIC(p,s) |	Exact numerical, precision p, scale s. (Same as DECIMAL) |
-| FLOAT(p) |	Approximate numerical, mantissa precision p. A floating number in base 10 exponential notation. |
-| REAL |	Approximate numerical |
-| FLOAT |	Approximate numerical |
-| DOUBLE PRECISION |	Approximate numerical |
-| DATE |	Stores year, month, and day values |
-| TIME |	Stores hour, minute, and second values |
-| TIMESTAMP |	Stores year, month, day, hour, minute, and second values |
-| INTERVAL |	Composed of a number of integer fields, representing a period of time, depending on the type of interval |
-| ARRAY |	A set-length and ordered collection of elements |
-| MULTISET | 	A variable-length and unordered collection of elements |
-| XML |	Stores XML data |
+| Data type                          | Description                                                                                              |
+|------------------------------------|:---------------------------------------------------------------------------------------------------------|
+| CHARACTER(n)                       | Character string. Fixed-length n                                                                         |
+| VARCHAR(n) or CHARACTER VARYING(n) | Character string. Variable length. Maximum length n                                                      |
+| BINARY(n)                          | Binary string. Fixed-length n                                                                            |
+| BOOLEAN                            | Stores TRUE or FALSE values                                                                              |
+| VARBINARY(n) or BINARY VARYING(n)  | Binary string. Variable length. Maximum length n                                                         |
+| INTEGER(p)                         | Integer numerical (no decimal).                                                                          |
+| SMALLINT                           | Integer numerical (no decimal).                                                                          |
+| INTEGER                            | Integer numerical (no decimal).                                                                          |
+| BIGINT                             | Integer numerical (no decimal).                                                                          |
+| DECIMAL(p,s)                       | Exact numerical, precision p, scale s.                                                                   |
+| NUMERIC(p,s)                       | Exact numerical, precision p, scale s. (Same as DECIMAL)                                                 |
+| FLOAT(p)                           | Approximate numerical, mantissa precision p. A floating number in base 10 exponential notation.          |
+| REAL                               | Approximate numerical                                                                                    |
+| FLOAT                              | Approximate numerical                                                                                    |
+| DOUBLE PRECISION                   | Approximate numerical                                                                                    |
+| DATE                               | Stores year, month, and day values                                                                       |
+| TIME                               | Stores hour, minute, and second values                                                                   |
+| TIMESTAMP                          | Stores year, month, day, hour, minute, and second values                                                 |
+| INTERVAL                           | Composed of a number of integer fields, representing a period of time, depending on the type of interval |
+| ARRAY                              | A set-length and ordered collection of elements                                                          |
+| MULTISET                           | A variable-length and unordered collection of elements                                                   |
+| XML                                | Stores XML data                                                                                          |
 
 
-<a name="datatypediffs"></a> SQL Data Type Quick Reference
-----------------------------------------------------------
+## <a name="datatypediffs"></a> SQL Data Type Quick Reference
 
 Different databases offer different choices for the data type definition.
 
 The following table shows some of the common names of data types between the various database platforms:
 
-| Data type |	Access |	SQLServer |	Oracle | MySQL | PostgreSQL |
-| :------------- | :------------- | :---------------- | :----------------| :----------------| :---------------|
-| boolean	| Yes/No |	Bit |	Byte |	N/A	| Boolean |
-| integer	| Number (integer) | Int |	Number | Int / Integer	| Int / Integer |
-| float	| Number (single)	|Float / Real |	Number |	Float |	Numeric
-| currency | Currency |	Money |	N/A |	N/A	| Money |
-| string (fixed) | N/A | Char |	Char | Char |	Char |
-| string (variable)	| Text (<256) / Memo (65k+)	| Varchar |	Varchar / Varchar2 |	Varchar |	Varchar |
-| binary object	OLE Object Memo	Binary (fixed up to 8K) | Varbinary (<8K) | Image (<2GB)	Long | Raw	Blob | Text	Binary | Varbinary |
-
-
+| Data type                                               | Access                    | SQLServer            | Oracle             | MySQL          | PostgreSQL    |
+|:--------------------------------------------------------|:--------------------------|:---------------------|:-------------------|:---------------|:--------------|
+| boolean                                                 | Yes/No                    | Bit                  | Byte               | N/A            | Boolean       |
+| integer                                                 | Number (integer)          | Int                  | Number             | Int / Integer  | Int / Integer |
+| float                                                   | Number (single)           | Float / Real         | Number             | Float          | Numeric       |
+| currency                                                | Currency                  | Money                | N/A                | N/A            | Money         |
+| string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
+| string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
+| binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
 
 Previous: [Index](index.html) Next: [Basic queries.](01-sql-basic-queries.html)
