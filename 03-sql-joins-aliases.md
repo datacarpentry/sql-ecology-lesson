@@ -97,6 +97,7 @@ but using `AS` is much clearer so it's good style to include it.
 > SQL queries help us *ask* specific *questions* which we want to answer about our data. The real skill with SQL is to know how to translate our scientific questions into a sensible SQL query (and subsequently visualize and interpret our results).
 >
 > Have a look at the following questions; these questions are written in plain English. Can you translate them to *SQL queries* and give a suitable answer?  
+
 > 1. How many plots from each type are there?  
 
 > 2. How many specimens are of each gender are there for each year?  
