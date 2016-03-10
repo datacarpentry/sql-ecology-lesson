@@ -5,9 +5,7 @@ title: Joins and aliases
 minutes: 30
 ---
 
-
-Joins
------
+## Joins
 
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
@@ -17,7 +15,8 @@ tables using the word `ON`.  What we want is to join the data with the same
 species codes.
 
     SELECT *
-    FROM surveys JOIN species
+    FROM surveys
+    JOIN species
     ON surveys.species_id = species.species_id
 
 `ON` is like `WHERE`, it filters things out according to a test condition.  We use
@@ -29,7 +28,8 @@ telling the manager that we want to combine `surveys` with `species` and that
 the common column is `species_id`.
 
     SELECT *
-    FROM surveys JOIN species
+    FROM surveys
+    JOIN species
     USING (species_id)
 
 
@@ -41,7 +41,8 @@ species were captured, but instead of their species ID we wanted their
 actual species names.
 
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
-    FROM surveys JOIN species
+    FROM surveys
+    JOIN species
     ON surveys.species_id = species.species_id
 
 > ### Challenge:
@@ -54,7 +55,8 @@ wanted average mass of the individuals on each different type of treatment, we
 could do something like
 
     SELECT plots.plot_type, AVG(surveys.weight)
-    FROM surveys JOIN plots
+    FROM surveys
+    JOIN plots
     ON surveys.plot_id = plots.plot_id
     GROUP BY plots.plot_type
 
@@ -67,8 +69,7 @@ could do something like
 > Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
 
 
-Aliases
--------
+## Aliases
 
 As queries get more complex names can get long and unwieldy. To help make things
 clearer we can use aliases to assign new names to things in the query.
@@ -76,13 +77,15 @@ clearer we can use aliases to assign new names to things in the query.
 We can alias both table names:
 
     SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
-    FROM surveys AS surv JOIN species AS sp
+    FROM surveys AS surv
+    JOIN species AS sp
     ON surv.species_id = sp.species_id
 
 And column names:
 
     SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
-    FROM surveys AS surv JOIN species AS sp
+    FROM surveys AS surv
+    JOIN species AS sp
     ON surv.species_id = sp.species_id
 
 The `AS` isn't technically required, so you could do
@@ -90,7 +93,7 @@ The `AS` isn't technically required, so you could do
     SELECT surv.year yr
     FROM surveys surv
 
-but using `AS` is much clearer so it's good style to include it.
+but using `AS` is much clearer so it is good style to include it.
 
 > ### Challenge (optional):
 >
@@ -116,21 +119,21 @@ but using `AS` is much clearer so it's good style to include it.
 >
 > Proposed solutions:
 >
-> 1. Solution: ```SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC```  
+> 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
 
-> 2. Solution: ```SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year```
+> 2. Solution: `SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year`
 
-> 3. Solution: ```SELECT species_id, plot_type, count(*) FROM surveys JOIN plots ON surveys.plot_id=plots.plot_id WHERE species_id IS NOT null GROUP BY species_id, plot_type```
+> 3. Solution: `SELECT species_id, plot_type, count(*) FROM surveys JOIN plots ON surveys.plot_id=plots.plot_id WHERE species_id IS NOT null GROUP BY species_id, plot_type`
 
-> 4. Solution: ```SELECT taxa, AVG(weight) FROM surveys JOIN species ON species.species_id=surveys.species_id GROUP BY taxa```
+> 4. Solution: `SELECT taxa, AVG(weight) FROM surveys JOIN species ON species.species_id=surveys.species_id GROUP BY taxa`
 
-> 5. Solution: ```SELECT taxa, 100.0*count(*)/(SELECT count(*) FROM surveys) FROM surveys JOIN species ON surveys.species_id=species.species_id GROUP BY taxa```
+> 5. Solution: `SELECT taxa, 100.0*count(*)/(SELECT count(*) FROM surveys) FROM surveys JOIN species ON surveys.species_id=species.species_id GROUP BY taxa`
 
-> 6. Solution: ```SELECT surveys.species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id```
+> 6. Solution: `SELECT surveys.species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id`
 
-> 7. Solution: ```SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex```
+> 7. Solution: `SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex`
 
-> 8. Solution: ```SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year```
+> 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
 
 
 Previous: [SQL Aggregation](02-sql-aggregation.html)
