@@ -55,6 +55,23 @@ b) per each species.
 > 2. Average weight of each species in each year.
 Can you modify the above queries combining them into one?
 
+## The `HAVING` keyword
+
+In the previous lesson, we have seen the keywords `WHERE`, allowing to
+filter the results according to some criteria. SQL offers a mechanism to
+filter the results based on aggregate functions, through the `HAVING` keyword.
+
+For example, we can adapt the last request we wrote to only return information
+about species with a count higher than 10:
+
+    SELECT species_id, COUNT(*)
+    FROM surveys
+    GROUP BY species_id
+    HAVING COUNT(surveys.species_id) > 10
+
+The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
+aggregate functions instead of database fields.
+
 ## Ordering aggregated results.
 
 We can order the results of our aggregation by a specific column, including
