@@ -64,13 +64,24 @@ filter the results based on aggregate functions, through the `HAVING` keyword.
 For example, we can adapt the last request we wrote to only return information
 about species with a count higher than 10:
 
-    SELECT species_id, COUNT(*)
+    SELECT species_id, COUNT(surves.species_id)
     FROM surveys
     GROUP BY species_id
     HAVING COUNT(surveys.species_id) > 10
 
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields.
+
+If you use `AS` in your query to rename a column, `HAVING` can use this
+information to make the query more readable. For example, in the above
+query, we can call the `COUNT(surveys.species_id)` by another name, like
+`occurrences`. This can be written this way:
+
+    SELECT species_id, COUNT(surves.species_id) AS occurrences
+    FROM surveys
+    GROUP BY species_id
+    HAVING occurrences > 10
+
 
 > ### Challenge
 >
