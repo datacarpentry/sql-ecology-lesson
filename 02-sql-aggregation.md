@@ -82,6 +82,10 @@ query, we can call the `COUNT(surveys.species_id)` by another name, like
     GROUP BY species_id
     HAVING occurrences > 10
 
+Note that in both queries, `HAVING` comes *after* `GROUP BY`. One way to
+think about this is: the data are retrieved (`SELECT`), can be filtered
+(`WHERE`), then joined in groups (`GROUP BY`); finally, we only select some
+of these groups (`HAVING`).
 
 > ### Challenge
 >
