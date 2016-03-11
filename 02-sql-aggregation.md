@@ -72,6 +72,11 @@ about species with a count higher than 10:
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields.
 
+> ### Challenge
+>
+> Write a query that returns, from the `species` table, the number of
+`genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+
 ## Ordering aggregated results.
 
 We can order the results of our aggregation by a specific column, including
