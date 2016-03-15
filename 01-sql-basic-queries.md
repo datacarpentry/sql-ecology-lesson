@@ -203,4 +203,9 @@ we recommend to put each clause on its own line.
 > Write the query as a single line, then put each clause on its own line, and 
 > see how more legible the query becomes!
 
+## Handling `NULL` values
+
+<!-- TODO -->
+
+
 Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)
