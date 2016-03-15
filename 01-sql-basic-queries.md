@@ -190,21 +190,17 @@ The computer is basically doing this:
 2. Sorting results according to ORDER BY
 3. Displaying requested columns or expressions.
 
-
-## Order of clauses
-
-The order of the clauses when we write a query is dictated by SQL: SELECT, FROM, WHERE, ORDER BY
-and we often write each of them on their own line for readability.
-
+Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
+BY`. It is possible to write a query as a single line, but for readability,
+we recommend to put each clause on its own line.
 
 > ### Challenge
 >
 > Let's try to combine what we've learned so far in a single
 > query.  Using the surveys table write a query to display the three date fields,
-> species\_id, and weight in kilograms (rounded to two decimal places), for
-> individuals captured in 1999, ordered alphabetically by the species\_id.
-
-
-
+> `species_id`, and weight in kilograms (rounded to two decimal places), for
+> individuals captured in 1999, ordered alphabetically by the `species_id`.
+> Write the query as a single line, then put each clause on its own line, and 
+> see how more legible the query becomes!
 
 Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)
