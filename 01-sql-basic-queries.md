@@ -80,7 +80,8 @@ _Dipodomys merriami_, which has a species code of DM.  We need to add a
 We can do the same thing with numbers.
 Here, we only want the data since 2000:
 
-    SELECT * FROM surveys WHERE year >= 2000;
+    SELECT * FROM surveys
+    WHERE year >= 2000;
 
 We can use more sophisticated conditions by combining tests with `AND`
 and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
@@ -113,7 +114,7 @@ Now, lets combine the above queries to get data for the 3 _Dipodomys_ species fr
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
-     
+
     SELECT *
     FROM surveys
     WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
@@ -124,8 +125,8 @@ to make sure you are getting what you want.  Sometimes it might help to take a
 subset of the data that you can easily see in a temporary database to practice
 your queries on before working on a larger or more complicated database.
 
-When the queries become more complex, it can be useful to add comments. In SQL, 
-comments are started by `--`, and end at the end of the line. For example, a 
+When the queries become more complex, it can be useful to add comments. In SQL,
+comments are started by `--`, and end at the end of the line. For example, a
 commented version of the above query can be written as:
 
     -- Get post 2000 data on Dipodomys' species
@@ -200,7 +201,7 @@ we recommend to put each clause on its own line.
 > query.  Using the surveys table write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
-> Write the query as a single line, then put each clause on its own line, and 
+> Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
 
 Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)

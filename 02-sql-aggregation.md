@@ -14,18 +14,18 @@ Let’s go to the surveys table and find out how many individuals there are.
 Using the wildcard simply counts the number of records (rows)
 
     SELECT COUNT(*)
-    FROM surveys
+    FROM surveys;
 
 We can also find out how much all of those individuals weigh.
 
     SELECT COUNT(*), SUM(weight)
-    FROM surveys
+    FROM surveys;
 
 We can output this value in kilograms, rounded to 3 decimal
 places:
 
     SELECT ROUND(SUM(weight)/1000.0, 3)
-    FROM surveys
+    FROM surveys;
 
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
@@ -40,7 +40,7 @@ using a `GROUP BY` clause
 
     SELECT species_id, COUNT(*)
     FROM surveys
-    GROUP BY species_id
+    GROUP BY species_id;
 
 `GROUP BY` tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give `GROUP BY` a comma separated list.
@@ -64,10 +64,10 @@ filter the results based on aggregate functions, through the `HAVING` keyword.
 For example, we can adapt the last request we wrote to only return information
 about species with a count higher than 10:
 
-    SELECT species_id, COUNT(surves.species_id)
+    SELECT species_id, COUNT(surveys.species_id)
     FROM surveys
     GROUP BY species_id
-    HAVING COUNT(surveys.species_id) > 10
+    HAVING COUNT(surveys.species_id) > 10;
 
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields.
@@ -80,7 +80,7 @@ query, we can call the `COUNT(surveys.species_id)` by another name, like
     SELECT species_id, COUNT(surves.species_id) AS occurrences
     FROM surveys
     GROUP BY species_id
-    HAVING occurrences > 10
+    HAVING occurrences > 10;
 
 Note that in both queries, `HAVING` comes *after* `GROUP BY`. One way to
 think about this is: the data are retrieved (`SELECT`), can be filtered
@@ -101,7 +101,7 @@ species captured, ordered by the count
     SELECT species_id, COUNT(*)
     FROM surveys
     GROUP BY species_id
-    ORDER BY COUNT(species_id)
+    ORDER BY COUNT(species_id);
 
 
 ## Saving queries for future use
@@ -120,17 +120,17 @@ the number of individuals in a view, we can write
     CREATE VIEW species_count AS
     SELECT species_id, COUNT(*)
     FROM surveys
-    GROUP BY species_id
+    GROUP BY species_id;
 
 Now, we will be able to access these results with a much shorter notation:
 
     SELECT *
-    FROM species_count
+    FROM species_count;
 
 Assuming we do not need this view anymore, we can remove it from the database
 almost as we would a table:
 
-    DROP VIEW species_count
+    DROP VIEW species_count;
 
 You can also add a view using *Create View* in the *View* menu and see the
 results in the *Views* tab just like a table

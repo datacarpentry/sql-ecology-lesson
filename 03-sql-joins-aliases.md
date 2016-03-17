@@ -17,20 +17,20 @@ species codes.
     SELECT *
     FROM surveys
     JOIN species
-    ON surveys.species_id = species.species_id
+    ON surveys.species_id = species.species_id;
 
 `ON` is like `WHERE`, it filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
-Alternatively, we can use the word `USING`, as a short-hand.  In this case we are 
-telling the manager that we want to combine `surveys` with `species` and that 
+Alternatively, we can use the word `USING`, as a short-hand.  In this case we are
+telling the manager that we want to combine `surveys` with `species` and that
 the common column is `species_id`.
 
     SELECT *
     FROM surveys
     JOIN species
-    USING (species_id)
+    USING (species_id);
 
 
 We often won't want all of the fields from both tables, so anywhere we would
@@ -43,7 +43,7 @@ actual species names.
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
     FROM surveys
     JOIN species
-    ON surveys.species_id = species.species_id
+    ON surveys.species_id = species.species_id;
 
 > ### Challenge:
 >
@@ -58,7 +58,7 @@ could do something like
     FROM surveys
     JOIN plots
     ON surveys.plot_id = plots.plot_id
-    GROUP BY plots.plot_type
+    GROUP BY plots.plot_type;
 
 > ### Challenge:
 >
@@ -79,19 +79,19 @@ We can alias both table names:
     SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
     FROM surveys AS surv
     JOIN species AS sp
-    ON surv.species_id = sp.species_id
+    ON surv.species_id = sp.species_id;
 
 And column names:
 
     SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
     FROM surveys AS surv
     JOIN species AS sp
-    ON surv.species_id = sp.species_id
+    ON surv.species_id = sp.species_id;
 
 The `AS` isn't technically required, so you could do
 
     SELECT surv.year yr
-    FROM surveys surv
+    FROM surveys surv;
 
 but using `AS` is much clearer so it is good style to include it.
 
