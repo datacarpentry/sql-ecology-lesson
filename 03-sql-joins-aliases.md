@@ -137,6 +137,6 @@ but using `AS` is much clearer so it is good style to include it.
 
 > 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
 
-> 8. Solution: `SELECT fem.plot_id, fem.FperPlot, mal.MperPlot FROM (SELECT plot_id, COUNT(*) AS FperPlot FROM surveys WHERE sex = 'F' GROUP BY plot_id) as fem INNER JOIN (SELECT plot_id, COUNT(*) AS MperPlot FROM surveys WHERE sex = 'M' GROUP BY plot_id) as mal ON fem.plot_id = mal.plot_id`
+> 9. Solution: `SELECT fem.plot_id, fem.FperPlot, mal.MperPlot FROM (SELECT plot_id, COUNT(*) AS FperPlot FROM surveys WHERE sex = 'F' GROUP BY plot_id) as fem INNER JOIN (SELECT plot_id, COUNT(*) AS MperPlot FROM surveys WHERE sex = 'M' GROUP BY plot_id) as mal ON fem.plot_id = mal.plot_id`
 
 Previous: [SQL Aggregation](02-sql-aggregation.html)
