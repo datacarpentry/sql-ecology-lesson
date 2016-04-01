@@ -74,16 +74,16 @@ could do something like
 SQL includes numerous functions for manipulating data. You've already seen some
 of these being used for aggregation (`SUM` and `COUNT`) but there are functions
 that operate on individual values as well. Probably the most important of these
-are `COALESCE` and `NULLIF`. `COALESCE` allows us to specify a value to use in
+are `IFNULL` and `NULLIF`. `IFNULL` allows us to specify a value to use in
 place of `NULL`.
 
 We can represent unknown genders with "U" instead of `NULL`:
 
-    SELECT species_id, sex, COALESCE(sex, 'U') AS non_null_sex
+    SELECT species_id, sex, IFNULL(sex, 'U') AS non_null_sex
     FROM surveys
 
 The lone "sex" column is only included in the query above to illustrate where
-`COALESCE` has changed values; this isn't a usage requirement.
+`IFNULL` has changed values; this isn't a usage requirement.
 
 > ### Challenge:
 >
@@ -95,25 +95,25 @@ The lone "sex" column is only included in the query above to illustrate where
 > Write a query that calculates the average hind-foot length of each species,
 > assuming that unknown lengths are 30 (as above).
 
-`COALESCE` can be particularly useful in `JOIN`. When joining the `species` and
+`IFNULL` can be particularly useful in `JOIN`. When joining the `species` and
 `surveys` tables earlier, some results were excluded because the `species_id`
-was `NULL`. We can use `COALESCE` to include them again, re-writing the `NULL`
-to a valid joining value:
+was `NULL`. We can use `IFNULL` to include them again, re-writing the `NULL` to
+a valid joining value:
 
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
     FROM surveys
     JOIN species
-    ON surveys.species_id = COALESCE(species.species_id, 'AB')
+    ON surveys.species_id = IFNULL(species.species_id, 'AB')
 
 > ### Challenge:
 >
 > Write a query that returns the number of genus of the animals caught in each
-> plot, using `COALESCE` to assume that unknown species are all of the genus
+> plot, using `IFNULL` to assume that unknown species are all of the genus
 > "Rodent".
 
-The inverse of `COALESCE` is `NULLIF`. This returns `NULL` if the first
-argument is equal to the second argument. If the two are not equal, the first
-argument is returned. This is useful for "nulling out" specific values.
+The inverse of `IFNULL` is `NULLIF`. This returns `NULL` if the first argument
+is equal to the second argument. If the two are not equal, the first argument
+is returned. This is useful for "nulling out" specific values.
 
 We can "null out" plot 7:
 
@@ -128,6 +128,7 @@ below:
 | `ABS(n)`                     | Returns the absolute (positive) value of the numeric expression *n*                             |
 | `LENGTH(s)`                  | Returns the length of the string expression *s*                                                 |
 | `LOWER(s)`                   | Returns the string expression *s* converted to lowercase                                        |
+| `NULLIF(x, y)`               | Returns NULL if *x* is equal to *y*, otherwise returns *x*                                      |
 | `ROUND(n)` or `ROUND(n, x)`  | Returns the numeric expression *n* rounded to *x* digits after the decimal point (0 by default) |
 | `TRIM(s)`                    | Returns the string expression *s* without leading and trailing whitespace characters            |
 | `UPPER(s)`                   | Returns the string expression *s* converted to uppercase                                        |
@@ -137,6 +138,7 @@ table below:
 
 | Function                            | Description                                                                                                                                                                    |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `IFNULL(x, y)`                      | Returns *x* if it is non-NULL, otherwise returns *y*                                                                                                                           |
 | `RANDOM()`                          | Returns a random integer between -9223372036854775808 and +9223372036854775807.                                                                                                |
 | `REPLACE(s, f, r)`                  | Returns the string expression *s* in which every occurrence of *f* has been replaced with *r*                                                                                  |
 | `SUBSTR(s, x, y)` or `SUBSTR(s, x)` | Returns the portion of the string expression *s* starting at the character position *x* (leftmost position is 1), *y* characters long (or to the end of *s* if *y* is omitted) |
