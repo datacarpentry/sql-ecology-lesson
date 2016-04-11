@@ -32,7 +32,7 @@ There are many other aggregate functions included in SQL including
 
 > ### Challenge
 >
-> Write a query that returns: total weight, average weight, and the min and max weights for all animals caught over the duration of the survey. Can you modify it so that it outputs that for a range of weights?
+> Write a query that returns: total weight, average weight, and the min and max weights for all animals caught over the duration of the survey. Can you modify it so that it outputs these values only for weights between 5 and 10?
 
 
 Now, let's see how many individuals were counted in each species. We do this
