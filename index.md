@@ -22,8 +22,8 @@ status: Teaching
 
 Data Carpentry's aim is to teach researchers basic concepts, skills,
 and tools for working with data so that they can get more done in less
-time, and with less pain. The lessons below were designed for those interested 
-in working with {{page.domain %}} data in {{page.topic %}}. 
+time, and with less pain. The lessons below were designed for those interested
+in working with {{page.domain %}} data in {{page.topic %}}.
 
 
 **Content Contributors: {{page.contributors | join: ', ' %}}**
@@ -32,25 +32,7 @@ in working with {{page.domain %}} data in {{page.topic %}}.
 **Lesson Maintainers: {{page.maintainers | join: ', ' %}}**
 
 
-###Instructor's setup notes
-
-By default SQLite Manager opens in a separate window and it is not possible to zoom in to enlarge the font
-so that it is more readable, especially for students in the back rows.
-
-The way to fix this is to:
-
-1. Open the SQLite Manager
-2. Click on the ![Options](img/options_button.png)*Options* button .
-3. Chose *Start SQLite Manager: in a new tab*.
-
-You can then use **Ctrl - +** to zoom just like any other web page.
-
-
-
-<br> 
-
-
-#### Lesson status: {{ page.status }} 
+#### Lesson status: {{ page.status }}
 <!--
   [Information on Lesson Status Categories]()
 -->
@@ -80,9 +62,9 @@ Data files for the workshop are available here: [{{page.dataurl %}}]({{page.data
 <p>
 Data Carpentry's teaching is hands-on, so participants are encouraged to use
 their own computers to insure the proper setup of tools for an efficient workflow.
-<em>These lessons assume no prior knowledge of the skills or tools</em>, but working 
+<em>These lessons assume no prior knowledge of the skills or tools</em>, but working
 through this lesson requires working copies of the software described below.
-To most effectively use these materials, please make sure to install everything 
+To most effectively use these materials, please make sure to install everything
 <em>before</em> working through this lesson.
 </p>
 
@@ -101,8 +83,3 @@ To most effectively use these materials, please make sure to install everything
 {% endif %}
 
 <p><strong>Twitter</strong>: @datacarpentry
-
-
-
-
-
