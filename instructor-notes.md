@@ -39,6 +39,7 @@ Firefox plugin, and the Portal dataset
 **Tips**
 
 * **Changing data type**: There is a step on import where you have to select the data type for the field. Some people select the wrong type or nothing at all and wonder what they can do to change it. If you right click or Control click on the column name in the Structure tab, then there's an Edit Column option and you can type in a new data type. When you go to save it, it does warn you that this is dangerous behavior, so people are being warned, but it might be nice to show this option and also to say why it's not generally a good idea to change data types.
+* **Importing data**: Note how cleanly the csv files import into SQL. If you have also taught the spreadsheet lesson, it would be a good idea to compare the format of the csv files with the messy spreadsheet and ask "Remember that messy spreadsheet? What would have happened if we tried to load that in to SQL?"
 
 ### 00-supplement-database-design.md
 (optional)
