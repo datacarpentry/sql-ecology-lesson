@@ -10,7 +10,11 @@ minutes: 30
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
-We also need to tell the computer which columns provide the link between the two
+The `JOIN` command on its own will result in a cross product, where each row in
+first table is paired with each row in the second table. Usually this is not
+what is desired when combining two tables with data that is related in some way.
+
+For that, we need to tell the computer which columns provide the link between the two
 tables using the word `ON`.  What we want is to join the data with the same
 species codes.
 
@@ -23,6 +27,16 @@ species codes.
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
+The output of the `JOIN` command will have columns from first table plus the
+columns from the second table. For the above command, the output will be a table
+that has the following column names:
+
+| record_id | month | day | year | plot_id | species_id | sex | hindfoot_length | weight | species_id | genus | species | taxa |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| ... |||||||||||||   
+| 96  | 8  | 20  | 1997  | 12  | **DM**  |  M |  36  |  41  | **DM** | Dipodomys  | merriami  | Rodent  |
+| ... |||||||||||||| 
+
 Alternatively, we can use the word `USING`, as a short-hand.  In this case we are
 telling the manager that we want to combine `surveys` with `species` and that
 the common column is `species_id`.
@@ -32,6 +46,13 @@ the common column is `species_id`.
     JOIN species
     USING (species_id);
 
+The output will only have one **species_id** column
+
+| record_id | month | day | year | plot_id | species_id | sex | hindfoot_length | weight  | genus | species | taxa |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| ... ||||||||||||
+| 96  | 8  | 20  | 1997  | 12  | DM  |  M |  36  |  41  | Dipodomys  | merriami  | Rodent  |
+| ... |||||||||||||
 
 We often won't want all of the fields from both tables, so anywhere we would
 have used a field name in a non-join query, we can use `table.colname`.
@@ -44,6 +65,13 @@ actual species names.
     FROM surveys
     JOIN species
     ON surveys.species_id = species.species_id;
+
+| year | month | day | genus | species |
+|---|---|---|---|---|
+| ... |||||
+| 1977 | 7 | 16 | Neotoma | albigula|
+| 1977 | 7 | 16 | Dipodomys | merriami|
+|...||||||
 
 > ### Challenge:
 >
