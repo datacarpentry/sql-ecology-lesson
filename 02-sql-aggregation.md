@@ -77,7 +77,7 @@ information to make the query more readable. For example, in the above
 query, we can call the `COUNT(surveys.species_id)` by another name, like
 `occurrences`. This can be written this way:
 
-    SELECT species_id, COUNT(surves.species_id) AS occurrences
+    SELECT species_id, COUNT(surveys.species_id) AS occurrences
     FROM surveys
     GROUP BY species_id
     HAVING occurrences > 10;
