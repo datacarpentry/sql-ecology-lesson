@@ -108,7 +108,7 @@ place of `NULL`.
 We can represent unknown genders with "U" instead of `NULL`:
 
     SELECT species_id, sex, IFNULL(sex, 'U') AS non_null_sex
-    FROM surveys
+    FROM surveys;
 
 The lone "sex" column is only included in the query above to illustrate where
 `IFNULL` has changed values; this isn't a usage requirement.
@@ -131,7 +131,7 @@ a valid joining value:
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
     FROM surveys
     JOIN species
-    ON surveys.species_id = IFNULL(species.species_id, 'AB')
+    ON surveys.species_id = IFNULL(species.species_id, 'AB');
 
 > ### Challenge:
 >
@@ -146,7 +146,7 @@ is returned. This is useful for "nulling out" specific values.
 We can "null out" plot 7:
 
     SELECT species_id, plot_id, NULLIF(plot_id, 7) AS partial_plot_id
-    FROM surveys
+    FROM surveys;
 
 Some more functions which are common to SQL databases are listed in the table
 below:
