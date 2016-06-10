@@ -105,7 +105,7 @@ that operate on individual values as well. Probably the most important of these
 are `IFNULL` and `NULLIF`. `IFNULL` allows us to specify a value to use in
 place of `NULL`.
 
-We can represent unknown genders with "U" instead of `NULL`:
+We can represent unknown sexes with "U" instead of `NULL`:
 
     SELECT species_id, sex, IFNULL(sex, 'U') AS non_null_sex
     FROM surveys;
@@ -210,7 +210,7 @@ but using `AS` is much clearer so it is good style to include it.
 
 > 1. How many plots from each type are there?  
 
-> 2. How many specimens are of each gender are there for each year?  
+> 2. How many specimens are of each sex are there for each year?  
 
 > 3. How many specimens of each species were captured in each type of plot?  
 
