@@ -175,7 +175,7 @@ To truly be alphabetical, we might want to order by genus then species.
 
 > ### Challenge
 >
-> Write a query that returns year, species, and weight in kg from
+> Write a query that returns year, species_id, and weight in kg from
 > the surveys table, sorted with the largest weights at the top.
 
 
