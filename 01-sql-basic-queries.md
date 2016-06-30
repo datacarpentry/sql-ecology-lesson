@@ -143,7 +143,15 @@ comments; this is especially true of more complex queries.
 ## Sorting
 
 We can also sort the results of our queries by using `ORDER BY`.
-For simplicity, let’s go back to the species table and alphabetize it by taxa.
+For simplicity, let’s go back to the **species** table and alphabetize it by taxa.
+
+First, let's look at what's in the **species** table. It's a table of the species_id and the full genus, species and taxa information for each species_id. Having this in a separate table is nice, because we didn't need to include all
+this information in our main **surveys** table.
+
+    SELECT *
+    FROM species;
+
+Now let's order it by taxa.
 
     SELECT *
     FROM species
