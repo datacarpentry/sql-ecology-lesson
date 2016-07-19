@@ -223,9 +223,11 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. What is the hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
 
 > 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
->
+
+> 9. Are there observable differences between the number of recorded females and males on each measured plot?
+
 > Proposed solutions:
->
+
 > 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
 
 > 2. Solution: `SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year`
@@ -242,5 +244,6 @@ but using `AS` is much clearer so it is good style to include it.
 
 > 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
 
+> 9. Solution: `SELECT fem.plot_id, fem.FperPlot, mal.MperPlot FROM (SELECT plot_id, COUNT(*) AS FperPlot FROM surveys WHERE sex = 'F' GROUP BY plot_id) as fem INNER JOIN (SELECT plot_id, COUNT(*) AS MperPlot FROM surveys WHERE sex = 'M' GROUP BY plot_id) as mal ON fem.plot_id = mal.plot_id`
 
 Previous: [SQL Aggregation](02-sql-aggregation.html)
