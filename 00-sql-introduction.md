@@ -116,8 +116,8 @@ file.  Clicking on the "open file" icon and then that file will open the databas
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables, where each table corresponds to one of the `csv` files 
-we were exploring earlier.  To see the contents of any table, click on it, and 
-then go to the "Browse and Search" tab in the middle of the screen.  This will 
+we were exploring earlier.  To see the contents of any table, click on it, and
+then click the “Browse and Search” tab in the right panel.  This will 
 give us a view that we're used to - just a copy of the table.  Hopefully this 
 helps to show that a 
 database is, in some sense, just a collection of tables, where there's some value 
