@@ -3,6 +3,13 @@ layout: lesson
 root: .
 title: Databases using SQL
 minutes: 60
+exercises: 5
+questions:
+- "What is a relational database and why should I use it?"
+- "What is SQL?"
+objectives:
+- "Understand the benefits of using a relational database"
+- "Set up a small database using SQLite"
 ---
 
 ## Setup
