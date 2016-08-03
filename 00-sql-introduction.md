@@ -78,7 +78,15 @@ In particular, we want to use a tool where it's easy to repeat our analysis
 in case our data changes.  We also want to do all this searching without 
 actually modifying our source data.  
 
-Putting our data into a database and using SQL will help us achieve these goals.  
+Putting our data into a relational database and using SQL will help us achieve these goals.  
+
+> ### Definition: _Relational database_
+>
+> A relational database is a digital database where all data is stored in relations (or tables)
+> containing rows and columns. All tables contain records and all records are identified by a
+> field contiaing a unique value. Every table shares at least one field with another table in
+> one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
+> in many ways 
 
 # Databases
 
