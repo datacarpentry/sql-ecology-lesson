@@ -20,7 +20,7 @@ Manager -> Install -> Restart now**
 # Motivation
 
 To start, let's orient ourselves in our project workflow.  Previously, 
-we used Excel and OpenRefine to go from from messy, human created data 
+we used Excel and OpenRefine to go from messy, human created data 
 to cleaned, computer-readable data.  Now we're going to move to the next piece 
 of the data workflow, using the computer to read in our data, and then 
 use it for analysis and visualization.  
