@@ -153,14 +153,8 @@ special NULL value.  Scroll through our `summer_2000` view.  It should be
 easy to find several records with missing values.  How do you think we 
 could filter to find these rows?  
 
-You might want to try a query like: 
-
-    SELECT *
-    FROM summer_2000
-    WHERE species_id == NULL
-
-But this won't work, because the NULL value isn't a text string, it's 
-a special value.  Instead we need the following syntax: 
+To find all records where the species_id 
+is missing, we can use: 
 
     SELECT *
     FROM summer_2000
@@ -180,7 +174,9 @@ query to the "PE" species, this will be easier to see:
     FROM summer_2000
     WHERE species_id == 'PE'
 
-If we find the average weight, SQL behaves like we would hope, ignoring
+There should only be six records.  If you look at the weight column, it's 
+easy to see what the average weight would be.  If we use SQL to find the 
+average weight, SQL behaves like we would hope, ignoring
 the NULL values:
 
     SELECT AVG(weight)
@@ -194,14 +190,21 @@ we might get tripped up:
    FROM summer_2000
    WHERE species_id == 'PE'
 
-This *will* work if I modify the count command slightly: 
+Here the COUNT command includes all six records (even those with null 
+values), but the SUM only includes the 4 records with data in the 
+weight field, giving us an incorrect average.  However, 
+my strategy *will* work if I modify the count command slightly: 
 
    SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
    FROM summer_2000
    WHERE species_id == 'PE'
 
-So here is one example where NULLs can be tricky - COUNT(*) and 
-COUNT(field) can return different values.  Another case is when 
+When I count the weight field specifically, it ignores the records 
+with data missing in that field.  So 
+here is one example where NULLs can be tricky - COUNT(*) and 
+COUNT(field) can return different values.  
+
+Another case is when 
 we use a "negative" query - let's count all the non-female animals: 
 
    SELECT COUNT(*) 
