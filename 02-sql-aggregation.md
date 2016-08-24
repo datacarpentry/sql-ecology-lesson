@@ -120,7 +120,7 @@ query would look like:
 
     SELECT *
     FROM surveys
-    WHERE year == 2000 AND (month > 4 AND month < 10)
+    WHERE year = 2000 AND (month > 4 AND month < 10)
 
 But we don't want to have to type that every time we want to ask a 
 question about that particular subset of data!  Let's create a view: 
@@ -128,7 +128,7 @@ question about that particular subset of data!  Let's create a view:
     CREATE VIEW summer_2000 AS
     SELECT *
     FROM surveys
-    WHERE year == 2000 AND (month > 4 AND month < 10)
+    WHERE year = 2000 AND (month > 4 AND month < 10)
 
 You can also add a view using *Create View* in the *View* menu and see the
 results in the *Views* tab just like a table
