@@ -29,7 +29,7 @@ You can then use **Ctrl - +** to zoom just like any other web page.
 
 ## Motivation and Framing
 
-See this slide deck as an intro for the lesson: 
+See this slide deck as a sample intro for the lesson: 
 [SQL Intro Deck](https://speakerdeck.com/christinalk/data-carpentry-sql-introduction)
 
 Key points: 
