@@ -167,9 +167,9 @@ afternoon!), this is a an interactive activity to try.
 each of the cards they hold is a *field* in that database.  
 * At various points in the lesson, stop and "query" the student database.  To do this: 
 	* On a slide (or in a text editor), show or type in a sample query.  Something like: 
-  ~~~
-  SELECT name, name FROM students WHERE height > 66
-  ~~~
+    ~~~
+    SELECT name, name FROM students WHERE height > 66
+    ~~~
 	* If the query applies to a record (student), that student should stand, 
 	and display (hold up) the appropriate field (card)
 	* See the following slide deck for a list of sample queries.  [Sample queries](https://speakerdeck.com/christinalk/query-live-database)
