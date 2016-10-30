@@ -199,28 +199,31 @@ my strategy *will* work if I modify the count command slightly:
     FROM summer_2000
     WHERE species_id == 'PE'
 
-When I count the weight field specifically, it ignores the records 
-with data missing in that field.  So 
-here is one example where NULLs can be tricky - COUNT(*) and 
-COUNT(field) can return different values.  
+When I count the weight field specifically, it ignores the records with data
+missing in that field.  So here is one example where `NULL`s can be tricky -
+`COUNT(*)` and `COUNT(field)` can return different values.
 
 Another case is when 
 we use a "negative" query - let's count all the non-female animals: 
 
-    SELECT COUNT(*)
+    SELECT COUNT(*) 
     FROM summer_2000
     WHERE sex != 'F'
 
 Now let's count all the non-male animals: 
 
-    SELECT COUNT(*)
-    FROM summer_2000
-    WHERE sex != 'M'
+~~~
+SELECT COUNT(*) 
+FROM summer_2000
+WHERE sex != 'M'
+~~~
 
 But if we compare those two numbers with the total: 
 
-    SELECT COUNT(*)
-    FROM summer_2000
+~~~
+SELECT COUNT(*) 
+FROM summer_2000
+~~~
 
 We'll see that they don't add up to the total!  That's because SQL 
 doesn't automatically include NULL values in a negative conditional 
@@ -230,8 +233,10 @@ returns the 'not NULL, not x' group. Sometimes this may be what we want -
 but sometimes we may want the missing values included as well!  In that 
 case, we'd need to change our query to: 
 
-    SELECT COUNT(*)
-    FROM summer_2000
-    WHERE sex != 'M' OR sex IS NULL
+~~~
+SELECT COUNT(*)
+FROM summer_2000
+WHERE sex != 'M' OR sex IS NULL
+~~~
 
 Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and aliases.](03-sql-joins-aliases.html)
