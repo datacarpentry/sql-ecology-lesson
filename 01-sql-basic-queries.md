@@ -12,7 +12,8 @@ individual that was captured at the site, including when they were captured,
 what plot they were captured on, their species ID, sex and weight in grams.
 
 Let’s write an SQL query that selects only the year column from the
-surveys table.
+surveys table. SQL queries can be written in the box located under 
+the "Execute SQL" tab. Click 'Run SQL' to execute the query in the box.
 
     SELECT year
     FROM surveys;
