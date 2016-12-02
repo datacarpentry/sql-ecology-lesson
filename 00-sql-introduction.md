@@ -57,6 +57,7 @@ We'll need the following three files:
 > 
 > * How has the hindfoot length and weight of Dipodomys species changed over time? 
 > * What is the average weight of each species, per year?  
+> * What information can I learn about Dipodomys species in the 2000s, over time?
 > 
 > What would I need to answer these questions?  Which files have the data I need? What 
 > operations would I need to perform if I were doing these analyses by hand?  
