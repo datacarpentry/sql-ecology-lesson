@@ -51,14 +51,16 @@ We'll need the following three files:
 
 > ### Challenge
 >
+> Open each of these csv files and explore them. 
 > What information is contained in each file?  Specifically, if I had 
 > the following research questions: 
 > 
-> * What information can I learn about Dipodomys species in the 2000s, over time?  
+> * How has the hindfoot length and weight of Dipodomys species changed over time? 
 > * What is the average weight of each species, per year?  
+> * What information can I learn about Dipodomys species in the 2000s, over time?
 > 
-> What would I need to answer these questions?  Which files have the data? What 
-> operations would I need to perform if I were doing this by hand?  
+> What would I need to answer these questions?  Which files have the data I need? What 
+> operations would I need to perform if I were doing these analyses by hand?  
 
 ## Goals
 
@@ -84,11 +86,12 @@ Putting our data into a database and using SQL will help us achieve these goals.
 
 ## Why use relational databases
 
-* Data separate from analysis.
-    * No risk of accidentally changing data when analyzing it
-    * If we change the data we can just rerun the query
-* Fast for large amounts of data
-* Improve quality control of data entry (type constraints and use of forms in
+Using a relational database serves several purposes.
+* It keeps your data separate from your analysis.
+    * This means there's no risk of accidentally changing data when you analyze it.
+    * If we get new data we can just rerun the query.
+* It's fast, even for large amounts of data.
+* It improves quality control of data entry (type constraints and use of forms in
   Access, Filemaker, etc.)
 * The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
