@@ -149,3 +149,25 @@ plot in descending order.
 	GROUP BY species.genus, surveys.plot_id
 	ORDER BY surveys.plot_id, COUNT(*) DESC
 
+**EXERCISE**
+
+Try to come up with a query that computates an aggregation,
+like in the last chapter. Then add a filter ("WHERE") on the computed value.
+Why does it make sense to use an alias here?
+
+**SOLUTION**
+
+For example look at:
+
+	SELECT year, month, day, species_id, ROUND(weight / 1000.0, 2)
+	FROM surveys
+	WHERE ROUND(weight / 1000.0, 2) > 50.0
+	ORDER BY ROUND(weight / 1000.0, 2)
+
+when using an alias, it can be simplified (and there is less code duplication):
+
+	SELECT year, month, day, species_id,
+           ROUND(weight / 1000.0, 2) as weight_kg
+	FROM surveys
+	WHERE weight_kg > 50.0
+	ORDER BY weight_kg
