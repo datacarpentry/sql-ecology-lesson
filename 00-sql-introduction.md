@@ -163,9 +163,23 @@ follow these instructions:
 6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field: choose TEXT for fields with text
-   (`species_id`, `genus`, `sex`, etc.) and INT for fields with numbers (`day`,
-   `month`, `year`, `weight`, etc.)
+9. Set the data types for each field using the suggestions in the table below:
+
+| Field             | Data Type      | Table(s)          |
+|-------------------|:---------------|-------------------|
+| day               | INTEGER        | surveys           |
+| genus             | TEXT           | species           |
+| hindfoot_length   | REAL           | surveys           |
+| month             | INTEGER        | surveys           |
+| plot_id           | TEXT           | plots, surveys    |
+| plot_type         | TEXT           | plots             |
+| record_id         | TEXT           | surveys           |
+| sex               | TEXT           | surveys           |
+| species_id        | TEXT           | species, surveys  |
+| species           | TEXT           | species           |
+| taxa              | TEXT           | species           |
+| weight            | REAL           | surveys           |
+| year              | INTEGER        | surveys           |
 
 > ### Challenge
 >
