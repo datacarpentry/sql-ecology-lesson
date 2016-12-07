@@ -4,6 +4,11 @@ root: .
 title: Databases using SQL
 minutes: 60
 ---
+## Learning Objectives
+1. Describe why relational databases are useful.
+2. Summarize the list of data types used in most database management systems.
+3. Select, group, add to, and analyze subsets of data.
+4. Combine data across multiple spreadsheets.
 
 ## Setup
 
