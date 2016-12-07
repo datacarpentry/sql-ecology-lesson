@@ -4,6 +4,10 @@ root: .
 title: Joins and aliases
 minutes: 30
 ---
+## Learning Objectives
+1. Employ joins to combine data from two tables.
+2. Apply functions to manipulate individual values.
+3. Employ aliases to assign new names to items in a query.
 
 ## Joins
 
