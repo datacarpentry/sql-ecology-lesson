@@ -52,7 +52,7 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-    SELECT year, month, day, weight/1000.0
+    SELECT year, month, day, weight/1000
     FROM surveys;
 
 When we run the query, the expression `weight / 1000.0` is evaluated for each
@@ -60,7 +60,7 @@ row and appended to that row, in a new column.  Expressions can use any fields,
 any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
 functions. For example, we could round the values to make them easier to read.
 
-    SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000.0, 2)
+    SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000, 2)
     FROM surveys;
 
 > ## Challenge

@@ -28,7 +28,7 @@ for individuals caught on Plot 1 that weigh more than 75 g.
 
 **SOLUTION**
 
-	SELECT day, month, year, species_id, weight / 1000.0
+	SELECT day, month, year, species_id, weight / 1000
 	FROM surveys
 	WHERE plot_id = 1
 	AND weight > 75;
@@ -46,7 +46,7 @@ for individuals caught on Plot 1 that weigh more than 75 g.
 		surveys.month,
 		surveys.year,
 		species.species_id,
-		surveys.weight / 1000.0
+		surveys.weight / 1000
 	FROM surveys
 	JOIN species ON surveys.species_id = species.species_id
 	WHERE surveys.weight > 75
@@ -72,7 +72,7 @@ table, sorted with the largest weights at the top.
 
 **SOLUTION**
 
-	SELECT year, species_id, weight / 1000.0
+	SELECT year, species_id, weight / 1000
 	FROM surveys ORDER BY weight DESC;
 
 
@@ -85,7 +85,7 @@ weight in kilograms (rounded to two decimal places), for rodents captured in
 
 **SOLUTION**
 
-	SELECT year, month, day, species_id, ROUND(weight / 1000.0, 2)
+	SELECT year, month, day, species_id, ROUND(weight / 1000, 2)
 	FROM surveys
 	WHERE year = 1999
 	ORDER BY species_id;
