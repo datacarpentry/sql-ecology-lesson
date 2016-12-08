@@ -55,8 +55,10 @@ on different dates, but we needed it in kg instead of g we would use
     SELECT year, month, day, weight/1000
     FROM surveys;
 
-When we run the query, the expression `weight / 1000.0` is evaluated for each
-row and appended to that row, in a new column.  Expressions can use any fields,
+When we run the query, the expression `weight / 1000` is evaluated for each
+row and appended to that row, in a new column. If we used the `INTEGER` data type
+for the weight field then integer division would have been done, to obtain the
+correct results in that case divide by `1000.0`. Expressions can use any fields,
 any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
 functions. For example, we could round the values to make them easier to read.
 
@@ -84,8 +86,9 @@ Here, we only want the data since 2000:
     SELECT * FROM surveys
     WHERE year >= 2000;
 
-We can use more sophisticated conditions by combining tests with `AND`
-and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
+If we used the `TEXT` data type for the year the `WHERE` clause should
+be `year >= '2000'`. We can use more sophisticated conditions by combining tests
+with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
 starting in the year 2000:
 
     SELECT *
