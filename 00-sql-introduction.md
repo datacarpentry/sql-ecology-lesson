@@ -165,21 +165,21 @@ follow these instructions:
 8. When asked if you want to modify the table, click **OK**
 9. Set the data types for each field using the suggestions in the table below:
 
-| Field             | Data Type      | Table(s)          |
-|-------------------|:---------------|-------------------|
-| day               | INTEGER        | surveys           |
-| genus             | TEXT           | species           |
-| hindfoot_length   | REAL           | surveys           |
-| month             | INTEGER        | surveys           |
-| plot_id           | TEXT           | plots, surveys    |
-| plot_type         | TEXT           | plots             |
-| record_id         | TEXT           | surveys           |
-| sex               | TEXT           | surveys           |
-| species_id        | TEXT           | species, surveys  |
-| species           | TEXT           | species           |
-| taxa              | TEXT           | species           |
-| weight            | REAL           | surveys           |
-| year              | INTEGER        | surveys           |
+| Field             | Data Type      | Motivation                                                                       | Table(s)          |
+|-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
+| day               | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
+| genus             | TEXT           | Field contains alphanumeric data                                                 | species           |
+| hindfoot_length   | REAL           | Field contains measured data                                                     | surveys           |
+| month             | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
+| plot_id           | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | plots, surveys    |
+| plot_type         | TEXT           | Field contains alphanumeric data                                                 | plots             |
+| record_id         | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | surveys           |
+| sex               | TEXT           | Field contains alphanumeric data                                                 | surveys           |
+| species_id        | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | species, surveys  |
+| species           | TEXT           | Field contains alphanumeric data                                                 | species           |
+| taxa              | TEXT           | Field contains alphanumeric data                                                 | species           |
+| weight            | REAL           | Field contains measured data                                                     | surveys           |
+| year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
 > ### Challenge
 >
