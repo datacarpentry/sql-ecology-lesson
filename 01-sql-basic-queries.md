@@ -4,6 +4,10 @@ root: .
 title: Basic queries
 minutes: 30
 ---
+## Learning objectives
+1. Write and build queries.
+2. Filter data given various criteria.
+3. Sort the results of a query.
 
 ## Writing my first query
 
