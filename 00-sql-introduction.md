@@ -5,10 +5,11 @@ title: Databases using SQL
 minutes: 60
 ---
 ## Learning Objectives
-1. Describe why relational databases are useful.
-2. Summarize the list of data types used in most database management systems.
-3. Select, group, add to, and analyze subsets of data.
-4. Combine data across multiple spreadsheets.
+1. Create and populate a database from a text file.
+2. Describe why relational databases are useful.
+3. Define SQLite data types.
+4. Select, group, add to, and analyze subsets of data.
+5. Combine data across multiple tables.
 
 ## Setup
 
