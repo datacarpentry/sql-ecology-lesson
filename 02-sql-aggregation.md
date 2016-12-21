@@ -7,7 +7,7 @@ minutes: 30
 ## Learning Objectives
 1. Apply aggregation to group records in SQL.
 2. Filter and order results of a query based on aggregate functions.
-3. Save a query for future use.
+3. Save a query to make a new table.
 4. Apply filters to find missing values in SQL.
 
 ## COUNT and GROUP BY
