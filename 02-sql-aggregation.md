@@ -29,7 +29,7 @@ We can also find out how much all of those individuals weigh.
 We can output this value in kilograms, rounded to 3 decimal
 places:
 
-    SELECT ROUND(SUM(weight)/1000.0, 3)
+    SELECT ROUND(SUM(weight)/1000, 3)
     FROM surveys;
 
 There are many other aggregate functions included in SQL including
