@@ -3,7 +3,20 @@ layout: lesson
 root: .
 title: Databases using SQL
 minutes: 60
+exercises: 5
+questions:
+- "What is a relational database and why should I use it?"
+- "What is SQL?"
+objectives:
+- "Understand the benefits of using a relational database"
+- "Set up a small database using SQLite"
 ---
+## Learning Objectives
+1. Create and populate a database from a text file.
+2. Describe why relational databases are useful.
+3. Define SQLite data types.
+4. Select, group, add to, and analyze subsets of data.
+5. Combine data across multiple tables.
 
 ## Setup
 
@@ -20,7 +33,7 @@ Manager -> Install -> Restart now**
 # Motivation
 
 To start, let's orient ourselves in our project workflow.  Previously, 
-we used Excel and OpenRefine to go from from messy, human created data 
+we used Excel and OpenRefine to go from messy, human created data 
 to cleaned, computer-readable data.  Now we're going to move to the next piece 
 of the data workflow, using the computer to read in our data, and then 
 use it for analysis and visualization.  
@@ -80,13 +93,22 @@ In particular, we want to use a tool where it's easy to repeat our analysis
 in case our data changes.  We also want to do all this searching without 
 actually modifying our source data.  
 
-Putting our data into a database and using SQL will help us achieve these goals.  
+Putting our data into a relational database and using SQL will help us achieve these goals.  
+
+> ### Definition: _Relational database_
+>
+> A relational database is a digital database where all data is stored in relations (or tables)
+> containing rows and columns. All tables contain records and all records are identified by a
+> field contiaing a unique value. Every table shares at least one field with another table in
+> one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
+> in many ways 
 
 # Databases
 
 ## Why use relational databases
 
 Using a relational database serves several purposes.
+
 * It keeps your data separate from your analysis.
     * This means there's no risk of accidentally changing data when you analyze it.
     * If we get new data we can just rerun the query.
@@ -111,8 +133,8 @@ file.  Clicking on the "open file" icon and then that file will open the databas
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables, where each table corresponds to one of the `csv` files 
-we were exploring earlier.  To see the contents of any table, click on it, and 
-then go to the "Browse and Search" tab in the middle of the screen.  This will 
+we were exploring earlier.  To see the contents of any table, click on it, and
+then click the “Browse and Search” tab in the right panel.  This will 
 give us a view that we're used to - just a copy of the table.  Hopefully this 
 helps to show that a 
 database is, in some sense, just a collection of tables, where there's some value 
@@ -180,6 +202,10 @@ follow these instructions:
 | taxa              | TEXT           | Field contains alphanumeric data                                                 | species           |
 | weight            | REAL           | Field contains measured data                                                     | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
+
+
+Finally, click **OK** one more time to confirm the operation.
+
 
 > ### Challenge
 >
