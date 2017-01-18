@@ -108,6 +108,7 @@ Putting our data into a relational database and using SQL will help us achieve t
 ## Why use relational databases
 
 Using a relational database serves several purposes.
+
 * It keeps your data separate from your analysis.
     * This means there's no risk of accidentally changing data when you analyze it.
     * If we get new data we can just rerun the query.
