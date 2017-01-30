@@ -82,6 +82,43 @@ actual species names.
 > Write a query that returns the genus, the species, and the weight
 > of every individual captured at the site
 
+### Different join types
+
+We can count the number of records returned by our original join query.
+
+    SELECT COUNT(*)
+    FROM surveys
+    JOIN species
+    USING (species_id);
+
+Notice that this number is smaller than the number of records present in the
+survey data.
+
+    SELECT COUNT(*) FROM surveys;
+
+This is because, by default, SQL only returns records where the joining value
+is present in the join columns of both tables (i.e. it takes the _intersection_
+of the two join columns). This joining behaviour is known as an `INNER JOIN`.
+In fact the `JOIN` command is simply shorthand for `INNER JOIN` and the two
+terms can be used interchangably as they will produce the same result.
+
+We can also tell the computer that we wish to keep all the records in the first
+table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
+
+> ### Challenge:
+>
+> Re-write the original query to keep all the entries present in the `surveys`
+> table. How many records are returned by this query?
+
+> ### Challenge:
+> Count the number of records in the `surveys` table that have a `NULL` value
+> in the `species_id` column.
+
+In SQL a `NULL` value in one table can never be joined to a NULL value in a
+second table because `NULL` is not equal to anything, even itself. 
+
+### Combining joins with sorting and aggregation
+
 Joins can be combined with sorting, filtering, and aggregation.  So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
