@@ -77,6 +77,16 @@ actual species names.
 | 1977 | 7 | 16 | Dipodomys | merriami|
 |...||||||
 
+Many databases, including SQLite, also support a join through the WHERE clause of a query.  
+For example, you may see the query above written without an explicit JOIN.
+
+	SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
+	FROM surveys, species
+	WHERE surveys.species_id = species.species_id
+
+For the remainder of this lesson, we'll stick with the explicit use of the JOIN keyword for 
+joining tables in SQL.  
+
 > ### Challenge:
 >
 > Write a query that returns the genus, the species, and the weight
