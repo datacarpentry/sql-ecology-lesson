@@ -127,6 +127,12 @@ to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (specie
     FROM surveys
     WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
 
+Numeric queries need to be similarly quoted:
+
+    SELECT *
+    FROM surveys
+    WHERE (year IN ('2000', '2002'));
+
 We started with something simple, then added more clauses one by one, testing
 their effects as we went along.  For complex queries, this is a good strategy,
 to make sure you are getting what you want.  Sometimes it might help to take a
