@@ -1,9 +1,16 @@
 ---
-layout: lesson
-root: .
-title: Aggregation
-minutes: 30
+title: "SQL Aggregation"
+teaching: 30
+exercises: 5
+questions:
+- "Aggregating, filtering and ordering query results"
+objectives:
+- "Apply aggregation to group records in SQL."
+- "Filter and order results of a query based on aggregate functions."
+- "Save a query to make a new table."
+- "Apply filters to find missing values in SQL."
 ---
+
 ## Learning Objectives
 1. Apply aggregation to group records in SQL.
 2. Filter and order results of a query based on aggregate functions.
@@ -35,10 +42,10 @@ places:
 There are many other aggregate functions included in SQL including
 `MAX`, `MIN`, and `AVG`.
 
-> ### Challenge
+> ## Challenge
 >
-> Write a query that returns: total weight, average weight, and the min and max weights for all animals caught over the duration of the survey. Can you modify it so that it outputs these values only for weights between 5 and 10?
-
+> - Write a query that returns: total weight, average weight, and the min and max weights for all animals caught over the duration of the survey. Can you modify it so that it outputs these values only for weights between 5 and 10?
+{: .challenge}
 
 Now, let's see how many individuals were counted in each species. We do this
 using a `GROUP BY` clause
@@ -50,7 +57,7 @@ using a `GROUP BY` clause
 `GROUP BY` tells SQL what field or fields we want to use to aggregate the data.
 If we want to group by multiple fields, we give `GROUP BY` a comma separated list.
 
-> ### Challenge
+> ## Challenge
 >
 > Write queries that return:
 >
@@ -58,7 +65,9 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 a) in total;
 b) per each species.
 > 2. Average weight of each species in each year.
-Can you modify the above queries combining them into one?
+>
+> Can you modify the above queries combining them into one?
+{: .challenge}
 
 ## The `HAVING` keyword
 
@@ -92,10 +101,11 @@ think about this is: the data are retrieved (`SELECT`), can be filtered
 (`WHERE`), then joined in groups (`GROUP BY`); finally, we only select some
 of these groups (`HAVING`).
 
-> ### Challenge
+> ## Challenge
 >
-> Write a query that returns, from the `species` table, the number of
+> - Write a query that returns, from the `species` table, the number of
 `genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+{: .challenge}
 
 ## Ordering aggregated results.
 
@@ -143,12 +153,13 @@ Now, we will be able to access these results with a much shorter notation:
     SELECT *
     FROM summer_2000;
 
-> ### Challenge
+> ## Challenge
 >
-> Write a query that returns the number of each species
+> - Write a query that returns the number of each species
 caught in each year sorted from most often caught species to the least
 occurring ones within each year starting from the most recent records. Save
 this query as a `VIEW`.
+{: .challenge}
 
 ## Null values
 
@@ -243,5 +254,3 @@ SELECT COUNT(*)
 FROM summer_2000
 WHERE sex != 'M' OR sex IS NULL
 ~~~
-
-Previous: [SQL Basic Queries](01-sql-basic-queries.html) Next: [Joins and aliases.](03-sql-joins-aliases.html)
