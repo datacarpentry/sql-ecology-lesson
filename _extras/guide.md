@@ -1,3 +1,9 @@
+---
+layout: page
+title: "Instructor Notes"
+permalink: /guide/
+---
+
 ## Learning objectives
 * Understand concept of relational database
 * Be able to perform simple queries in SQL from a single table
@@ -22,7 +28,7 @@ so that it is more readable, especially for students in the back rows.
 The way to fix this is to:
 
 1. Open the SQLite Manager
-2. Click on the ![Options](img/options_button.png)*Options* button .
+2. Click on the ![Options](../img/options_button.png)*Options* button .
 3. Chose *Start SQLite Manager: in a new tab*.
 
 You can then use **Ctrl - +** to zoom just like any other web page.
