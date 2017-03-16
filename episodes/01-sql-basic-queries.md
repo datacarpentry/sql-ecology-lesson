@@ -1,9 +1,15 @@
 ---
-layout: lesson
-root: .
-title: Basic queries
-minutes: 30
+title: "Basic Queries"
+teaching: 30
+exercises: 5
+questions:
+- "Learning Basic Queries in SQL"
+objectives:
+- "Write and build queries."
+- "Filter data given various criteria."
+- "Sort the results of a query."
 ---
+
 ## Learning objectives
 1. Write and build queries.
 2. Filter data given various criteria.
@@ -71,7 +77,8 @@ functions. For example, we could round the values to make them easier to read.
 
 > ## Challenge
 >
-> Write a query that returns The year, month, day, species_id and weight in mg
+> - Write a query that returns The year, month, day, species_id and weight in mg
+{: .challenge}
 
 ## Filtering
 
@@ -110,11 +117,11 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
     FROM surveys
     WHERE (species_id = 'DM') OR (species_id = 'DO') OR (species_id = 'DS');
 
-> ### Challenge
+> ## Challenge
 >
-> Write a query that returns the day, month, year, species_id, and
+> - Write a query that returns the day, month, year, species_id, and
 > weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
-
+{: .challenge}
 
 ## Building more complex queries
 
@@ -181,11 +188,11 @@ To truly be alphabetical, we might want to order by genus then species.
     FROM species
     ORDER BY genus ASC, species ASC;
 
-> ### Challenge
+> ## Challenge
 >
-> Write a query that returns year, species_id, and weight in kg from
+> - Write a query that returns year, species_id, and weight in kg from
 > the surveys table, sorted with the largest weights at the top.
-
+{: .challenge}
 
 ## Order of execution
 
@@ -211,13 +218,13 @@ Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
 BY`. It is possible to write a query as a single line, but for readability,
 we recommend to put each clause on its own line.
 
-> ### Challenge
+> ## Challenge
 >
-> Let's try to combine what we've learned so far in a single
+> - Let's try to combine what we've learned so far in a single
 > query.  Using the surveys table write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
-> Write the query as a single line, then put each clause on its own line, and
+> - Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
+{: .challenge}
 
-Previous: [SQL Introduction](00-sql-introduction.html) Next: [SQL Aggregation.](02-sql-aggregation.html)

@@ -1,9 +1,15 @@
 ---
-layout: lesson
-root: .
-title: Joins and aliases
-minutes: 30
+title: "Joins and aliases"
+teaching: 30
+exercises: 5
+questions:
+- "Joining tables and creating aliases"
+objectives:
+- "Employ joins to combine data from two tables."
+- "Apply functions to manipulate individual values."
+- "Employ aliases to assign new names to items in a query."
 ---
+
 ## Learning Objectives
 1. Employ joins to combine data from two tables.
 2. Apply functions to manipulate individual values.
@@ -87,10 +93,11 @@ For example, you may see the query above written without an explicit JOIN.
 For the remainder of this lesson, we'll stick with the explicit use of the JOIN keyword for 
 joining tables in SQL.  
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that returns the genus, the species, and the weight
+> - Write a query that returns the genus, the species, and the weight
 > of every individual captured at the site
+{: .challenge}
 
 ### Different join types
 
@@ -115,14 +122,16 @@ terms can be used interchangably as they will produce the same result.
 We can also tell the computer that we wish to keep all the records in the first
 table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
 
-> ### Challenge:
+> ## Challenge:
 >
-> Re-write the original query to keep all the entries present in the `surveys`
+> - Re-write the original query to keep all the entries present in the `surveys`
 > table. How many records are returned by this query?
+{: .challenge}
 
-> ### Challenge:
-> Count the number of records in the `surveys` table that have a `NULL` value
+> ## Challenge:
+> - Count the number of records in the `surveys` table that have a `NULL` value
 > in the `species_id` column.
+{: .challenge}
 
 In SQL a `NULL` value in one table can never be joined to a NULL value in a
 second table because `NULL` is not equal to anything, even itself. 
@@ -139,14 +148,15 @@ could do something like
     ON surveys.plot_id = plots.plot_id
     GROUP BY plots.plot_type;
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that returns the number of genus of the animals caught in each plot in descending order.
+> - Write a query that returns the number of genus of the animals caught in each plot in descending order.
+{: .challenge}
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
-
+> - Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
+{: .challenge}
 
 ## Functions
 
@@ -164,15 +174,17 @@ We can represent unknown sexes with "U" instead of `NULL`:
 The lone "sex" column is only included in the query above to illustrate where
 `IFNULL` has changed values; this isn't a usage requirement.
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that returns 30 instead of `NULL` for values in the
+> - Write a query that returns 30 instead of `NULL` for values in the
 > `hindfoot_length` column.
+{: .challenge}
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that calculates the average hind-foot length of each species,
+> - Write a query that calculates the average hind-foot length of each species,
 > assuming that unknown lengths are 30 (as above).
+{: .challenge}
 
 `IFNULL` can be particularly useful in `JOIN`. When joining the `species` and
 `surveys` tables earlier, some results were excluded because the `species_id`
@@ -184,11 +196,12 @@ a valid joining value:
     JOIN species
     ON surveys.species_id = IFNULL(species.species_id, 'AB');
 
-> ### Challenge:
+> ## Challenge:
 >
-> Write a query that returns the number of genus of the animals caught in each
+> - Write a query that returns the number of genus of the animals caught in each
 > plot, using `IFNULL` to assume that unknown species are all of the genus
 > "Rodent".
+{: .challenge}
 
 The inverse of `IFNULL` is `NULLIF`. This returns `NULL` if the first argument
 is equal to the second argument. If the two are not equal, the first argument
@@ -222,10 +235,11 @@ table below:
 | `REPLACE(s, f, r)`                  | Returns the string expression *s* in which every occurrence of *f* has been replaced with *r*                                                                                  |
 | `SUBSTR(s, x, y)` or `SUBSTR(s, x)` | Returns the portion of the string expression *s* starting at the character position *x* (leftmost position is 1), *y* characters long (or to the end of *s* if *y* is omitted) |
 
-> ### Challenge:
+> ## Challenge:
 >
 > Write a query that returns genus names, sorted from longest genus name down
 > to shortest.
+{: .challenge}
 
 ## Aliases
 
@@ -253,7 +267,7 @@ The `AS` isn't technically required, so you could do
 
 but using `AS` is much clearer so it is good style to include it.
 
-> ### Challenge (optional):
+> ## Challenge (optional):
 >
 > SQL queries help us *ask* specific *questions* which we want to answer about our data. The real skill with SQL is to know how to translate our scientific questions into a sensible SQL query (and subsequently visualize and interpret our results).
 >
@@ -274,8 +288,10 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. What is the average hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
 > 
 > 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
+{: .challenge}
 
-> Proposed solutions:
+
+> ## Proposed solutions:
 >
 > 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
 >
@@ -292,6 +308,5 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. Solution: `SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex`
 >
 > 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
+{: .solution}
 
-
-Previous: [SQL Aggregation](02-sql-aggregation.html)
