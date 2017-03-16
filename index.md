@@ -1,85 +1,38 @@
 ---
 layout: lesson
 root: .
-lastupdated: April 16, 2015
-contributors: ["Ethan White","Greg Wilson","Josh Herr","Sophie Clayton","Tracy Teal", "Aleksandra Pawlik"]
-maintainers: ["Paula Andrea Martinez", "Timothée Poisot"]
-domain: Ecology
-topic: SQL
-software: SQL
-dataurl: http://dx.doi.org/10.6084/m9.figshare.1314459
-status: Teaching
 ---
 
-<!-- USING THIS LESSON TEMPLATE -->
-<!-- Lesson specific information is taken from the YAML header at the top of the page -->
+Databases are useful for both storing and using data effectively. Using a relational database serves several purposes.
 
-<!-- THE LESSON INFORMATION -->
+- It keeps your data separate from your analysis. This means there’s no risk of accidentally changing data when you analyze it.
+- If we get new data we can rerun a query to find all the data that meets certain criteria.
+- It’s fast, even for large amounts of data.
+- It improves quality control of data entry (type constraints and use of forms in Access, Filemaker, etc.)
+- The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
-<!-- Get the information from _data/info.yml -->
-
-# Data Carpentry {{ page.topic }} for {{ page.domain }}
-
-Data Carpentry's aim is to teach researchers basic concepts, skills,
-and tools for working with data so that they can get more done in less
-time, and with less pain. The lessons below were designed for those interested
-in working with {{page.domain %}} data in {{page.topic %}}.
+This lesson will teach you what relational databases are, how you can load data
+into them and how you can query databases to extract just the information that you need.
 
 
-**Content Contributors: {{page.contributors | join: ', ' %}}**
+> ## Getting Started
+>
+> Data Carpentry's teaching is hands-on, so participants are encouraged to use
+> their own computers to insure the proper setup of tools for an efficient 
+> workflow. <br>**These lessons assume no prior knowledge of the skills or tools.**
+>
+> To get started, follow the directions in the "[Setup](setup/)" tab to 
+> download data to your computer and follow any installation instructions.
+>
+> #### Prerequisites
+>
+> This lesson requires a working copy of **SQLite Manager** for SQL.
+> <br>To most effectively use these materials, please make sure to install 
+> everything *before* working through this lesson.
+{: .prereq}
 
+> ## For Instructors
+> If you are teaching this lesson in a workshop, please see the 
+> [Instructor notes](guide/).
+{: .prereq}
 
-**Lesson Maintainers: {{page.maintainers | join: ', ' %}}**
-
-
-#### Lesson status: {{ page.status }}
-<!--
-  [Information on Lesson Status Categories]()
--->
-
-<!-- ###### INDEX OF LESSONS ON THIS TOPIC ###### -->
-
-## Lessons:
-
-
-{% for lesson in site.data.lessons %}
-
-1. [{{ lesson.name }}]({{ lesson.url }})
-
-{% endfor %}
-
-
-
-## Data
-
-Data files for the workshop are available here: [{{page.dataurl %}}]({{page.dataurl %}})
-
-
-<br>
-
-<h2>Requirements</h2>
-
-<p>
-Data Carpentry's teaching is hands-on, so participants are encouraged to use
-their own computers to ensure the proper setup of tools for an efficient workflow.
-<em>These lessons assume no prior knowledge of the skills or tools</em>, but working
-through this lesson requires working copies of the software described below.
-To most effectively use these materials, please make sure to install everything
-<em>before</em> working through this lesson.
-</p>
-
-
-
-{% if page.software == "Python" %}
-{% include pythonSetup.html %}
-{% elsif page.software == "Spreadsheets" %}
-{% include spreadsheetSetup.html %}
-{% elsif page.software == "R" %}
-{% include rSetup.html %}
-{% elsif page.software == "SQL" %}
-{% include sqlSetup.html %}
-{% else %}
-{% include anySetup.html %}
-{% endif %}
-
-<p><strong>Twitter</strong>: @datacarpentry

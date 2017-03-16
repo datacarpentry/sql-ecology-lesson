@@ -1,8 +1,6 @@
 ---
-layout: lesson
-root: .
-title: Databases using SQL
-minutes: 60
+title: "Databases using SQL"
+teaching: 60
 exercises: 5
 questions:
 - "What is a relational database and why should I use it?"
@@ -11,6 +9,7 @@ objectives:
 - "Understand the benefits of using a relational database"
 - "Set up a small database using SQLite"
 ---
+
 ## Learning Objectives
 1. Create and populate a database from a text file.
 2. Describe why relational databases are useful.
@@ -22,13 +21,7 @@ objectives:
 
 _Note: this should have been done by participants before the start of the workshop._
 
-1. Install Firefox
-2. Install the SQLite Manager add on: **Menu (the three horizontal lines near the
-top right corner of Firefox) -> Add-ons -> Search -> SQLite
-Manager -> Install -> Restart now**
-4. Add SQLite Manager to the menu: **Menu -> Customize, then drag the SQLite
-   Manager icon to one of the empty menu squares on the right, Exit Customize**
-5. Open SQLite Manager: **Menu -> SQLite Manager**
+See [Setup](/setup/) for install instructions.
 
 # Motivation
 
@@ -62,7 +55,7 @@ We'll need the following three files:
 * `species.csv`
 * `plots.csv`
 
-> ### Challenge
+> ## Challenge
 >
 > Open each of these csv files and explore them. 
 > What information is contained in each file?  Specifically, if I had 
@@ -74,6 +67,7 @@ We'll need the following three files:
 > 
 > What would I need to answer these questions?  Which files have the data I need? What 
 > operations would I need to perform if I were doing these analyses by hand?  
+{: .challenge}
 
 ## Goals
 
@@ -95,13 +89,14 @@ actually modifying our source data.
 
 Putting our data into a relational database and using SQL will help us achieve these goals.  
 
-> ### Definition: _Relational database_
+> ## Definition: _Relational database_
 >
 > A relational database is a digital database where all data is stored in relations (or tables)
 > containing rows and columns. All tables contain records and all records are identified by a
 > field contiaing a unique value. Every table shares at least one field with another table in
 > one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
 > in many ways 
+{: .callout}
 
 # Databases
 
@@ -207,9 +202,10 @@ follow these instructions:
 Finally, click **OK** one more time to confirm the operation.
 
 
-> ### Challenge
+> ## Challenge
 >
-> Import the plots and species tables
+> - Import the plots and species tables
+{: .challenge}
 
 You can also use this same approach to append new data to an existing table.
 
@@ -263,4 +259,4 @@ The following table shows some of the common names of data types between the var
 | string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
 | binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
 
-Previous: [Index](index.html) Next: [Basic queries.](01-sql-basic-queries.html)
+
