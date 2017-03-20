@@ -4,20 +4,20 @@ title: Setup
 permalink: /setup/
 ---
 
-> ## Data
-> **Download** this data to your computer: [http://dx.doi.org/10.6084/m9.figshare.1314459](http://dx.doi.org/10.6084/m9.figshare.1314459). Click on **Download all**.
->
-> #### About the data
-> The data for this lesson is a part of the Data Carpentry Ecology workshop. 
-> It is a teaching version of the Portal Database data. 
-> 
-> The data for this lesson and the workshop are in the 
-> [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) 
-> available on FigShare, with a CC-BY license 
-> available for reuse.
+## Data
+**Download** this data to your computer: [http://dx.doi.org/10.6084/m9.figshare.1314459](http://dx.doi.org/10.6084/m9.figshare.1314459). Click on **Download all**.
+
+#### About the data
+The data for this lesson is a part of the Data Carpentry Ecology workshop. 
+It is a teaching version of the Portal Database data. 
+ 
+The data for this lesson and the workshop are in the 
+[Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) 
+available on FigShare, with a CC-BY license 
+available for reuse.
 {: .prereq}
 
-> ## Software
+## Software
 {: .prereq}
 
 SQL is a specialized programming language used with databases.  We
