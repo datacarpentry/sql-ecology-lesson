@@ -4,7 +4,7 @@ title: Setup
 permalink: /setup/
 ---
 
-## Data
+> ## Data
 **Download** this data to your computer: [http://dx.doi.org/10.6084/m9.figshare.1314459](http://dx.doi.org/10.6084/m9.figshare.1314459). Click on **Download all**.
 
 #### About the data
@@ -17,7 +17,7 @@ available on FigShare, with a CC-BY license
 available for reuse.
 {: .prereq}
 
-## Software
+> ## Software
 {: .prereq}
 
 SQL is a specialized programming language used with databases.  We
