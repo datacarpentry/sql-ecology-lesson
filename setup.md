@@ -18,7 +18,6 @@ available for reuse.
 {: .prereq}
 
 > ## Software
-{: .prereq}
 
 SQL is a specialized programming language used with databases.  We
 use a simple database manager called [SQLite](http://www.sqlite.org/)
@@ -58,3 +57,4 @@ Within Firefox, go to [https://addons.mozilla.org/en-us/firefox/addon/sqlite-man
 - After restart the SQLite Manager will be added ot the **Tools** menu
 - Open SQLite Manager:  
 **Tools -&gt; SQLite Manager**
+{: .prereq}
