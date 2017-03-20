@@ -211,7 +211,7 @@ You can also use this same approach to append new data to an existing table.
 
 ## Adding data to existing tables
 
-1. Browse & Search -> Add
+1. "“Browse and Search” tab -> Add
 1. Enter data into a csv file and append
 
 
