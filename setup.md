@@ -5,6 +5,7 @@ permalink: /setup/
 ---
 
 > ## Data
+{: .prereq}
 **Download** this data to your computer: [http://dx.doi.org/10.6084/m9.figshare.1314459](http://dx.doi.org/10.6084/m9.figshare.1314459). Click on **Download all**.
 
 #### About the data
@@ -15,10 +16,10 @@ The data for this lesson and the workshop are in the
 [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) 
 available on FigShare, with a CC-BY license 
 available for reuse.
-{: .prereq}
+
 
 > ## Software
-
+{: .prereq}
 SQL is a specialized programming language used with databases.  We
 use a simple database manager called [SQLite](http://www.sqlite.org/)
 in our lessons.
@@ -57,4 +58,3 @@ Within Firefox, go to [https://addons.mozilla.org/en-us/firefox/addon/sqlite-man
 - After restart the SQLite Manager will be added ot the **Tools** menu
 - Open SQLite Manager:  
 **Tools -&gt; SQLite Manager**
-{: .prereq}
