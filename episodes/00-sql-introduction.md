@@ -61,9 +61,9 @@ We'll need the following three files:
 > What information is contained in each file?  Specifically, if I had 
 > the following research questions: 
 > 
-> * How has the hindfoot length and weight of Dipodomys species changed over time? 
+> * How has the hindfoot length and weight of *Dipodomys* species changed over time?
 > * What is the average weight of each species, per year?  
-> * What information can I learn about Dipodomys species in the 2000s, over time?
+> * What information can I learn about *Dipodomys* species in the 2000s, over time?
 > 
 > What would I need to answer these questions?  Which files have the data I need? What 
 > operations would I need to perform if I were doing these analyses by hand?  
@@ -93,7 +93,7 @@ Putting our data into a relational database and using SQL will help us achieve t
 >
 > A relational database is a digital database where all data is stored in relations (or tables)
 > containing rows and columns. All tables contain records and all records are identified by a
-> field contiaing a unique value. Every table shares at least one field with another table in
+> field containing a unique value. Every table shares at least one field with another table in
 > one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
 > in many ways 
 {: .callout}
@@ -123,7 +123,7 @@ details of exactly how to import and export data and the
 
 ## Relational databases
 
-Let's download and look at a pre-existing database, the `portal_mammals.sqlite` 
+Let's look at a pre-existing database, the `portal_mammals.sqlite`
 file.  Clicking on the "open file" icon and then that file will open the database.  
 
 You can see the tables in the database by looking at the left hand side of the
@@ -163,7 +163,7 @@ To summarize:
 * No redundant information
     * Split into separate tables with one table per class of information
     * Needs an identifier in common between tables – shared column - to
-       reconnect (foreign key).
+       reconnect (known as a *foreign key*).
 
 ## Import
 
@@ -211,7 +211,7 @@ You can also use this same approach to append new data to an existing table.
 
 ## Adding data to existing tables
 
-1. Browse & Search -> Add
+1. "“Browse and Search” tab -> Add
 1. Enter data into a csv file and append
 
 
@@ -258,5 +258,3 @@ The following table shows some of the common names of data types between the var
 | string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
 | string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
 | binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
-
-
