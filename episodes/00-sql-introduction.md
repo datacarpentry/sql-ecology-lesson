@@ -8,7 +8,7 @@ questions:
 objectives:
 - "Describe why relational databases are useful"
 - "Set up a small database from text files using SQLite"
-- "Understand SQLite data types
+- "Understand SQLite data types"
 ---
 
 ## Setup
