@@ -175,7 +175,7 @@ follow these instructions:
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
 3. Select the `surveys.csv` file to import
-4. Give the table a name that matches the file name (surveys), or use the default
+4. Give the table a name that matches the file name (`surveys`), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
 7. Press **OK**
@@ -204,7 +204,7 @@ Finally, click **OK** one more time to confirm the operation.
 
 > ## Challenge
 >
-> - Import the plots and species tables
+> - Import the `plots` and `species` tables
 {: .challenge}
 
 You can also use this same approach to append new data to an existing table.
