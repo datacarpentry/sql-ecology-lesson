@@ -135,7 +135,7 @@ query would look like:
 
     SELECT *
     FROM surveys
-    WHERE year = 2000 AND (month > 4 AND month < 10)
+    WHERE year = 2000 AND (month > 4 AND month < 10);
 
 But we don't want to have to type that every time we want to ask a 
 question about that particular subset of data!  Let's create a view: 
@@ -143,7 +143,7 @@ question about that particular subset of data!  Let's create a view:
     CREATE VIEW summer_2000 AS
     SELECT *
     FROM surveys
-    WHERE year = 2000 AND (month > 4 AND month < 10)
+    WHERE year = 2000 AND (month > 4 AND month < 10);
 
 You can also add a view using *Create View* in the *View* menu and see the
 results in the *Views* tab just like a table
@@ -174,21 +174,21 @@ is missing, we can use:
 
     SELECT *
     FROM summer_2000
-    WHERE species_id IS NULL
+    WHERE species_id IS NULL;
 
 If we wanted to use all the records where `species_id` is NOT null, we 
 would add the `NOT` keyword to our query.  
 
     SELECT *
     FROM summer_2000
-    WHERE species_id IS NOT NULL
+    WHERE species_id IS NOT NULL;
 
 There are many hidden "gotchas" with NULL values.  If we restrict our 
 query to the "PE" species, this will be easier to see: 
 
     SELECT *
     FROM summer_2000
-    WHERE species_id == 'PE'
+    WHERE species_id == 'PE';
 
 There should only be six records.  If you look at the weight column, it's 
 easy to see what the average weight would be.  If we use SQL to find the 
@@ -197,14 +197,14 @@ the NULL values:
 
     SELECT AVG(weight)
     FROM summer_2000
-    WHERE species_id == 'PE'
+    WHERE species_id == 'PE';
 
 But if we try to be extra clever, and find the average ourselves, 
 we might get tripped up: 
 
     SELECT SUM(weight), COUNT(*), SUM(weight)/COUNT(*)
     FROM summer_2000
-    WHERE species_id == 'PE'
+    WHERE species_id == 'PE';
 
 Here the COUNT command includes all six records (even those with null 
 values), but the SUM only includes the 4 records with data in the 
@@ -213,7 +213,7 @@ my strategy *will* work if I modify the count command slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
-    WHERE species_id == 'PE'
+    WHERE species_id == 'PE';
 
 When I count the weight field specifically, it ignores the records with data
 missing in that field.  So here is one example where `NULL`s can be tricky -
@@ -224,21 +224,21 @@ we use a "negative" query - let's count all the non-female animals:
 
     SELECT COUNT(*) 
     FROM summer_2000
-    WHERE sex != 'F'
+    WHERE sex != 'F';
 
 Now let's count all the non-male animals: 
 
 ~~~
 SELECT COUNT(*) 
 FROM summer_2000
-WHERE sex != 'M'
+WHERE sex != 'M';
 ~~~
 
 But if we compare those two numbers with the total: 
 
 ~~~
 SELECT COUNT(*) 
-FROM summer_2000
+FROM summer_2000;
 ~~~
 
 We'll see that they don't add up to the total!  That's because SQL 
@@ -252,5 +252,5 @@ case, we'd need to change our query to:
 ~~~
 SELECT COUNT(*)
 FROM summer_2000
-WHERE sex != 'M' OR sex IS NULL
+WHERE sex != 'M' OR sex IS NULL;
 ~~~
