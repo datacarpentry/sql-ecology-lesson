@@ -218,10 +218,3 @@ Suppose we run this query:
     SELECT COUNT(*), weight
     FROM summer_2000;
 
-What value will be returned for `weight`?  Since we haven't told SQL
-how to aggregate that column, the answer is that it can return any
-of the values it finds in that column.  It could be the first one
-that was inserted into the table, or the last, or be chosen at
-random: all we know is that it will be a value that is actually
-present.  This is almost never useful, so be careful when using
-aggregation to always specify how values are to be combined.
