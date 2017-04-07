@@ -27,7 +27,7 @@ This is a good way to introduce yourself
 and to meet some of our community members.
 
 1.  If you do not have a [GitHub][github] account,
-    you can [send us comments by email][contact].
+    you can [send us comments by email][dc-contact].
     However,
     we will be able to respond more quickly if you use one of the other methods described below.
 
@@ -83,6 +83,30 @@ it's easy for people who have been using these lessons for a while
 to forget how impenetrable some of this material can be,
 so fresh eyes are always welcome.
 
+
+### Data Carpentry Style
+
+Every lesson has its own repository, with individual files for each topic. We
+use two digits followed by a one-word topic key to ensure files appear in the
+right order when listed. Lessons should be written in Markdown.
+
+We don't store **datasets** for lessons inside the lesson repositories. For completed
+lessons the data should be publicly available in a data repository appropriate
+to the data type. For lesson development the data may be provided in any way
+that is convenient including posting to a website, on
+[figshare](http://figshare.com/), a public dropbox link, a
+[GitHub gist](https://gist.github.com), or even included in the PR. Once the PR
+is ready to merge the data should be placed in the
+[official data repository](http://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+and all links to the data updated.
+
+To ensure **consistent formatting** of the lessons, we recommend the following
+guidelines:
+* No trailing white space
+* Wrap lines at 80 characters (unless it breaks URLs)
+* Use unclosed `#` symbols for headers, e.g. `# Heading 1`
+
+
 ## What *Not* to Contribute
 
 Our lessons already contain more material than we can cover in a typical workshop,
@@ -136,6 +160,7 @@ which everyone is welcome to join.
 You can also [reach us by email][contact].
 
 [contact]: mailto:admin@software-carpentry.org
+[dc-contact]: mailto:board@datacarpentry.org
 [dc-issues]: https://github.com/issues?q=user%3Adatacarpentry
 [dc-lessons]: http://datacarpentry.org/lessons/
 [dc-site]: http://datacarpentry.org/
