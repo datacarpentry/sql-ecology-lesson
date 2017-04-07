@@ -9,6 +9,11 @@ objectives:
 - "Filter and order results of a query based on aggregate functions."
 - "Save a query to make a new table."
 - "Apply filters to find missing values in SQL."
+keypoints:
+- "Use the `GROUP BY` keyword to aggregate data."
+- "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggreggated data."
+- "Use the `HAVING` keyword to filter on aggregate properties."
+- "Use a `VIEW` to save a query as though it were a new table."
 ---
 
 ## Learning Objectives
