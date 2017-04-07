@@ -89,13 +89,15 @@ actually modifying our source data.
 
 Putting our data into a relational database and using SQL will help us achieve these goals.  
 
-> ## Definition: _Relational database_
+> ## Definition: *Relational Database*
 >
-> A relational database is a digital database where all data is stored in relations (or tables)
-> containing rows and columns. All tables contain records and all records are identified by a
-> field containing a unique value. Every table shares at least one field with another table in
-> one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
-> in many ways 
+> A relational database stores data in *relations* made up of *records* with *fields*.
+> The relations are usually represented as *tables*;
+> each record is usually shown as a row, and the fields as columns.
+> In most cases, each record will have a unique identifier, called a *key*,
+> which is stored as one of its fields.
+> Records may also contain keys that refer to records in other tables,
+> which enables us to combine information from two or more sources.
 {: .callout}
 
 # Databases
