@@ -21,7 +21,7 @@ objectives:
 
 _Note: this should have been done by participants before the start of the workshop._
 
-See [Setup](/setup/) for install instructions.
+See [Setup](/sql-ecology-lesson/setup/) for install instructions.
 
 # Motivation
 
