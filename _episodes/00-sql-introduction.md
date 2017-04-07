@@ -21,7 +21,12 @@ objectives:
 
 _Note: this should have been done by participants before the start of the workshop._
 
-See [Setup](/sql-ecology-lesson/setup/) for install instructions.
+We use [SQLite Manager](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/)
+and the 
+[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
+instructions on how to download the data, and also how to install and open
+SQLite Manager.
 
 # Motivation
 
@@ -126,7 +131,9 @@ details of exactly how to import and export data and the
 ## Relational databases
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
-file.  Clicking on the "open file" icon and then that file will open the database.  
+file from the Portal Project dataset that we downloaded during
+[Setup](/sql-ecology-lesson/setup/). Clicking on the "open file" icon, then
+find that file and clicking on it will open the database.
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables, where each table corresponds to one of the `csv` files 
