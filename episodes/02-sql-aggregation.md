@@ -11,7 +11,7 @@ objectives:
 - "Apply filters to find missing values in SQL."
 keypoints:
 - "Use the `GROUP BY` keyword to aggregate data."
-- "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggreggated data."
+- "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggregated data."
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to save a query as though it were a new table."
 ---
