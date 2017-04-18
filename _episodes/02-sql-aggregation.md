@@ -3,7 +3,7 @@ title: "SQL Aggregation"
 teaching: 30
 exercises: 5
 questions:
-- "Aggregating, filtering and ordering query results"
+- "How can I summarize my data by aggregating, filtering, or ordering query results?"
 objectives:
 - "Apply aggregation to group records in SQL."
 - "Filter and order results of a query based on aggregate functions."
@@ -15,12 +15,6 @@ keypoints:
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to access the result of a query as though it was a new table."
 ---
-
-## Learning Objectives
-1. Apply aggregation to group records in SQL.
-2. Filter and order results of a query based on aggregate functions.
-3. Save a query to make a new table.
-4. Apply filters to find missing values in SQL.
 
 ## COUNT and GROUP BY
 

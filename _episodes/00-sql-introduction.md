@@ -7,19 +7,13 @@ questions:
 - "What is SQL?"
 objectives:
 - "Understand the benefits of using a relational database"
-- "Set up a small database using SQLite"
+- "Set up a small database from csv files using SQLite"
+- "Understand SQLite data types"
 keypoints:
 - "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
 - "A relational database is made up of tables which are related to each other by shared keys."
 - "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
-
-## Learning Objectives
-1. Create and populate a database from a text file.
-2. Describe why relational databases are useful.
-3. Define SQLite data types.
-4. Select, group, add to, and analyze subsets of data.
-5. Combine data across multiple tables.
 
 ## Setup
 
