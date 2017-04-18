@@ -6,16 +6,25 @@ questions:
 - "What is a relational database and why should I use it?"
 - "What is SQL?"
 objectives:
-- "Describe why relational databases are useful"
-- "Set up a small database from text files using SQLite"
+- "Understand the benefits of using a relational database"
+- "Set up a small database from csv files using SQLite"
 - "Understand SQLite data types"
+keypoints:
+- "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
+- "A relational database is made up of tables which are related to each other by shared keys."
+- "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
 
 ## Setup
 
 _Note: this should have been done by participants before the start of the workshop._
 
-See [Setup](/setup/) for install instructions.
+We use [SQLite Manager](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/)
+and the 
+[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
+instructions on how to download the data, and also how to install and open
+SQLite Manager.
 
 # Motivation
 
@@ -83,13 +92,15 @@ actually modifying our source data.
 
 Putting our data into a relational database and using SQL will help us achieve these goals.  
 
-> ## Definition: _Relational database_
+> ## Definition: *Relational Database*
 >
-> A relational database is a digital database where all data is stored in relations (or tables)
-> containing rows and columns. All tables contain records and all records are identified by a
-> field containing a unique value. Every table shares at least one field with another table in
-> one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
-> in many ways 
+> A relational database stores data in *relations* made up of *records* with *fields*.
+> The relations are usually represented as *tables*;
+> each record is usually shown as a row, and the fields as columns.
+> In most cases, each record will have a unique identifier, called a *key*,
+> which is stored as one of its fields.
+> Records may also contain keys that refer to records in other tables,
+> which enables us to combine information from two or more sources.
 {: .callout}
 
 # Databases
@@ -118,7 +129,9 @@ details of exactly how to import and export data and the
 ## Relational databases
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
-file.  Clicking on the "open file" icon and then that file will open the database.  
+file from the Portal Project dataset that we downloaded during
+[Setup](/sql-ecology-lesson/setup/). Clicking on the "open file" icon, then
+find that file and clicking on it will open the database.
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables, where each table corresponds to one of the `csv` files 
@@ -168,13 +181,13 @@ follow these instructions:
 
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
-3. Select the file to import
-4. Give the table a name that matches the file name (surveys, species, plots), or use the default
+3. Select the `surveys.csv` file to import
+4. Give the table a name that matches the file name (`surveys`), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field using the suggestions in the table below:
+9. Set the data types for each field using the suggestions in the table below (this includes fields from `plots` and `species` tables also):
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
@@ -198,7 +211,7 @@ Finally, click **OK** one more time to confirm the operation.
 
 > ## Challenge
 >
-> - Import the plots and species tables
+> - Import the `plots` and `species` tables
 {: .challenge}
 
 You can also use this same approach to append new data to an existing table.
