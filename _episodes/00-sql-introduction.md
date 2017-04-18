@@ -8,6 +8,10 @@ questions:
 objectives:
 - "Understand the benefits of using a relational database"
 - "Set up a small database using SQLite"
+keypoints:
+- "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
+- "A relational database is made up of tables which are related to each other by shared keys."
+- "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
 
 ## Learning Objectives
