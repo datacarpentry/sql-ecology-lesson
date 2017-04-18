@@ -3,17 +3,13 @@ title: "Joins and aliases"
 teaching: 30
 exercises: 5
 questions:
-- "Joining tables and creating aliases"
+- "How do I bring data together from separate tables?"
+- "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
 - "Employ joins to combine data from two tables."
 - "Apply functions to manipulate individual values."
 - "Employ aliases to assign new names to items in a query."
 ---
-
-## Learning Objectives
-1. Employ joins to combine data from two tables.
-2. Apply functions to manipulate individual values.
-3. Employ aliases to assign new names to items in a query.
 
 ## Joins
 

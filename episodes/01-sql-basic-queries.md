@@ -3,7 +3,7 @@ title: "Basic Queries"
 teaching: 30
 exercises: 5
 questions:
-- "Learning Basic Queries in SQL"
+- "How do I write a basic query in SQL?"
 objectives:
 - "Write and build queries."
 - "Filter data given various criteria."
@@ -14,11 +14,6 @@ keypoints:
 - "Calculations using mathematical symbols can also be performed on SQL queries."
 - "Adding comments in SQL helps keep complex queries understandable."
 ---
-
-## Learning objectives
-1. Write and build queries.
-2. Filter data given various criteria.
-3. Sort the results of a query.
 
 ## Writing my first query
 
