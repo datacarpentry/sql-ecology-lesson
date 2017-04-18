@@ -8,6 +8,11 @@ objectives:
 - "Write and build queries."
 - "Filter data given various criteria."
 - "Sort the results of a query."
+keypoints:
+- "It is useful to apply conventions when writing SQL queries to aid readability."
+- "Use logical connectors such as AND or OR to create more complex queries."
+- "Calculations using mathematical symbols can also be performed on SQL queries."
+- "Adding comments in SQL helps keep complex queries understandable."
 ---
 
 ## Learning objectives
