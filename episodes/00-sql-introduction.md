@@ -7,21 +7,24 @@ questions:
 - "What is SQL?"
 objectives:
 - "Understand the benefits of using a relational database"
-- "Set up a small database using SQLite"
+- "Set up a small database from csv files using SQLite"
+- "Understand SQLite data types"
+keypoints:
+- "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
+- "A relational database is made up of tables which are related to each other by shared keys."
+- "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
-
-## Learning Objectives
-1. Create and populate a database from a text file.
-2. Describe why relational databases are useful.
-3. Define SQLite data types.
-4. Select, group, add to, and analyze subsets of data.
-5. Combine data across multiple tables.
 
 ## Setup
 
 _Note: this should have been done by participants before the start of the workshop._
 
-See [Setup](/setup/) for install instructions.
+We use [SQLite Manager](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/)
+and the 
+[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
+instructions on how to download the data, and also how to install and open
+SQLite Manager.
 
 # Motivation
 
@@ -61,9 +64,9 @@ We'll need the following three files:
 > What information is contained in each file?  Specifically, if I had 
 > the following research questions: 
 > 
-> * How has the hindfoot length and weight of Dipodomys species changed over time? 
+> * How has the hindfoot length and weight of *Dipodomys* species changed over time?
 > * What is the average weight of each species, per year?  
-> * What information can I learn about Dipodomys species in the 2000s, over time?
+> * What information can I learn about *Dipodomys* species in the 2000s, over time?
 > 
 > What would I need to answer these questions?  Which files have the data I need? What 
 > operations would I need to perform if I were doing these analyses by hand?  
@@ -89,13 +92,15 @@ actually modifying our source data.
 
 Putting our data into a relational database and using SQL will help us achieve these goals.  
 
-> ## Definition: _Relational database_
+> ## Definition: *Relational Database*
 >
-> A relational database is a digital database where all data is stored in relations (or tables)
-> containing rows and columns. All tables contain records and all records are identified by a
-> field contiaing a unique value. Every table shares at least one field with another table in
-> one-to-one, one-to-many or many-to-many relationships. This allows the user to access the data
-> in many ways 
+> A relational database stores data in *relations* made up of *records* with *fields*.
+> The relations are usually represented as *tables*;
+> each record is usually shown as a row, and the fields as columns.
+> In most cases, each record will have a unique identifier, called a *key*,
+> which is stored as one of its fields.
+> Records may also contain keys that refer to records in other tables,
+> which enables us to combine information from two or more sources.
 {: .callout}
 
 # Databases
@@ -123,8 +128,10 @@ details of exactly how to import and export data and the
 
 ## Relational databases
 
-Let's download and look at a pre-existing database, the `portal_mammals.sqlite` 
-file.  Clicking on the "open file" icon and then that file will open the database.  
+Let's look at a pre-existing database, the `portal_mammals.sqlite`
+file from the Portal Project dataset that we downloaded during
+[Setup](/sql-ecology-lesson/setup/). Clicking on the "open file" icon, then
+find that file and clicking on it will open the database.
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Tables, where each table corresponds to one of the `csv` files 
@@ -163,7 +170,7 @@ To summarize:
 * No redundant information
     * Split into separate tables with one table per class of information
     * Needs an identifier in common between tables – shared column - to
-       reconnect (foreign key).
+       reconnect (known as a *foreign key*).
 
 ## Import
 
@@ -174,28 +181,28 @@ follow these instructions:
 
 1. Start a New Database **Database -> New Database**
 2. Start the import **Database -> Import**
-3. Select the file to import
-4. Give the table a name that matches the file name (surveys, species, plots), or use the default
+3. Select the `surveys.csv` file to import
+4. Give the table a name that matches the file name (`surveys`), or use the default
 5. If the first row has column headings, check the appropriate box
 6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
 7. Press **OK**
 8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field using the suggestions in the table below:
+9. Set the data types for each field using the suggestions in the table below (this includes fields from `plots` and `species` tables also):
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
-| day               | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
-| genus             | TEXT           | Field contains alphanumeric data                                                 | species           |
-| hindfoot_length   | REAL           | Field contains measured data                                                     | surveys           |
-| month             | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
-| plot_id           | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | plots, surveys    |
-| plot_type         | TEXT           | Field contains alphanumeric data                                                 | plots             |
-| record_id         | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | surveys           |
-| sex               | TEXT           | Field contains alphanumeric data                                                 | surveys           |
-| species_id        | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | species, surveys  |
-| species           | TEXT           | Field contains alphanumeric data                                                 | species           |
-| taxa              | TEXT           | Field contains alphanumeric data                                                 | species           |
-| weight            | REAL           | Field contains measured data                                                     | surveys           |
+| day               | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
+| genus             | TEXT           | Field contains text data                                                 	| species           |
+| hindfoot_length   | REAL           | Field contains measured numeric data                                             | surveys           |
+| month             | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
+| plot_id           | INTEGER        | Field contains numeric data	    						| plots, surveys    |
+| plot_type         | TEXT           | Field contains text data                                                 	| plots             |
+| record_id         | INTEGER        | Field contains numeric data 							| surveys           |
+| sex               | TEXT           | Field contains text data                                                 	| surveys           |
+| species_id        | TEXT           | Field contains text data								| species, surveys  |
+| species           | TEXT           | Field contains text data                                                 	| species           |
+| taxa              | TEXT           | Field contains text data                                                 	| species           |
+| weight            | REAL           | Field contains measured numerical data                                           | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
 
@@ -204,14 +211,14 @@ Finally, click **OK** one more time to confirm the operation.
 
 > ## Challenge
 >
-> - Import the plots and species tables
+> - Import the `plots` and `species` tables
 {: .challenge}
 
 You can also use this same approach to append new data to an existing table.
 
 ## Adding data to existing tables
 
-1. Browse & Search -> Add
+1. "“Browse and Search” tab -> Add
 1. Enter data into a csv file and append
 
 
@@ -258,5 +265,3 @@ The following table shows some of the common names of data types between the var
 | string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
 | string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
 | binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
-
-
