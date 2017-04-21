@@ -288,9 +288,6 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. What is the average hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
 > 
 > 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
-{: .challenge}
-
-
 > ## Proposed solutions:
 >
 > 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
@@ -308,5 +305,5 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. Solution: `SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex`
 >
 > 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
-{: .solution}
-
+> {: .solution}
+{: .challenge}
