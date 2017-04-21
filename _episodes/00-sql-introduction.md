@@ -191,18 +191,18 @@ follow these instructions:
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
-| day               | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
-| genus             | TEXT           | Field contains alphanumeric data                                                 | species           |
-| hindfoot_length   | REAL           | Field contains measured data                                                     | surveys           |
-| month             | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
-| plot_id           | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | plots, surveys    |
-| plot_type         | TEXT           | Field contains alphanumeric data                                                 | plots             |
-| record_id         | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | surveys           |
-| sex               | TEXT           | Field contains alphanumeric data                                                 | surveys           |
-| species_id        | TEXT           | Field conatins numeric data, which does not lend itself to meaningful arithmetic | species, surveys  |
-| species           | TEXT           | Field contains alphanumeric data                                                 | species           |
-| taxa              | TEXT           | Field contains alphanumeric data                                                 | species           |
-| weight            | REAL           | Field contains measured data                                                     | surveys           |
+| day               | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
+| genus             | TEXT           | Field contains text data                                                 	| species           |
+| hindfoot_length   | REAL           | Field contains measured numeric data                                             | surveys           |
+| month             | INTEGER        | Having data as numeric allows for meaningful arithmetic and comparisons          | surveys           |
+| plot_id           | INTEGER        | Field contains numeric data	    						| plots, surveys    |
+| plot_type         | TEXT           | Field contains text data                                                 	| plots             |
+| record_id         | INTEGER        | Field contains numeric data 							| surveys           |
+| sex               | TEXT           | Field contains text data                                                 	| surveys           |
+| species_id        | TEXT           | Field contains text data								| species, surveys  |
+| species           | TEXT           | Field contains text data                                                 	| species           |
+| taxa              | TEXT           | Field contains text data                                                 	| species           |
+| weight            | REAL           | Field contains measured numerical data                                           | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
 
