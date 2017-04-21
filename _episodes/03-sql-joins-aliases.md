@@ -288,8 +288,9 @@ but using `AS` is much clearer so it is good style to include it.
 > 7. What is the average hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
 > 
 > 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
-> ## Proposed solutions:
 >
+> > ## Proposed solutions:
+> >
 > > 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
 > >
 > > 2. Solution: `SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year`
