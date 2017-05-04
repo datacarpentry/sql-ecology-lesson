@@ -57,6 +57,24 @@ Firefox plugin, and the Portal dataset
 * Structuring data for database import
 * Discuss the different SQL data types
 
+**Naming conventions**
+* Naming occurs during translation of business rules to data model components
+* Names should make the object unique and distinguishable from other objects
+* Names should be descriptive of other objects in the environment and be familiar to users
+* Names should adhere to certain standards: (General Tips)
+	* Should not contain spaces
+	* Should not start with numbers
+	* They should be full words, not abbreviations
+	* Underscores can separate words
+	* Data types are not names
+	* Names are often in lowercase
+	* Avoid quotes when naming a table or field
+* Naming conventions are important because: 
+	* Names Are Long Lived
+	* Names Are Contracts
+	* Developer Context Switching
+
+
 **Tips**
 
 * **Changing data type**: There is a step on import where you have to select the data type for the field. Some people select the wrong type or nothing at all and wonder what they can do to change it. If you right click or Control click on the column name in the Structure tab, then there's an Edit Column option and you can type in a new data type. When you go to save it, it does warn you that this is dangerous behavior, so people are being warned, but it might be nice to show this option and also to say why it's not generally a good idea to change data types.
