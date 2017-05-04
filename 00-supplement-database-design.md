@@ -30,5 +30,10 @@ Other database management systems
     * Multiple simultaneous users
 	* More difficult to setup and maintain
 
+* Microsoft SQL Server (SQL Server)
+    * Multiple simultaneous users
+	* Easy to use
+	* Most complex part is development and troubleshooting
+
 
 
