@@ -22,30 +22,34 @@ individual that was captured at the site, including when they were captured,
 what plot they were captured on, their species ID, sex and weight in grams.
 
 Let’s write an SQL query that selects only the year column from the
-surveys table. SQL queries can be written in the box located under 
+surveys table limiting the results to the first 10 rows. 
+SQL queries can be written in the box located under 
 the "Execute SQL" tab. Click 'Run SQL' to execute the query in the box.
 
     SELECT year
-    FROM surveys;
+    FROM surveys
+    LIMIT 10;
 
-We have capitalized the words SELECT and FROM because they are SQL keywords.
+We have capitalized the words SELECT FROM and LIMIT because they are SQL keywords.
 SQL is case insensitive, but it helps for readability, and is good style.
 
 If we want more information, we can just add a new column to the list of fields,
 right after SELECT:
 
     SELECT year, month, day
-    FROM surveys;
+    FROM surveys
+    LIMIT 10;
 
 Or we can select all of the columns in a table using the wildcard *
 
     SELECT *
-    FROM surveys;
+    FROM surveys
+    LIMIT 10;
 
 ### Unique values
 
 If we want only the unique values so that we can quickly see what species have
-been sampled we use `DISTINCT`
+been sampled we use `DISTINCT`. We also drop the LIMIT command to see all results.
 
     SELECT DISTINCT species_id
     FROM surveys;
