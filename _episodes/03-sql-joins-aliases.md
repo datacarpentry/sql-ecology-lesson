@@ -212,7 +212,7 @@ is returned. This is useful for "nulling out" specific values.
 
 We can "null out" plot 7:
 
-    SELECT species_id, plot_id, NULLIF(plot_id, 7) AS partial_plot_id
+    SELECT species_id, plot_id, NULLIF(plot_id, "7") AS partial_plot_id
     FROM surveys;
 
 Some more functions which are common to SQL databases are listed in the table
