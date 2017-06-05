@@ -22,29 +22,35 @@ individual that was captured at the site, including when they were captured,
 what plot they were captured on, their species ID, sex and weight in grams.
 
 Let’s write an SQL query that selects only the year column from the
-surveys table limiting the results to the first 10 rows. 
-SQL queries can be written in the box located under 
+surveys table. SQL queries can be written in the box located under 
 the "Execute SQL" tab. Click 'Run SQL' to execute the query in the box.
 
     SELECT year
-    FROM surveys
-    LIMIT 10;
+    FROM surveys;
 
-We have capitalized the words SELECT FROM and LIMIT because they are SQL keywords.
+We have capitalized the words SELECT and FROM because they are SQL keywords.
 SQL is case insensitive, but it helps for readability, and is good style.
 
 If we want more information, we can just add a new column to the list of fields,
 right after SELECT:
 
     SELECT year, month, day
-    FROM surveys
-    LIMIT 10;
+    FROM surveys;
 
 Or we can select all of the columns in a table using the wildcard *
 
     SELECT *
+    FROM surveys;
+
+### Limiting results
+
+Sometimes you don't want to see all the results you just want to get a sense of
+of what's being returned. In that case you can use the LIMIT command. In particular
+you would want to do this if you were working with large databases.
+
+    SELECT *
     FROM surveys
-    LIMIT 10;
+    LIMIT 10; 
 
 ### Unique values
 
