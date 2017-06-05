@@ -55,7 +55,7 @@ you would want to do this if you were working with large databases.
 ### Unique values
 
 If we want only the unique values so that we can quickly see what species have
-been sampled we use `DISTINCT`. We also drop the LIMIT command to see all results.
+been sampled we use `DISTINCT` 
 
     SELECT DISTINCT species_id
     FROM surveys;
