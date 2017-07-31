@@ -42,10 +42,20 @@ Or we can select all of the columns in a table using the wildcard *
     SELECT *
     FROM surveys;
 
+### Limiting results
+
+Sometimes you don't want to see all the results you just want to get a sense of
+of what's being returned. In that case you can use the LIMIT command. In particular
+you would want to do this if you were working with large databases.
+
+    SELECT *
+    FROM surveys
+    LIMIT 10; 
+
 ### Unique values
 
 If we want only the unique values so that we can quickly see what species have
-been sampled we use `DISTINCT`
+been sampled we use `DISTINCT` 
 
     SELECT DISTINCT species_id
     FROM surveys;
