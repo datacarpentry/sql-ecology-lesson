@@ -171,7 +171,7 @@ place of `NULL`.
 
 We can represent unknown sexes with "U" instead of `NULL`:
 
-    SELECT species_id, sex, IFNULL(sex, 'U') AS non_null_sex
+    SELECT species_id, sex, IFNULL(sex, 'U')
     FROM surveys;
 
 The lone "sex" column is only included in the query above to illustrate where
@@ -212,7 +212,7 @@ is returned. This is useful for "nulling out" specific values.
 
 We can "null out" plot 7:
 
-    SELECT species_id, plot_id, NULLIF(plot_id, 7) AS partial_plot_id
+    SELECT species_id, plot_id, NULLIF(plot_id, 7)
     FROM surveys;
 
 Some more functions which are common to SQL databases are listed in the table
@@ -246,7 +246,7 @@ table below:
 
 ## Aliases
 
-As queries get more complex names can get long and unwieldy. To help make things
+As queries get more complex names can get long and unwieldy (as we saw before). To help make things
 clearer we can use aliases to assign new names to things in the query.
 
 We can alias both table names:
