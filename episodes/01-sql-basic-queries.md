@@ -129,8 +129,9 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
 > ## Challenge
 >
-> - Write a query that returns the day, month, year, species_id, and
-> weight (in kg) for individuals caught on Plot 1 that weigh more than 75 g
+> - Produce a table listing the data for all individuals in Plot 1 
+> that weighed more than 75 grams, telling us the date, species id code, and weight
+> (in kg). 
 {: .challenge}
 
 ## Building more complex queries
