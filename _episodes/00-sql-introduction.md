@@ -179,7 +179,9 @@ database.  We'll be creating this database from the three `csv` files
 we downloaded earlier.  Close the currently open database and then 
 follow these instructions: 
 
-1. Start a New Database **Database -> New Database**
+1. Start a New Database 
+    - **Database -> New Database**
+    - Give a name **Ok -> Open**. Creates the database in the opened folder
 2. Start the import **Database -> Import**
 3. Select the `surveys.csv` file to import
 4. Give the table a name that matches the file name (`surveys`), or use the default
