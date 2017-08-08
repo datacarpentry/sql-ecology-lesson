@@ -87,7 +87,7 @@ for the right pieces of data ourselves, or clicking between spreadsheets,
 or manually sorting columns, we want to make the computer do the work.  
 
 In particular, we want to use a tool where it's easy to repeat our analysis 
-in case our data changes.  We also want to do all this searching without 
+in case our data changes. We also want to do all this searching without 
 actually modifying our source data.  
 
 Putting our data into a relational database and using SQL will help us achieve these goals.  
@@ -113,18 +113,17 @@ Using a relational database serves several purposes.
     * This means there's no risk of accidentally changing data when you analyze it.
     * If we get new data we can just rerun the query.
 * It's fast, even for large amounts of data.
-* It improves quality control of data entry (type constraints and use of forms in
-  Access, Filemaker, etc.)
+* It improves quality control of data entry (type constraints and use of forms in MS Access, Filemaker, Oracle Application Express etc.)
 * The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
 ## Database Management Systems
 
 There are a number of different database management systems for working with
 relational data. We're going to use SQLite today, but basically everything we
-teach you will apply to the other database systems as well (e.g., MySQL,
-PostgreSQL, MS Access, Filemaker Pro). The only things that will differ are the
-details of exactly how to import and export data and the
-[details of data types](#datatypediffs).
+teach you will apply to the other database systems as well (e.g. MySQL,
+PostgreSQL, MS Access, MS SQL Server, Oracle Database and Filemaker Pro). The 
+only things that will differ are the details of exactly how to import and 
+export data and the [details of data types](#datatypediffs).
 
 ## Relational databases
 
@@ -138,13 +137,12 @@ screen under Tables, where each table corresponds to one of the `csv` files
 we were exploring earlier.  To see the contents of any table, click on it, and
 then click the “Browse and Search” tab in the right panel.  This will 
 give us a view that we're used to - just a copy of the table.  Hopefully this 
-helps to show that a 
-database is, in some sense, just a collection of tables, where there's some value 
-in the tables that allows them to be connected to each other (the "related" part 
-of "relational database").  
+helps to show that a database is, in some sense, just a collection of tables, 
+where there's some value in the tables that allows them to be connected to each 
+other (the "related" part of "relational database").  
 
 The leftmost tab, "Structure", provides some metadata about each table.  It 
-describes the columns, often called *fields*.  (The rows of a database table 
+describes the columns, often called *fields*. (The rows of a database table 
 are called *records*.)  If you scroll down in the Structure view, you'll 
 see a list of fields, their labels, and their data *type*.  Each field contains 
 one variety or type of data, often numbers or text.  You can see in the 
@@ -220,7 +218,7 @@ You can also use this same approach to append new data to an existing table.
 
 ## Adding data to existing tables
 
-1. "“Browse and Search” tab -> Add
+1. "Browse and Search" tab -> Add
 1. Enter data into a csv file and append
 
 
@@ -265,5 +263,5 @@ The following table shows some of the common names of data types between the var
 | float                                                   | Number (single)           | Float / Real         | Number             | Float          | Numeric       |
 | currency                                                | Currency                  | Money                | N/A                | N/A            | Money         |
 | string (fixed)                                          | N/A                       | Char                 | Char               | Char           | Char          |
-| string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar / Varchar2 | Varchar        | Varchar       |
+| string (variable)                                       | Text (<256) / Memo (65k+) | Varchar              | Varchar2 | Varchar        | Varchar       |
 | binary object	OLE Object Memo	Binary (fixed up to 8K)   | Varbinary (<8K)           | Image (<2GB)	Long | Raw	Blob          | Text	Binary | Varbinary     |
