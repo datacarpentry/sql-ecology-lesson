@@ -150,6 +150,11 @@ results in the *Views* tab just like a table.
 Now, we will be able to access these results with a much shorter notation:
 
     SELECT *
+    FROM summer_2000;
+    
+If we were interested in species_id 'PE' we could use our new VIEW, in this way:
+    
+    SELECT *
     FROM summer_2000
     WHERE species_id == 'PE';
 
