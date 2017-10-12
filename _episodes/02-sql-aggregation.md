@@ -151,7 +151,8 @@ results in the *Views* tab just like a table.
 Now, we will be able to access these results with a much shorter notation:
 
     SELECT *
-    FROM summer_2000;
+    FROM summer_2000
+    WHERE species_id == 'PE';
 
 There should only be six records.  If you look at the `weight` column, it's
 easy to see what the average weight would be.  If we use SQL to find the
