@@ -69,7 +69,7 @@ Firefox plugin, and the Portal dataset
 	* Names should not start with numbers, rather add numbers at the end of the name (for example, name1)
 	* Names should be full words, not abbreviations (for example, doctor)
 	* Underscores can separate words (for example, name_of_data)
-	* Data types are not names (for example, integerData instead of integer)
+	* Data types are not names (for example, integer_data instead of integer)
 	* Names are often in lowercase (for example, name)
 	* DO NOT use quotes when naming a table or field
 
