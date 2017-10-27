@@ -34,6 +34,10 @@ Other database management systems
     * Multiple simultaneous users
 	* Easy to use
 	* Most complex part is development and troubleshooting
+	
+* MongoDB (for Big Data needs)
+    * Easy to scale
+    * Performance is good since it is equipped to work with big data
 
 
 
