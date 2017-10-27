@@ -143,7 +143,7 @@ of these groups (`HAVING`).
 
 It is not uncommon to repeat the same operation more than once, for example
 for monitoring or reporting purposes. SQL comes with a very powerful mechanism
-to do this: views. Views are a form of query that is saved in the database,
+to do this by creating views. Views are a form of query that is saved in the database,
 and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
@@ -158,7 +158,7 @@ query would look like:
     WHERE year = 2000 AND (month > 4 AND month < 10);
 
 But we don't want to have to type that every time we want to ask a
-question about that particular subset of data.  Let's create a view:
+question about that particular subset of data. Hence, we can benefit from a view:
 
     CREATE VIEW summer_2000 AS
     SELECT *
@@ -166,18 +166,19 @@ question about that particular subset of data.  Let's create a view:
     WHERE year = 2000 AND (month > 4 AND month < 10);
 
 You can also add a view using *Create View* in the *View* menu and see the
-results in the *Views* tab just like a table.
+results in the *Views* tab, the same way as creating a table from the menu.
 
-Now, we will be able to access these results with a much shorter notation:
+Using a view we will be able to access these results with a much shorter notation:
 
     SELECT *
     FROM summer_2000
     WHERE species_id == 'PE';
 
-There should only be six records.  If you look at the `weight` column, it's
-easy to see what the average weight would be.  If we use SQL to find the
-average weight, SQL behaves like we would hope, ignoring
-the NULL values:
+## What About NULL?
+
+From the last example, there should only be six records.  If you look at the `weight` column, it's
+easy to see what the average weight would be. If we use SQL to find the
+average weight, SQL behaves like we would hope, ignoring the NULL values:
 
     SELECT AVG(weight)
     FROM summer_2000
@@ -192,8 +193,8 @@ we might get tripped up:
 
 Here the `COUNT` command includes all six records (even those with NULL
 values), but the `SUM` only includes the 4 records with data in the
-`weight` field, giving us an incorrect average.  However,
-our strategy *will* work if we modify the count command slightly:
+`weight` field, giving us an incorrect average. However,
+our strategy *will* work if we modify the `COUNT` command slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
@@ -221,21 +222,14 @@ But if we compare those two numbers with the total:
     SELECT COUNT(*)
     FROM summer_2000;
 
-We'll see that they don't add up to the total!  That's because SQL
+We'll see that they don't add up to the total! That's because SQL
 doesn't automatically include NULL values in a negative conditional
 statement.  So if we are quering "not x", then SQL divides our data
-into three categories: 'x', 'not NULL, not x' and NULL and
+into three categories: 'x', 'not NULL, not x' and NULL; then,
 returns the 'not NULL, not x' group. Sometimes this may be what we want -
-but sometimes we may want the missing values included as well!  In that
+but sometimes we may want the missing values included as well! In that
 case, we'd need to change our query to:
 
     SELECT COUNT(*)
     FROM summer_2000
     WHERE sex != 'M' OR sex IS NULL;
-
-There is one more subtlety we need to be aware of.
-Suppose we run this query:
-
-    SELECT COUNT(*), weight
-    FROM summer_2000;
-
