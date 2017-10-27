@@ -34,6 +34,12 @@ to cleaned, computer-readable data.  Now we're going to move to the next piece
 of the data workflow, using the computer to read in our data, and then 
 use it for analysis and visualization.  
 
+## What is SQL?
+
+SQL stands for Structured Query Language. SQL allows us to interact with relational databases through queries. 
+These queries can allow you to perform a number of actions such as: insert, update and delete information in a database.
+
+
 ## Dataset Description
 
 The data we will be using is a time-series for a small mammal community in
