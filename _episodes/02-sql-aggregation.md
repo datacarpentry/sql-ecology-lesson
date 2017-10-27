@@ -1,17 +1,20 @@
 ---
-title: "SQL Aggregation"
-teaching: 30
+title: "SQL Aggregation and aliases"
+teaching: 60
 exercises: 5
 questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
+- "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
 - "Apply aggregation to group records in SQL."
 - "Filter and order results of a query based on aggregate functions."
+- "Employ aliases to assign new names to items in a query."
 - "Save a query to make a new table."
 - "Apply filters to find missing values in SQL."
 keypoints:
 - "Use the `GROUP BY` keyword to aggregate data."
 - "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggregated data."
+- "Aliases can help shorten long queries. To write clear and readible queries, use the `AS` keyword when creating aliases."
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to access the result of a query as though it was a new table."
 ---
