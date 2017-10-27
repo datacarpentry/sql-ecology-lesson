@@ -73,6 +73,17 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 > Can you modify the above queries combining them into one?
 {: .challenge}
 
+## Ordering Aggregated Results
+
+We can order the results of our aggregation by a specific column, including
+the aggregated column.  Let’s count the number of individuals of each
+species captured, ordered by the count:
+
+    SELECT species_id, COUNT(*)
+    FROM surveys
+    GROUP BY species_id
+    ORDER BY COUNT(species_id);
+
 ## The `HAVING` keyword
 
 In the previous lesson, we have seen the keywords `WHERE`, allowing to
@@ -110,17 +121,6 @@ of these groups (`HAVING`).
 > Write a query that returns, from the `species` table, the number of
 > `genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
 {: .challenge}
-
-## Ordering Aggregated Results
-
-We can order the results of our aggregation by a specific column, including
-the aggregated column.  Let’s count the number of individuals of each
-species captured, ordered by the count:
-
-    SELECT species_id, COUNT(*)
-    FROM surveys
-    GROUP BY species_id
-    ORDER BY COUNT(species_id);
 
 ## Saving Queries for Future Use
 
