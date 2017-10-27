@@ -21,11 +21,11 @@ keypoints:
 
 ## COUNT and GROUP BY
 
-Aggregation allows us to combine results by grouping records based on value and
+Aggregation allows us to combine results by grouping records based on value, also it is useful for
 calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
-Using the wildcard simply counts the number of records (rows):
+Using the wildcard * simply counts the number of records (rows):
 
     SELECT COUNT(*)
     FROM surveys;
@@ -35,13 +35,13 @@ We can also find out how much all of those individuals weigh:
     SELECT COUNT(*), SUM(weight)
     FROM surveys;
 
-We can output this value in kilograms, rounded to 3 decimal places:
-(Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction, the limit in this case is 3)
+We can output this value in kilograms (dividing the value to 1000.0), then rounding to 3 decimal places:
+(Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
     SELECT ROUND(SUM(weight)/1000.00, 3)
     FROM surveys;
 
-There are many other aggregate functions included in SQL including
+There are many other aggregate functions included in SQL, for example:
 `MAX`, `MIN`, and `AVG`.
 
 > ## Challenge
