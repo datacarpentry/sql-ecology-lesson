@@ -21,12 +21,12 @@ To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
 The `JOIN` command on its own will result in a cross product, where each row in
-first table is paired with each row in the second table. Usually this is not
+the first table is paired with each row in the second table. Usually this is not
 what is desired when combining two tables with data that is related in some way.
 
 For that, we need to tell the computer which columns provide the link between the two
 tables using the word `ON`.  What we want is to join the data with the same
-species codes.
+species id.
 
     SELECT *
     FROM surveys
@@ -37,7 +37,7 @@ species codes.
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
-The output of the `JOIN` command will have columns from first table plus the
+The output of the `JOIN` command will have columns from the first table plus the
 columns from the second table. For the above command, the output will be a table
 that has the following column names:
 
@@ -47,7 +47,8 @@ that has the following column names:
 | 96  | 8  | 20  | 1997  | 12  | **DM**  |  M |  36  |  41  | **DM** | Dipodomys  | merriami  | Rodent  |
 | ... |||||||||||||| 
 
-Alternatively, we can use the word `USING`, as a short-hand.  In this case we are
+Alternatively, we can use the word `USING`, as a short-hand. `USING` only 
+works on columns which share the same name. In this case we are
 telling the manager that we want to combine `surveys` with `species` and that
 the common column is `species_id`.
 
@@ -83,14 +84,14 @@ actual species names.
 | 1977 | 7 | 16 | Dipodomys | merriami|
 |...||||||
 
-Many databases, including SQLite, also support a join through the WHERE clause of a query.  
+Many databases, including SQLite, also support a join through the `WHERE` clause of a query.  
 For example, you may see the query above written without an explicit JOIN.
 
 	SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
 	FROM surveys, species
 	WHERE surveys.species_id = species.species_id;
 
-For the remainder of this lesson, we'll stick with the explicit use of the JOIN keyword for 
+For the remainder of this lesson, we'll stick with the explicit use of the `JOIN` keyword for 
 joining tables in SQL.  
 
 > ## Challenge:
