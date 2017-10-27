@@ -84,6 +84,32 @@ species captured, ordered by the count:
     GROUP BY species_id
     ORDER BY COUNT(species_id);
 
+## Aliases
+
+As queries get more complex names can get long and unwieldy (as we saw before). To help make things
+clearer we can use aliases to assign new names to things in the query.
+
+We can alias both table names:
+
+    SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
+    FROM surveys AS surv
+    JOIN species AS sp
+    ON surv.species_id = sp.species_id;
+
+And column names:
+
+    SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
+    FROM surveys AS surv
+    JOIN species AS sp
+    ON surv.species_id = sp.species_id;
+
+The `AS` isn't technically required, so you could do
+
+    SELECT surv.year yr
+    FROM surveys surv;
+
+but using `AS` is much clearer so it is good style to include it.
+
 ## The `HAVING` keyword
 
 In the previous lesson, we have seen the keywords `WHERE`, allowing to
