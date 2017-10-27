@@ -86,26 +86,17 @@ species captured, ordered by the count:
 
 ## Aliases
 
-As queries get more complex names can get long and unwieldy (as we saw before). To help make things
+As queries get more complex names can get long and unwieldy. To help make things
 clearer we can use aliases to assign new names to things in the query.
 
-We can alias both table names:
+We can use aliases in column names or table names using `AS`:
 
-    SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
-    FROM surveys AS surv
-    JOIN species AS sp
-    ON surv.species_id = sp.species_id;
-
-And column names:
-
-    SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
-    FROM surveys AS surv
-    JOIN species AS sp
-    ON surv.species_id = sp.species_id;
+    SELECT MAX(year) AS last_surveyed_year
+    FROM surveys;
 
 The `AS` isn't technically required, so you could do
 
-    SELECT surv.year yr
+    SELECT MAX(year) yr
     FROM surveys surv;
 
 but using `AS` is much clearer so it is good style to include it.
