@@ -1,7 +1,7 @@
 ---
 title: "SQL Aggregation and aliases"
-teaching: 60
-exercises: 5
+teaching: 50
+exercises: 10
 questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
 - "How can I make sure column names from my queries make sense and aren't too long?"
