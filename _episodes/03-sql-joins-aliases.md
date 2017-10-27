@@ -115,7 +115,7 @@ survey data.
     SELECT COUNT(*) FROM surveys;
 
 This is because, by default, SQL only returns records where the joining value
-is present in the join columns of both tables (i.e. it takes the _intersection_
+is present in the joined columns of both tables (i.e. it takes the _intersection_
 of the two join columns). This joining behaviour is known as an `INNER JOIN`.
 In fact the `JOIN` command is simply shorthand for `INNER JOIN` and the two
 terms can be used interchangably as they will produce the same result.
@@ -134,12 +134,12 @@ table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
 > in the `species_id` column.
 {: .challenge}
 
-In SQL a `NULL` value in one table can never be joined to a NULL value in a
-second table because `NULL` is not equal to anything, even itself. 
+Remember: In SQL a `NULL` value in one table can never be joined to a `NULL` value in a
+second table because `NULL` is not equal to anything, not even itself. 
 
 ### Combining joins with sorting and aggregation
 
-Joins can be combined with sorting, filtering, and aggregation.  So, if we
+Joins can be combined with sorting, filtering, and aggregation. So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
 
@@ -159,7 +159,7 @@ could do something like
 > - Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
 {: .challenge}
 
-## Functions
+## Functions `IFNULL` and `NULLIF`
 
 SQL includes numerous functions for manipulating data. You've already seen some
 of these being used for aggregation (`SUM` and `COUNT`) but there are functions
@@ -167,7 +167,7 @@ that operate on individual values as well. Probably the most important of these
 are `IFNULL` and `NULLIF`. `IFNULL` allows us to specify a value to use in
 place of `NULL`.
 
-We can represent unknown sexes with "U" instead of `NULL`:
+We can represent unknown sexes with `'U'` instead of `NULL`:
 
     SELECT species_id, sex, IFNULL(sex, 'U')
     FROM surveys;
