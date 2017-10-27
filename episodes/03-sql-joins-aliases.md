@@ -1,21 +1,18 @@
 ---
-title: "Joins and aliases"
-teaching: 30
+title: "Joins"
+teaching: 15
 exercises: 5
 questions:
 - "How do I bring data together from separate tables?"
-- "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
 - "Employ joins to combine data from two tables."
 - "Apply functions to manipulate individual values."
-- "Employ aliases to assign new names to items in a query."
 keypoints:
 - "Use the `JOIN` command to combine data from two tables---the `ON` or `USING` keywords specify which columns link the tables."
 - "Regular `JOIN` returns only matching rows. Other join commands provide different behavior, e.g., `LEFT JOIN` retains all rows of the table on the left side of the command."
 - "`IFNULL` allows you to specify a value to use in place of `NULL`, which can help in joins"
 - "`NULLIF` can be used to replace certain values with `NULL` in results"
 - "Many other functions like `IFNULL` and `NULLIF` can operate on individual values."
-- "Aliases can help shorten long queries. To write clear and readible queries, use the `AS` keyword when creating aliases."
 ---
 
 ## Joins
