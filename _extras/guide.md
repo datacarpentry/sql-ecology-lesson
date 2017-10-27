@@ -58,19 +58,21 @@ Firefox plugin, and the Portal dataset
 * Discuss the different SQL data types
 
 **Naming conventions**
-* Names should make the uniquely identify what the data is representing
-* Names should be descriptive and familiar
-* Names should adhere to certain standards: (General Tips)
-	* Should not contain spaces (for example, NameOfData)
-	* Should not start with numbers (for example, Name1)
-	* They should be full words, not abbreviations (for example, Doctor)
-	* Underscores can separate words (for example, name_of_data)
-	* Data types are not names (for example, integerData)
-	* Names are often in lowercase (for example, name)
-	* Avoid quotes when naming a table or field
 * Naming conventions are important because: 
 	* Names are used more than once
 	* Names are not usually subject to change (for example, spelling errors)
+	
+* Names should uniquely identify what the data is representing
+* Names should be descriptive and familiar
+* Names should adhere to certain standards: (General Tips)
+	* Names should not contain spaces (for example, nameofdata)
+	* Names should not start with numbers, rather add numbers at the end of the name (for example, name1)
+	* Names should be full words, not abbreviations (for example, doctor)
+	* Underscores can separate words (for example, name_of_data)
+	* Data types are not names (for example, integerData instead of integer)
+	* Names are often in lowercase (for example, name)
+	* DO NOT use quotes when naming a table or field
+
 
 **Tips**
 
