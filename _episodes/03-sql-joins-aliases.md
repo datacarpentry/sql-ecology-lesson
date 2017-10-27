@@ -1,7 +1,7 @@
 ---
 title: "Joins"
 teaching: 15
-exercises: 5
+exercises: 10
 questions:
 - "How do I bring data together from separate tables?"
 objectives:
