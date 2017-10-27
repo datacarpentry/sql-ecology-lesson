@@ -103,11 +103,11 @@ but using `AS` is much clearer so it is good style to include it.
 
 ## The `HAVING` keyword
 
-In the previous lesson, we have seen the keywords `WHERE`, allowing to
+In the previous episode, we have seen the keyword `WHERE`, allowing to
 filter the results according to some criteria. SQL offers a mechanism to
-filter the results based on aggregate functions, through the `HAVING` keyword.
+filter the results based on **aggregate functions**, through the `HAVING` keyword.
 
-For example, we can adapt the last request we wrote to only return information
+For example, we can request to only return information
 about species with a count higher than 10:
 
     SELECT species_id, COUNT(species_id)
@@ -116,9 +116,9 @@ about species with a count higher than 10:
     HAVING COUNT(species_id) > 10;
 
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
-aggregate functions instead of database fields.
+aggregate functions instead of database fields to filter.
 
-If you use `AS` in your query to rename a column, `HAVING` can use this
+If you use `AS` in your query to rename a column, `HAVING` you can use this
 information to make the query more readable. For example, in the above
 query, we can call the `COUNT(species_id)` by another name, like
 `occurrences`. This can be written this way:
@@ -129,8 +129,8 @@ query, we can call the `COUNT(species_id)` by another name, like
     HAVING occurrences > 10;
 
 Note that in both queries, `HAVING` comes *after* `GROUP BY`. One way to
-think about this is: the data are retrieved (`SELECT`), can be filtered
-(`WHERE`), then joined in groups (`GROUP BY`); finally, we only select some
+think about this is: the data are retrieved (`SELECT`), which can be filtered
+(`WHERE`), then joined in groups (`GROUP BY`); finally, we can filter again based on some
 of these groups (`HAVING`).
 
 > ## Challenge
