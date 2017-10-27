@@ -159,7 +159,7 @@ could do something like
 > - Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
 {: .challenge}
 
-## Functions `IFNULL` and `NULLIF`
+## Functions `IFNULL` and `NULLIF` and more
 
 SQL includes numerous functions for manipulating data. You've already seen some
 of these being used for aggregation (`SUM` and `COUNT`) but there are functions
@@ -242,31 +242,14 @@ table below:
 > to shortest.
 {: .challenge}
 
-## Aliases
-
-As queries get more complex names can get long and unwieldy (as we saw before). To help make things
-clearer we can use aliases to assign new names to things in the query.
-
-We can alias both table names:
-
-    SELECT surv.year, surv.month, surv.day, sp.genus, sp.species
-    FROM surveys AS surv
-    JOIN species AS sp
-    ON surv.species_id = sp.species_id;
-
-And column names:
+As we saw before, aliases make things clearer, and are especially useful when joining tables.
 
     SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
     FROM surveys AS surv
     JOIN species AS sp
     ON surv.species_id = sp.species_id;
-
-The `AS` isn't technically required, so you could do
-
-    SELECT surv.year yr
-    FROM surveys surv;
-
-but using `AS` is much clearer so it is good style to include it.
+    
+To practice we have some optional challenges for you.
 
 > ## Challenge (optional):
 >
