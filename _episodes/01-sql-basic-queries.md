@@ -89,6 +89,9 @@ functions. For example, we could round the values to make them easier to read.
 >
 > - Write a query that returns The year, month, day, species_id and weight in mg
 {: .challenge}
+> ## Solution
+> SELECT year, month, day, species_id, weight * 1000.0
+> FROM surveys;
 
 ## Filtering
 
