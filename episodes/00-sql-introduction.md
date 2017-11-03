@@ -6,9 +6,11 @@ questions:
 - "What is a relational database and why should I use it?"
 - "What is SQL?"
 objectives:
-- "Understand the benefits of using a relational database"
-- "Set up a small database from csv files using SQLite"
-- "Understand SQLite data types"
+- "Describe why relational databases are useful."
+- "Create and populate a database from a text file."
+- "Define SQLite data types."
+- "Select, group, add to, and analyze subsets of data."
+- "Combine data across multiple tables."
 keypoints:
 - "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
 - "A relational database is made up of tables which are related to each other by shared keys."
