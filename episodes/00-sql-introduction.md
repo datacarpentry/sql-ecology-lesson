@@ -21,12 +21,10 @@ keypoints:
 
 _Note: this should have been done by participants before the start of the workshop._
 
-We use [SQLite Manager](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/)
-and the 
+We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
 [Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
-instructions on how to download the data, and also how to install and open
-SQLite Manager.
+instructions on how to download the data, and also how to install DB Browser for SQLite.
 
 # Motivation
 
