@@ -49,6 +49,17 @@ There are many other aggregate functions included in SQL, for example:
 > Write a query that returns: total weight, average weight, and the min and max weights
 > for all animals caught over the duration of the survey.
 > Can you modify it so that it outputs these values only for weights between 5 and 10?
+>
+> > ## Solution
+> > ~~~
+> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
+> > FROM surveys
+> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
+> > FROM surveys
+> > WHERE (weight > 5 AND weight < 10)
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 Now, let's see how many individuals were counted in each species. We do this
@@ -71,6 +82,24 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 > 2. Average weight of each species in each year.
 >
 > Can you modify the above queries combining them into one?
+>
+> > ## Solution 1
+> > ~~~
+> > SELECT year, COUNT(*)
+> > FROM surveys
+> > GROUP BY year;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+>
+> > ## Solution 2
+> > ~~~
+> > SELECT year, species_id, ROUND(AVG(weight), 
+> > FROM surveys
+> > GROUP BY year, species_id;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Ordering Aggregated Results
@@ -137,6 +166,16 @@ of these groups (`HAVING`).
 >
 > Write a query that returns, from the `species` table, the number of
 > `genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+>
+> > ## Solution
+> > ~~~
+> > SELECT taxa, genus, COUNT(*) as n
+> > FROM species
+> > GROUP BY taxa
+> > HAVING n > 10
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Saving Queries for Future Use
