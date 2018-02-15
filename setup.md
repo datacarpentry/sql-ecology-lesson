@@ -26,13 +26,15 @@ in our lessons.
     
 
 We will use [SQLite Manager](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/)
-    plugin for the [Firefox web browser](https://www.mozilla.org/en-US/firefox/new/). If you don't have Firefox installed, you need to install it first and
+    plugin for the [Firefox web browser](https://www.mozilla.org/en-US/firefox/organizations/all/). If you don't have Firefox installed, you need to install it first and
     then you will be able to add the plugin.
+    
+Important note: The SQLite Manager plugin does not work with the latest versions of Firefox (v. 57 and later). If you need to download and install Firefox for this lesson, please install the Extended Service Release (ESR) version as described below. This version will be supported until mid-2018, at which point the SQLite Manager plugin will no longer be usable for this lesson. If you already have Firefox v. 57 or later installed on your machine, you will also need to download the ESR version in order to install the plugin.
 
 
 ### Windows
 
-- If you don't already have Firefox, download Firefox from the [Firefox download page](https://www.mozilla.org/en-US/firefox/new/)
+- If you don't already have Firefox, download Firefox ESR from the [Firefox download page](https://www.mozilla.org/en-US/firefox/organizations/all/)
 - Install Firefox following the installer instructions
 - Install the SQLite Manager add on:  
 Within Firefox, go to [https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/). 
@@ -48,7 +50,7 @@ Manager icon to one of the empty menu squares on the right, Exit Customize**
 
 ### Mac
 
-- If you don't already have Firefox, download Firefox from the [Firefox download page](https://www.mozilla.org/en-US/firefox/new/)
+- If you don't already have Firefox, download Firefox ESR from the [Firefox download page](https://www.mozilla.org/en-US/firefox/organizations/all/)
 - Install Firefox following the installer instructions
 - Install the SQLite Manager add on:  
 Within Firefox, go to [https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/](https://addons.mozilla.org/en-us/firefox/addon/sqlite-manager/). 
