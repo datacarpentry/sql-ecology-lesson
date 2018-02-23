@@ -118,15 +118,17 @@ about species with a count higher than 10:
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields to filter.
 
-If you use `AS` in your query to rename a column, `HAVING` you can use this
-information to make the query more readable. For example, in the above
-query, we can call the `COUNT(species_id)` by another name, like
-`occurrences`. This can be written this way:
+The `AS` keyword can be used to assign an alias to a column or a table.
+For example, in the above query, we can call the `COUNT(species_id)` by
+another name, like `occurrences`. This can be written this way:
 
     SELECT species_id, COUNT(species_id) AS occurrences
     FROM surveys
     GROUP BY species_id
     HAVING occurrences > 10;
+
+Using this temporary name in the `HAVING` statement makes the query more
+readable. Remember that an alias only exists for the duration of the query.
 
 Note that in both queries, `HAVING` comes *after* `GROUP BY`. One way to
 think about this is: the data are retrieved (`SELECT`), which can be filtered
@@ -148,7 +150,7 @@ and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
 
-Creating a view from a query requires to add `CREATE VIEW viewname AS`
+Creating a view from a query requires the addition of `CREATE VIEW viewname AS`
 before the query itself. For example, imagine that my project only covers
 the data gathered during the summer (May - September) of 2000.  That
 query would look like:
