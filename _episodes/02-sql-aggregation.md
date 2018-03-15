@@ -65,12 +65,11 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Write queries that return:
 >
-> 1. How many individuals were counted in each year
->    *   in total
->    *   per each species
-> 2. Average weight of each species in each year.
+> 1. How many individuals were counted in each year in total
+> 2. How many were counted each year, for each different species
+> 3. The average weights of each species in each year
 >
-> Can you modify the above queries combining them into one?
+> Can you get the answer to both 2 and 3 in a single query?
 {: .challenge}
 
 ## Ordering Aggregated Results
