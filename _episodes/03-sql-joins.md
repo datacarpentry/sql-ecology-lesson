@@ -99,6 +99,16 @@ joining tables in SQL.
 >
 > - Write a query that returns the genus, the species, and the weight
 > of every individual captured at the site
+>
+> > ## Solution
+> > ~~~
+> > SELECT species.genus, species.species_id, surveys.weight
+> > FROM surveys
+> > JOIN species
+> > ON surveys.species_id = species.species_id;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ### Different join types
@@ -128,11 +138,29 @@ table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
 >
 > - Re-write the original query to keep all the entries present in the `surveys`
 > table. How many records are returned by this query?
+>
+> > ## Solution
+> > ~~~
+> > SELECT * FROM surveys
+> > LEFT JOIN species
+> > USING (species_id)
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 > ## Challenge:
 > - Count the number of records in the `surveys` table that have a `NULL` value
 > in the `species_id` column.
+>
+> > ## Solution
+> > ~~~
+> > SELECT COUNT(*)
+> > FROM surveys
+> > WHERE species_id IS NULL
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 Remember: In SQL a `NULL` value in one table can never be joined to a `NULL` value in a
@@ -153,11 +181,34 @@ could do something like
 > ## Challenge:
 >
 > - Write a query that returns the number of genus of the animals caught in each plot in descending order.
+>
+> > ## Solution
+> > ~~~
+> > ELECT surveys.plot_id, species.genus, COUNT(*)
+> > FROM surveys
+> > JOIN species
+> > ON surveys.species_id = species.species_id
+> > GROUP BY species.genus, surveys.plot_id
+> > ORDER BY surveys.plot_id DESC
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 > ## Challenge:
 >
 > - Write a query that finds the average weight of each rodent species (i.e., only include species with Rodent in the taxa field).
+>
+> > ## Solution
+> > ~~~
+> > SELECT AVG(surveys.weight)
+> > FROM surveys
+> > JOIN species
+> > ON surveys.species_id = species.species_id
+> > WHERE species.taxa='Rodent';
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Functions `IFNULL` and `NULLIF` and more
@@ -180,11 +231,28 @@ The lone "sex" column is only included in the query above to illustrate where
 >
 > - Write a query that returns 30 instead of `NULL` for values in the
 > `hindfoot_length` column.
+>
+> > ## Solution
+> > ~~~
+> > SELECT hindfoot_length, IFNULL(hindfoot_length,30)
+> > FROM surveys;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 > ## Challenge:
 >
 > - Write a query that calculates the average hind-foot length of each species,
+>
+> > ## Solution
+> > ~~~
+> > SELECT species_id, avg(IFNULL(hindfoot_length,30))
+> > FROM surveys
+> > GROUP BY species_id;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 > assuming that unknown lengths are 30 (as above).
 {: .challenge}
 
@@ -203,6 +271,16 @@ a valid joining value:
 > - Write a query that returns the number of genus of the animals caught in each
 > plot, using `IFNULL` to assume that unknown species are all of the genus
 > "Rodent".
+>
+> > ## Solution
+> > ~~~
+> > SELECT genus, plot_id, IFNULL(genus, 'Rodent') AS genus2, COUNT(*)
+> > FROM surveys LEFT JOIN species
+> > ON surveys.species_id=species.species_id
+> > GROUP BY plot_id, genus2
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 The inverse of `IFNULL` is `NULLIF`. This returns `NULL` if the first argument
@@ -240,6 +318,15 @@ table below:
 > ## Challenge:
 >
 > Write a query that returns genus names, sorted from longest genus name down
+>
+> > ## Solution
+> > ~~~
+> > SELECT genus
+> > FROM species
+> > ORDER BY LENGTH(genus) DESC
+> > ~~~
+> > {: .sql}
+> {: .solution}
 > to shortest.
 {: .challenge}
 
