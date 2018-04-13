@@ -88,6 +88,18 @@ functions. For example, we could round the values to make them easier to read.
 > ## Challenge
 >
 > - Write a query that returns The year, month, day, species_id and weight in mg
+
+> > ## Solution
+> >    SELECT year, month, day, species_id, weight * 1000
+> >    FROM surveys ;
+
+> > Solution Notes
+> > - There are some NULL values in the weight column
+> > - The last column will be named "weight * 1000"
+> > This can be changed by providing an alias (discussed later)
+> >
+> {: .solution}
+
 {: .challenge}
 
 ## Filtering
@@ -129,9 +141,30 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
 > ## Challenge
 >
-> - Produce a table listing the data for all individuals in Plot 1 
+> - Write a query that returns the data for all individuals in Plot 1 
 > that weighed more than 75 grams, telling us the date, species id code, and weight
-> (in kg). 
+> (in kg).
+> > ## Solution
+> > SELECT year, month, day, species_id, weight / 1000.0
+> > FROM surveys
+> > WHERE plot_id = 1 
+> > AND weight > 75 ;
+> > 
+> > Solution Notes
+> > - Use division by 1000.0 to force floating point division
+> > what happens if you divide by 1000 (an integer) ?
+> > - Unaltered column "weight" appears in the filter in the WHERE clause
+> > even though "weight / 1000.0" appears in the SELECT clause
+> > Either way will work, by writing it this way the code in the WHERE clause
+> > closely matches the
+> > problem statement (code is more easily verified to be correct).   
+> > - We are filtering on plot_id in the WHERE clause
+> > even though it is not in the SELECT clause.
+> > - There are no longer any rows with NULL value in the weight column
+> > because NULL is not > 75(NULL can never be greater than, less than or equal to anything else)
+
+> {: .solution}
+
 {: .challenge}
 
 ## Building more complex queries
@@ -203,31 +236,46 @@ To truly be alphabetical, we might want to order by genus then species.
 >
 > - Write a query that returns year, species_id, and weight in kg from
 > the surveys table, sorted with the largest weights at the top.
+
+> > ## Solution
+> > 
+> > SELECT year, species_id, weight / 1000.0
+> > FROM surveys
+> > ORDER BY weight DESC ;
+
+> > Solution Notes
+> > - Order on the weight column itself, as opposed to the calculation derived from weight
+> > this makes it easier to compare the code to the problem statement
+> > 
+> {: .solution}
+
 {: .challenge}
 
-## Order of execution
+## Independence of Columns in the SQL Statement clauses
 
-Another note for ordering. We don’t actually have to display a column to sort by
-it.  For example, let’s say we want to order the birds by their species ID, but
-we only want to see genus and species.
+We don’t actually have to display a column to sort by
+it.  For example, let’s say we want to see genus and species
+only for members of the Bird taxon,
+and we want to sort the rows based on the
+values in yet another column, species_id.
 
     SELECT genus, species
     FROM species
     WHERE taxa = 'Bird'
     ORDER BY species_id ASC;
 
-We can do this because sorting occurs earlier in the computational pipeline than
-field selection.
+The clauses of the SQL statement are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER BY`. But there is no requirement for the
+columns in the `WHERE` clause or `ORDER BY` clause to also be included in
+the `SELECT` clause.
 
-The computer is basically doing this:
+Finally, SQL is very tolerant of white space variation and insensitive
+to the case of the key words. It is possible to write a query as a single line, like this
 
-1. Filtering rows according to WHERE
-2. Sorting results according to ORDER BY
-3. Displaying requested columns or expressions.
+    select genus,species from species where taxa='Bird'order by species_id asc;
 
-Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
-BY`. It is possible to write a query as a single line, but for readability,
-we recommend to put each clause on its own line.
+For readability, we recommend to put each clause 
+on its own line, indent and space in a consistent manner
+and capitalize SQL key words.
 
 > ## Challenge
 >
@@ -237,5 +285,25 @@ we recommend to put each clause on its own line.
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
-{: .challenge}
 
+> > ## Solution
+> > 
+> > select year,month,day,species_id,round(weight/1000.0,2) from surveys where year=1999 order by species_id asc;
+> > 
+
+> > Compared to:
+
+> > SELECT year, month, day, species_id,
+> >   ROUND(weight / 1000.0, 2)
+> > FROM surveys
+> > WHERE year=1999 
+> > ORDER BY species_id ASC;
+
+> > If you return to work on this code 6 months from now, which style would you prefer?
+
+> > Solution Notes
+> > - NULLs are present in both species_id and weight columns
+
+> {: .solution}
+
+{: .challenge}
