@@ -97,12 +97,12 @@ joining tables in SQL.
 
 > ## Challenge:
 >
-> - Write a query that returns the genus, the species, and the weight
+> - Write a query that returns the genus, the species name, and the weight
 > of every individual captured at the site
 >
 > > ## Solution
 > > ~~~
-> > SELECT species.genus, species.species_id, surveys.weight
+> > SELECT species.genus, species.species, surveys.weight
 > > FROM surveys
 > > JOIN species
 > > ON surveys.species_id = species.species_id;
@@ -143,7 +143,7 @@ table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
 > > ~~~
 > > SELECT * FROM surveys
 > > LEFT JOIN species
-> > USING (species_id)
+> > USING (species_id);
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -157,7 +157,7 @@ table by using the command `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
 > > ~~~
 > > SELECT COUNT(*)
 > > FROM surveys
-> > WHERE species_id IS NULL
+> > WHERE species_id IS NULL;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -180,16 +180,17 @@ could do something like
 
 > ## Challenge:
 >
-> - Write a query that returns the number of genus of the animals caught in each plot in descending order.
+> - Write a query that returns the number of animals caught per genus in each plot. 
+> Order the results by plot number (ascending) and by descending number of individuals in each plot.
 >
 > > ## Solution
 > > ~~~
-> > ELECT surveys.plot_id, species.genus, COUNT(*)
+> > SELECT surveys.plot_id, species.genus, COUNT(*) AS number_indiv
 > > FROM surveys
 > > JOIN species
 > > ON surveys.species_id = species.species_id
 > > GROUP BY species.genus, surveys.plot_id
-> > ORDER BY surveys.plot_id DESC
+> > ORDER BY surveys.plot_id ASC, number_indiv DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -201,11 +202,12 @@ could do something like
 >
 > > ## Solution
 > > ~~~
-> > SELECT AVG(surveys.weight)
+> > SELECT surveys.species_id, AVG(surveys.weight)
 > > FROM surveys
 > > JOIN species
 > > ON surveys.species_id = species.species_id
-> > WHERE species.taxa='Rodent';
+> > WHERE species.taxa = 'Rodent'
+> > GROUP BY surveys.species_id;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -234,7 +236,7 @@ The lone "sex" column is only included in the query above to illustrate where
 >
 > > ## Solution
 > > ~~~
-> > SELECT hindfoot_length, IFNULL(hindfoot_length,30)
+> > SELECT hindfoot_length, IFNULL(hindfoot_length, 30)
 > > FROM surveys;
 > > ~~~
 > > {: .sql}
@@ -244,6 +246,7 @@ The lone "sex" column is only included in the query above to illustrate where
 > ## Challenge:
 >
 > - Write a query that calculates the average hind-foot length of each species,
+> assuming that unknown lengths are 30 (as above).
 >
 > > ## Solution
 > > ~~~
@@ -253,7 +256,6 @@ The lone "sex" column is only included in the query above to illustrate where
 > > ~~~
 > > {: .sql}
 > {: .solution}
-> assuming that unknown lengths are 30 (as above).
 {: .challenge}
 
 `IFNULL` can be particularly useful in `JOIN`. When joining the `species` and
@@ -268,16 +270,17 @@ a valid joining value:
 
 > ## Challenge:
 >
-> - Write a query that returns the number of genus of the animals caught in each
+> - Write a query that returns the number of animals caught per genus in each
 > plot, using `IFNULL` to assume that unknown species are all of the genus
 > "Rodent".
 >
 > > ## Solution
 > > ~~~
-> > SELECT genus, plot_id, IFNULL(genus, 'Rodent') AS genus2, COUNT(*)
-> > FROM surveys LEFT JOIN species
+> > SELECT plot_id, IFNULL(genus, 'Rodent') AS genus2, COUNT(*)
+> > FROM surveys 
+> > LEFT JOIN species
 > > ON surveys.species_id=species.species_id
-> > GROUP BY plot_id, genus2
+> > GROUP BY plot_id, genus2;
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -317,17 +320,18 @@ table below:
 
 > ## Challenge:
 >
-> Write a query that returns genus names, sorted from longest genus name down
+> Write a query that returns genus names (no repeats), sorted from longest genus name down
+> to shortest.
 >
 > > ## Solution
 > > ~~~
-> > SELECT genus
+> > SELECT DISTINCT genus
 > > FROM species
-> > ORDER BY LENGTH(genus) DESC
+> > ORDER BY LENGTH(genus) DESC;
 > > ~~~
 > > {: .sql}
 > {: .solution}
-> to shortest.
+>
 {: .challenge}
 
 As we saw before, aliases make things clearer, and are especially useful when joining tables.
