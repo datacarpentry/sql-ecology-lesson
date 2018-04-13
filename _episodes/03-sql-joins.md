@@ -357,30 +357,75 @@ To practice we have some optional challenges for you.
 > 
 > 4. What is the average weight of each taxa?  
 > 
-> 5. What is the percentage of each species in each taxa?  
-> 
-> 6. What are the minimum, maximum and average weight for each species of Rodent?  
+> 5. What are the minimum, maximum and average weight for each species of Rodent?  
 >
-> 7. What is the average hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
+> 6. What is the average hindfoot length for male and female rodent of each species? Is there a Male / Female difference?  
 > 
-> 8. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
+> 7. What is the average weight of each rodent species over the course of the years? Is there any noticeable trend for any of the species?  
 >
 > > ## Proposed solutions:
 > >
-> > 1. Solution: `SELECT plot_type, count(*) AS num_plots  FROM plots  GROUP BY plot_type  ORDER BY num_plots DESC`
+> > 1. Solution: 
+> > ~~~
+> > SELECT plot_type, COUNT(*) AS num_plots
+> > FROM plots
+> > GROUP BY plot_type;
+> > ~~~
+> > {: .sql}
 > >
-> > 2. Solution: `SELECT year, sex, count(*) AS num_animal  FROM surveys  WHERE sex IS NOT null  GROUP BY sex, year`
+> > 2. Solution:
+> > ~~~
+> > SELECT year, sex, COUNT(*) AS num_animal
+> > FROM surveys
+> > WHERE sex IS NOT NULL
+> > GROUP BY sex, year;
+> > ~~~
+> > {: .sql}
 > >
-> > 3. Solution: `SELECT species_id, plot_type, count(*) FROM surveys JOIN plots ON surveys.plot_id=plots.plot_id WHERE species_id IS NOT null GROUP BY species_id, plot_type`
+> > 3. Solution: 
+> > ~~~
+> > SELECT species_id, plot_type, COUNT(*) 
+> > FROM surveys 
+> > JOIN plots USING(plot_id) 
+> > WHERE species_id IS NOT NULL 
+> > GROUP BY species_id, plot_type;
+> > ~~~
+> > {: .sql}
 > >
-> > 4. Solution: `SELECT taxa, AVG(weight) FROM surveys JOIN species ON species.species_id=surveys.species_id GROUP BY taxa`
+> > 4. Solution:
+> > ~~~
+> > SELECT taxa, AVG(weight) 
+> > FROM surveys 
+> > JOIN species ON species.species_id = surveys.species_id
+> > GROUP BY taxa;
+> > ~~~
+> > {: .sql}
 > >
-> > 5. Solution: `SELECT taxa, 100.0*count(*)/(SELECT count(*) FROM surveys) FROM surveys JOIN species ON surveys.species_id=species.species_id GROUP BY taxa`
+> > 5. Solution:
+> > ~~~
+> > SELECT surveys.species_id, MIN(weight), MAX(weight), AVG(weight) FROM surveys 
+> > JOIN species ON surveys.species_id = species.species_id 
+> > WHERE taxa = 'Rodent' 
+> > GROUP BY surveys.species_id;
+> > ~~~
+> > {: .sql}
 > >
-> > 6. Solution: `SELECT surveys.species_id, MIN(weight) as min_weight, MAX(weight) as max_weight, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id`
+> > 6. Solution:
+> > ~~~
+> > SELECT surveys.species_id, sex, AVG(hindfoot_length)
+> > FROM surveys JOIN species ON surveys.species_id = species.species_id 
+> > WHERE (taxa = 'Rodent') AND (sex IS NOT NULL) 
+> > GROUP BY surveys.species_id, sex;
+> > ~~~
+> > {: .sql}
 > >
-> > 7. Solution: `SELECT surveys.species_id, sex, AVG(hindfoot_length) as mean_foot_length  FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' AND sex IS NOT NULL GROUP BY surveys.species_id, sex`
-> >
-> > 8. Solution: `SELECT surveys.species_id, year, AVG(weight) as mean_weight FROM surveys JOIN species ON surveys.species_id=species.species_id WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year`
+> > 7. Solution:
+> > ~~~
+> > SELECT surveys.species_id, year, AVG(weight) as mean_weight
+> > FROM surveys 
+> > JOIN species ON surveys.species_id = species.species_id 
+> > WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year;
+> > ~~~
+> > {: .sql}
 > {: .solution}
 {: .challenge}
