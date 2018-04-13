@@ -87,7 +87,7 @@ functions. For example, we could round the values to make them easier to read.
 
 > ## Challenge
 >
-> - Write a query that returns the year, month, day, species_id and weight in mg
+> - Write a query that returns the year, month, day, species_id and weight in mg.
 >
 > > ## Solution
 > > ~~~
@@ -143,9 +143,9 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 >
 > > ## Solution
 > > ~~~
-> > SELECT day, month, year, species_id, weight / 1000.0
+> > SELECT day, month, year, species_id, weight / 1000
 > > FROM surveys
-> > WHERE (plot_id = 1 AND weight > 75);
+> > WHERE (plot_id = 1) AND (weight > 75);
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -258,7 +258,7 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query.  Using the surveys table write a query to display the three date fields,
+> query. Using the surveys table write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and

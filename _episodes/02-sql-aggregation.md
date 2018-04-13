@@ -46,17 +46,20 @@ There are many other aggregate functions included in SQL, for example:
 
 > ## Challenge
 >
-> Write a query that returns: total weight, average weight, and the min and max weights
+> Write a query that returns: the total weight, average weight, minimum and maximum weights
 > for all animals caught over the duration of the survey.
 > Can you modify it so that it outputs these values only for weights between 5 and 10?
 >
 > > ## Solution
 > > ~~~
+> > -- All animals
+> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
+> > FROM surveys;
+> >
+> > -- Only weights between 5 and 10
 > > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
 > > FROM surveys
-> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
-> > FROM surveys
-> > WHERE (weight > 5 AND weight < 10)
+> > WHERE (weight > 5) AND (weight < 10);
 > > ~~~
 > > {: .sql}
 > {: .solution}
@@ -82,7 +85,7 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Can you get the answer to both 2 and 3 in a single query?
 >
-> > ## Solution 1
+> > ## Solution of 1
 > > ~~~
 > > SELECT year, COUNT(*)
 > > FROM surveys
@@ -91,9 +94,9 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 > > {: .sql}
 > {: .solution}
 >
-> > ## Solution 2
+> > ## Solution of 2 and 3
 > > ~~~
-> > SELECT year, species_id, ROUND(AVG(weight), 
+> > SELECT year, species_id, COUNT(*), AVG(weight) 
 > > FROM surveys
 > > GROUP BY year, species_id;
 > > ~~~
@@ -164,14 +167,14 @@ of these groups (`HAVING`).
 > ## Challenge
 >
 > Write a query that returns, from the `species` table, the number of
-> `genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+> `species` in each `taxa`, only for the `taxa` with more than 10 `species`.
 >
 > > ## Solution
 > > ~~~
-> > SELECT taxa, genus, COUNT(*) as n
+> > SELECT taxa, COUNT(*) AS n
 > > FROM species
 > > GROUP BY taxa
-> > HAVING n > 10
+> > HAVING n > 10;
 > > ~~~
 > > {: .sql}
 > {: .solution}
