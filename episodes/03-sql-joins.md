@@ -180,7 +180,7 @@ could do something like
 
 > ## Challenge:
 >
-> - Write a query that returns the number of animals caught per genus in each plot. 
+> - Write a query that returns the number of animals caught of each genus in each plot. 
 > Order the results by plot number (ascending) and by descending number of individuals in each plot.
 >
 > > ## Solution
@@ -250,7 +250,7 @@ The lone "sex" column is only included in the query above to illustrate where
 >
 > > ## Solution
 > > ~~~
-> > SELECT species_id, avg(IFNULL(hindfoot_length,30))
+> > SELECT species_id, AVG(IFNULL(hindfoot_length,30))
 > > FROM surveys
 > > GROUP BY species_id;
 > > ~~~
@@ -270,7 +270,7 @@ a valid joining value:
 
 > ## Challenge:
 >
-> - Write a query that returns the number of animals caught per genus in each
+> - Write a query that returns the number of animals caught of each genus in each
 > plot, using `IFNULL` to assume that unknown species are all of the genus
 > "Rodent".
 >
