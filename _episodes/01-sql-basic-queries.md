@@ -87,7 +87,15 @@ functions. For example, we could round the values to make them easier to read.
 
 > ## Challenge
 >
-> - Write a query that returns The year, month, day, species_id and weight in mg
+> - Write a query that returns the year, month, day, species_id and weight in mg.
+>
+> > ## Solution
+> > ~~~
+> > SELECT day, month, year, species_id, weight * 1000
+> > FROM surveys;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Filtering
@@ -132,6 +140,15 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 > - Produce a table listing the data for all individuals in Plot 1 
 > that weighed more than 75 grams, telling us the date, species id code, and weight
 > (in kg). 
+>
+> > ## Solution
+> > ~~~
+> > SELECT day, month, year, species_id, weight / 1000
+> > FROM surveys
+> > WHERE (plot_id = 1) AND (weight > 75);
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Building more complex queries
@@ -203,6 +220,15 @@ To truly be alphabetical, we might want to order by genus then species.
 >
 > - Write a query that returns year, species_id, and weight in kg from
 > the surveys table, sorted with the largest weights at the top.
+>
+> > ## Solution
+> > ~~~
+> > SELECT year, species_id, weight / 1000
+> > FROM surveys
+> > ORDER BY weight DESC;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Order of execution
@@ -232,10 +258,19 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query.  Using the surveys table write a query to display the three date fields,
+> query. Using the surveys table write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and
 > see how more legible the query becomes!
+>
+> > ## Solution
+> > ~~~
+> > SELECT year, month, day, species_id, ROUND(weight / 1000, 2)
+> > FROM surveys
+> > WHERE year = 1999
+> > ORDER BY species_id;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
-
