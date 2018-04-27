@@ -9,5 +9,5 @@ on how to contribute updates, bug fixes, or other corrections.
 
 ## Maintainers
 
-* Paula Andrea Martinez ([@orchid00](https://github.com/orchid00))
 * Timothée Poisot ([@tpoisot](https://github.com/tpoisot))
+* Rémi Rampin ([@remram44](https://github.com/remram44))
