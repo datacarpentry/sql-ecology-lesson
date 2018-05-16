@@ -29,7 +29,7 @@ the "Execute SQL" tab. Click 'Run SQL' to execute the query in the box.
     FROM surveys;
 
 We have capitalized the words SELECT and FROM because they are SQL keywords.
-SQL is case insensitive, but it helps for readability, and is good style.
+SQL is not case insensitive, but it helps for readability, and is good style.
 
 If we want more information, we can just add a new column to the list of fields,
 right after SELECT:
