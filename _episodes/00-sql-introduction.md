@@ -135,25 +135,21 @@ export data and the [details of data types](#datatypediffs).
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
 file from the Portal Project dataset that we downloaded during
-[Setup](/sql-ecology-lesson/setup/). Clicking on the "open file" icon, then
+[Setup](/sql-ecology-lesson/setup/). Clicking on the "Open Database" button, then
 find that file and clicking on it will open the database.
 
-You can see the tables in the database by looking at the left hand side of the
-screen under Tables, where each table corresponds to one of the `csv` files 
-we were exploring earlier.  To see the contents of any table, click on it, and
-then click the “Browse and Search” tab in the right panel.  This will 
-give us a view that we're used to - just a copy of the table.  Hopefully this 
+You can see the tables in the database by looking at the "Database Structure" tab under Tables, where each table corresponds to one of the `csv` files 
+we were exploring earlier.  To see the contents of any table, right-click on it (Control key+click on Mac), and
+select Browse Table.  This will 
+give us a view that we're used to - just a copy of the table.  This 
 helps to show that a database is, in some sense, just a collection of tables, 
 where there's some value in the tables that allows them to be connected to each 
 other (the "related" part of "relational database").  
 
-The leftmost tab, "Structure", provides some metadata about each table.  It 
-describes the columns, often called *fields*. (The rows of a database table 
-are called *records*.)  If you scroll down in the Structure view, you'll 
-see a list of fields, their labels, and their data *type*.  Each field contains 
-one variety or type of data, often numbers or text.  You can see in the 
+Back in the "Database Structure" tab, double click on a table to see the columns in that table, often called *fields*, along with each field's data *type* (The rows of a database table are called *records*.)   Each field contains 
+one variety, or type of data, often numbers or text.  You can see in the 
 `surveys` table that most fields contain numbers (integers) while the `species` 
-table is nearly all text.  
+table is all text.  
 
 The "Execute SQL" tab is blank now - this is where we'll be typing our queries 
 to retrieve information from the database tables.  
@@ -184,16 +180,16 @@ we downloaded earlier.  Close the currently open database and then
 follow these instructions: 
 
 1. Start a New Database 
-    - **Database -> New Database**
-    - Give a name **Ok -> Open**. Creates the database in the opened folder
-2. Start the import **Database -> Import**
+    - Click the **New Database** button
+    - Give a name and click Save to create the database in the opened folder
+    - In the "Edit table definition" window that pops up, click cancel as we will be importing tables, not creating them from scratch
+2. Click **File -> Import -> Table From CSV**
 3. Select the `surveys.csv` file to import
 4. Give the table a name that matches the file name (`surveys`), or use the default
-5. If the first row has column headings, check the appropriate box
-6. Make sure the delimiter and quotation options are appropriate for the CSV files.  Ensure 'Ignore trailing Separator/Delimiter' is left *unchecked*.
-7. Press **OK**
-8. When asked if you want to modify the table, click **OK**
-9. Set the data types for each field using the suggestions in the table below (this includes fields from `plots` and `species` tables also):
+5. Check the "Columns names in first line" box
+6. Since we are dealing with CSV files, make sure the field separator is set to ",". Also, set the quote character to double-quotes
+7. Press **OK**, you should subsequently get a message that the table was imported.
+8. In the "Database Structure" tab, right-click the `surveys` table and click **Modify Table**. Set the data types for each field using the suggestions in the table below (this includes fields from `plots` and `species` tables also):
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
@@ -212,7 +208,7 @@ follow these instructions:
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
 
-Finally, click **OK** one more time to confirm the operation.
+Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
 
 > ## Challenge
