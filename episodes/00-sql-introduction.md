@@ -23,7 +23,7 @@ _Note: this should have been done by participants before the start of the worksh
 
 We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
 [Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
-throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
+throughout this lesson. See [Setup](../setup.html) for
 instructions on how to download the data, and also how to install DB Browser for SQLite.
 
 # Motivation
