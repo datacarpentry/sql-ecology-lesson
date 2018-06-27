@@ -174,7 +174,7 @@ To summarize:
 * No redundant information
     * Split into separate tables with one table per class of information
     * Needs an identifier in common between tables – shared column - to
-       reconnect (known as a *foreign key*).
+       reconnect (known as a *foreign key*). Choose identifiers that are somewhat self-explanatory, explain further in a readme file, or of course, separate database table (imagine how an outsider, maybe 10 years from now, would struggle without a proper explanation)
 
 ## Import
 
