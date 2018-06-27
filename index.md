@@ -8,7 +8,7 @@ Databases are useful for both storing and using data effectively. Using a relati
 - It keeps your data separate from your analysis. This means there’s no risk of accidentally changing data when you analyze it.
 - If we get new data we can rerun a query to find all the data that meets certain criteria.
 - It’s fast, even for large amounts of data.
-- It improves quality control of data entry (type constraints and use of forms in Access, Filemaker, etc.)
+- It improves quality control of data entry (similar to type constraints and use of forms in Access, Filemaker, etc.)
 - The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
 
 This lesson will teach you what relational databases are, how you can load data
