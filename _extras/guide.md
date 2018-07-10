@@ -13,7 +13,7 @@ permalink: /guide/
 
 ## Data
 As for all of the [Data Carpentry ecology lessons](https://github.com/datacarpentry?utf8=%E2%9C%93&query=ecology), this
-lesson uses the Portal Project Teaching Database. The data is available at <a href="http://dx.doi.org/10.6084/m9.figshare.1314459">http://dx.doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
+lesson uses the Portal Project Teaching Database. The data is available at <a href="https://doi.org/10.6084/m9.figshare.1314459">https://doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
 SQLite database file (portal_mammals.sqlite) as well as three .csv files
 (species.csv, plots.csv, surveys.csv) that can be imported into SQLite.
 
