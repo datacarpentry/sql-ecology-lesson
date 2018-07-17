@@ -6,7 +6,7 @@ questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
 - "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
-- "Apply aggregation to group records in SQL."
+- "Apply aggregation to grouped records in SQL."
 - "Filter and order results of a query based on aggregate functions."
 - "Employ aliases to assign new names to items in a query."
 - "Save a query to make a new table."
@@ -35,7 +35,7 @@ We can also find out how much all of those individuals weigh:
     SELECT COUNT(*), SUM(weight)
     FROM surveys;
 
-We can output this value in kilograms (dividing the value to 1000.0), then rounding to 3 decimal places:
+We can output this value in kilograms (dividing the value by 1000.00), then rounding to 3 decimal places:
 (Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
     SELECT ROUND(SUM(weight)/1000.00, 3)
@@ -189,8 +189,8 @@ and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
 
-Creating a view from a query requires to add `CREATE VIEW viewname AS`
-before the query itself. For example, imagine that my project only covers
+Creating a view from a query requires us to add `CREATE VIEW viewname AS`
+before the query itself. For example, imagine that our project only covers
 the data gathered during the summer (May - September) of 2000.  That
 query would look like:
 
@@ -213,7 +213,7 @@ Using a view we will be able to access these results with a much shorter notatio
 
     SELECT *
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 ## What About NULL?
 
@@ -223,14 +223,14 @@ average weight, SQL behaves like we would hope, ignoring the NULL values:
 
     SELECT AVG(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 But if we try to be extra clever, and find the average ourselves,
 we might get tripped up:
 
     SELECT SUM(weight), COUNT(*), SUM(weight)/COUNT(*)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 Here the `COUNT` command includes all six records (even those with NULL
 values), but the `SUM` only includes the 4 records with data in the
@@ -239,7 +239,7 @@ our strategy *will* work if we modify the `COUNT` command slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 When we count the weight field specifically, SQL ignores the records with data
 missing in that field.  So here is one example where NULLs can be tricky:
