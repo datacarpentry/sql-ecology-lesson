@@ -6,7 +6,7 @@ questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
 - "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
-- "Apply aggregation to grouped records in SQL."
+- "Apply aggregation functions to group records together."
 - "Filter and order results of a query based on aggregate functions."
 - "Employ aliases to assign new names to items in a query."
 - "Save a query to make a new table."
