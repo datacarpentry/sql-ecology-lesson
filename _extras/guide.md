@@ -13,25 +13,11 @@ permalink: /guide/
 
 ## Data
 As for all of the [Data Carpentry ecology lessons](https://github.com/datacarpentry?utf8=%E2%9C%93&query=ecology), this
-lesson uses the Portal Project Teaching Database. The data is available at http://dx.doi.org/10.6084/m9.figshare.1314459 and the download includes a
+lesson uses the Portal Project Teaching Database. The data is available at <a href="http://dx.doi.org/10.6084/m9.figshare.1314459">http://dx.doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
 SQLite database file (portal_mammals.sqlite) as well as three .csv files
 (species.csv, plots.csv, surveys.csv) that can be imported into SQLite.
 
 **Note** that the figshare download is an archive (.zip) file that rudely explodes all of the files into your current directory.
-
-## Instructor's setup notes
-
-By default SQLite Manager opens in a separate window and it is not possible to
-zoom in to enlarge the font
-so that it is more readable, especially for students in the back rows.
-
-The way to fix this is to:
-
-1. Open the SQLite Manager
-2. Click on the ![Options](../img/options_button.png)*Options* button .
-3. Chose *Start SQLite Manager: in a new tab*.
-
-You can then use **Ctrl - +** to zoom just like any other web page.
 
 ## Motivation and Framing
 
@@ -51,15 +37,14 @@ helpful to identify that you're now somewhere between clean data and analysis.
 ## Lesson outline
 
 ### 00-sql-introduction
-* Introduce relational databases, database management systems, the SQLite
-Firefox plugin, and the Portal dataset
+* Introduce relational databases, database management systems, DB Browser for
+SQLite, and the Portal dataset
 * Import .csv files into sqlite
 * Structuring data for database import
 * Discuss the different SQL data types
 
 **Tips**
 
-* **Changing data type**: There is a step on import where you have to select the data type for the field. Some people select the wrong type or nothing at all and wonder what they can do to change it. If you right click or Control click on the column name in the Structure tab, then there's an Edit Column option and you can type in a new data type. When you go to save it, it does warn you that this is dangerous behavior, so people are being warned, but it might be nice to show this option and also to say why it's not generally a good idea to change data types.
 * **Importing data**: Note how cleanly the csv files import into SQL. If you have also taught the spreadsheet lesson, it would be a good idea to compare the format of the csv files with the messy spreadsheet and ask "Remember that messy spreadsheet? What would have happened if we tried to load that in to SQL?"
 
 ### 00-supplement-database-design.md
