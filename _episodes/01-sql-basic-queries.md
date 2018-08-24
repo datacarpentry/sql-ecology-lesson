@@ -23,7 +23,7 @@ what plot they were captured on, their species ID, sex and weight in grams.
 
 Let’s write an SQL query that selects only the year column from the
 surveys table. SQL queries can be written in the box located under 
-the "Execute SQL" tab. Click 'Run SQL' to execute the query in the box.
+the "Execute SQL" tab. Click on the right arrow above the query box to execute the query. The results are displayed in the box below your query.
 
     SELECT year
     FROM surveys;
