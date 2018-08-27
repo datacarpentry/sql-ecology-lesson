@@ -221,7 +221,7 @@ Finally, click **OK** one more time to confirm the operation.
 
 You can also use this same approach to append new fields to an existing table.
 
-## Adding fiels to existing tables
+## Adding fields to existing tables
 
 1. Go to the "Database Structure" tab, right click on the table you'd like to add data to, and choose **Modify Table**, or click on the **Modify Table** just under the tabs and above the table.
 2. Click the **Add Field** button to add a new field and assign it a data type.
