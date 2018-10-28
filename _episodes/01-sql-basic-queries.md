@@ -34,7 +34,7 @@ If we want to select a single column, we can type the column name instead of the
     SELECT year
     FROM surveys;
 
-If we want more information, we can just add a new column to the list of fields,
+If we want more information, we can just add more columns to the list of fields,
 right after SELECT:
 
     SELECT year, month, day
