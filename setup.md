@@ -24,4 +24,7 @@ title: Setup
 > 
 > We will use the [DB Browser for SQLite](http://sqlitebrowser.org/) program,
 > which is available for all major platforms.
+> You will need to install both SQLite and DB Browser for SQLight for your computer platform. Click on each link and follow the installion 
+> instructions. You will need administrative or install privleges if you are using a university managed computer you will need to submit a 
+> request to your helpdesk for the installion of both software tools. 
 {: .prereq}
