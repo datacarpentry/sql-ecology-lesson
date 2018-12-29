@@ -8,7 +8,7 @@ Teal and Ethan White and contributions from Deb Paul and Mike Smorul.
 
 Data is from the Portal Project Teaching Database by S. K. Morgan Ernest, Thomas J. Valone, James H. Brown, and Ethan P. White.
 
-http://dx.doi.org/10.6084/m9.figshare.1314459
+https://doi.org/10.6084/m9.figshare.1314459
 
 Which was adapted from the paper: S. K. Morgan Ernest, Thomas J. Valone, and James H. Brown. 2009. Long-term monitoring and experimental manipulation of a Chihuahuan Desert ecosystem near Portal, Arizona, USA. Ecology 90:1708.
 
