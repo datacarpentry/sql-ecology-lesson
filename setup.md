@@ -23,5 +23,5 @@ title: Setup
 > in our lessons.
 > 
 > We will use the [DB Browser for SQLite](http://sqlitebrowser.org/) program,
-> which is available for all major platforms.
+> which is available for all major platforms. Mac users may already have DB Browswer installed after installing SQLite.
 {: .prereq}
