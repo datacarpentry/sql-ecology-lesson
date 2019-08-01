@@ -44,7 +44,7 @@ Or we can select all of the columns in a table using the wildcard *
 
 ### Limiting results
 
-Sometimes you don't want to see all the results you just want to get a sense of what's being returned. In that case you can use the LIMIT command. In particular, you would want to do this if you were working with large databases.
+Sometimes you don't want to see all the results you just want to get a sense of what's being returned. In that case, you can use the LIMIT command. In particular, you would want to do this if you were working with large databases.
 
     SELECT *
     FROM surveys
