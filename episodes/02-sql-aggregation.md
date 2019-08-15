@@ -217,7 +217,7 @@ Using a view we will be able to access these results with a much shorter notatio
 
 ## What About NULL?
 
-From the last example, there should only be six records.  If you look at the `weight` column, it's
+From the last example, there should only be five records.  If you look at the `weight` column, it's
 easy to see what the average weight would be. If we use SQL to find the
 average weight, SQL behaves like we would hope, ignoring the NULL values:
 
@@ -232,8 +232,8 @@ we might get tripped up:
     FROM summer_2000
     WHERE species_id == 'PE';
 
-Here the `COUNT` command includes all six records (even those with NULL
-values), but the `SUM` only includes the 4 records with data in the
+Here the `COUNT` command includes all five records (even those with NULL
+values), but the `SUM` only includes the three records with data in the
 `weight` field, giving us an incorrect average. However,
 our strategy *will* work if we modify the `COUNT` command slightly:
 
