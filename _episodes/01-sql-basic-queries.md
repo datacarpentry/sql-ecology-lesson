@@ -258,7 +258,7 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query. Using the surveys table write a query to display the three date fields,
+> query. Using the surveys table, write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and
