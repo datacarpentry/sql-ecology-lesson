@@ -25,7 +25,7 @@ Aggregation allows us to combine results by grouping records based on value, als
 calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
-Using the wildcard * simply counts the number of records (rows):
+Using the wildcard * counts the number of records (rows):
 
     SELECT COUNT(*)
     FROM surveys;
