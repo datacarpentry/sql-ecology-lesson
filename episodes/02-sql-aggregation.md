@@ -6,14 +6,14 @@ questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
 - "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
-- "Apply aggregation to group records in SQL."
+- "Apply aggregation functions to group records together."
 - "Filter and order results of a query based on aggregate functions."
 - "Employ aliases to assign new names to items in a query."
 - "Save a query to make a new table."
 - "Apply filters to find missing values in SQL."
 keypoints:
 - "Use the `GROUP BY` keyword to aggregate data."
-- "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggregated data."
+- "Functions like `MIN`, `MAX`, `AVG`, `SUM`, `COUNT`, etc. operate on aggregated data."
 - "Aliases can help shorten long queries. To write clear and readible queries, use the `AS` keyword when creating aliases."
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to access the result of a query as though it was a new table."
@@ -35,7 +35,7 @@ We can also find out how much all of those individuals weigh:
     SELECT COUNT(*), SUM(weight)
     FROM surveys;
 
-We can output this value in kilograms (dividing the value to 1000.0), then rounding to 3 decimal places:
+We can output this value in kilograms (dividing the value by 1000.00), then rounding to 3 decimal places:
 (Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
     SELECT ROUND(SUM(weight)/1000.00, 3)
@@ -46,9 +46,23 @@ There are many other aggregate functions included in SQL, for example:
 
 > ## Challenge
 >
-> Write a query that returns: total weight, average weight, and the min and max weights
+> Write a query that returns: the total weight, average weight, minimum and maximum weights
 > for all animals caught over the duration of the survey.
 > Can you modify it so that it outputs these values only for weights between 5 and 10?
+>
+> > ## Solution
+> > ~~~
+> > -- All animals
+> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
+> > FROM surveys;
+> >
+> > -- Only weights between 5 and 10
+> > SELECT SUM(weight), AVG(weight), MIN(weight), MAX(weight)
+> > FROM surveys
+> > WHERE (weight > 5) AND (weight < 10);
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 Now, let's see how many individuals were counted in each species. We do this
@@ -65,12 +79,29 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > Write queries that return:
 >
-> 1. How many individuals were counted in each year
->    *   in total
->    *   per each species
-> 2. Average weight of each species in each year.
+> 1. How many individuals were counted in each year in total
+> 2. How many were counted each year, for each different species
+> 3. The average weights of each species in each year
 >
-> Can you modify the above queries combining them into one?
+> Can you get the answer to both 2 and 3 in a single query?
+>
+> > ## Solution of 1
+> > ~~~
+> > SELECT year, COUNT(*)
+> > FROM surveys
+> > GROUP BY year;
+> > ~~~
+> > {: .sql}
+> {: .solution}
+>
+> > ## Solution of 2 and 3
+> > ~~~
+> > SELECT year, species_id, COUNT(*), AVG(weight) 
+> > FROM surveys
+> > GROUP BY year, species_id;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Ordering Aggregated Results
@@ -118,7 +149,8 @@ about species with a count higher than 10:
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields to filter.
 
-The `AS` keyword can be used to assign an alias to a column or a table.
+You can use the `AS` keyword to assign an alias to a column or table, and refer
+to that alias in the `HAVING` clause.
 For example, in the above query, we can call the `COUNT(species_id)` by
 another name, like `occurrences`. This can be written this way:
 
@@ -126,9 +158,6 @@ another name, like `occurrences`. This can be written this way:
     FROM surveys
     GROUP BY species_id
     HAVING occurrences > 10;
-
-Using this temporary name in the `HAVING` statement makes the query more
-readable. Remember that an alias only exists for the duration of the query.
 
 Note that in both queries, `HAVING` comes *after* `GROUP BY`. One way to
 think about this is: the data are retrieved (`SELECT`), which can be filtered
@@ -138,7 +167,17 @@ of these groups (`HAVING`).
 > ## Challenge
 >
 > Write a query that returns, from the `species` table, the number of
-> `genus` in each `taxa`, only for the `taxa` with more than 10 `genus`.
+> `species` in each `taxa`, only for the `taxa` with more than 10 `species`.
+>
+> > ## Solution
+> > ~~~
+> > SELECT taxa, COUNT(*) AS n
+> > FROM species
+> > GROUP BY taxa
+> > HAVING n > 10;
+> > ~~~
+> > {: .sql}
+> {: .solution}
 {: .challenge}
 
 ## Saving Queries for Future Use
@@ -150,8 +189,8 @@ and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
 
-Creating a view from a query requires the addition of `CREATE VIEW viewname AS`
-before the query itself. For example, imagine that my project only covers
+Creating a view from a query requires us to add `CREATE VIEW viewname AS`
+before the query itself. For example, imagine that our project only covers
 the data gathered during the summer (May - September) of 2000.  That
 query would look like:
 
@@ -174,33 +213,33 @@ Using a view we will be able to access these results with a much shorter notatio
 
     SELECT *
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 ## What About NULL?
 
-From the last example, there should only be six records.  If you look at the `weight` column, it's
+From the last example, there should only be five records.  If you look at the `weight` column, it's
 easy to see what the average weight would be. If we use SQL to find the
 average weight, SQL behaves like we would hope, ignoring the NULL values:
 
     SELECT AVG(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 But if we try to be extra clever, and find the average ourselves,
 we might get tripped up:
 
     SELECT SUM(weight), COUNT(*), SUM(weight)/COUNT(*)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
-Here the `COUNT` command includes all six records (even those with NULL
-values), but the `SUM` only includes the 4 records with data in the
+Here the `COUNT` command includes all five records (even those with NULL
+values), but the `SUM` only includes the three records with data in the
 `weight` field, giving us an incorrect average. However,
 our strategy *will* work if we modify the `COUNT` command slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 When we count the weight field specifically, SQL ignores the records with data
 missing in that field.  So here is one example where NULLs can be tricky:
