@@ -21,7 +21,7 @@ keypoints:
 
 ## COUNT and GROUP BY
 
-Aggregation allows us to combine results by grouping records based on value, also it is useful for
+Aggregation allows us to combine results by grouping records based on value. It is also useful for
 calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
