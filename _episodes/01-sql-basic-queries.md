@@ -115,8 +115,10 @@ Here, we only want the data since 2000:
     SELECT * FROM surveys
     WHERE year >= 2000;
 
-If we used the `TEXT` data type for the year the `WHERE` clause should
-be `year >= '2000'`. We can use more sophisticated conditions by combining tests
+If we used the `TEXT` data type for the year, the `WHERE` clause should
+be `year >= '2000'`. 
+
+We can use more sophisticated conditions by combining tests
 with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
 starting in the year 2000:
 
