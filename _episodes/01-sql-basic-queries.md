@@ -155,7 +155,7 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
 ## Building more complex queries
 
-Now, lets combine the above queries to get data for the 3 _Dipodomys_ species from
+Now, let's combine the above queries to get data for the 3 _Dipodomys_ species from
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
