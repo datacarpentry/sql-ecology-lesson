@@ -23,7 +23,7 @@ _Note: this should have been done by participants before the start of the worksh
 
 We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
 [Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
-throughout this lesson. See [Setup](/sql-ecology-lesson/setup/) for
+throughout this lesson. See [Setup](../setup.html) for
 instructions on how to download the data, and also how to install DB Browser for SQLite.
 
 # Motivation
@@ -135,21 +135,23 @@ export data and the [details of data types](#datatypediffs).
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
 file from the Portal Project dataset that we downloaded during
-[Setup](/sql-ecology-lesson/setup/). Clicking on the "Open Database" button, then
-find that file and clicking on it will open the database.
+[Setup](/sql-ecology-lesson/setup.html). Click on the "Open Database" button, select the portal_mammals.sqlite file, and click "Open" to open the database.
 
-You can see the tables in the database by looking at the "Database Structure" tab under Tables, where each table corresponds to one of the `csv` files 
-we were exploring earlier.  To see the contents of any table, right-click on it (Control key+click on Mac), and
-select Browse Table.  This will 
-give us a view that we're used to - just a copy of the table.  This 
+You can see the tables in the database by looking at the left hand side of the
+screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files 
+we were exploring earlier. To see the contents of any table, click on it, and
+then click the “Browse Data” tab next to the "Database Structure" tab. This will 
+give us a view that we're used to - just a copy of the table. Hopefully this 
 helps to show that a database is, in some sense, just a collection of tables, 
 where there's some value in the tables that allows them to be connected to each 
 other (the "related" part of "relational database").  
 
-Back in the "Database Structure" tab, double click on a table to see the columns in that table, often called *fields*, along with each field's data *type* (The rows of a database table are called *records*.)   Each field contains 
-one variety, or type of data, often numbers or text.  You can see in the 
-`surveys` table that most fields contain numbers (integers) while the `species` 
-table is all text.  
+The "Database Structure" tab also provides some metadata about each table. If you click on the down arrow next to a table name, you will see information about the columns, which in databases are referred to as "fields," and their assigned data types.  
+(The rows of a database table 
+are called *records*.) Each field contains 
+one variety or type of data, often numbers or text. You can see in the 
+`surveys` table that most fields contain numbers (BIGINT, or big integer, and FLOAT, or floating point numbers/decimals) while the `species` 
+table is entirely made up of text fields.  
 
 The "Execute SQL" tab is blank now - this is where we'll be typing our queries 
 to retrieve information from the database tables.  
@@ -176,20 +178,22 @@ To summarize:
 
 Before we get started with writing our own queries, we'll create our own 
 database.  We'll be creating this database from the three `csv` files 
-we downloaded earlier.  Close the currently open database and then 
+we downloaded earlier.  Close the currently open database (**File > Close Database**) and then 
 follow these instructions: 
 
 1. Start a New Database 
     - Click the **New Database** button
     - Give a name and click Save to create the database in the opened folder
     - In the "Edit table definition" window that pops up, click cancel as we will be importing tables, not creating them from scratch
-2. Click **File -> Import -> Table From CSV**
-3. Select the `surveys.csv` file to import
+2. Select **File >> Import >> Table from CSV file...**
+3. Choose `surveys.csv` from the data folder we downloaded and click **Open**.
 4. Give the table a name that matches the file name (`surveys`), or use the default
-5. Check the "Columns names in first line" box
-6. Since we are dealing with CSV files, make sure the field separator is set to ",". Also, set the quote character to double-quotes
+5. If the first row has column headings, be sure to check the box next to "Column names in first line".
+6. Be sure the field separator and quotation options are correct. If you're not sure which options are correct, test some of the options until the preview at the bottom of the window looks right.
 7. Press **OK**, you should subsequently get a message that the table was imported.
-8. In the "Database Structure" tab, right-click the `surveys` table and click **Modify Table**. Set the data types for each field using the suggestions in the table below (this includes fields from `plots` and `species` tables also):
+9. Back on the Database Structure tab, you should now see the table listed. Right click on the table name and choose **Modify Table**, or click on the **Modify Table** button just under the tabs and above the table list.
+10. Click **Save** if asked to save all pending changes.
+11. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also):
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
@@ -207,8 +211,7 @@ follow these instructions:
 | weight            | REAL           | Field contains measured numerical data                                           | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
-
-Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
+12. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
 
 > ## Challenge
@@ -216,12 +219,12 @@ Finally, click **OK** one more time to confirm the operation. Then click the **W
 > - Import the `plots` and `species` tables
 {: .challenge}
 
-You can also use this same approach to append new data to an existing table.
+You can also use this same approach to append new fields to an existing table.
 
-## Adding data to existing tables
+## Adding fields to existing tables
 
-1. "Browse and Search" tab -> Add
-1. Enter data into a csv file and append
+1. Go to the "Database Structure" tab, right click on the table you'd like to add data to, and choose **Modify Table**, or click on the **Modify Table** just under the tabs and above the table.
+2. Click the **Add Field** button to add a new field and assign it a data type.
 
 
 ## <a name="datatypes"></a> Data types
