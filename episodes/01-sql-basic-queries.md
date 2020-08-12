@@ -202,7 +202,7 @@ Now let's order it by taxa.
     FROM species
     ORDER BY taxa ASC;
 
-The keyword `ASC` tells us to order it in Ascending order.
+The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
     SELECT *
