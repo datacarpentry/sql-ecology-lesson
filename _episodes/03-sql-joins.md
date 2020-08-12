@@ -34,7 +34,7 @@ species id.
     JOIN species
     ON surveys.species_id = species.species_id;
 
-`ON` is like `WHERE`, it filters things out according to a test condition.  We use
+`ON` is like `WHERE`. It filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
@@ -366,66 +366,66 @@ To practice we have some optional challenges for you.
 > > ## Proposed solutions:
 > >
 > > 1. Solution: 
-> > ~~~
-> > SELECT plot_type, COUNT(*) AS num_plots
-> > FROM plots
-> > GROUP BY plot_type;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT plot_type, COUNT(*) AS num_plots
+> >     FROM plots
+> >     GROUP BY plot_type;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 2. Solution:
-> > ~~~
-> > SELECT year, sex, COUNT(*) AS num_animal
-> > FROM surveys
-> > WHERE sex IS NOT NULL
-> > GROUP BY sex, year;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT year, sex, COUNT(*) AS num_animal
+> >     FROM surveys
+> >     WHERE sex IS NOT NULL
+> >     GROUP BY sex, year;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 3. Solution: 
-> > ~~~
-> > SELECT species_id, plot_type, COUNT(*) 
-> > FROM surveys 
-> > JOIN plots USING(plot_id) 
-> > WHERE species_id IS NOT NULL 
-> > GROUP BY species_id, plot_type;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT species_id, plot_type, COUNT(*) 
+> >     FROM surveys 
+> >     JOIN plots USING(plot_id) 
+> >     WHERE species_id IS NOT NULL 
+> >     GROUP BY species_id, plot_type;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 4. Solution:
-> > ~~~
-> > SELECT taxa, AVG(weight) 
-> > FROM surveys 
-> > JOIN species ON species.species_id = surveys.species_id
-> > GROUP BY taxa;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT taxa, AVG(weight) 
+> >     FROM surveys 
+> >     JOIN species ON species.species_id = surveys.species_id
+> >     GROUP BY taxa;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 5. Solution:
-> > ~~~
-> > SELECT surveys.species_id, MIN(weight), MAX(weight), AVG(weight) FROM surveys 
-> > JOIN species ON surveys.species_id = species.species_id 
-> > WHERE taxa = 'Rodent' 
-> > GROUP BY surveys.species_id;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, MIN(weight), MAX(weight), AVG(weight) FROM surveys 
+> >     JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE taxa = 'Rodent' 
+> >     GROUP BY surveys.species_id;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 6. Solution:
-> > ~~~
-> > SELECT surveys.species_id, sex, AVG(hindfoot_length)
-> > FROM surveys JOIN species ON surveys.species_id = species.species_id 
-> > WHERE (taxa = 'Rodent') AND (sex IS NOT NULL) 
-> > GROUP BY surveys.species_id, sex;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, sex, AVG(hindfoot_length)
+> >     FROM surveys JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE (taxa = 'Rodent') AND (sex IS NOT NULL) 
+> >     GROUP BY surveys.species_id, sex;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 7. Solution:
-> > ~~~
-> > SELECT surveys.species_id, year, AVG(weight) as mean_weight
-> > FROM surveys 
-> > JOIN species ON surveys.species_id = species.species_id 
-> > WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, year, AVG(weight) as mean_weight
+> >     FROM surveys 
+> >     JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year;
+> >     ~~~
+> >     {: .sql}
 > {: .solution}
 {: .challenge}
