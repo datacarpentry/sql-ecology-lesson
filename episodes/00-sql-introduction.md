@@ -135,7 +135,7 @@ export data and the [details of data types](#datatypediffs).
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
 file from the Portal Project dataset that we downloaded during
-[Setup](/sql-ecology-lesson/setup/). Click on the "Open Database" button, select the portal_mammals.sqlite file, and click "Open" to open the database.
+[Setup](/sql-ecology-lesson/setup.html). Click on the "Open Database" button, select the portal_mammals.sqlite file, and click "Open" to open the database.
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files 
@@ -181,16 +181,16 @@ database.  We'll be creating this database from the three `csv` files
 we downloaded earlier.  Close the currently open database (**File > Close Database**) and then 
 follow these instructions: 
 
-1. Start a new database:
-    - Click on the **New Database** icon or select **File >> New Database...**
-    - Assign a name to the new database, choose the folder where you'd like to save it, and click **Save**. This creates the database in the selected folder.
-2. Click **Cancel** to close the next pop-up window (titled **Edit table definition**), since we will be importing tables and not creating tables from scratch.
-3. Select **File >> Import >> Table from CSV file...**
-4. Choose `surveys.csv` from the data folder we downloaded and click **Open**.
-5. Give the table a name that matches the file name or use the default.
-6. If the first row has column headings, be sure to check the box next to "Column names in first line".
-7. Be sure the field separator and quotation options are correct. If you're not sure which options are correct, test some of the options until the preview at the bottom of the window looks right.
-8. Click **OK**.
+1. Start a New Database 
+    - Click the **New Database** button
+    - Give a name and click Save to create the database in the opened folder
+    - In the "Edit table definition" window that pops up, click cancel as we will be importing tables, not creating them from scratch
+2. Select **File >> Import >> Table from CSV file...**
+3. Choose `surveys.csv` from the data folder we downloaded and click **Open**.
+4. Give the table a name that matches the file name (`surveys`), or use the default
+5. If the first row has column headings, be sure to check the box next to "Column names in first line".
+6. Be sure the field separator and quotation options are correct. If you're not sure which options are correct, test some of the options until the preview at the bottom of the window looks right.
+7. Press **OK**, you should subsequently get a message that the table was imported.
 9. Back on the Database Structure tab, you should now see the table listed. Right click on the table name and choose **Modify Table**, or click on the **Modify Table** button just under the tabs and above the table list.
 10. Click **Save** if asked to save all pending changes.
 11. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also):
@@ -211,8 +211,7 @@ follow these instructions:
 | weight            | REAL           | Field contains measured numerical data                                           | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
 
-
-12. Finally, click **OK** one more time to confirm the operation.
+12. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
 
 > ## Challenge

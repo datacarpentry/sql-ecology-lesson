@@ -21,6 +21,14 @@ keypoints:
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
+
+Database tables are used to organize and group data by common characteristics or principles.  
+Often, we need to combine elements from separate tables into a single tables or queries for analysis and visualization.
+A JOIN is a means for combining columns from multiple tables by using values common to each.
+
+The JOIN command combined with ON is used to combine fields from separate tables.  
+
+
 The `JOIN` command on its own will result in a cross product, where each row in
 the first table is paired with each row in the second table. Usually this is not
 what is desired when combining two tables with data that is related in some way.
@@ -34,7 +42,7 @@ species id.
     JOIN species
     ON surveys.species_id = species.species_id;
 
-`ON` is like `WHERE`, it filters things out according to a test condition.  We use
+`ON` is like `WHERE`. It filters things out according to a test condition.  We use
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
@@ -366,12 +374,12 @@ To practice we have some optional challenges for you.
 > > ## Proposed solutions:
 > >
 > > 1. Solution: 
-> > ~~~
-> > SELECT plot_type, COUNT(*) AS num_plots
-> > FROM plots
-> > GROUP BY plot_type;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT plot_type, COUNT(*) AS num_plots
+> >     FROM plots
+> >     GROUP BY plot_type;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 2. Solution:
 > > ~~~
@@ -382,49 +390,49 @@ To practice we have some optional challenges for you.
 > > {: .sql}
 > >
 > > 3. Solution: 
-> > ~~~
-> > SELECT species_id, plot_type, COUNT(*) 
-> > FROM surveys 
-> > JOIN plots USING(plot_id) 
-> > WHERE species_id IS NOT NULL 
-> > GROUP BY species_id, plot_type;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT species_id, plot_type, COUNT(*) 
+> >     FROM surveys 
+> >     JOIN plots USING(plot_id) 
+> >     WHERE species_id IS NOT NULL 
+> >     GROUP BY species_id, plot_type;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 4. Solution:
-> > ~~~
-> > SELECT taxa, AVG(weight) 
-> > FROM surveys 
-> > JOIN species ON species.species_id = surveys.species_id
-> > GROUP BY taxa;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT taxa, AVG(weight) 
+> >     FROM surveys 
+> >     JOIN species ON species.species_id = surveys.species_id
+> >     GROUP BY taxa;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 5. Solution:
-> > ~~~
-> > SELECT surveys.species_id, MIN(weight), MAX(weight), AVG(weight) FROM surveys 
-> > JOIN species ON surveys.species_id = species.species_id 
-> > WHERE taxa = 'Rodent' 
-> > GROUP BY surveys.species_id;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, MIN(weight), MAX(weight), AVG(weight) FROM surveys 
+> >     JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE taxa = 'Rodent' 
+> >     GROUP BY surveys.species_id;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 6. Solution:
-> > ~~~
-> > SELECT surveys.species_id, sex, AVG(hindfoot_length)
-> > FROM surveys JOIN species ON surveys.species_id = species.species_id 
-> > WHERE (taxa = 'Rodent') AND (sex IS NOT NULL) 
-> > GROUP BY surveys.species_id, sex;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, sex, AVG(hindfoot_length)
+> >     FROM surveys JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE (taxa = 'Rodent') AND (sex IS NOT NULL) 
+> >     GROUP BY surveys.species_id, sex;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 7. Solution:
-> > ~~~
-> > SELECT surveys.species_id, year, AVG(weight) as mean_weight
-> > FROM surveys 
-> > JOIN species ON surveys.species_id = species.species_id 
-> > WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT surveys.species_id, year, AVG(weight) as mean_weight
+> >     FROM surveys 
+> >     JOIN species ON surveys.species_id = species.species_id 
+> >     WHERE taxa = 'Rodent' GROUP BY surveys.species_id, year;
+> >     ~~~
+> >     {: .sql}
 > {: .solution}
 {: .challenge}
