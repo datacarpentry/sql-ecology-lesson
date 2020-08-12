@@ -6,14 +6,14 @@ questions:
 - "How can I summarize my data by aggregating, filtering, or ordering query results?"
 - "How can I make sure column names from my queries make sense and aren't too long?"
 objectives:
-- "Apply aggregation to group records in SQL."
+- "Apply aggregation functions to group records together."
 - "Filter and order results of a query based on aggregate functions."
 - "Employ aliases to assign new names to items in a query."
 - "Save a query to make a new table."
 - "Apply filters to find missing values in SQL."
 keypoints:
 - "Use the `GROUP BY` keyword to aggregate data."
-- "Functions like `MIN`, `MAX`, `AVERAGE`, `SUM`, `COUNT`, etc. operate on aggregated data."
+- "Functions like `MIN`, `MAX`, `AVG`, `SUM`, `COUNT`, etc. operate on aggregated data."
 - "Aliases can help shorten long queries. To write clear and readible queries, use the `AS` keyword when creating aliases."
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to access the result of a query as though it was a new table."
@@ -21,11 +21,11 @@ keypoints:
 
 ## COUNT and GROUP BY
 
-Aggregation allows us to combine results by grouping records based on value, also it is useful for
+Aggregation allows us to combine results by grouping records based on value. It is also useful for
 calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
-Using the wildcard * simply counts the number of records (rows):
+Using the wildcard * counts the number of records (rows):
 
     SELECT COUNT(*)
     FROM surveys;
@@ -35,7 +35,7 @@ We can also find out how much all of those individuals weigh:
     SELECT COUNT(*), SUM(weight)
     FROM surveys;
 
-We can output this value in kilograms (dividing the value to 1000.0), then rounding to 3 decimal places:
+We can output this value in kilograms (dividing the value by 1000.00), then rounding to 3 decimal places:
 (Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
     SELECT ROUND(SUM(weight)/1000.00, 3)
@@ -149,10 +149,10 @@ about species with a count higher than 10:
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields to filter.
 
-If you use `AS` in your query to rename a column, `HAVING` you can use this
-information to make the query more readable. For example, in the above
-query, we can call the `COUNT(species_id)` by another name, like
-`occurrences`. This can be written this way:
+You can use the `AS` keyword to assign an alias to a column or table, and refer
+to that alias in the `HAVING` clause.
+For example, in the above query, we can call the `COUNT(species_id)` by
+another name, like `occurrences`. This can be written this way:
 
     SELECT species_id, COUNT(species_id) AS occurrences
     FROM surveys
@@ -189,8 +189,8 @@ and can be used to look at, filter, and even update information. One way to
 think of views is as a table, that can read, aggregate, and filter information
 from several places before showing it to you.
 
-Creating a view from a query requires to add `CREATE VIEW viewname AS`
-before the query itself. For example, imagine that my project only covers
+Creating a view from a query requires us to add `CREATE VIEW viewname AS`
+before the query itself. For example, imagine that our project only covers
 the data gathered during the summer (May - September) of 2000.  That
 query would look like:
 
@@ -213,33 +213,33 @@ Using a view we will be able to access these results with a much shorter notatio
 
     SELECT *
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 ## What About NULL?
 
-From the last example, there should only be six records.  If you look at the `weight` column, it's
+From the last example, there should only be five records.  If you look at the `weight` column, it's
 easy to see what the average weight would be. If we use SQL to find the
 average weight, SQL behaves like we would hope, ignoring the NULL values:
 
     SELECT AVG(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 But if we try to be extra clever, and find the average ourselves,
 we might get tripped up:
 
     SELECT SUM(weight), COUNT(*), SUM(weight)/COUNT(*)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
-Here the `COUNT` command includes all six records (even those with NULL
-values), but the `SUM` only includes the 4 records with data in the
+Here the `COUNT` command includes all five records (even those with NULL
+values), but the `SUM` only includes the three records with data in the
 `weight` field, giving us an incorrect average. However,
 our strategy *will* work if we modify the `COUNT` command slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
-    WHERE species_id == 'PE';
+    WHERE species_id = 'PE';
 
 When we count the weight field specifically, SQL ignores the records with data
 missing in that field.  So here is one example where NULLs can be tricky:
