@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 
 ## Learning objectives
@@ -13,7 +12,7 @@ permalink: /guide/
 
 ## Data
 As for all of the [Data Carpentry ecology lessons](https://github.com/datacarpentry?utf8=%E2%9C%93&query=ecology), this
-lesson uses the Portal Project Teaching Database. The data is available at <a href="http://dx.doi.org/10.6084/m9.figshare.1314459">http://dx.doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
+lesson uses the Portal Project Teaching Database. The data is available at <a href="https://doi.org/10.6084/m9.figshare.1314459">https://doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
 SQLite database file (portal_mammals.sqlite) as well as three .csv files
 (species.csv, plots.csv, surveys.csv) that can be imported into SQLite.
 
@@ -73,7 +72,7 @@ The first lesson includes a brief introduction to data design and choosing datab
 As you teach the lesson, it can be helpful to pause and write up the query keywords 
 on the board.  This could look like this: 
 
-* After 01-sql-basic queries
+* After 01-sql-basic queries  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -82,13 +81,11 @@ FROM table
 
 WHERE (conditional statement, applies to row values) 
       (AND/OR) 
-      
 
-   
 ORDER BY column/FUNCTION(column) (ASC/DESC)
 ~~~
 
-* After 02-sql-aggregation
+* After 02-sql-aggregation  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -103,7 +100,7 @@ GROUP BY column
 ORDER BY column/FUNCTION(column) (ASC/DESC)
 ~~~
 
-* After 03-sql-joins-aliases
+* After 03-sql-joins-aliases  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -142,25 +139,28 @@ ORDER BY column/FUNCTION(column) (ASC/DESC)          arrange()
 If you want to try something more active (esp. if you're teaching SQL in the 
 afternoon!), this is a an interactive activity to try.  
 
-* Give each student six cards, with the following labels: 
-	* name
+* Give each student six cards. Four of the cards should have the following labels: 
 	* name
 	* height
-	* DoC
-	* height*2.54
 	* dept
+	* DoC
+	* The remaining two cards should be blank (for now!)
 * Have students fill out their cards: 
-	* Name: first name
-	* Height: height in INCHES
-	* Dept (department): close enough (just pick one if you don’t have a home department)
-	* DoC (Dog or Cat): Dog, Cat, Both, Neither, or leave blank
+	* name: first name
+	* height: height in INCHES
+	* dept: department (if none, just pick one)
+	* DoC: choose from `Dog`, `Cat`, `Both`, `Neither`, or leave blank
 * Each student is now a *record* in an interactive "students" database, where 
 each of the cards they hold is a *field* in that database.  
 * At various points in the lesson, stop and "query" the student database.  To do this: 
-	* On a slide (or in a text editor), show or type in a sample query.  Something like: 
+	* On a slide (or in a text editor), show or type in a sample query.  Something like:  
     ~~~
-    SELECT name, name FROM students WHERE height > 66
+    SELECT name, dept FROM students WHERE height > 66;
     ~~~
 	* If the query applies to a record (student), that student should stand, 
 	and display (hold up) the appropriate field (card)
+	* For some queries, the student may have to fill in a blank card with calculated data. For example:  
+    ~~~
+    SELECT name, name, height*2.54 AS height_cm FROM students;
+    ~~~
 	* See the following slide deck for a list of sample queries.  [Sample queries](https://speakerdeck.com/christinalk/query-live-database)

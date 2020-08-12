@@ -42,9 +42,7 @@ right after SELECT:
 
 ### Limiting results
 
-Sometimes you don't want to see all the results you just want to get a sense of
-of what's being returned. In that case you can use the LIMIT command. In particular
-you would want to do this if you were working with large databases. 
+Sometimes you don't want to see all the results, you just want to get a sense of what's being returned. In that case, you can use the `LIMIT` command. In particular, you would want to do this if you were working with large databases.
 
     SELECT *
     FROM surveys
@@ -113,8 +111,10 @@ Here, we only want the data since 2000:
     SELECT * FROM surveys
     WHERE year >= 2000;
 
-If we used the `TEXT` data type for the year the `WHERE` clause should
-be `year >= '2000'`. We can use more sophisticated conditions by combining tests
+If we used the `TEXT` data type for the year, the `WHERE` clause should
+be `year >= '2000'`. 
+
+We can use more sophisticated conditions by combining tests
 with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
 starting in the year 2000:
 
@@ -151,7 +151,7 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
 ## Building more complex queries
 
-Now, lets combine the above queries to get data for the 3 _Dipodomys_ species from
+Now, let's combine the above queries to get data for the 3 _Dipodomys_ species from
 the year 2000 on.  This time, let’s use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id
 = 'DO') OR (species_id = 'DS')`, but reads more neatly:
@@ -198,7 +198,7 @@ Now let's order it by taxa.
     FROM species
     ORDER BY taxa ASC;
 
-The keyword `ASC` tells us to order it in Ascending order.
+The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
     SELECT *
@@ -256,7 +256,7 @@ we recommend to put each clause on its own line.
 > ## Challenge
 >
 > - Let's try to combine what we've learned so far in a single
-> query. Using the surveys table write a query to display the three date fields,
+> query. Using the surveys table, write a query to display the three date fields,
 > `species_id`, and weight in kilograms (rounded to two decimal places), for
 > individuals captured in 1999, ordered alphabetically by the `species_id`.
 > - Write the query as a single line, then put each clause on its own line, and
