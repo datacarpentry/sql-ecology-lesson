@@ -1,7 +1,6 @@
 ---
 layout: page
 title: "Instructor Notes"
-permalink: /guide/
 ---
 
 ## Learning objectives
@@ -13,25 +12,11 @@ permalink: /guide/
 
 ## Data
 As for all of the [Data Carpentry ecology lessons](https://github.com/datacarpentry?utf8=%E2%9C%93&query=ecology), this
-lesson uses the Portal Project Teaching Database. The data is available at http://dx.doi.org/10.6084/m9.figshare.1314459 and the download includes a
+lesson uses the Portal Project Teaching Database. The data is available at <a href="https://doi.org/10.6084/m9.figshare.1314459">https://doi.org/10.6084/m9.figshare.1314459</a> and the download includes a
 SQLite database file (portal_mammals.sqlite) as well as three .csv files
 (species.csv, plots.csv, surveys.csv) that can be imported into SQLite.
 
 **Note** that the figshare download is an archive (.zip) file that rudely explodes all of the files into your current directory.
-
-## Instructor's setup notes
-
-By default SQLite Manager opens in a separate window and it is not possible to
-zoom in to enlarge the font
-so that it is more readable, especially for students in the back rows.
-
-The way to fix this is to:
-
-1. Open the SQLite Manager
-2. Click on the ![Options](../img/options_button.png)*Options* button .
-3. Chose *Start SQLite Manager: in a new tab*.
-
-You can then use **Ctrl - +** to zoom just like any other web page.
 
 ## Motivation and Framing
 
@@ -51,8 +36,8 @@ helpful to identify that you're now somewhere between clean data and analysis.
 ## Lesson outline
 
 ### 00-sql-introduction
-* Introduce relational databases, database management systems, the SQLite
-Firefox plugin, and the Portal dataset
+* Introduce relational databases, database management systems, DB Browser for
+SQLite, and the Portal dataset
 * Import .csv files into sqlite
 * Structuring data for database import
 * Discuss the different SQL data types
@@ -76,7 +61,6 @@ Firefox plugin, and the Portal dataset
 
 **Tips**
 
-* **Changing data type**: There is a step on import where you have to select the data type for the field. Some people select the wrong type or nothing at all and wonder what they can do to change it. If you right click or Control click on the column name in the Structure tab, then there's an Edit Column option and you can type in a new data type. When you go to save it, it does warn you that this is dangerous behavior, so people are being warned, but it might be nice to show this option and also to say why it's not generally a good idea to change data types.
 * **Importing data**: Note how cleanly the csv files import into SQL. If you have also taught the spreadsheet lesson, it would be a good idea to compare the format of the csv files with the messy spreadsheet and ask "Remember that messy spreadsheet? What would have happened if we tried to load that in to SQL?"
 
 ### 00-supplement-database-design.md
@@ -105,7 +89,7 @@ The first lesson includes a brief introduction to data design and choosing datab
 As you teach the lesson, it can be helpful to pause and write up the query keywords 
 on the board.  This could look like this: 
 
-* After 01-sql-basic queries
+* After 01-sql-basic queries  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -114,13 +98,11 @@ FROM table
 
 WHERE (conditional statement, applies to row values) 
       (AND/OR) 
-      
 
-   
 ORDER BY column/FUNCTION(column) (ASC/DESC)
 ~~~
 
-* After 02-sql-aggregation
+* After 02-sql-aggregation  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -135,7 +117,7 @@ GROUP BY column
 ORDER BY column/FUNCTION(column) (ASC/DESC)
 ~~~
 
-* After 03-sql-joins-aliases
+* After 03-sql-joins-aliases  
 ~~~
 SELECT column
        FUNCTION(column)
@@ -174,25 +156,28 @@ ORDER BY column/FUNCTION(column) (ASC/DESC)          arrange()
 If you want to try something more active (esp. if you're teaching SQL in the 
 afternoon!), this is a an interactive activity to try.  
 
-* Give each student six cards, with the following labels: 
-	* name
+* Give each student six cards. Four of the cards should have the following labels: 
 	* name
 	* height
-	* DoC
-	* height*2.54
 	* dept
+	* DoC
+	* The remaining two cards should be blank (for now!)
 * Have students fill out their cards: 
-	* Name: first name
-	* Height: height in INCHES
-	* Dept (department): close enough (just pick one if you don’t have a home department)
-	* DoC (Dog or Cat): Dog, Cat, Both, Neither, or leave blank
+	* name: first name
+	* height: height in INCHES
+	* dept: department (if none, just pick one)
+	* DoC: choose from `Dog`, `Cat`, `Both`, `Neither`, or leave blank
 * Each student is now a *record* in an interactive "students" database, where 
 each of the cards they hold is a *field* in that database.  
 * At various points in the lesson, stop and "query" the student database.  To do this: 
-	* On a slide (or in a text editor), show or type in a sample query.  Something like: 
+	* On a slide (or in a text editor), show or type in a sample query.  Something like:  
     ~~~
-    SELECT name, name FROM students WHERE height > 66
+    SELECT name, dept FROM students WHERE height > 66;
     ~~~
 	* If the query applies to a record (student), that student should stand, 
 	and display (hold up) the appropriate field (card)
+	* For some queries, the student may have to fill in a blank card with calculated data. For example:  
+    ~~~
+    SELECT name, name, height*2.54 AS height_cm FROM students;
+    ~~~
 	* See the following slide deck for a list of sample queries.  [Sample queries](https://speakerdeck.com/christinalk/query-live-database)
