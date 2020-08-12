@@ -351,7 +351,7 @@ To practice we have some optional challenges for you.
 > 
 > 1. How many plots from each type are there?  
 > 
-> 2. How many specimens are of each sex are there for each year? How many in each year could not be sexed? 
+> 2. How many specimens are of each sex are there for each year, including those whose sex is unknown?
 > 
 > 3. How many specimens of each species were captured in each type of plot, excluding specimens of unknown species? 
 > 
