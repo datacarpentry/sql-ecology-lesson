@@ -359,9 +359,9 @@ To practice we have some optional challenges for you.
 > 
 > 1. How many plots from each type are there?  
 > 
-> 2. How many specimens are of each sex are there for each year?  
+> 2. How many specimens are of each sex are there for each year, including those whose sex is unknown?
 > 
-> 3. How many specimens of each species were captured in each type of plot?  
+> 3. How many specimens of each species were captured in each type of plot, excluding specimens of unknown species? 
 > 
 > 4. What is the average weight of each taxa?  
 > 
@@ -382,13 +382,12 @@ To practice we have some optional challenges for you.
 > >     {: .sql}
 > >
 > > 2. Solution:
-> >     ~~~
-> >     SELECT year, sex, COUNT(*) AS num_animal
-> >     FROM surveys
-> >     WHERE sex IS NOT NULL
-> >     GROUP BY sex, year;
-> >     ~~~
-> >     {: .sql}
+> > ~~~
+> > SELECT year, sex, COUNT(*) AS num_animal
+> > FROM surveys
+> > GROUP BY sex, year;
+> > ~~~
+> > {: .sql}
 > >
 > > 3. Solution: 
 > >     ~~~
