@@ -28,8 +28,6 @@ A JOIN is a means for combining columns from multiple tables by using values com
 
 The JOIN command combined with ON is used to combine fields from separate tables.  
 
-An SQL join clause combines columns from one or more tables in a relational database. 
-It creates a set that can be saved as a table.
 
 The `JOIN` command on its own will result in a cross product, where each row in
 the first table is paired with each row in the second table. Usually this is not
