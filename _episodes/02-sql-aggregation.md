@@ -21,11 +21,11 @@ keypoints:
 
 ## COUNT and GROUP BY
 
-Aggregation allows us to combine results by grouping records based on value, also it is useful for
+Aggregation allows us to combine results by grouping records based on value. It is also useful for
 calculating combined values in groups.
 
 Let’s go to the surveys table and find out how many individuals there are.
-Using the wildcard * simply counts the number of records (rows):
+Using the wildcard * counts the number of records (rows):
 
     SELECT COUNT(*)
     FROM surveys;
@@ -149,10 +149,10 @@ about species with a count higher than 10:
 The `HAVING` keyword works exactly like the `WHERE` keyword, but uses
 aggregate functions instead of database fields to filter.
 
-If you use `AS` in your query to rename a column, `HAVING` you can use this
-information to make the query more readable. For example, in the above
-query, we can call the `COUNT(species_id)` by another name, like
-`occurrences`. This can be written this way:
+You can use the `AS` keyword to assign an alias to a column or table, and refer
+to that alias in the `HAVING` clause.
+For example, in the above query, we can call the `COUNT(species_id)` by
+another name, like `occurrences`. This can be written this way:
 
     SELECT species_id, COUNT(species_id) AS occurrences
     FROM surveys
