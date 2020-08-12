@@ -21,11 +21,10 @@ keypoints:
 To combine data from two tables we use the SQL `JOIN` command, which comes after
 the `FROM` command.
 
-Earlier, we talked about relational databases.
 
 Database tables are used to organize and group data by common characteristics or principles.  
 Often, we need to combine elements from separate tables into a single tables or queries for analysis and visualization.
-A JOIN is a means for combining columns from one (self-join) or more tables by using values common to each.
+A JOIN is a means for combining columns from multiple tables by using values common to each.
 
 The JOIN command combined with ON is used to combine fields from separate tables.  
 
