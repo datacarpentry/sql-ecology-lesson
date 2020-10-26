@@ -49,7 +49,7 @@ rodents are sampled on a series of 24 plots, with different experimental
 manipulations controlling which rodents are allowed to access which plots.
 
 This is a real dataset that has been used in over 100 publications. We've
-simplified it just a little bit for the workshop, but you can download the
+simplified it for the workshop, but you can download the
 [full dataset](http://esapubs.org/archive/ecol/E090/118/) and work with it using
 exactly the same tools we'll learn about today.
 
@@ -117,7 +117,7 @@ Using a relational database serves several purposes.
 
 * It keeps your data separate from your analysis.
     * This means there's no risk of accidentally changing data when you analyze it.
-    * If we get new data we can just rerun the query.
+    * If we get new data we can rerun the query.
 * It's fast, even for large amounts of data.
 * It improves quality control of data entry (type constraints and use of forms in MS Access, Filemaker, Oracle Application Express etc.)
 * The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
@@ -141,7 +141,7 @@ You can see the tables in the database by looking at the left hand side of the
 screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files 
 we were exploring earlier. To see the contents of any table, click on it, and
 then click the “Browse Data” tab next to the "Database Structure" tab. This will 
-give us a view that we're used to - just a copy of the table. Hopefully this 
+give us a view that we're used to - a copy of the table. Hopefully this 
 helps to show that a database is, in some sense, just a collection of tables, 
 where there's some value in the tables that allows them to be connected to each 
 other (the "related" part of "relational database").  
