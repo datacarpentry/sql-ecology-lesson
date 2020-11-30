@@ -382,12 +382,12 @@ To practice we have some optional challenges for you.
 > >     {: .sql}
 > >
 > > 2. Solution:
-> > ~~~
-> > SELECT year, sex, COUNT(*) AS num_animal
-> > FROM surveys
-> > GROUP BY sex, year;
-> > ~~~
-> > {: .sql}
+> >     ~~~
+> >     SELECT year, sex, COUNT(*) AS num_animal
+> >     FROM surveys
+> >     GROUP BY sex, year;
+> >     ~~~
+> >     {: .sql}
 > >
 > > 3. Solution: 
 > >     ~~~
