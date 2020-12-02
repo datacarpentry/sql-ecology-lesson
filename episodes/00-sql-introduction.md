@@ -17,14 +17,15 @@ keypoints:
 - "Different database management systems (DBMS) use slightly different vocabulary, but they are all based on the same ideas."
 ---
 
-## Setup
-
-_Note: this should have been done by participants before the start of the workshop._
-
-We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
-[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
-throughout this lesson. See [Setup](../setup.html) for
-instructions on how to download the data, and also how to install DB Browser for SQLite.
+> ## Setup
+> 
+> _Note: this should have been done by participants before the start of the workshop._
+> 
+> We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
+> [Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
+> throughout this lesson. See [Setup](../setup.html) for
+> instructions on how to download the data, and also how to install DB Browser for SQLite.
+{: .callout}
 
 # Motivation
 
