@@ -1,5 +1,5 @@
 ---
-title: "Databases using SQL"
+title: "Introducing Databases and SQL"
 teaching: 60
 exercises: 5
 questions:
