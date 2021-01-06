@@ -21,22 +21,22 @@ keypoints:
 
 _Note: this should have been done by participants before the start of the workshop._
 
-We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the 
+We use [DB Browser for SQLite](http://sqlitebrowser.org/) and the
 [Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459)
 throughout this lesson. See [Setup](../setup.html) for
 instructions on how to download the data, and also how to install DB Browser for SQLite.
 
 # Motivation
 
-To start, let's orient ourselves in our project workflow.  Previously, 
-we used Excel and OpenRefine to go from messy, human created data 
-to cleaned, computer-readable data.  Now we're going to move to the next piece 
-of the data workflow, using the computer to read in our data, and then 
-use it for analysis and visualization.  
+To start, let's orient ourselves in our project workflow.  Previously,
+we used Excel and OpenRefine to go from messy, human created data
+to cleaned, computer-readable data.  Now we're going to move to the next piece
+of the data workflow, using the computer to read in our data, and then
+use it for analysis and visualization.
 
 ## What is SQL?
 
-SQL stands for Structured Query Language. SQL allows us to interact with relational databases through queries. 
+SQL stands for Structured Query Language. SQL allows us to interact with relational databases through queries.
 These queries can allow you to perform a number of actions such as: insert, select, update and delete information in a database.
 
 
@@ -55,10 +55,10 @@ exactly the same tools we'll learn about today.
 
 ## Questions
 
-First, let's download and look at some of the cleaned spreadsheets 
-from the 
-[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459).  
-We'll need the following three files: 
+First, let's download and look at some of the cleaned spreadsheets
+from the
+[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459).
+We'll need the following three files:
 
 * `surveys.csv`
 * `species.csv`
@@ -66,37 +66,37 @@ We'll need the following three files:
 
 > ## Challenge
 >
-> Open each of these csv files and explore them. 
-> What information is contained in each file?  Specifically, if I had 
-> the following research questions: 
-> 
+> Open each of these csv files and explore them.
+> What information is contained in each file?  Specifically, if I had
+> the following research questions:
+>
 > * How has the hindfoot length and weight of *Dipodomys* species changed over time?
-> * What is the average weight of each species, per year?  
+> * What is the average weight of each species, per year?
 > * What information can I learn about *Dipodomys* species in the 2000s, over time?
-> 
-> What would I need to answer these questions?  Which files have the data I need? What 
-> operations would I need to perform if I were doing these analyses by hand?  
+>
+> What would I need to answer these questions?  Which files have the data I need? What
+> operations would I need to perform if I were doing these analyses by hand?
 {: .challenge}
 
 ## Goals
 
-In order to answer the questions described above, we'll need to do the 
-following basic data operations: 
+In order to answer the questions described above, we'll need to do the
+following basic data operations:
 
 * select subsets of the data (rows and columns)
 * group subsets of data
 * do math and other calculations
 * combine data across spreadsheets
 
-In addition, we don't want to do this manually!  Instead of searching 
-for the right pieces of data ourselves, or clicking between spreadsheets, 
-or manually sorting columns, we want to make the computer do the work.  
+In addition, we don't want to do this manually!  Instead of searching
+for the right pieces of data ourselves, or clicking between spreadsheets,
+or manually sorting columns, we want to make the computer do the work.
 
-In particular, we want to use a tool where it's easy to repeat our analysis 
-in case our data changes. We also want to do all this searching without 
-actually modifying our source data.  
+In particular, we want to use a tool where it's easy to repeat our analysis
+in case our data changes. We also want to do all this searching without
+actually modifying our source data.
 
-Putting our data into a relational database and using SQL will help us achieve these goals.  
+Putting our data into a relational database and using SQL will help us achieve these goals.
 
 > ## Definition: *Relational Database*
 >
@@ -124,12 +124,11 @@ Using a relational database serves several purposes.
 
 ## Database Management Systems
 
-There are a number of different database management systems for working with
-relational data. We're going to use SQLite today, but basically everything we
-teach you will apply to the other database systems as well (e.g. MySQL,
-PostgreSQL, MS Access, MS SQL Server, Oracle Database and Filemaker Pro). The 
-only things that will differ are the details of exactly how to import and 
-export data and the [details of data types](#datatypediffs).
+There are different database management systems to work with relational databases
+such as SQLite, MySQL, Potsgresql, MSSQL Server, and many more. Each of them differ
+mainly based on their scalability, but they all share the same core principles of
+relational databases. In this lesson, we use SQLite to introduce you to SQL and
+data retrieval from a relational database.
 
 ## Relational databases
 
@@ -138,25 +137,25 @@ file from the Portal Project dataset that we downloaded during
 [Setup](/sql-ecology-lesson/setup.html). Click on the "Open Database" button, select the portal_mammals.sqlite file, and click "Open" to open the database.
 
 You can see the tables in the database by looking at the left hand side of the
-screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files 
+screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files
 we were exploring earlier. To see the contents of any table, click on it, and
-then click the “Browse Data” tab next to the "Database Structure" tab. This will 
-give us a view that we're used to - a copy of the table. Hopefully this 
-helps to show that a database is, in some sense, just a collection of tables, 
-where there's some value in the tables that allows them to be connected to each 
-other (the "related" part of "relational database").  
+then click the “Browse Data” tab next to the "Database Structure" tab. This will
+give us a view that we're used to - a copy of the table. Hopefully this
+helps to show that a database is, in some sense, just a collection of tables,
+where there's some value in the tables that allows them to be connected to each
+other (the "related" part of "relational database").
 
-The "Database Structure" tab also provides some metadata about each table. If you click on the down arrow next to a table name, you will see information about the columns, which in databases are referred to as "fields," and their assigned data types.  
-(The rows of a database table 
-are called *records*.) Each field contains 
-one variety or type of data, often numbers or text. You can see in the 
-`surveys` table that most fields contain numbers (BIGINT, or big integer, and FLOAT, or floating point numbers/decimals) while the `species` 
-table is entirely made up of text fields.  
+The "Database Structure" tab also provides some metadata about each table. If you click on the down arrow next to a table name, you will see information about the columns, which in databases are referred to as "fields," and their assigned data types.
+(The rows of a database table
+are called *records*.) Each field contains
+one variety or type of data, often numbers or text. You can see in the
+`surveys` table that most fields contain numbers (BIGINT, or big integer, and FLOAT, or floating point numbers/decimals) while the `species`
+table is entirely made up of text fields.
 
-The "Execute SQL" tab is blank now - this is where we'll be typing our queries 
-to retrieve information from the database tables.  
+The "Execute SQL" tab is blank now - this is where we'll be typing our queries
+to retrieve information from the database tables.
 
-To summarize: 
+To summarize:
 
 * Relational databases store data in tables with fields (columns) and records
   (rows)
@@ -176,12 +175,12 @@ To summarize:
 
 ## Import
 
-Before we get started with writing our own queries, we'll create our own 
-database.  We'll be creating this database from the three `csv` files 
-we downloaded earlier.  Close the currently open database (**File > Close Database**) and then 
-follow these instructions: 
+Before we get started with writing our own queries, we'll create our own
+database.  We'll be creating this database from the three `csv` files
+we downloaded earlier.  Close the currently open database (**File > Close Database**) and then
+follow these instructions:
 
-1. Start a New Database 
+1. Start a New Database
     - Click the **New Database** button
     - Give a name and click Save to create the database in the opened folder
     - In the "Edit table definition" window that pops up, click cancel as we will be importing tables, not creating them from scratch
