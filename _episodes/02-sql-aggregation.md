@@ -96,7 +96,7 @@ If we want to group by multiple fields, we give `GROUP BY` a comma separated lis
 >
 > > ## Solution of 2 and 3
 > > ~~~
-> > SELECT year, species_id, COUNT(*), AVG(weight) 
+> > SELECT year, species_id, COUNT(*), AVG(weight)
 > > FROM surveys
 > > GROUP BY year, species_id;
 > > ~~~
@@ -205,9 +205,6 @@ question about that particular subset of data. Hence, we can benefit from a view
     SELECT *
     FROM surveys
     WHERE year = 2000 AND (month > 4 AND month < 10);
-
-You can also add a view using *Create View* in the *View* menu and see the
-results in the *Views* tab, the same way as creating a table from the menu.
 
 Using a view we will be able to access these results with a much shorter notation:
 
