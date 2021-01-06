@@ -1,5 +1,5 @@
 ---
-title: "SQL Aggregation and aliases"
+title: "Aggregating and Grouping Data"
 teaching: 50
 exercises: 10
 questions:
