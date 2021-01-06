@@ -4,16 +4,17 @@ title: Setup
 ---
 
 > ## Data
-> **Download** this data to your computer: [https://doi.org/10.6084/m9.figshare.1314459](https://doi.org/10.6084/m9.figshare.1314459). Click on **Download all** to download the zip file. Unzip it to a location that you can easily find on your computer.
+> This lesson uses specific data files from the [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459). To 
+> get the data, go to the [data location on figshare](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) and click on **Dowwnload all** to download the zip file. 
 > 
-> #### About the data
-> The data for this lesson is a part of the Data Carpentry Ecology workshop. 
-> It is a teaching version of the Portal Database data. 
->  
-> The data for this lesson and the workshop are in the 
-> [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) 
-> available on FigShare, with a CC-BY license 
-> available for reuse.
+> If you are working on this lesson on your own, you can move the zipped data file to 
+> anywhere on your computer where it is easy to access, and unzip the files. If you 
+> are working on this lesson as part of a workshop, your instructor may advise you 
+> to unzip the data files in a specific location. 
+> 
+> See the 
+> [Ecology Workshop Overview Page](https://datacarpentry.org/ecology-workshop/) for more details about the data set. 
+> 
 {: .prereq}
 
 
@@ -24,4 +25,12 @@ title: Setup
 > 
 > We will use the [DB Browser for SQLite](http://sqlitebrowser.org/) program,
 > which is available for all major platforms.
+{: .prereq}
+
+> ## Am I ready? 
+> 
+> The [first lesson episode](/00-sql-introduction/index.html) has instructions
+> on loading the data in DB Browser. If you can follow the instructions under "Relational
+> Databases" or "Import", everything should have downloaded and installed correctly. 
+> 
 {: .prereq}
