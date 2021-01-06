@@ -10,4 +10,5 @@ on how to contribute updates, bug fixes, or other corrections.
 ## Maintainers
 
 * Timothée Poisot ([@tpoisot](https://github.com/tpoisot))
-* Rémi Rampin ([@remram44](https://github.com/remram44))
+* Christina Koch ([@ChristinaLK](https://github.com/ChristinaLK))
+* Katy Felkner ([@katyfelkner](https://github.com/katyfelkner))
