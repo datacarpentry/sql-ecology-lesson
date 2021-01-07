@@ -1,5 +1,5 @@
 ---
-title: "Joins"
+title: "Combining Data With Joins"
 teaching: 15
 exercises: 10
 questions:
