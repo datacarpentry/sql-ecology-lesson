@@ -39,7 +39,7 @@ helpful to identify that you're now somewhere between clean data and analysis.
 * Data import
     * Not necessarily a concept, but we always have at least a handful of people that 
       struggle with the table import step -- especially in the virtual context with window changing
-    * Data type options in SQLite (Integer, text, blog, real, numeric) when importing 
+    * Data type options in SQLite (Integer, text, blob, real, numeric) when importing 
       from CSV. (Maybe have a table of SQLite date types in the student material).
 * Good to make sure that a comparison is drawn between joins in different 
 languages, e.g. SQL vs tidyverse
