@@ -33,6 +33,20 @@ If you've written up a diagram of the data analysis pipeline (raw data ->
 clean data -> import and analyze -> results -> visualization), it can be
 helpful to identify that you're now somewhere between clean data and analysis.
 
+## Common Difficult Concepts
+
+* Making the leap from a research question to a query (seen in some of the challenges)
+* Data import
+    * Not necessarily a concept, but we always have at least a handful of people that 
+      struggle with the table import step -- especially in the virtual context with window changing
+    * Data type options in SQLite (Integer, text, blob, real, numeric) when importing 
+      from CSV. (Maybe have a table of SQLite date types in the student material).
+* Good to make sure that a comparison is drawn between joins in different 
+languages, e.g. SQL vs tidyverse
+* HAVING, and why it's different to WHERE.... - especially when teaching online
+* given the dataset is _relatively_ complex, some students (and instructors) find it difficult to remember what data is where, especially when they're from a totally different domain 
+* How NULLs behave in different circumstances (when did a NULL change your result and how do you know?)
+
 ## Lesson outline
 
 ### 00-sql-introduction
@@ -312,4 +326,3 @@ plot in descending order.
 	JOIN species ON surveys.species_id = species.species_id
 	GROUP BY species.genus, surveys.plot_id
 	ORDER BY surveys.plot_id, COUNT(*) DESC
-
