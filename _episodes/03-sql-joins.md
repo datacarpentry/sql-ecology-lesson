@@ -11,9 +11,9 @@ objectives:
 keypoints:
 - "Use the `JOIN` command to combine data from two tables---the `ON` or `USING` keywords specify which columns link the tables."
 - "Regular `JOIN` returns only matching rows. Other join commands provide different behavior, e.g., `LEFT JOIN` retains all rows of the table on the left side of the command."
-- "`IFNULL` allows you to specify a value to use in place of `NULL`, which can help in joins"
+- "`COALESCE` allows you to specify a value to use in place of `NULL`, which can help in joins"
 - "`NULLIF` can be used to replace certain values with `NULL` in results"
-- "Many other functions like `IFNULL` and `NULLIF` can operate on individual values."
+- "Many other functions like `COALESCE` and `NULLIF` can operate on individual values."
 ---
 
 ## Joins
@@ -221,21 +221,21 @@ could do something like
 > {: .solution}
 {: .challenge}
 
-## Functions `IFNULL` and `NULLIF` and more
+## Functions `COALESCE` and `NULLIF` and more
 
 SQL includes numerous functions for manipulating data. You've already seen some
 of these being used for aggregation (`SUM` and `COUNT`) but there are functions
 that operate on individual values as well. Probably the most important of these
-are `IFNULL` and `NULLIF`. `IFNULL` allows us to specify a value to use in
+are `COALESCE` and `NULLIF`. `COALESCE` allows us to specify a value to use in
 place of `NULL`.
 
 We can represent unknown sexes with `'U'` instead of `NULL`:
 
-    SELECT species_id, sex, IFNULL(sex, 'U')
+    SELECT species_id, sex, COALESCE(sex, 'U')
     FROM surveys;
 
 The lone "sex" column is only included in the query above to illustrate where
-`IFNULL` has changed values; this isn't a usage requirement.
+`COALESCE` has changed values; this isn't a usage requirement.
 
 > ## Challenge:
 >
@@ -244,7 +244,7 @@ The lone "sex" column is only included in the query above to illustrate where
 >
 > > ## Solution
 > > ~~~
-> > SELECT hindfoot_length, IFNULL(hindfoot_length, 30)
+> > SELECT hindfoot_length, COALESCE(hindfoot_length, 30)
 > > FROM surveys;
 > > ~~~
 > > {: .sql}
@@ -258,7 +258,7 @@ The lone "sex" column is only included in the query above to illustrate where
 >
 > > ## Solution
 > > ~~~
-> > SELECT species_id, AVG(IFNULL(hindfoot_length,30))
+> > SELECT species_id, AVG(COALESCE(hindfoot_length, 30))
 > > FROM surveys
 > > GROUP BY species_id;
 > > ~~~
@@ -266,25 +266,24 @@ The lone "sex" column is only included in the query above to illustrate where
 > {: .solution}
 {: .challenge}
 
-`IFNULL` can be particularly useful in `JOIN`. When joining the `species` and
+`COALESCE` can be particularly useful in `JOIN`. When joining the `species` and
 `surveys` tables earlier, some results were excluded because the `species_id`
-was `NULL` in the surveys table. We can use `IFNULL` to include them again, re-writing the `NULL` to
+was `NULL` in the surveys table. We can use `COALESCE` to include them again, re-writing the `NULL` to
 a valid joining value:
 
     SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
     FROM surveys
     JOIN species
-    ON IFNULL(surveys.species_id,'AB') = species.species_id;
+    ON COALESCE(surveys.species_id, 'AB') = species.species_id;
 
 > ## Challenge:
 >
 > - Write a query that returns the number of animals caught of each genus in each
-> plot, using `IFNULL` to assume that unknown species are all of the genus
-> "Rodent".
+> plot, assuming that unknown species are all of the genus "Rodent".
 >
 > > ## Solution
 > > ~~~
-> > SELECT plot_id, IFNULL(genus, 'Rodent') AS genus2, COUNT(*)
+> > SELECT plot_id, COALESCE(genus, 'Rodent') AS genus2, COUNT(*)
 > > FROM surveys 
 > > LEFT JOIN species
 > > ON surveys.species_id=species.species_id
@@ -294,7 +293,7 @@ a valid joining value:
 > {: .solution}
 {: .challenge}
 
-The inverse of `IFNULL` is `NULLIF`. This returns `NULL` if the first argument
+The inverse of `COALESCE` is `NULLIF`. This returns `NULL` if the first argument
 is equal to the second argument. If the two are not equal, the first argument
 is returned. This is useful for "nulling out" specific values.
 
@@ -309,6 +308,7 @@ below:
 | Function                     | Description                                                                                     |
 |------------------------------|-------------------------------------------------------------------------------------------------|
 | `ABS(n)`                     | Returns the absolute (positive) value of the numeric expression *n*                             |
+| `COALESCE(x1, ..., xN)`      | Returns the first of its parameters that is not NULL                                            |
 | `LENGTH(s)`                  | Returns the length of the string expression *s*                                                 |
 | `LOWER(s)`                   | Returns the string expression *s* converted to lowercase                                        |
 | `NULLIF(x, y)`               | Returns NULL if *x* is equal to *y*, otherwise returns *x*                                      |
@@ -321,7 +321,6 @@ table below:
 
 | Function                            | Description                                                                                                                                                                    |
 |-------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `IFNULL(x, y)`                      | Returns *x* if it is non-NULL, otherwise returns *y*                                                                                                                           |
 | `RANDOM()`                          | Returns a random integer between -9223372036854775808 and +9223372036854775807.                                                                                                |
 | `REPLACE(s, f, r)`                  | Returns the string expression *s* in which every occurrence of *f* has been replaced with *r*                                                                                  |
 | `SUBSTR(s, x, y)` or `SUBSTR(s, x)` | Returns the portion of the string expression *s* starting at the character position *x* (leftmost position is 1), *y* characters long (or to the end of *s* if *y* is omitted) |
