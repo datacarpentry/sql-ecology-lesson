@@ -5,7 +5,7 @@ title: Setup
 
 > ## Data
 > This lesson uses specific data files from the [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459). To 
-> get the data, go to the [data location on figshare](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) and click on **Download all** to download the zip file. 
+> get the data, go to the [data location on figshare](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) and click on the **Download all** button to download the zip file. 
 > 
 > If you are working on this lesson on your own, you can move the zipped data file to 
 > anywhere on your computer where it is easy to access, and unzip the files. If you 
