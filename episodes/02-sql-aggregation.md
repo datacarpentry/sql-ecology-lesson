@@ -117,20 +117,32 @@ species captured, ordered by the count:
 
 ## Aliases
 
-As queries get more complex names can get long and unwieldy. To help make things
-clearer we can use aliases to assign new names to things in the query.
+As queries get more complex, the expressions we use can get long and unwieldy. To help make things
+clearer in the query and in its output, we can use aliases to assign new names to things in the query. 
 
-We can use aliases in column names or table names using `AS`:
+We can use aliases in column names using `AS`:
 
     SELECT MAX(year) AS last_surveyed_year
     FROM surveys;
 
 The `AS` isn't technically required, so you could do
 
-    SELECT MAX(year) yr
-    FROM surveys surv;
+    SELECT MAX(year) last_surveyed_year
+    FROM surveys;
 
 but using `AS` is much clearer so it is good style to include it.
+
+We can not only alias column names, but also table names in the same way:
+
+    SELECT *
+    FROM surveys AS surv;
+    
+And again, the `AS` keyword is not required, so this works, too:
+
+    SELECT *
+    FROM surveys surv;
+
+Aliasing table names can be helpful when working with queries that involve multiple tables; you will learn more about this later.
 
 ## The `HAVING` keyword
 
@@ -262,7 +274,7 @@ But if we compare those two numbers with the total:
 
 We'll see that they don't add up to the total! That's because SQL
 doesn't automatically include NULL values in a negative conditional
-statement.  So if we are quering "not x", then SQL divides our data
+statement.  So if we are querying "not x", then SQL divides our data
 into three categories: 'x', 'not NULL, not x' and NULL; then,
 returns the 'not NULL, not x' group. Sometimes this may be what we want -
 but sometimes we may want the missing values included as well! In that
