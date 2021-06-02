@@ -26,9 +26,13 @@ into them and how you can query databases to extract just the information that y
 >
 > #### Prerequisites
 >
-> This lesson requires a working copy of **DB Browser for SQLite** for SQL.
-> <br>To most effectively use these materials, please make sure to install 
-> everything *before* working through this lesson.
+> This lesson requires:
+> -  Working copy of **DB Browser for SQLite for SQL**
+> -  A dataset
+> 
+> Follow the directions in the **Setup** tab to download both the DB Browser for SQLite and the data to your computer and follow any installation instructions.
+> 
+> Please make sure to install everything *before* working through this lesson.
 {: .prereq}
 
 > ## For Instructors
