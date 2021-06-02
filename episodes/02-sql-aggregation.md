@@ -262,7 +262,7 @@ But if we compare those two numbers with the total:
 
 We'll see that they don't add up to the total! That's because SQL
 doesn't automatically include NULL values in a negative conditional
-statement.  So if we are quering "not x", then SQL divides our data
+statement.  So if we are querying "not x", then SQL divides our data
 into three categories: 'x', 'not NULL, not x' and NULL; then,
 returns the 'not NULL, not x' group. Sometimes this may be what we want -
 but sometimes we may want the missing values included as well! In that
