@@ -19,12 +19,16 @@ title: Setup
 
 
 > ## Software
-> SQL is a specialized programming language used with databases.  We
-> use a simple database manager called [SQLite](http://www.sqlite.org/)
-> in our lessons.
 > 
-> We will use the [DB Browser for SQLite](http://sqlitebrowser.org/) program,
-> which is available for all major platforms.
+> Download **DB Browser for SQLite** for your operating system 
+> from [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/). 
+> **DB Browser for SQLite** is a visual tool to create, edit, and 
+> query **SQLite** databases. **SQLite** is included with **DB Browser 
+> for SQLite**, so it does not have to be installed separately.
+> * There are a few options for Windows, but most modern computers can use the `Standard installer for 64-bit Windows` version
+>   * The `.zip (no installer)` version can be run directly from the folder, after extracting the contents of the zip file. It will not show up in the `Start` menu.
+> 
+> Launch **DB Broser for SQLite** to confirm that the installation was successful. 
 {: .prereq}
 
 > ## Am I ready? 
