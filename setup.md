@@ -28,7 +28,7 @@ title: Setup
 > * There are a few options for Windows, but most modern computers can use the `Standard installer for 64-bit Windows` version
 >   * The `.zip (no installer)` version can be run directly from the folder, after extracting the contents of the zip file. It will not show up in the `Start` menu.
 > 
-> Launch **DB Broser for SQLite** to confirm that the installation was successful. 
+> Launch **DB Browser for SQLite** to confirm that the installation was successful. 
 {: .prereq}
 
 > ## Am I ready? 
