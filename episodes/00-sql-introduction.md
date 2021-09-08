@@ -55,10 +55,7 @@ exactly the same tools we'll learn about today.
 
 ## Questions
 
-First, let's download and look at some of the cleaned spreadsheets
-from the
-[Portal Project dataset](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459).
-We'll need the following three files:
+Let's look at some of the cleaned spreadsheets you downloaded during [Setup](../setup.html) to complete this challenge. You'll need the following three files:
 
 * `surveys.csv`
 * `species.csv`
