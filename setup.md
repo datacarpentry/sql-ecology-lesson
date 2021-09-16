@@ -33,7 +33,7 @@ title: Setup
 
 > ## Am I ready? 
 > 
-> The [first lesson episode](/00-sql-introduction/index.html) has instructions
+> The [first lesson episode](/sql-ecology-lesson/00-sql-introduction/index.html) has instructions
 > on loading the data in DB Browser. If you can follow the instructions under "Relational
 > Databases" or "Import", everything should have downloaded and installed correctly. 
 > 
