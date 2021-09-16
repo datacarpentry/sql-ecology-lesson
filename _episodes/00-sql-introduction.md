@@ -9,8 +9,6 @@ objectives:
 - "Describe why relational databases are useful."
 - "Create and populate a database from a text file."
 - "Define SQLite data types."
-- "Select, group, add to, and analyze subsets of data."
-- "Combine data across multiple tables."
 keypoints:
 - "SQL allows us to select and group subsets of data, do math and other calculations, and combine data."
 - "A relational database is made up of tables which are related to each other by shared keys."
