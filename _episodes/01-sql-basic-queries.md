@@ -23,6 +23,9 @@ what plot they were captured on, their species ID, sex and weight in grams.
 
 Let’s write an SQL query that selects all of the columns in the surveys table. SQL queries can be written in the box located under the "Execute SQL" tab. Click on the right arrow above the query box to execute the query. (You can also use the keyboard shortcut "Cmd-Enter" on a Mac or "Ctrl-Enter" on a Windows machine to execute a query.) The results are displayed in the box below your query. If you want to display all of the columns in a table, use the wildcard *.
 
+> Semicolon is the standard way to separate each SQL statement in database systems that allow more than one SQL statement to be executed in the same call to the server.
+> It is possible to write a query as a single line, but for readability, we recommend to put each clause on its own line.
+
     SELECT *
     FROM surveys;
 
@@ -250,8 +253,7 @@ The computer is basically doing this:
 3. Displaying requested columns or expressions.
 
 Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
-BY`. It is possible to write a query as a single line, but for readability,
-we recommend to put each clause on its own line.
+BY`. 
 
 > ## Challenge
 >
