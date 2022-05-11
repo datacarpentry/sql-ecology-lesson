@@ -133,8 +133,8 @@ file from the Portal Project dataset that we downloaded during
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files
-we were exploring earlier. To see the contents of any table, click on it, and
-then click the “Browse Data” tab next to the "Database Structure" tab. This will
+we were exploring earlier. To see the contents of any table, right-click on it, and
+then click the “Browse Table” from the menu, or select the “Browse Data” tab next to the "Database Structure" tab and select the wanted table from the dropdown named “Table”. This will
 give us a view that we're used to - a copy of the table. Hopefully this
 helps to show that a database is, in some sense, just a collection of tables,
 where there's some value in the tables that allows them to be connected to each
