@@ -241,10 +241,10 @@ we might get tripped up:
     FROM summer_2000
     WHERE species_id = 'PE';
 
-Here the `COUNT` command includes all five records (even those with NULL
+Here the `COUNT` clause includes all five records (even those with NULL
 values), but the `SUM` only includes the three records with data in the
 `weight` field, giving us an incorrect average. However,
-our strategy *will* work if we modify the `COUNT` command slightly:
+our strategy *will* work if we modify the `COUNT` clause slightly:
 
     SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
     FROM summer_2000
