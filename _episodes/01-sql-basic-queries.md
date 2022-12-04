@@ -42,7 +42,7 @@ right after SELECT:
 
 ### Limiting results
 
-Sometimes you don't want to see all the results, you just want to get a sense of what's being returned. In that case, you can use the `LIMIT` clause. In particular, you would want to do this if you were working with large databases.
+Sometimes you don't want to see all the results, you just want to get a sense of what's being returned. In that case, you can use a `LIMIT` clause. In particular, you would want to do this if you were working with large databases.
 
     SELECT *
     FROM surveys
