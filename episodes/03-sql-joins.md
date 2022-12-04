@@ -9,7 +9,7 @@ objectives:
 - "Apply functions to manipulate individual values."
 - "Employ aliases to assign new names to tables and columns in a query."
 keypoints:
-- "Use the `JOIN` clause to combine data from two tables---the `ON` or `USING` keywords specify which columns link the tables."
+- "Use a `JOIN` clause to combine data from two tables---the `ON` or `USING` keywords specify which columns link the tables."
 - "Regular `JOIN` returns only matching rows. Other join clauses provide different behavior, e.g., `LEFT JOIN` retains all rows of the table on the left side of the clause."
 - "`COALESCE` allows you to specify a value to use in place of `NULL`, which can help in joins"
 - "`NULLIF` can be used to replace certain values with `NULL` in results"
@@ -18,7 +18,7 @@ keypoints:
 
 ## Joins
 
-To combine data from two tables we use the SQL `JOIN` clause, which comes after
+To combine data from two tables we use an SQL `JOIN` clause, which comes after
 the `FROM` clause.
 
 
@@ -26,10 +26,10 @@ Database tables are used to organize and group data by common characteristics or
 Often, we need to combine elements from separate tables into a single tables or queries for analysis and visualization.
 A JOIN is a means for combining columns from multiple tables by using values common to each.
 
-The JOIN clause combined with ON is used to combine fields from separate tables.  
+The JOIN keyword combined with ON is used to combine fields from separate tables.  
 
 
-The `JOIN` clause on its own will result in a cross product, where each row in
+A `JOIN` clause on its own will result in a cross product, where each row in
 the first table is paired with each row in the second table. Usually this is not
 what is desired when combining two tables with data that is related in some way.
 
@@ -46,8 +46,8 @@ species id.
 the `table.colname` format to tell the manager what column in which table we are
 referring to.
 
-The output of the `JOIN` clause will have columns from the first table plus the
-columns from the second table. For the above clause, the output will be a table
+The output from using the `JOIN` clause will have columns from the first table plus the
+columns from the second table. For the above statement, the output will be a table
 that has the following column names:
 
 | record_id | month | day | year | plot_id | species_id | sex | hindfoot_length | weight | species_id | genus | species | taxa |
@@ -136,11 +136,11 @@ survey data.
 This is because, by default, SQL only returns records where the joining value
 is present in the joined columns of both tables (i.e. it takes the _intersection_
 of the two join columns). This joining behaviour is known as an `INNER JOIN`.
-In fact the `JOIN` clause is simply shorthand for `INNER JOIN` and the two
+In fact the `JOIN` keyword is simply shorthand for `INNER JOIN` and the two
 terms can be used interchangably as they will produce the same result.
 
 We can also tell the computer that we wish to keep all the records in the first
-table by using the clause `LEFT OUTER JOIN`, or `LEFT JOIN` for short.
+table by using a `LEFT OUTER JOIN` clause, or `LEFT JOIN` for short.
 
 > ## Challenge:
 >
