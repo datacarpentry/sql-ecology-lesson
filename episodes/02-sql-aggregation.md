@@ -14,7 +14,7 @@ objectives:
 keypoints:
 - "Use the `GROUP BY` keyword to aggregate data."
 - "Functions like `MIN`, `MAX`, `AVG`, `SUM`, `COUNT`, etc. operate on aggregated data."
-- "Aliases can help shorten long queries. To write clear and readible queries, use the `AS` keyword when creating aliases."
+- "Aliases can help shorten long queries. To write clear and readable queries, use the `AS` keyword when creating aliases."
 - "Use the `HAVING` keyword to filter on aggregate properties."
 - "Use a `VIEW` to access the result of a query as though it was a new table."
 ---
