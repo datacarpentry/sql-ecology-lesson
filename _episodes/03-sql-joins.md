@@ -137,7 +137,7 @@ This is because, by default, SQL only returns records where the joining value
 is present in the joined columns of both tables (i.e. it takes the _intersection_
 of the two join columns). This joining behaviour is known as an `INNER JOIN`.
 In fact the `JOIN` keyword is simply shorthand for `INNER JOIN` and the two
-terms can be used interchangably as they will produce the same result.
+terms can be used interchangeably as they will produce the same result.
 
 We can also tell the computer that we wish to keep all the records in the first
 table by using a `LEFT OUTER JOIN` clause, or `LEFT JOIN` for short.
