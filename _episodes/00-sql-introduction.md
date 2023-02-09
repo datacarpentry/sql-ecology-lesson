@@ -120,7 +120,7 @@ Using a relational database serves several purposes.
 ## Database Management Systems
 
 There are different database management systems to work with relational databases
-such as SQLite, MySQL, Potsgresql, MSSQL Server, and many more. Each of them differ
+such as SQLite, MySQL, PostgreSQL, MSSQL Server, and many more. Each of them differ
 mainly based on their scalability, but they all share the same core principles of
 relational databases. In this lesson, we use SQLite to introduce you to SQL and
 data retrieval from a relational database.
