@@ -31,7 +31,7 @@ covered in this lesson.
         </tr>
         <tr>
             <td>SELECT 1 + 2</td>
-            <td>Performas a calculation</td>
+            <td>Performs a calculation</td>
         </tr>
         <tr>
             <td>FROM</td>
@@ -47,9 +47,9 @@ covered in this lesson.
         </tr>
         <tr>
             <td>LIMIT</td>
-            <td>Retrieves the records from the table based on the limit value</td>
-            <td>SELECT * <br> FROM surveys <br> LIMIT 1 </td>
-            <td>Query will display all records from the table but it will return only 1 row</td>
+            <td>Retrieves the number of records from the table up to the limit value</td>
+            <td>SELECT * <br> FROM surveys <br> LIMIT 5 </td>
+            <td>Query will will return only the first 5 rows from the table</td>
         </tr>
         <tr>
             <td>DISTINCT</td>
@@ -60,8 +60,8 @@ covered in this lesson.
         <tr>
             <td>AS</td>
             <td>Used as an alias to rename the column or table</td>
-            <td>SELECT 1 + 2 AS sum</td>
-            <td>Column will be renamed to sum</td>
+            <td>SELECT 1 + 2 AS calc</td>
+            <td>Column will be renamed to "calc"</td>
         </tr>
         <tr>
             <td>GROUP BY</td>
@@ -71,9 +71,9 @@ covered in this lesson.
         </tr>
         <tr>
             <td>HAVING</td>
-            <td>Used instead of WHERE with aggregate functions</td>
+            <td>Used to filter grouped rows when using aggregate functions</td>
             <td>SELECT MAX(weight) <br> FROM surveys <br> GROUP BY year HAVING MAX(weight) > 100</td>
-            <td>Filter the results by the years that have a max weight greater than 100g</td>
+            <td>Filter the results by the years that have a maximum weight greater than 100g</td>
         </tr>
         <tr>
             <td>JOIN</td>
