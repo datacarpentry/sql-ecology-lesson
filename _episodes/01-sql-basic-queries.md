@@ -250,8 +250,10 @@ The computer is basically doing this:
 3. Displaying requested columns or expressions.
 
 Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
-BY`. It is possible to write a query as a single line, but for readability,
-we recommend to put each clause on its own line.
+BY`. 
+
+> It is possible to write a query as a single line, but for readability, we recommend to put each clause on its own line.
+> The standard way to separate each SQL statement is with a semicolon. This allows more than one SQL statement to be executed together.
 
 > ## Challenge
 >
