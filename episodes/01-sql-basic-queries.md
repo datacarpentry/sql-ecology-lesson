@@ -46,12 +46,12 @@ Sometimes you don't want to see all the results, you just want to get a sense of
 
     SELECT *
     FROM surveys
-    LIMIT 10; 
+    LIMIT 10;
 
 ### Unique values
 
 If we want only the unique values so that we can quickly see what species have
-been sampled we use `DISTINCT` 
+been sampled we use `DISTINCT`
 
     SELECT DISTINCT species_id
     FROM surveys;
@@ -112,7 +112,7 @@ Here, we only want the data since 2000:
     WHERE year >= 2000;
 
 If we used the `TEXT` data type for the year, the `WHERE` clause should
-be `year >= '2000'`. 
+be `year >= '2000'`.
 
 We can use more sophisticated conditions by combining tests
 with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
@@ -135,9 +135,9 @@ species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
 > ## Challenge
 >
-> - Produce a table listing the data for all individuals in Plot 1 
+> - Produce a table listing the data for all individuals in Plot 1
 > that weighed more than 75 grams, telling us the date, species id code, and weight
-> (in kg). 
+> (in kg).
 >
 > > ## Solution
 > > ~~~
@@ -250,10 +250,13 @@ The computer is basically doing this:
 3. Displaying requested columns or expressions.
 
 Clauses are written in a fixed order: `SELECT`, `FROM`, `WHERE`, then `ORDER
-BY`. 
+BY`.
 
+> ## Multiple statements
+>
 > It is possible to write a query as a single line, but for readability, we recommend to put each clause on its own line.
-> The standard way to separate each SQL statement is with a semicolon. This allows more than one SQL statement to be executed together.
+> The standard way to separate a whole SQL statement is with a semicolon. This allows more than one SQL statement to be executed together.
+{: .discussion}
 
 > ## Challenge
 >
