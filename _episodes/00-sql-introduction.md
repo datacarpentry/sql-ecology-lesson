@@ -187,7 +187,8 @@ follow these instructions:
 7. Press **OK**, you should subsequently get a message that the table was imported.
 9. Back on the Database Structure tab, you should now see the table listed. Right click on the table name and choose **Modify Table**, or click on the **Modify Table** button just under the tabs and above the table list.
 10. Click **Save** if asked to save all pending changes.
-11. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also):
+11. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also).
+12. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
 | Field             | Data Type      | Motivation                                                                       | Table(s)          |
 |-------------------|:---------------|----------------------------------------------------------------------------------|-------------------|
@@ -204,8 +205,6 @@ follow these instructions:
 | taxa              | TEXT           | Field contains text data                                                 	| species           |
 | weight            | REAL           | Field contains measured numerical data                                           | surveys           |
 | year              | INTEGER        | Allows for meaningful arithmetic and comparisons                                 | surveys           |
-
-12. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
 
 > ## Challenge
