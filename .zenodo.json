@@ -1,1 +1,164 @@
-{"contributors":[{"type":"Editor","name":"Paula Andrea Martinez"},{"type":"Editor","name":"Timothée Poisot"}],"creators":[{"name":"Greg Wilson"},{"name":"Raniere Silva"},{"name":"Ethan White"},{"name":"Timothée Poisot"},{"name":"Tracy Teal"},{"name":"Francois Michonneau"},{"name":"Abigail Cabunoc"},{"name":"Aleksandra Pawlik"},{"name":"Hilmar Lapp"},{"name":"Jaime Ashander"},{"name":"Paula Andrea"},{"name":"Erin Becker"},{"name":"Christina Koch"},{"name":"Carlos Martinez"},{"name":"Karen Cranston"},{"name":"Kari L. Jordan"},{"name":"Dave Jones"},{"name":"Michel Heeremans"},{"name":"Nicky Nicolson"},{"name":"Rémi Emonet"},{"name":"Byron Smith"},{"name":"Casey Youngflesh"},{"name":"Fanie Riekert"},{"name":"Piotr Banaszkiewicz"},{"name":"Jin"},{"name":"Josh Herr"},{"name":"Auriel Fournier"},{"name":"Christie Bahlai"},{"name":"James Allen"},{"name":"Jon Pipitone"},{"name":"Karthik Ram"},{"name":"Maneesha Sane"},{"name":"Maxim Belkin"},{"name":"Michael Hansen"},{"name":"Nick Young"},{"name":"evanwill"},{"name":"Akima George"},{"name":"Andrew Scheller"},{"name":"Bill Mills"},{"name":"Christopher Medrela"},{"name":"Gabriel A. Devenyi"},{"name":"Geoffrey Boushey"},{"name":"Ian Carroll"},{"name":"Jethro Johnson"},{"name":"Jonah Duckles"},{"name":"Kevin Foobar"},{"name":"Laurent Gatto"},{"name":"Moritz Neeb"},{"name":"Saira Kazmi"},{"name":"Sebastian Schmeier"},{"name":"Sophie Clayton"},{"name":"Sumana Harihareswara"},{"name":"W. Trevor King"},{"name":"Will Furnass"},{"name":"Xu Fei"},{"name":"ashander"}]}
+{
+  "contributors": [
+    {
+      "type": "Editor",
+      "name": "James D Foster",
+      "orcid": "0000-0002-5182-9295"
+    },
+    {
+      "type": "Editor",
+      "name": "Sathya Pandalai"
+    },
+    {
+      "type": "Editor",
+      "name": "Katy Felkner"
+    }
+  ],
+  "creators": [
+    {
+      "name": "Christina Koch",
+      "orcid": "0000-0001-8600-8158"
+    },
+    {
+      "name": "Paula Andrea Martinez",
+      "orcid": "0000-0002-8990-1985"
+    },
+    {
+      "name": "Rémi Rampin",
+      "orcid": "0000-0002-0524-2282"
+    },
+    {
+      "name": "Timothée Poisot"
+    },
+    {
+      "name": "Maneesha Sane"
+    },
+    {
+      "name": "Amy E. Hodge",
+      "orcid": "0000-0002-5902-3077"
+    },
+    {
+      "name": "James D Foster",
+      "orcid": "0000-0002-5182-9295"
+    },
+    {
+      "name": "Lisa Ngo"
+    },
+    {
+      "name": "Marchand"
+    },
+    {
+      "name": "BJ Lougee"
+    },
+    {
+      "name": "Emmanuelle Rodrigues Nunes",
+      "orcid": "0000-0001-5994-352X"
+    },
+    {
+      "name": "Jacqueline Muller",
+      "orcid": "0000-0003-2709-5444"
+    },
+    {
+      "name": "Samantha Bail"
+    },
+    {
+      "name": "Karen Cranston",
+      "orcid": "0000-0002-4798-9499"
+    },
+    {
+      "name": "Kari L Jordan",
+      "orcid": "0000-0003-4121-2432"
+    },
+    {
+      "name": "Viviane Girardin"
+    },
+    {
+      "name": "Rohit Singla"
+    },
+    {
+      "name": "Aditya Sarin"
+    },
+    {
+      "name": "Adrian Png"
+    },
+    {
+      "name": "Amanda Devine"
+    },
+    {
+      "name": "Chris Wood",
+      "orcid": "0000-0001-6258-6447"
+    },
+    {
+      "name": "Dan Villa"
+    },
+    {
+      "name": "Deborah (Debbie) Buehler",
+      "orcid": "0000-0003-3669-6364"
+    },
+    {
+      "name": "Dominic Bordelon"
+    },
+    {
+      "name": "Drew Fordham"
+    },
+    {
+      "name": "Fernando Rios"
+    },
+    {
+      "name": "James D Foster"
+    },
+    {
+      "name": "Jen Smith",
+      "orcid": "0000-0001-5329-0417"
+    },
+    {
+      "name": "Luis J Villanueva"
+    },
+    {
+      "name": "Neil Bizzell"
+    },
+    {
+      "name": "Nicola Soranzo",
+      "orcid": "0000-0003-3627-5340"
+    },
+    {
+      "name": "Ryan Gan",
+      "orcid": "0000-0001-9056-1466"
+    },
+    {
+      "name": "ShenmengXu"
+    },
+    {
+      "name": "Steven Ford"
+    },
+    {
+      "name": "Zak van Heerden"
+    },
+    {
+      "name": "bathmer"
+    },
+    {
+      "name": "cjcenter"
+    },
+    {
+      "name": "Erin Jonaitis"
+    },
+    {
+      "name": "Gaurav Vaidya",
+      "orcid": "0000-0003-0587-0454"
+    },
+    {
+      "name": "Henry Senyondo",
+      "orcid": "0000-0001-7105-5808"
+    },
+    {
+      "name": "Novica Nakov"
+    },
+    {
+      "name": "tatumhawkins"
+    }
+  ],
+  "license": {
+    "id": "CC-BY-4.0"
+  }
+}
