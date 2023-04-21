@@ -26,7 +26,7 @@ what plot they were captured on, their species ID, sex and weight in grams.
 
 Let's write an SQL query that selects all of the columns in the surveys table. SQL queries can be written in the box located under the "Execute SQL" tab. Click on the right arrow above the query box to execute the query. (You can also use the keyboard shortcut "Cmd-Enter" on a Mac or "Ctrl-Enter" on a Windows machine to execute a query.) The results are displayed in the box below your query. If you want to display all of the columns in a table, use the wildcard \*.
 
-```
+```sql
 SELECT *
 FROM surveys;
 ```
@@ -36,7 +36,7 @@ SQL is case insensitive, but it helps for readability, and is good style.
 
 If we want to select a single column, we can type the column name instead of the wildcard \*.
 
-```
+```sql
 SELECT year
 FROM surveys;
 ```
@@ -44,7 +44,7 @@ FROM surveys;
 If we want more information, we can add more columns to the list of fields,
 right after SELECT:
 
-```
+```sql
 SELECT year, month, day
 FROM surveys;
 ```
@@ -53,7 +53,7 @@ FROM surveys;
 
 Sometimes you don't want to see all the results, you just want to get a sense of what's being returned. In that case, you can use a `LIMIT` clause. In particular, you would want to do this if you were working with large databases.
 
-```
+```sql
 SELECT *
 FROM surveys
 LIMIT 10;
@@ -64,7 +64,7 @@ LIMIT 10;
 If we want only the unique values so that we can quickly see what species have
 been sampled we use `DISTINCT`
 
-```
+```sql
 SELECT DISTINCT species_id
 FROM surveys;
 ```
@@ -72,7 +72,7 @@ FROM surveys;
 If we select more than one column, then the distinct pairs of values are
 returned
 
-```
+```sql
 SELECT DISTINCT year, species_id
 FROM surveys;
 ```
@@ -83,7 +83,7 @@ We can also do calculations with the values in a query.
 For example, if we wanted to look at the mass of each individual
 on different dates, but we needed it in kg instead of g we would use
 
-```
+```sql
 SELECT year, month, day, weight/1000
 FROM surveys;
 ```
@@ -95,7 +95,7 @@ correct results in that case divide by `1000.0`. Expressions can use any fields,
 any arithmetic operators (`+`, `-`, `*`, and `/`) and a variety of built-in
 functions. For example, we could round the values to make them easier to read.
 
-```
+```sql
 SELECT plot_id, species_id, sex, weight, ROUND(weight / 1000, 2)
 FROM surveys;
 ```
@@ -126,7 +126,7 @@ criteria.  For example, let's say we only want data for the species
 *Dipodomys merriami*, which has a species code of DM.  We need to add a
 `WHERE` clause to our query:
 
-```
+```sql
 SELECT *
 FROM surveys
 WHERE species_id='DM';
@@ -135,7 +135,7 @@ WHERE species_id='DM';
 We can do the same thing with numbers.
 Here, we only want the data since 2000:
 
-```
+```sql
 SELECT * FROM surveys
 WHERE year >= 2000;
 ```
@@ -147,7 +147,7 @@ We can use more sophisticated conditions by combining tests
 with `AND` and `OR`.  For example, suppose we want the data on *Dipodomys merriami*
 starting in the year 2000:
 
-```
+```sql
 SELECT *
 FROM surveys
 WHERE (year >= 2000) AND (species_id = 'DM');
@@ -160,7 +160,7 @@ in the way that we intend.
 If we wanted to get data for any of the *Dipodomys* species, which have
 species codes `DM`, `DO`, and `DS`, we could combine the tests using OR:
 
-```
+```sql
 SELECT *
 FROM surveys
 WHERE (species_id = 'DM') OR (species_id = 'DO') OR (species_id = 'DS');
@@ -194,7 +194,7 @@ Now, let's combine the above queries to get data for the 3 *Dipodomys* species f
 the year 2000 on.  This time, let's use IN as one way to make the query easier
 to understand.  It is equivalent to saying `WHERE (species_id = 'DM') OR (species_id = 'DO') OR (species_id = 'DS')`, but reads more neatly:
 
-```
+```sql
 SELECT *
 FROM surveys
 WHERE (year >= 2000) AND (species_id IN ('DM', 'DO', 'DS'));
@@ -210,7 +210,7 @@ When the queries become more complex, it can be useful to add comments. In SQL,
 comments are started by `--`, and end at the end of the line. For example, a
 commented version of the above query can be written as:
 
-```
+```sql
 -- Get post 2000 data on Dipodomys' species
 -- These are in the surveys table, and we are interested in all columns
 SELECT * FROM surveys
@@ -231,14 +231,14 @@ For simplicity, let's go back to the **species** table and alphabetize it by tax
 First, let's look at what's in the **species** table. It's a table of the species\_id and the full genus, species and taxa information for each species\_id. Having this in a separate table is nice, because we didn't need to include all
 this information in our main **surveys** table.
 
-```
+```sql
 SELECT *
 FROM species;
 ```
 
 Now let's order it by taxa.
 
-```
+```sql
 SELECT *
 FROM species
 ORDER BY taxa ASC;
@@ -247,7 +247,7 @@ ORDER BY taxa ASC;
 The keyword `ASC` tells us to order it in ascending order.
 We could alternately use `DESC` to get descending order.
 
-```
+```sql
 SELECT *
 FROM species
 ORDER BY taxa DESC;
@@ -258,7 +258,7 @@ ORDER BY taxa DESC;
 We can also sort on several fields at once.
 To truly be alphabetical, we might want to order by genus then species.
 
-```
+```sql
 SELECT *
 FROM species
 ORDER BY genus ASC, species ASC;
@@ -291,7 +291,7 @@ Another note for ordering. We don't actually have to display a column to sort by
 it.  For example, let's say we want to order the birds by their species ID, but
 we only want to see genus and species.
 
-```
+```sql
 SELECT genus, species
 FROM species
 WHERE taxa = 'Bird'

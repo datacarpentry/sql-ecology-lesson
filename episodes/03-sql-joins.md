@@ -37,7 +37,7 @@ For that, we need to tell the computer which columns provide the link between th
 tables using the word `ON`.  What we want is to join the data with the same
 species id.
 
-```
+```sql
 SELECT *
 FROM surveys
 JOIN species
@@ -63,7 +63,7 @@ works on columns which share the same name. In this case we are
 telling the manager that we want to combine `surveys` with `species` and that
 the common column is `species_id`.
 
-```
+```sql
 SELECT *
 FROM surveys
 JOIN species
@@ -85,7 +85,7 @@ For example, what if we wanted information on when individuals of each
 species were captured, but instead of their species ID we wanted their
 actual species names.
 
-```
+```sql
 SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
 FROM surveys
 JOIN species
@@ -102,7 +102,7 @@ ON surveys.species_id = species.species_id;
 Many databases, including SQLite, also support a join through the `WHERE` clause of a query.  
 For example, you may see the query above written without an explicit JOIN.
 
-```
+```sql
 SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
 FROM surveys, species
 WHERE surveys.species_id = species.species_id;
@@ -137,7 +137,7 @@ ON surveys.species_id = species.species_id;
 
 We can count the number of records returned by our original join query.
 
-```
+```sql
 SELECT COUNT(*)
 FROM surveys
 JOIN species
@@ -147,7 +147,7 @@ USING (species_id);
 Notice that this number is smaller than the number of records present in the
 survey data.
 
-```
+```sql
 SELECT COUNT(*) FROM surveys;
 ```
 
@@ -211,7 +211,7 @@ Joins can be combined with sorting, filtering, and aggregation. So, if we
 wanted average mass of the individuals on each different type of treatment, we
 could do something like
 
-```
+```sql
 SELECT plots.plot_type, AVG(surveys.weight)
 FROM surveys
 JOIN plots
@@ -276,7 +276,7 @@ place of `NULL`.
 
 We can represent unknown sexes with `'U'` instead of `NULL`:
 
-```
+```sql
 SELECT species_id, sex, COALESCE(sex, 'U')
 FROM surveys;
 ```
@@ -330,7 +330,7 @@ GROUP BY species_id;
 was `NULL` in the surveys table. We can use `COALESCE` to include them again, re-writing the `NULL` to
 a valid joining value:
 
-```
+```sql
 SELECT surveys.year, surveys.month, surveys.day, species.genus, species.species
 FROM surveys
 JOIN species
@@ -366,7 +366,7 @@ is returned. This is useful for "nulling out" specific values.
 
 We can "null out" plot 7:
 
-```
+```sql
 SELECT species_id, plot_id, NULLIF(plot_id, 7)
 FROM surveys;
 ```
@@ -417,7 +417,7 @@ ORDER BY LENGTH(genus) DESC;
 
 As we saw before, aliases make things clearer, and are especially useful when joining tables.
 
-```
+```sql
 SELECT surv.year AS yr, surv.month AS mo, surv.day AS day, sp.genus AS gen, sp.species AS sp
 FROM surveys AS surv
 JOIN species AS sp

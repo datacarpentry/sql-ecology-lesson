@@ -34,7 +34,6 @@ for SQLite**, so it does not have to be installed separately.
 
 Launch **DB Browser for SQLite** to confirm that the installation was successful.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq

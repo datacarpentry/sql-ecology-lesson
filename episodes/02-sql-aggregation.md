@@ -29,14 +29,14 @@ calculating combined values in groups.
 Let's go to the surveys table and find out how many individuals there are.
 Using the wildcard \* counts the number of records (rows):
 
-```
+```sql
 SELECT COUNT(*)
 FROM surveys;
 ```
 
 We can also find out how much all of those individuals weigh:
 
-```
+```sql
 SELECT COUNT(*), SUM(weight)
 FROM surveys;
 ```
@@ -44,7 +44,7 @@ FROM surveys;
 We can output this value in kilograms (dividing the value by 1000.00), then rounding to 3 decimal places:
 (Notice the divisor has numbers after the decimal point, which forces the answer to have a decimal fraction)
 
-```
+```sql
 SELECT ROUND(SUM(weight)/1000.00, 3)
 FROM surveys;
 ```
@@ -82,7 +82,7 @@ WHERE (weight > 5) AND (weight < 10);
 Now, let's see how many individuals were counted in each species. We do this
 using a `GROUP BY` clause
 
-```
+```sql
 SELECT species_id, COUNT(*)
 FROM surveys
 GROUP BY species_id;
@@ -135,7 +135,7 @@ We can order the results of our aggregation by a specific column, including
 the aggregated column.  Let's count the number of individuals of each
 species captured, ordered by the count:
 
-```
+```sql
 SELECT species_id, COUNT(*)
 FROM surveys
 GROUP BY species_id
@@ -149,14 +149,14 @@ clearer in the query and in its output, we can use aliases to assign new names t
 
 We can use aliases in column names using `AS`:
 
-```
+```sql
 SELECT MAX(year) AS last_surveyed_year
 FROM surveys;
 ```
 
 The `AS` isn't technically required, so you could do
 
-```
+```sql
 SELECT MAX(year) last_surveyed_year
 FROM surveys;
 ```
@@ -165,14 +165,14 @@ but using `AS` is much clearer so it is good style to include it.
 
 We can not only alias column names, but also table names in the same way:
 
-```
+```sql
 SELECT *
 FROM surveys AS surv;
 ```
 
 And again, the `AS` keyword is not required, so this works, too:
 
-```
+```sql
 SELECT *
 FROM surveys surv;
 ```
@@ -188,7 +188,7 @@ filter the results based on **aggregate functions**, through the `HAVING` keywor
 For example, we can request to only return information
 about species with a count higher than 10:
 
-```
+```sql
 SELECT species_id, COUNT(species_id)
 FROM surveys
 GROUP BY species_id
@@ -203,7 +203,7 @@ to that alias in the `HAVING` clause.
 For example, in the above query, we can call the `COUNT(species_id)` by
 another name, like `occurrences`. This can be written this way:
 
-```
+```sql
 SELECT species_id, COUNT(species_id) AS occurrences
 FROM surveys
 GROUP BY species_id
@@ -251,7 +251,7 @@ before the query itself. For example, imagine that our project only covers
 the data gathered during the summer (May - September) of 2000.  That
 query would look like:
 
-```
+```sql
 SELECT *
 FROM surveys
 WHERE year = 2000 AND (month > 4 AND month < 10);
@@ -260,7 +260,7 @@ WHERE year = 2000 AND (month > 4 AND month < 10);
 But we don't want to have to type that every time we want to ask a
 question about that particular subset of data. Hence, we can benefit from a view:
 
-```
+```sql
 CREATE VIEW summer_2000 AS
 SELECT *
 FROM surveys
@@ -269,7 +269,7 @@ WHERE year = 2000 AND (month > 4 AND month < 10);
 
 Using a view we will be able to access these results with a much shorter notation:
 
-```
+```sql
 SELECT *
 FROM summer_2000
 WHERE species_id = 'PE';
@@ -281,7 +281,7 @@ From the last example, there should only be five records.  If you look at the `w
 easy to see what the average weight would be. If we use SQL to find the
 average weight, SQL behaves like we would hope, ignoring the NULL values:
 
-```
+```sql
 SELECT AVG(weight)
 FROM summer_2000
 WHERE species_id = 'PE';
@@ -290,7 +290,7 @@ WHERE species_id = 'PE';
 But if we try to be extra clever, and find the average ourselves,
 we might get tripped up:
 
-```
+```sql
 SELECT SUM(weight), COUNT(*), SUM(weight)/COUNT(*)
 FROM summer_2000
 WHERE species_id = 'PE';
@@ -301,7 +301,7 @@ values), but the `SUM` only includes the three records with data in the
 `weight` field, giving us an incorrect average. However,
 our strategy *will* work if we modify the `COUNT` function slightly:
 
-```
+```sql
 SELECT SUM(weight), COUNT(weight), SUM(weight)/COUNT(weight)
 FROM summer_2000
 WHERE species_id = 'PE';
@@ -314,7 +314,7 @@ missing in that field.  So here is one example where NULLs can be tricky:
 Another case is when we use a "negative" query.  Let's count all the
 non-female animals:
 
-```
+```sql
 SELECT COUNT(*)
 FROM summer_2000
 WHERE sex != 'F';
@@ -322,7 +322,7 @@ WHERE sex != 'F';
 
 Now let's count all the non-male animals:
 
-```
+```sql
 SELECT COUNT(*)
 FROM summer_2000
 WHERE sex != 'M';
@@ -330,7 +330,7 @@ WHERE sex != 'M';
 
 But if we compare those two numbers with the total:
 
-```
+```sql
 SELECT COUNT(*)
 FROM summer_2000;
 ```
@@ -343,7 +343,7 @@ returns the 'not NULL, not x' group. Sometimes this may be what we want -
 but sometimes we may want the missing values included as well! In that
 case, we'd need to change our query to:
 
-```
+```sql
 SELECT COUNT(*)
 FROM summer_2000
 WHERE sex != 'M' OR sex IS NULL;
