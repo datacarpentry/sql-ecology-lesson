@@ -104,12 +104,20 @@ Putting our data into a relational database and using SQL will help us achieve t
 
 ### Definition: *Relational Database*
 
-A relational database stores data in *relations* made up of *records* with *fields*.
-The relations are usually represented as *tables*;
-each record is usually shown as a row, and the fields as columns.
-In most cases, each record will have a unique identifier, called a *key*,
-which is stored as one of its fields.
-Records may also contain keys that refer to records in other tables,
+A relational database stores data in *tables* made up of *records* (rows) and *attributes* (columns).
+*Attributes* may also be called *fields*, as *records* may also be called *observations*; Depending
+on the scientific topics and what is being recorded in the database, the jargons change a little bit.
+
+The idea of *relational* is associated with organizing information across multiple tables in the database.
+The *relationship* between tables in the database can be established (or even enforced) in different ways,
+from a pure conceptual decision to the use of *keys* and other mechanisms.
+
+In many everyday datasets we don't need multiple tables and we don't have to think about *relations* 
+within data sets. 
+The idea of *relational data* becomes more and more important as the amount and complexity of data grows.
+And that is really the motivation for *relational databases*: to organize data in small, topic-related sets.
+
+Records in one tables may contain keys that refer to records in other tables,
 which enables us to combine information from two or more sources.
 
 
