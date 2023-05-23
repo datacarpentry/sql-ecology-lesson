@@ -368,12 +368,12 @@ For example, we could round the values to make them easier to read.</p>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> plot_id, species_id, sex, weight, <span class="fu">ROUND</span>(weight <span class="op">/</span> <span class="dv">1000</span>, <span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <ul><li>Write a query that returns the year, month, day, species_id and
@@ -447,12 +447,12 @@ which have species codes <code>DM</code>, <code>DO</code>, and
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (species_id <span class="op">=</span> <span class="st">'DM'</span>) <span class="kw">OR</span> (species_id <span class="op">=</span> <span class="st">'DO'</span>) <span class="kw">OR</span> (species_id <span class="op">=</span> <span class="st">'DS'</span>);</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <ul><li>Produce a table listing the data for all individuals in Plot 1 that
@@ -563,12 +563,12 @@ we might want to order by genus then species.</p>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> species</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> genus <span class="kw">ASC</span>, species <span class="kw">ASC</span>;</span></code></pre>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <ul><li>Write a query that returns year, species_id, and weight in kg from
@@ -617,12 +617,12 @@ pipeline than field selection.</p>
 <li>Displaying requested columns or expressions.</li>
 </ol><p>Clauses are written in a fixed order: <code>SELECT</code>,
 <code>FROM</code>, <code>WHERE</code>, then <code>ORDER BY</code>.</p>
-<div id="discussion1" class="callout discussion">
+<div id="multiple-statements" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="multiple-statements" class="callout-inner">
-<h3 class="callout-title">Multiple statements<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Multiple statements<a class="anchor" aria-label="anchor" href="#multiple-statements"></a>
 </h3>
 <div class="callout-content">
 <p>It is possible to write a query as a single line, but for
@@ -632,12 +632,12 @@ allows more than one SQL statement to be executed together.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <ul><li>Let’s try to combine what we’ve learned so far in a single query.
@@ -720,7 +720,7 @@ understandable.</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -744,7 +744,7 @@ understandable.</li>
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/01-sql-basic-queries.html",
   "dateCreated": "2015-02-10",
   "dateModified": "2023-04-21",
-  "datePublished": "2023-05-16"
+  "datePublished": "2023-05-23"
 }
 
   </script><script>

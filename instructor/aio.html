@@ -355,12 +355,12 @@ the following three files:</p>
 <li><code>species.csv</code></li>
 <li><code>plots.csv</code></li>
 </ul>
-<div id="discussion1" class="callout discussion">
+<div id="challenge" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Open each of these csv files and explore them. What information is
@@ -400,12 +400,12 @@ analysis in case our data changes. We also want to do all this searching
 without actually modifying our source data.</p>
 <p>Putting our data into a relational database and using SQL will help
 us achieve these goals.</p>
-<div id="callout1" class="callout callout">
+<div id="definition-relational-database" class="callout callout">
 <div class="callout-square">
 <i class="callout-icon" data-feather="bell"></i>
 </div>
 <div id="definition-relational-database" class="callout-inner">
-<h3 class="callout-title">Definition: <em>Relational Database</em><a class="anchor" aria-label="anchor" href="#callout1"></a>
+<h3 class="callout-title">Definition: <em>Relational Database</em><a class="anchor" aria-label="anchor" href="#definition-relational-database"></a>
 </h3>
 <div class="callout-content">
 <p>A relational database stores data in <em>relations</em> made up of
@@ -654,12 +654,12 @@ comparisons</td>
 </tr>
 </tbody>
 </table>
-<div id="discussion2" class="callout discussion">
+<div id="challenge-1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#discussion2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -1033,12 +1033,12 @@ For example, we could round the values to make them easier to read.</p>
 <pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> plot_id, species_id, sex, weight, <span class="fu">ROUND</span>(weight <span class="op">/</span> <span class="dv">1000</span>, <span class="dv">2</span>)</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -1115,12 +1115,12 @@ which have species codes <code>DM</code>, <code>DO</code>, and
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (species_id <span class="op">=</span> <span class="st">'DM'</span>) <span class="kw">OR</span> (species_id <span class="op">=</span> <span class="st">'DO'</span>) <span class="kw">OR</span> (species_id <span class="op">=</span> <span class="st">'DS'</span>);</span></code></pre>
 </div>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -1235,12 +1235,12 @@ we might want to order by genus then species.</p>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> species</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> genus <span class="kw">ASC</span>, species <span class="kw">ASC</span>;</span></code></pre>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -1294,12 +1294,12 @@ pipeline than field selection.</p>
 </ol>
 <p>Clauses are written in a fixed order: <code>SELECT</code>,
 <code>FROM</code>, <code>WHERE</code>, then <code>ORDER BY</code>.</p>
-<div id="discussion1" class="callout discussion">
+<div id="multiple-statements" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
 </div>
 <div id="multiple-statements" class="callout-inner">
-<h3 class="callout-title">Multiple statements<a class="anchor" aria-label="anchor" href="#discussion1"></a>
+<h3 class="callout-title">Multiple statements<a class="anchor" aria-label="anchor" href="#multiple-statements"></a>
 </h3>
 <div class="callout-content">
 <p>It is possible to write a query as a single line, but for
@@ -1309,12 +1309,12 @@ allows more than one SQL statement to be executed together.</p>
 </div>
 </div>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -1445,12 +1445,12 @@ decimal fraction)</p>
 </div>
 <p>There are many other aggregate functions included in SQL, for
 example: <code>MAX</code>, <code>MIN</code>, and <code>AVG</code>.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns: the total weight, average weight, minimum
@@ -1497,12 +1497,12 @@ do this using a <code>GROUP BY</code> clause</p>
 <p><code>GROUP BY</code> tells SQL what field or fields we want to use
 to aggregate the data. If we want to group by multiple fields, we give
 <code>GROUP BY</code> a comma separated list.</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <p>Write queries that return:</p>
@@ -1648,12 +1648,12 @@ retrieved (<code>SELECT</code>), which can be filtered
 (<code>WHERE</code>), then joined in groups (<code>GROUP BY</code>);
 finally, we can filter again based on some of these groups
 (<code>HAVING</code>).</p>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns, from the <code>species</code> table, the
@@ -2137,12 +2137,12 @@ JOIN.</p>
 </div>
 <p>For the remainder of this lesson, we’ll stick with the explicit use
 of the <code>JOIN</code> keyword for joining tables in SQL.</p>
-<div id="challenge1" class="callout challenge">
+<div id="challenge" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge1"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2159,7 +2159,7 @@ weight of every individual captured at the site</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2203,12 +2203,12 @@ they will produce the same result.</p>
 <p>We can also tell the computer that we wish to keep all the records in
 the first table by using a <code>LEFT OUTER JOIN</code> clause, or
 <code>LEFT JOIN</code> for short.</p>
-<div id="challenge2" class="callout challenge">
+<div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-1" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge2"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-1"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2226,7 +2226,7 @@ query?</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2239,12 +2239,12 @@ query?</li>
 </div>
 </div>
 </div>
-<div id="challenge3" class="callout challenge">
+<div id="challenge-2" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-2" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge3"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-2"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2262,7 +2262,7 @@ column.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2294,12 +2294,12 @@ treatment, we could do something like</p>
 <span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> surveys.plot_id <span class="op">=</span> plots.plot_id</span>
 <span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> plots.plot_type;</span></code></pre>
 </div>
-<div id="challenge4" class="callout challenge">
+<div id="challenge-3" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-3" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge4"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-3"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2317,7 +2317,7 @@ descending number of individuals in each plot.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2333,12 +2333,12 @@ descending number of individuals in each plot.</li>
 </div>
 </div>
 </div>
-<div id="challenge5" class="callout challenge">
+<div id="challenge-4" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-4" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge5"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-4"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2355,7 +2355,7 @@ descending number of individuals in each plot.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2393,12 +2393,12 @@ allows us to specify a value to use in place of <code>NULL</code>.</p>
 <p>The lone “sex” column is only included in the query above to
 illustrate where <code>COALESCE</code> has changed values; this isn’t a
 usage requirement.</p>
-<div id="challenge6" class="callout challenge">
+<div id="challenge-5" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-5" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge6"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-5"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2415,7 +2415,7 @@ values in the <code>hindfoot_length</code> column.</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2427,12 +2427,12 @@ values in the <code>hindfoot_length</code> column.</li>
 </div>
 </div>
 </div>
-<div id="challenge7" class="callout challenge">
+<div id="challenge-6" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-6" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge7"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-6"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2449,7 +2449,7 @@ species, assuming that unknown lengths are 30 (as above).</li>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2476,12 +2476,12 @@ We can use <code>COALESCE</code> to include them again, re-writing the
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">JOIN</span> species</span>
 <span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> <span class="fu">COALESCE</span>(surveys.species_id, <span class="st">'AB'</span>) <span class="op">=</span> species.species_id;</span></code></pre>
 </div>
-<div id="challenge8" class="callout challenge">
+<div id="challenge-7" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-7" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge8"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-7"></a>
 </h3>
 <div class="callout-content">
 <ul>
@@ -2499,7 +2499,7 @@ genus in each plot, assuming that unknown species are all of the genus
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2614,12 +2614,12 @@ omitted)</td>
 </tr>
 </tbody>
 </table>
-<div id="challenge9" class="callout challenge">
+<div id="challenge-8" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-8" class="callout-inner">
-<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge9"></a>
+<h3 class="callout-title">Challenge:<a class="anchor" aria-label="anchor" href="#challenge-8"></a>
 </h3>
 <div class="callout-content">
 <p>Write a query that returns genus names (no repeats), sorted from
@@ -2634,7 +2634,7 @@ longest genus name down to shortest.</p>
   Show me the solution
   </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2658,12 +2658,12 @@ useful when joining tables.</p>
 <span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ON</span> surv.species_id <span class="op">=</span> sp.species_id;</span></code></pre>
 </div>
 <p>To practice we have some optional challenges for you.</p>
-<div id="challenge10" class="callout challenge">
+<div id="challenge-optional" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
 <div id="challenge-optional" class="callout-inner">
-<h3 class="callout-title">Challenge (optional):<a class="anchor" aria-label="anchor" href="#challenge10"></a>
+<h3 class="callout-title">Challenge (optional):<a class="anchor" aria-label="anchor" href="#challenge-optional"></a>
 </h3>
 <div class="callout-content">
 <p>SQL queries help us <em>ask</em> specific <em>questions</em> which we
@@ -2698,7 +2698,7 @@ species?</p></li>
   Proposed solutions:
   </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Solution:</li>
@@ -2832,7 +2832,7 @@ of <code>NULL</code>, which can help in joins</li>
         <p>Materials licensed under <a href="../LICENSE.html">CC-BY 4.0</a> by the authors</p>
         
         <p><a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">Template licensed under CC-BY 4.0</a> by <a href="https://carpentries.org" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.11.16" class="external-link">sandpaper (0.11.16)</a>,
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.12.0" class="external-link">sandpaper (0.12.0)</a>,
         <a href="https://github.com/carpentries/pegboard" class="external-link">pegboard (0.5.3)</a>,
       and <a href="https://github.com/carpentries/varnish/tree/0.2.16" class="external-link">varnish (0.2.16)</a>.</p>
 			</div>
@@ -2856,8 +2856,8 @@ of <code>NULL</code>, which can help in joins</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/aio.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2023-05-16",
-  "datePublished": "2023-05-16"
+  "dateModified": "2023-05-23",
+  "datePublished": "2023-05-23"
 }
 
   </script><script>
