@@ -2,9 +2,11 @@
 title: Setup
 ---
 
+## Setup
+
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Data
+### Data
 
 This lesson uses specific data files from the [Portal Project Teaching Database](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459). To
 get the data, go to the [data location on figshare](https://figshare.com/articles/Portal_Project_Teaching_Database/1314459) and click on the **Download all** button to download the zip file.
@@ -21,7 +23,7 @@ See the
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Software
+### Software
 
 Download **DB Browser for SQLite** for your operating system
 from [https://sqlitebrowser.org/dl/](https://sqlitebrowser.org/dl/).
@@ -38,7 +40,7 @@ Launch **DB Browser for SQLite** to confirm that the installation was successful
 
 ::::::::::::::::::::::::::::::::::::::::::  prereq
 
-## Am I ready?
+### Am I ready?
 
 The [first lesson episode](episodes/00-sql-introduction.md) has instructions
 on loading the data in DB Browser. If you can follow the instructions under "Relational
