@@ -19,7 +19,6 @@ on how to contribute updates, bug fixes, or other corrections.
 - Katy Felkner ([@katyfelkner](https://github.com/katyfelkner))
 - Christina Koch ([@ChristinaLK](https://github.com/ChristinaLK))
 - Paula Andrea Martinez ([@orchid00](https://github.com/orchid00))
-- Sathya Pandalai ([@spandalai](https://github.com/spandalai))
 - Timothée Poisot ([@tpoisot](https://github.com/tpoisot))
 - Rémi Rampin ([@remram44](https://github.com/remram44))
 - Ethan White ([@ethanwhite](https://github.com/ethanwhite/))
