@@ -128,12 +128,19 @@
                   <div class="accordion accordion-flush" id="accordionFlushcurrent">
   <div class="accordion-item">
     <div class="accordion-header" id="flush-headingcurrent">
+      <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#flush-collapsecurrent" aria-expanded="true" aria-controls="flush-collapsecurrent">
         <span class="visually-hidden">Current Chapter</span>
         <span class="current-chapter">
         Summary and Setup
         </span>
-      
+      </button>
     </div><!--/div.accordion-header-->
+        
+    <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
+      <div class="accordion-body">
+        <ul><li><a href="#setup">Setup</a></li>
+        </ul></div><!--/div.accordion-body-->
+    </div><!--/div.accordion-collapse-->
         
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
@@ -251,17 +258,15 @@ information that you need.</p>
 to use their own computers to insure the proper setup of tools for an
 efficient workflow. <br><strong>These lessons assume no prior knowledge
 of the skills or tools.</strong></p>
-<p>To get started, follow the directions in the “<a href="index.html#setup">Setup</a>” tab to download data to your computer and
-follow any installation instructions.</p>
 <div class="section level4">
 <h4 id="prerequisites">Prerequisites<a class="anchor" aria-label="anchor" href="#prerequisites"></a></h4>
 <p>This lesson requires:</p>
 <ul><li>Working copy of <strong>DB Browser for SQLite for SQL</strong>
 </li>
 <li>A dataset</li>
-</ul><p>Follow the directions in the <strong>Setup</strong> tab to download
-both the DB Browser for SQLite and the data to your computer and follow
-any installation instructions.</p>
+</ul><p>Follow the directions in the <strong><a href="index.html#setup">Setup</a></strong> section to download both the DB
+Browser for SQLite and the data to your computer and follow any
+installation instructions.</p>
 <p>Please make sure to install everything <em>before</em> working
 through this lesson.</p>
 </div>
@@ -282,7 +287,9 @@ through this lesson.</p>
 </div>
 
 
-      <section id="setup"><div id="data" class="callout prereq">
+      <section id="setup"><section id="setup"><h2 class="section-heading">Setup<a class="anchor" aria-label="anchor" href="#setup"></a>
+</h2>
+<hr class="half-width"><div id="data" class="callout prereq">
 <div class="callout-square">
 <i class="callout-icon" data-feather="check"></i>
 </div>
@@ -344,9 +351,7 @@ have downloaded and installed correctly.</p>
 </div>
 </div>
 </div>
-
-
-      </section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
+</section></section></main><nav class="bottom-pagination mx-md-4" aria-label="Next Chapter"><!-- content for small screens --><div class="d-block d-sm-block d-md-none">
         <a class="chapter-link float-end" href="00-sql-introduction.html">Next<i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i></a>
       </div>
       <!-- content for large screens -->
@@ -396,8 +401,8 @@ have downloaded and installed correctly.</p>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/index.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/index.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2023-06-06",
-  "datePublished": "2023-06-06"
+  "dateModified": "2023-06-07",
+  "datePublished": "2023-06-07"
 }
 
   </script><script>
