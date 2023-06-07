@@ -21,9 +21,6 @@ Data Carpentry's teaching is hands-on, so participants are encouraged to use
 their own computers to insure the proper setup of tools for an efficient
 workflow. <br>**These lessons assume no prior knowledge of the skills or tools.**
 
-To get started, follow the directions in the "[Setup](learners/setup.md)" tab to
-download data to your computer and follow any installation instructions.
-
 #### Prerequisites
 
 This lesson requires:
@@ -31,7 +28,7 @@ This lesson requires:
 - Working copy of **DB Browser for SQLite for SQL**
 - A dataset
 
-Follow the directions in the **Setup** tab to download both the DB Browser for SQLite and the data to your computer and follow any installation instructions.
+Follow the directions in the **[Setup](learners/setup.md)** section to download both the DB Browser for SQLite and the data to your computer and follow any installation instructions.
 
 Please make sure to install everything *before* working through this lesson.
 
