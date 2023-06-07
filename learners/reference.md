@@ -7,43 +7,43 @@ title: Reference
 *The definitions below are modified from the [Carpentries
 Glosario](https://glosario.carpentries.org/) (CC-BY-4.0)*
 
-[aggregation](https://glosario.carpentries.org/en/#aggregation)
+[[**aggreation**]{#aggreation}](https://glosario.carpentries.org/en/#aggreation)
 :   To combine many values into one, e.g., by summing a set of numbers.
 
-[field](https://glosario.carpentries.org/en/#field)
+[[**field**]{#field}](https://glosario.carpentries.org/en/#field)
 :   A component of a [record](#record) containing a single value. Every
     record in a database [table](#table) has the same fields.
 
-[filter](https://glosario.carpentries.org/en/#filter)
+[[**filter**]{#filter}](https://glosario.carpentries.org/en/#filter)
 :   To choose a set of [records](#record) (i.e., rows of a table) based
     on the values they contain.
 
-[full join](https://glosario.carpentries.org/en/#full_join)
+[[**full join**]{#full_join}](https://glosario.carpentries.org/en/#full_join)
 :   A [join](#join) that returns all rows and all columns from two
     tables A and B. Where the [keys](#key) of A and B match, values are
     combined; where they do not, missing values from either table are
     filled with [null](#null), NA, or some other [missing
     value](#missing_value) signifier.
 
-[group](https://glosario.carpentries.org/en/#group)
+[[**group**]{#group}](https://glosario.carpentries.org/en/#group)
 :   To divide data into subsets according to a set of criteria while
     leaving records in a single structure.
 
-[inner join](https://glosario.carpentries.org/en/#inner_join)
+[[**inner join**]{#inner_join}](https://glosario.carpentries.org/en/#inner_join)
 :   A [join](#join) that returns the combination of rows from two
     tables, A and B, whose [keys](#key) exist in both tables.
 
-[join](https://glosario.carpentries.org/en/#join)
+[[**join**]{#join}](https://glosario.carpentries.org/en/#join)
 :   One of several operations that combine values from two
     [tables](#table).
 
-[key](https://glosario.carpentries.org/en/#key)
+[[**key**]{#key}](https://glosario.carpentries.org/en/#key)
 :   A [field](#field) or combination of fields whose value(s)
     uniquely identify a [record](#record) within a [table](#table) or
     dataset. Keys are often used to select specific records and in
     [joins](#join).
 
-[left join](https://glosario.carpentries.org/en/#left_join)
+[[**left join**]{#left_join}](https://glosario.carpentries.org/en/#left_join)
 :   A [join](#join) that combines data from two tables, A and B, where
     [keys](#key) in table A match keys in table B, [fields](#field) are
     concatenated. Where a key in table A does \*not\* match a key in
@@ -51,27 +51,27 @@ Glosario](https://glosario.carpentries.org/) (CC-BY-4.0)*
     some other [missing value](#missing_value). Keys from table B that
     do not match keys from table A are excluded for the result.
 
-[missing value](https://glosario.carpentries.org/en/#missing_value)
+[[**missing value**]{#missing_value}](https://glosario.carpentries.org/en/#missing_value)
 :   A special value such as [null](#null) or NA used to indicate the
     absence of data. Missing values can signal that data was not
     collected or that the data did not exist in the first place (e.g.,
     the middle name of someone who does not have one).
 
-[null](https://glosario.carpentries.org/en/#null)
+[[**null**]{#null}](https://glosario.carpentries.org/en/#null)
 :   A special value used to represent a missing object.
 
-[record](https://glosario.carpentries.org/en/#record)
+[[**record**]{#record}](https://glosario.carpentries.org/en/#record)
 :   A group of related values that are stored together. A record may be
     represented as a tuple or as a row in a [table](#table); in the
     latter case, every record in the table has the same
     [fields](#field).
 
-[relational database](https://glosario.carpentries.org/en/#relational_database)
+[[**relational_database**]{#relational_database}](https://glosario.carpentries.org/en/#relational_database)
 :   A database that organizes information into [tables](#table), each of
     which has a fixed set of named [fields](#field) (shown as columns)
     and a variable number of [records](#record) (shown as rows).
 
-[right join](https://glosario.carpentries.org/en/#right_join)
+[[**right join**]{#right_join}](https://glosario.carpentries.org/en/#right_join)
 :   A [join](#join) that combines data from two tables, A and B. Where
     [keys](#key) in table A match keys in table B, [fields](#field) are
     concatenated. Where a key in table B does \*not\* match a key in
@@ -79,15 +79,15 @@ Glosario](https://glosario.carpentries.org/) (CC-BY-4.0)*
     some other [missing value](#missing_value) signifier. Keys from
     table A that do not exist in table B are dropped.
 
-[select](https://glosario.carpentries.org/en/#select)
+[[**select**]{#select}](https://glosario.carpentries.org/en/#select)
 :   To choose entire columns or rows from a table by name or location.
 
-[SQL](https://glosario.carpentries.org/en/#sql)
+[[**SQL**]{#SQL}](https://glosario.carpentries.org/en/#sql)
 :   The language used for writing queries for a [relational
     database](#relational_database). The term is an acronym for
     Structured Query Language.
 
-[table](https://glosario.carpentries.org/en/#table)
+[[**table**]{#table}](https://glosario.carpentries.org/en/#table)
 :   A set of [records](#record) in a [relational
     database](#relational_database) or observations in a data frame.
     Tables are usually displayed as rows (each of which represents one
