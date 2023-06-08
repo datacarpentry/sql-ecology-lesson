@@ -112,12 +112,12 @@ The idea of *relational* is associated with organizing information across multip
 The *relationship* between tables in the database can be established (or even enforced) in different ways,
 from a pure conceptual decision to the use of *keys* and other mechanisms.
 
-In many everyday datasets we don't need multiple tables and we don't have to think about *relations* 
+In many small datasets we have only a few tables and we don't have to think about cross-references
 within data sets. 
 The idea of *relational data* becomes more and more important as the amount and complexity of data grows.
-And that is really the motivation for *relational databases*: to organize data in small, topic-related sets.
+And that is really the motivation for relational databases: to organize data through related sets.
 
-Records in one tables may contain keys that refer to records in other tables,
+Records in one table may contain keys that refer to records in other tables,
 which enables us to combine information from two or more sources.
 
 
