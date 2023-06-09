@@ -11,16 +11,14 @@ on how to contribute updates, bug fixes, or other corrections.
 
 ### Current maintainers
 
-- Katy Felkner ([@katyfelkner](https://github.com/katyfelkner))
 - James Foster ([@jd-foster](https://github.com/jd-foster))
-- Sathya Pandalai ([@spandalai](https://github.com/spandalai))
+- Adam Mansur ([@adamancer](https://github.com/adamancer))
 
 ### Past maintainers
 
+- Katy Felkner ([@katyfelkner](https://github.com/katyfelkner))
 - Christina Koch ([@ChristinaLK](https://github.com/ChristinaLK))
+- Paula Andrea Martinez ([@orchid00](https://github.com/orchid00))
 - Timothée Poisot ([@tpoisot](https://github.com/tpoisot))
 - Rémi Rampin ([@remram44](https://github.com/remram44))
 - Ethan White ([@ethanwhite](https://github.com/ethanwhite/))
-- Paula Andrea Martinez ([@orchid00](https://github.com/orchid00))
-
-
