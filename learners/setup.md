@@ -44,7 +44,7 @@ Launch **DB Browser for SQLite** to confirm that the installation was successful
 
 The [first lesson episode](episodes/00-sql-introduction.md) has instructions
 on loading the data in DB Browser. To test your setup, you can follow the instructions for importing your data into DB Browser under the sections [Relational
-Databases](https://datacarpentry.org/sql-ecology-lesson/00-sql-introduction.html#relational-databases) or [Import](https://datacarpentry.org/sql-ecology-lesson/00-sql-introduction.html#import).
+Databases](../episodes/00-sql-introduction.md#relational-databases) or [Import](../episodes/00-sql-introduction.md#import).
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
