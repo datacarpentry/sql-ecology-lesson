@@ -234,7 +234,7 @@ more</a></li>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Combining Data With Joins</h1>
-        <p> Last updated on 2023-04-21 | 
+        <p> Last updated on 2023-06-30 | 
         
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/03-sql-joins.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
         
@@ -533,8 +533,10 @@ behaviour is known as an <code>INNER JOIN</code>. In fact the
 they will produce the same result.</p>
 <p>We can also tell the computer that we wish to keep all the records in
 the first table by using a <code>LEFT OUTER JOIN</code> clause, or
-<code>LEFT JOIN</code> for short.</p>
-<div id="challenge-1" class="callout challenge">
+<code>LEFT JOIN</code> for short. The difference between the two JOINs
+can be visualized like so:</p>
+<figure><img src="fig/sql-joins.png" alt="Diagrams representing INNER JOIN and LEFT JOIN each include two overlapping circles labeled A (left) and B (right). For INNER JOIN, the intersection of the two circles is filled in. The associated query is SELECT * FROM A JOIN B ON A.Key = B.Key. For LEFT JOIN, circle A, including its intersection with circle B, is filled in. The associated query is SELECT * FROM A LEFT JOIN B ON A.Key = B.Key." class="figure mx-auto d-block"><figcaption>Diagrams representing INNER JOIN and LEFT JOIN in
+SQLite</figcaption></figure><div id="challenge-1" class="callout challenge">
 <div class="callout-square">
 <i class="callout-icon" data-feather="zap"></i>
 </div>
@@ -1115,8 +1117,8 @@ of <code>NULL</code>, which can help in joins</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/03-sql-joins.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/03-sql-joins.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2023-04-21",
-  "datePublished": "2023-06-27"
+  "dateModified": "2023-06-30",
+  "datePublished": "2023-06-30"
 }
 
   </script><script>
