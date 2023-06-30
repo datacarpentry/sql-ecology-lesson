@@ -158,7 +158,14 @@ In fact the `JOIN` keyword is simply shorthand for `INNER JOIN` and the two
 terms can be used interchangeably as they will produce the same result.
 
 We can also tell the computer that we wish to keep all the records in the first
-table by using a `LEFT OUTER JOIN` clause, or `LEFT JOIN` for short.
+table by using a `LEFT OUTER JOIN` clause, or `LEFT JOIN` for short. The difference
+between the two JOINs can be visualized like so:
+
+![
+Diagrams representing INNER JOIN and LEFT JOIN in SQLite
+](fig/sql-joins.png){
+alt='Diagrams representing INNER JOIN and LEFT JOIN each include two overlapping circles labeled A (left) and B (right). For INNER JOIN, the intersection of the two circles is filled in. The associated query is SELECT * FROM A JOIN B ON A.Key = B.Key. For LEFT JOIN, circle A, including its intersection with circle B, is filled in. The associated query is SELECT * FROM A LEFT JOIN B ON A.Key = B.Key.'
+}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
