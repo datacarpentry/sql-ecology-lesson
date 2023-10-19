@@ -96,7 +96,7 @@ Glosario](https://glosario.carpentries.org/) (CC-BY-4.0)*
 
 ## Commands
 
-See [this cheat sheet](files/sql-cheat-sheet.md) for an list of the commands
+See [this cheat sheet](sql-cheat-sheet.md) for an list of the commands
 covered in this lesson.
 
 ### Keywords

@@ -1,5 +1,6 @@
-Software Carpentry SQL Cheat Sheet
-==================================
+---
+title: SQL Cheat Sheet
+---
 
 Basic Queries
 -------------
