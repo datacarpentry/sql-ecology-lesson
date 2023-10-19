@@ -91,6 +91,9 @@
     <loc>https://datacarpentry.github.io/sql-ecology-lesson/instructor/reference.html</loc>
   </url>
   <url>
+    <loc>https://datacarpentry.github.io/sql-ecology-lesson/instructor/sql-cheat-sheet.html</loc>
+  </url>
+  <url>
     <loc>https://datacarpentry.github.io/sql-ecology-lesson/instructor-notes.html</loc>
   </url>
   <url>
@@ -101,5 +104,8 @@
   </url>
   <url>
     <loc>https://datacarpentry.github.io/sql-ecology-lesson/reference.html</loc>
+  </url>
+  <url>
+    <loc>https://datacarpentry.github.io/sql-ecology-lesson/sql-cheat-sheet.html</loc>
   </url>
 </urlset>
