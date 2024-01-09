@@ -178,6 +178,16 @@ To summarize:
   - Split into separate tables with one table per class of information
   - Needs an identifier in common between tables – shared column - to
     reconnect (known as a *foreign key*).
+	
+:::::::::::::::::::::::::::::::::::::::::  callout
+
+### SQL vs. NoSQL
+
+SQL is not the only tool for managing and analyzing large amounts of data. As described above, SQL databases store data in tables using a rigid schema. This works well for many applications, but larger, more complex projects may benefit from the more flexible approach provided by NoSQL databases. 
+
+NoSQL databases are diverse, employing a variety of data structures tailored to specific use cases, but in general provide a scalable way to store, search, and establish relationships within large datasets that cannot easily be represented by a rigid, tabular schema. A more thorough discussion of the differences between SQL and NoSQL is beyond the scope of this lesson, but curious readers can start with [this comparison](https://www.mongodb.com/nosql-explained/nosql-vs-sql) by MongoDB, a NoSQL database vendor.
+
+::::::::::::::::::::::::::::::::::::::::::::::::::
 
 ### Import
 
