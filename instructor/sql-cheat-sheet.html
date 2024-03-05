@@ -250,25 +250,25 @@
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, column_name_2 FROM table_name<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, column_name_2 FROM table_name<span class="kw">;</span></span></code></pre>
 </div>
 <p>Select all of the columns in a table:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name<span class="kw">;</span></span></code></pre>
 </div>
 <p>Get only unique lines in a query:</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> DISTINCT column_name FROM table_name<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="ex">SELECT</span> DISTINCT column_name FROM table_name<span class="kw">;</span></span></code></pre>
 </div>
 <p>Perform calculations in a query:</p>
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, ROUND<span class="er">(</span><span class="ex">column_name_2</span> / 1000.0<span class="kw">)</span> <span class="ex">FROM</span> table_name<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, ROUND<span class="er">(</span><span class="ex">column_name_2</span> / 1000.0<span class="kw">)</span> <span class="ex">FROM</span> table_name<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="filtering"><h2 class="section-heading">Filtering<a class="anchor" aria-label="anchor" href="#filtering"></a>
 </h2>
@@ -276,13 +276,13 @@
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name = <span class="st">'Hello World'</span><span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name = <span class="st">'Hello World'</span><span class="kw">;</span></span></code></pre>
 </div>
 <p>Combine conditions:</p>
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE <span class="er">(</span><span class="ex">column_name_1</span> <span class="op">&gt;</span>= 1000<span class="kw">)</span> <span class="ex">AND</span> <span class="er">(</span><span class="ex">column_name_2</span> = <span class="st">'A'</span> OR column_name_2 = <span class="st">'B'</span><span class="kw">);</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE <span class="er">(</span><span class="ex">column_name_1</span> <span class="op">&gt;</span>= 1000<span class="kw">)</span> <span class="ex">AND</span> <span class="er">(</span><span class="ex">column_name_2</span> = <span class="st">'A'</span> OR column_name_2 = <span class="st">'B'</span><span class="kw">);</span></span></code></pre>
 </div>
 </section><section id="sorting"><h2 class="section-heading">Sorting<a class="anchor" aria-label="anchor" href="#sorting"></a>
 </h2>
@@ -291,7 +291,7 @@
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="missing-data"><h2 class="section-heading">Missing Data<a class="anchor" aria-label="anchor" href="#missing-data"></a>
 </h2>
@@ -304,13 +304,13 @@
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name IS NULL<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name IS NULL<span class="kw">;</span></span></code></pre>
 </div>
 <p>Test whether a value is not null:</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name IS NOT NULL<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name WHERE column_name IS NOT NULL<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="grouping-and-aggregation"><h2 class="section-heading">Grouping and Aggregation<a class="anchor" aria-label="anchor" href="#grouping-and-aggregation"></a>
 </h2>
@@ -318,7 +318,7 @@
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, SUM<span class="er">(</span><span class="ex">column_name_2</span><span class="kw">)</span><span class="ex">,</span> COUNT<span class="er">(</span><span class="ex">*</span><span class="kw">)</span> <span class="ex">FROM</span> table_name GROUP BY column_name_1<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="ex">SELECT</span> column_name_1, SUM<span class="er">(</span><span class="ex">column_name_2</span><span class="kw">)</span><span class="ex">,</span> COUNT<span class="er">(</span><span class="ex">*</span><span class="kw">)</span> <span class="ex">FROM</span> table_name GROUP BY column_name_1<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="joins"><h2 class="section-heading">Joins<a class="anchor" aria-label="anchor" href="#joins"></a>
 </h2>
@@ -326,7 +326,7 @@
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name_1 JOIN table_name_2 ON table_name_1.column_name = table_name_2.column_name<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name_1 JOIN table_name_2 ON table_name_1.column_name = table_name_2.column_name<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="combining-commands"><h2 class="section-heading">Combining Commands<a class="anchor" aria-label="anchor" href="#combining-commands"></a>
 </h2>
@@ -341,13 +341,13 @@ and foreign key relationships and other constraints.</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">CREATE</span> TABLE survey<span class="er">(</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>        <span class="ex">taken</span>   INTEGER NOT NULL,</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="ex">person</span>  TEXT,</span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="ex">quant</span>   REAL NOT NULL,</span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="ex">PRIMARY</span> KEY<span class="er">(</span><span class="ex">taken,</span> quant<span class="kw">)</span><span class="ex">,</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>        <span class="ex">FOREIGN</span> KEY<span class="er">(</span><span class="ex">person</span><span class="kw">)</span> <span class="ex">REFERENCES</span> person<span class="er">(</span><span class="ex">ident</span><span class="kw">)</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="kw">);</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="ex">CREATE</span> TABLE survey<span class="er">(</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a>        <span class="ex">taken</span>   INTEGER NOT NULL,</span>
+<span id="cb12-3"><a href="#cb12-3" tabindex="-1"></a>        <span class="ex">person</span>  TEXT,</span>
+<span id="cb12-4"><a href="#cb12-4" tabindex="-1"></a>        <span class="ex">quant</span>   REAL NOT NULL,</span>
+<span id="cb12-5"><a href="#cb12-5" tabindex="-1"></a>        <span class="ex">PRIMARY</span> KEY<span class="er">(</span><span class="ex">taken,</span> quant<span class="kw">)</span><span class="ex">,</span></span>
+<span id="cb12-6"><a href="#cb12-6" tabindex="-1"></a>        <span class="ex">FOREIGN</span> KEY<span class="er">(</span><span class="ex">person</span><span class="kw">)</span> <span class="ex">REFERENCES</span> person<span class="er">(</span><span class="ex">ident</span><span class="kw">)</span></span>
+<span id="cb12-7"><a href="#cb12-7" tabindex="-1"></a><span class="kw">);</span></span></code></pre>
 </div>
 </section><section id="transactions"><h2 class="section-heading">Transactions<a class="anchor" aria-label="anchor" href="#transactions"></a>
 </h2>
@@ -356,10 +356,10 @@ and foreign key relationships and other constraints.</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">BEGIN</span> TRANSACTION<span class="kw">;</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">DELETE</span> FROM table_name_1 WHERE condition<span class="kw">;</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">INSERT</span> INTO table_name_2 values<span class="er">(</span><span class="ex">...</span><span class="kw">);</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="ex">END</span> TRANSACTION<span class="kw">;</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="ex">BEGIN</span> TRANSACTION<span class="kw">;</span></span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a>  <span class="ex">DELETE</span> FROM table_name_1 WHERE condition<span class="kw">;</span></span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a>  <span class="ex">INSERT</span> INTO table_name_2 values<span class="er">(</span><span class="ex">...</span><span class="kw">);</span></span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="ex">END</span> TRANSACTION<span class="kw">;</span></span></code></pre>
 </div>
 </section><section id="programming"><h2 class="section-heading">Programming<a class="anchor" aria-label="anchor" href="#programming"></a>
 </h2>
@@ -377,14 +377,14 @@ and foreign key relationships and other constraints.</p>
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SH<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">import</span> sqlite3</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">connection</span> = sqlite3.connect<span class="er">(</span><span class="st">"database_name"</span><span class="kw">)</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="ex">cursor</span> = connection.cursor<span class="er">(</span><span class="kw">)</span></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="ex">cursor.execute</span><span class="er">(</span><span class="st">"...query..."</span><span class="kw">)</span></span>
-<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> cursor.fetchall<span class="er">(</span><span class="kw">)</span><span class="bu">:</span></span>
-<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a>    <span class="ex">...process</span> result r...</span>
-<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a><span class="fu">cursor.close()</span></span>
-<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a><span class="fu">connection.close()</span></span></code></pre>
+<pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="ex">import</span> sqlite3</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="ex">connection</span> = sqlite3.connect<span class="er">(</span><span class="st">"database_name"</span><span class="kw">)</span></span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="ex">cursor</span> = connection.cursor<span class="er">(</span><span class="kw">)</span></span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="ex">cursor.execute</span><span class="er">(</span><span class="st">"...query..."</span><span class="kw">)</span></span>
+<span id="cb14-5"><a href="#cb14-5" tabindex="-1"></a><span class="cf">for</span> r <span class="kw">in</span> cursor.fetchall<span class="er">(</span><span class="kw">)</span><span class="bu">:</span></span>
+<span id="cb14-6"><a href="#cb14-6" tabindex="-1"></a>    <span class="ex">...process</span> result r...</span>
+<span id="cb14-7"><a href="#cb14-7" tabindex="-1"></a><span class="fu">cursor.close()</span></span>
+<span id="cb14-8"><a href="#cb14-8" tabindex="-1"></a><span class="fu">connection.close()</span></span></code></pre>
 </div>
 </section></div> <!-- / div.lesson-content -->
     </main><!-- / main#main-content.main-content --><nav class="bottom-pagination mx-md-4" aria-label="Previous and Next Chapter"><div class="d-block d-sm-block d-md-none">
@@ -445,7 +445,7 @@ and foreign key relationships and other constraints.</p>
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/sql-cheat-sheet.html",
   "dateCreated": "2015-02-10",
   "dateModified": "2023-10-19",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>

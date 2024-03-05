@@ -298,15 +298,15 @@ are. Using the wildcard * counts the number of records (rows):</p>
 <div class="codewrapper sourceCode" id="cb1">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>We can also find out how much all of those individuals weigh:</p>
 <div class="codewrapper sourceCode" id="cb2">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">SUM</span>(weight)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb2-1"><a href="#cb2-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">SUM</span>(weight)</span>
+<span id="cb2-2"><a href="#cb2-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>We can output this value in kilograms (dividing the value by
 1000.00), then rounding to 3 decimal places: (Notice the divisor has
@@ -315,8 +315,8 @@ decimal fraction)</p>
 <div class="codewrapper sourceCode" id="cb3">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(<span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fl">1000.00</span>, <span class="dv">3</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb3-1"><a href="#cb3-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">ROUND</span>(<span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fl">1000.00</span>, <span class="dv">3</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>There are many other aggregate functions included in SQL, for
 example: <code>MAX</code>, <code>MIN</code>, and <code>AVG</code>.</p>
@@ -340,19 +340,19 @@ weights between 5 and 10?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1">Show me the solution</h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">-- All animals</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">AVG</span>(weight), <span class="fu">MIN</span>(weight), <span class="fu">MAX</span>(weight)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co">-- Only weights between 5 and 10</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">AVG</span>(weight), <span class="fu">MIN</span>(weight), <span class="fu">MAX</span>(weight)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> (weight <span class="op">&gt;</span> <span class="dv">5</span>) <span class="kw">AND</span> (weight <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="co">-- All animals</span></span>
+<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">AVG</span>(weight), <span class="fu">MIN</span>(weight), <span class="fu">MAX</span>(weight)</span>
+<span id="cb4-3"><a href="#cb4-3" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span>
+<span id="cb4-4"><a href="#cb4-4" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" tabindex="-1"></a><span class="co">-- Only weights between 5 and 10</span></span>
+<span id="cb4-6"><a href="#cb4-6" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">AVG</span>(weight), <span class="fu">MIN</span>(weight), <span class="fu">MAX</span>(weight)</span>
+<span id="cb4-7"><a href="#cb4-7" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb4-8"><a href="#cb4-8" tabindex="-1"></a><span class="kw">WHERE</span> (weight <span class="op">&gt;</span> <span class="dv">5</span>) <span class="kw">AND</span> (weight <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
 </div>
 </div>
 </div>
@@ -363,9 +363,9 @@ do this using a <code>GROUP BY</code> clause</p>
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id;</span></code></pre>
 </div>
 <p><code>GROUP BY</code> tells SQL what field or fields we want to use
 to aggregate the data. If we want to group by multiple fields, we give
@@ -391,14 +391,14 @@ to aggregate the data. If we want to group by multiple fields, we give
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2">Solution of 1</h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb6-1"><a href="#cb6-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb6-3"><a href="#cb6-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -409,14 +409,14 @@ to aggregate the data. If we want to group by multiple fields, we give
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3">Solution of 2 and 3</h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, species_id, <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">AVG</span>(weight)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>, species_id;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, species_id, <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">AVG</span>(weight)</span>
+<span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb7-3"><a href="#cb7-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> <span class="dt">year</span>, species_id;</span></code></pre>
 </div>
 </div>
 </div>
@@ -430,10 +430,10 @@ of each species captured, ordered by the count:</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(species_id);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb8-1"><a href="#cb8-1" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb8-2"><a href="#cb8-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
+<span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(species_id);</span></code></pre>
 </div>
 </section><section id="aliases"><h2 class="section-heading">Aliases<a class="anchor" aria-label="anchor" href="#aliases"></a>
 </h2>
@@ -444,15 +444,15 @@ can use aliases to assign new names to things in the query.</p>
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(<span class="dt">year</span>) <span class="kw">AS</span> last_surveyed_year</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb9-1"><a href="#cb9-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(<span class="dt">year</span>) <span class="kw">AS</span> last_surveyed_year</span>
+<span id="cb9-2"><a href="#cb9-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>The <code>AS</code> isn’t technically required, so you could do</p>
 <div class="codewrapper sourceCode" id="cb10">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(<span class="dt">year</span>) last_surveyed_year</span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb10-1"><a href="#cb10-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">MAX</span>(<span class="dt">year</span>) last_surveyed_year</span>
+<span id="cb10-2"><a href="#cb10-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>but using <code>AS</code> is much clearer so it is good style to
 include it.</p>
@@ -461,16 +461,16 @@ way:</p>
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys <span class="kw">AS</span> surv;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb11-1"><a href="#cb11-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb11-2"><a href="#cb11-2" tabindex="-1"></a><span class="kw">FROM</span> surveys <span class="kw">AS</span> surv;</span></code></pre>
 </div>
 <p>And again, the <code>AS</code> keyword is not required, so this
 works, too:</p>
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys surv;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb12-1"><a href="#cb12-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb12-2"><a href="#cb12-2" tabindex="-1"></a><span class="kw">FROM</span> surveys surv;</span></code></pre>
 </div>
 <p>Aliasing table names can be helpful when working with queries that
 involve multiple tables; you will learn more about this later.</p>
@@ -485,10 +485,10 @@ with a count higher than 10:</p>
 <div class="codewrapper sourceCode" id="cb13">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(species_id)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(species_id) <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb13-1"><a href="#cb13-1" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(species_id)</span>
+<span id="cb13-2"><a href="#cb13-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb13-3"><a href="#cb13-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
+<span id="cb13-4"><a href="#cb13-4" tabindex="-1"></a><span class="kw">HAVING</span> <span class="fu">COUNT</span>(species_id) <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 <p>The <code>HAVING</code> keyword works exactly like the
 <code>WHERE</code> keyword, but uses aggregate functions instead of
@@ -501,10 +501,10 @@ clause. For example, in the above query, we can call the
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(species_id) <span class="kw">AS</span> occurrences</span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> occurrences <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb14-1"><a href="#cb14-1" tabindex="-1"></a><span class="kw">SELECT</span> species_id, <span class="fu">COUNT</span>(species_id) <span class="kw">AS</span> occurrences</span>
+<span id="cb14-2"><a href="#cb14-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb14-3"><a href="#cb14-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
+<span id="cb14-4"><a href="#cb14-4" tabindex="-1"></a><span class="kw">HAVING</span> occurrences <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 <p>Note that in both queries, <code>HAVING</code> comes <em>after</em>
 <code>GROUP BY</code>. One way to think about this is: the data are
@@ -531,15 +531,15 @@ number of <code>species</code> in each <code>taxa</code>, only for the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4">Show me the solution</h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> taxa, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n</span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> species</span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> taxa</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="kw">HAVING</span> n <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb15-1"><a href="#cb15-1" tabindex="-1"></a><span class="kw">SELECT</span> taxa, <span class="fu">COUNT</span>(<span class="op">*</span>) <span class="kw">AS</span> n</span>
+<span id="cb15-2"><a href="#cb15-2" tabindex="-1"></a><span class="kw">FROM</span> species</span>
+<span id="cb15-3"><a href="#cb15-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> taxa</span>
+<span id="cb15-4"><a href="#cb15-4" tabindex="-1"></a><span class="kw">HAVING</span> n <span class="op">&gt;</span> <span class="dv">10</span>;</span></code></pre>
 </div>
 </div>
 </div>
@@ -561,9 +561,9 @@ the summer (May - September) of 2000. That query would look like:</p>
 <div class="codewrapper sourceCode" id="cb16">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="dt">year</span> <span class="op">=</span> <span class="dv">2000</span> <span class="kw">AND</span> (<span class="dt">month</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">AND</span> <span class="dt">month</span> <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb16-1"><a href="#cb16-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb16-2"><a href="#cb16-2" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb16-3"><a href="#cb16-3" tabindex="-1"></a><span class="kw">WHERE</span> <span class="dt">year</span> <span class="op">=</span> <span class="dv">2000</span> <span class="kw">AND</span> (<span class="dt">month</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">AND</span> <span class="dt">month</span> <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
 </div>
 <p>But we don’t want to have to type that every time we want to ask a
 question about that particular subset of data. Hence, we can benefit
@@ -571,19 +571,19 @@ from a view:</p>
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> summer_2000 <span class="kw">AS</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> <span class="dt">year</span> <span class="op">=</span> <span class="dv">2000</span> <span class="kw">AND</span> (<span class="dt">month</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">AND</span> <span class="dt">month</span> <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb17-1"><a href="#cb17-1" tabindex="-1"></a><span class="kw">CREATE</span> <span class="kw">VIEW</span> summer_2000 <span class="kw">AS</span></span>
+<span id="cb17-2"><a href="#cb17-2" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb17-3"><a href="#cb17-3" tabindex="-1"></a><span class="kw">FROM</span> surveys</span>
+<span id="cb17-4"><a href="#cb17-4" tabindex="-1"></a><span class="kw">WHERE</span> <span class="dt">year</span> <span class="op">=</span> <span class="dv">2000</span> <span class="kw">AND</span> (<span class="dt">month</span> <span class="op">&gt;</span> <span class="dv">4</span> <span class="kw">AND</span> <span class="dt">month</span> <span class="op">&lt;</span> <span class="dv">10</span>);</span></code></pre>
 </div>
 <p>Using a view we will be able to access these results with a much
 shorter notation:</p>
 <div class="codewrapper sourceCode" id="cb18">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb18-1"><a href="#cb18-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="op">*</span></span>
+<span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
 </div>
 </section><section id="what-about-null"><h2 class="section-heading">What About NULL?<a class="anchor" aria-label="anchor" href="#what-about-null"></a>
 </h2>
@@ -594,18 +594,18 @@ like we would hope, ignoring the NULL values:</p>
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">AVG</span>(weight)</span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb19-1"><a href="#cb19-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">AVG</span>(weight)</span>
+<span id="cb19-2"><a href="#cb19-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb19-3"><a href="#cb19-3" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
 </div>
 <p>But if we try to be extra clever, and find the average ourselves, we
 might get tripped up:</p>
 <div class="codewrapper sourceCode" id="cb20">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb20-1"><a href="#cb20-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">COUNT</span>(<span class="op">*</span>), <span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb20-2"><a href="#cb20-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb20-3"><a href="#cb20-3" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
 </div>
 <p>Here the <code>COUNT</code> function includes all five records (even
 those with NULL values), but the <code>SUM</code> only includes the
@@ -615,9 +615,9 @@ the <code>COUNT</code> function slightly:</p>
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">COUNT</span>(weight), <span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fu">COUNT</span>(weight)</span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb21-1"><a href="#cb21-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">SUM</span>(weight), <span class="fu">COUNT</span>(weight), <span class="fu">SUM</span>(weight)<span class="op">/</span><span class="fu">COUNT</span>(weight)</span>
+<span id="cb21-2"><a href="#cb21-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb21-3"><a href="#cb21-3" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
 </div>
 <p>When we count the weight field specifically, SQL ignores the records
 with data missing in that field. So here is one example where NULLs can
@@ -628,24 +628,24 @@ non-female animals:</p>
 <div class="codewrapper sourceCode" id="cb22">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'F'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb22-1"><a href="#cb22-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb22-3"><a href="#cb22-3" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'F'</span>;</span></code></pre>
 </div>
 <p>Now let’s count all the non-male animals:</p>
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'M'</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb23-1"><a href="#cb23-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb23-2"><a href="#cb23-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb23-3"><a href="#cb23-3" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'M'</span>;</span></code></pre>
 </div>
 <p>But if we compare those two numbers with the total:</p>
 <div class="codewrapper sourceCode" id="cb24">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb24-1"><a href="#cb24-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb24-2"><a href="#cb24-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000;</span></code></pre>
 </div>
 <p>We’ll see that they don’t add up to the total! That’s because SQL
 doesn’t automatically include NULL values in a negative conditional
@@ -657,9 +657,9 @@ we’d need to change our query to:</p>
 <div class="codewrapper sourceCode" id="cb25">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
-<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'M'</span> <span class="kw">OR</span> sex <span class="kw">IS</span> <span class="kw">NULL</span>;</span></code></pre>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb25-1"><a href="#cb25-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="fu">COUNT</span>(<span class="op">*</span>)</span>
+<span id="cb25-2"><a href="#cb25-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
+<span id="cb25-3"><a href="#cb25-3" tabindex="-1"></a><span class="kw">WHERE</span> sex <span class="op">!=</span> <span class="st">'M'</span> <span class="kw">OR</span> sex <span class="kw">IS</span> <span class="kw">NULL</span>;</span></code></pre>
 </div>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
@@ -741,7 +741,7 @@ was a new table.</li>
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/02-sql-aggregation.html",
   "dateCreated": "2015-02-10",
   "dateModified": "2023-04-21",
-  "datePublished": "2024-02-27"
+  "datePublished": "2024-03-05"
 }
 
   </script><script>
