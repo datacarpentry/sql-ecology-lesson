@@ -46,7 +46,7 @@
             </li>
           </ul></li>
       </div>
-      
+
       <div class="dropdown" id="instructor-dropdown">
         <button class="btn btn-secondary dropdown-toggle bordered-button" type="button" id="dropdownMenu1" data-bs-toggle="dropdown" aria-expanded="false">
           <i aria-hidden="true" class="icon" data-feather="eye"></i> Instructor View <i data-feather="chevron-down"></i>
@@ -170,7 +170,7 @@
                 </div><!--/div.accordion-flush-->
               </div><!--div.sidenav-view-selector -->
             </div><!--/div.col -->
-      
+
             <hr></div><!--/div.mobile-row -->
 
           <div class="accordion accordion-flush" id="accordionFlush11">
@@ -189,7 +189,7 @@
     <div class="accordion-header" id="flush-heading1">
         <a href="index.html">Summary and Schedule</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -198,7 +198,7 @@
     <div class="accordion-header" id="flush-heading2">
         <a href="00-sql-introduction.html">1. Introducing Databases and SQL</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -207,7 +207,7 @@
     <div class="accordion-header" id="flush-heading3">
         <a href="01-sql-basic-queries.html">2. Accessing Data With Queries</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -221,7 +221,7 @@
         </span>
       </button>
     </div><!--/div.accordion-header-->
-        
+
     <div id="flush-collapsecurrent" class="accordion-collapse collapse show" aria-labelledby="flush-headingcurrent" data-bs-parent="#accordionFlushcurrent">
       <div class="accordion-body">
         <ul><li><a href="#count-and-group-by">COUNT and GROUP BY</a></li>
@@ -232,7 +232,7 @@
 <li><a href="#what-about-null">What About NULL?</a></li>
         </ul></div><!--/div.accordion-body-->
     </div><!--/div.accordion-collapse-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -241,7 +241,7 @@
     <div class="accordion-header" id="flush-heading5">
         <a href="03-sql-joins.html">4. Combining Data With Joins</a>
     </div><!--/div.accordion-header-->
-        
+
   </div><!--/div.accordion-item-->
 </div><!--/div.accordion-flush-->
 
@@ -273,10 +273,10 @@
               </div>
             </div>
             <hr class="half-width resources"><a href="../instructor/aio.html">See all in one page</a>
-            
+
 
             <hr class="d-none d-sm-block d-md-none"><div class="d-grid gap-1">
-            
+
             </div>
           </div><!-- /div.accordion -->
         </div><!-- /div.sidebar-inner -->
@@ -297,20 +297,20 @@
           Previous: Accessing Data With
         </a>
         <a class="chapter-link float-end" href="../instructor/03-sql-joins.html" rel="next">
-          Next: Combining Data With... 
+          Next: Combining Data With...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Aggregating and Grouping Data</h1>
         <p>Last updated on 2023-04-21 |
-        
+
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/02-sql-aggregation.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
-        
-        
-        
+
+
+
         <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 60 minutes</p>
-        
+
         <div class="text-end">
           <button role="button" aria-pressed="false" tabindex="0" id="expand-code" class="pull-right" data-expand="Expand All Solutions " data-collapse="Collapse All Solutions "> Expand All Solutions <i aria-hidden="true" data-feather="plus"></i></button>
         </div>
@@ -346,8 +346,8 @@ functions.</li>
 </div>
 </div>
 </div>
-<section id="count-and-group-by"><h2 class="section-heading">COUNT and GROUP BY<a class="anchor" aria-label="anchor" href="#count-and-group-by"></a>
-</h2>
+<section><h2 class="section-heading" id="count-and-group-by">COUNT and GROUP BY<a class="anchor" aria-label="anchor" href="#count-and-group-by"></a>
+<a class="anchor" aria-label="anchor" href="#count-and-group-by"></a></h2>
 <hr class="half-width"><p>Aggregation allows us to combine results by grouping records based on
 value. It is also useful for calculating combined values in groups.</p>
 <p>Let’s go to the surveys table and find out how many individuals there
@@ -479,8 +479,8 @@ to aggregate the data. If we want to group by multiple fields, we give
 </div>
 </div>
 </div>
-</section><section id="ordering-aggregated-results"><h2 class="section-heading">Ordering Aggregated Results<a class="anchor" aria-label="anchor" href="#ordering-aggregated-results"></a>
-</h2>
+</section><section><h2 class="section-heading" id="ordering-aggregated-results">Ordering Aggregated Results<a class="anchor" aria-label="anchor" href="#ordering-aggregated-results"></a>
+<a class="anchor" aria-label="anchor" href="#ordering-aggregated-results"></a></h2>
 <hr class="half-width"><p>We can order the results of our aggregation by a specific column,
 including the aggregated column. Let’s count the number of individuals
 of each species captured, ordered by the count:</p>
@@ -492,8 +492,8 @@ of each species captured, ordered by the count:</p>
 <span id="cb8-3"><a href="#cb8-3" tabindex="-1"></a><span class="kw">GROUP</span> <span class="kw">BY</span> species_id</span>
 <span id="cb8-4"><a href="#cb8-4" tabindex="-1"></a><span class="kw">ORDER</span> <span class="kw">BY</span> <span class="fu">COUNT</span>(species_id);</span></code></pre>
 </div>
-</section><section id="aliases"><h2 class="section-heading">Aliases<a class="anchor" aria-label="anchor" href="#aliases"></a>
-</h2>
+</section><section><h2 class="section-heading" id="aliases">Aliases<a class="anchor" aria-label="anchor" href="#aliases"></a>
+<a class="anchor" aria-label="anchor" href="#aliases"></a></h2>
 <hr class="half-width"><p>As queries get more complex, the expressions we use can get long and
 unwieldy. To help make things clearer in the query and in its output, we
 can use aliases to assign new names to things in the query.</p>
@@ -531,8 +531,8 @@ works, too:</p>
 </div>
 <p>Aliasing table names can be helpful when working with queries that
 involve multiple tables; you will learn more about this later.</p>
-</section><section id="the-having-keyword"><h2 class="section-heading">The <code>HAVING</code> keyword<a class="anchor" aria-label="anchor" href="#the-having-keyword"></a>
-</h2>
+</section><section><h2 class="section-heading" id="the-having-keyword">The <code>HAVING</code> keyword<a class="anchor" aria-label="anchor" href="#the-having-keyword"></a>
+<a class="anchor" aria-label="anchor" href="#the-having-keyword"></a></h2>
 <hr class="half-width"><p>In the previous episode, we have seen the keyword <code>WHERE</code>,
 allowing to filter the results according to some criteria. SQL offers a
 mechanism to filter the results based on <strong>aggregate
@@ -602,8 +602,8 @@ number of <code>species</code> in each <code>taxa</code>, only for the
 </div>
 </div>
 </div>
-</section><section id="saving-queries-for-future-use"><h2 class="section-heading">Saving Queries for Future Use<a class="anchor" aria-label="anchor" href="#saving-queries-for-future-use"></a>
-</h2>
+</section><section><h2 class="section-heading" id="saving-queries-for-future-use">Saving Queries for Future Use<a class="anchor" aria-label="anchor" href="#saving-queries-for-future-use"></a>
+<a class="anchor" aria-label="anchor" href="#saving-queries-for-future-use"></a></h2>
 <hr class="half-width"><p>It is not uncommon to repeat the same operation more than once, for
 example for monitoring or reporting purposes. SQL comes with a very
 powerful mechanism to do this by creating views. Views are a form of
@@ -642,8 +642,8 @@ shorter notation:</p>
 <span id="cb18-2"><a href="#cb18-2" tabindex="-1"></a><span class="kw">FROM</span> summer_2000</span>
 <span id="cb18-3"><a href="#cb18-3" tabindex="-1"></a><span class="kw">WHERE</span> species_id <span class="op">=</span> <span class="st">'PE'</span>;</span></code></pre>
 </div>
-</section><section id="what-about-null"><h2 class="section-heading">What About NULL?<a class="anchor" aria-label="anchor" href="#what-about-null"></a>
-</h2>
+</section><section><h2 class="section-heading" id="what-about-null">What About NULL?<a class="anchor" aria-label="anchor" href="#what-about-null"></a>
+<a class="anchor" aria-label="anchor" href="#what-about-null"></a></h2>
 <hr class="half-width"><p>From the last example, there should only be five records. If you look
 at the <code>weight</code> column, it’s easy to see what the average
 weight would be. If we use SQL to find the average weight, SQL behaves
@@ -751,7 +751,7 @@ was a new table.</li>
           Previous: Accessing Data With
         </a>
         <a class="chapter-link float-end" href="../instructor/03-sql-joins.html" rel="next">
-          Next: Combining Data With... 
+          Next: Combining Data With...
           <i aria-hidden="true" class="small-arrow" data-feather="arrow-right"></i>
         </a>
       </div>
@@ -762,18 +762,18 @@ was a new table.</li>
       		<footer class="row footer mx-md-3"><hr><div class="col-md-6">
         <p>This lesson is subject to the <a href="CODE_OF_CONDUCT.html">Code of Conduct</a></p>
         <p>
-        
+
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/02-sql-aggregation.md" class="external-link">Edit on GitHub</a>
-        
+
 	
         | <a href="https://github.com/datacarpentry/sql-ecology-lesson/blob/main/CONTRIBUTING.md" class="external-link">Contributing</a>
         | <a href="https://github.com/datacarpentry/sql-ecology-lesson/" class="external-link">Source</a></p>
 				<p><a href="https://github.com/datacarpentry/sql-ecology-lesson/blob/main/CITATION" class="external-link">Cite</a> | <a href="mailto:team@carpentries.org">Contact</a> | <a href="https://carpentries.org/about/" class="external-link">About</a></p>
 			</div>
 			<div class="col-md-6">
-        
+
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
-        
+
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
         <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.16.5" class="external-link">sandpaper (0.16.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.6" class="external-link">pegboard (0.7.6)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.3" class="external-link">varnish (1.0.3)</a></p>
 			</div>
@@ -798,7 +798,7 @@ was a new table.</li>
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/02-sql-aggregation.html",
   "dateCreated": "2015-02-10",
   "dateModified": "2023-04-21",
-  "datePublished": "2024-07-02"
+  "datePublished": "2024-07-09"
 }
 
   </script><script>
