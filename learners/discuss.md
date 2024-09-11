@@ -34,7 +34,7 @@ title: Discussion
   - Underscores can separate words (for example, name\_of\_data)
   - Data types are not names (for example, integer\_data instead of integer)
   - Names are often in lowercase (for example, name)
-  - DO NOT use quotes when naming a table or field
+  - Do *not* use quotes when naming a table or field
 
 ### Other database management systems
 
