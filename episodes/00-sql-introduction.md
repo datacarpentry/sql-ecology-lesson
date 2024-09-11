@@ -140,7 +140,7 @@ data retrieval from a relational database.
 
 Let's look at a pre-existing database, the `portal_mammals.sqlite`
 file from the Portal Project dataset that we downloaded during
-[Setup](../learners/setup.md). Click on the "Open Database" button, select the portal\_mammals.sqlite file, and click "Open" to open the database.
+[Setup](../learners/setup.md). In DB Browser for SQLite, click on the "Open Database" button, select the portal\_mammals.sqlite file, and click "Open" to open the database.
 
 You can see the tables in the database by looking at the left hand side of the
 screen under Database Structure tab. Here you will see a list under "Tables." Each item listed here corresponds to one of the `csv` files
