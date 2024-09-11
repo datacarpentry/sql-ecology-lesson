@@ -302,7 +302,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Accessing Data With Queries</h1>
-        <p>Last updated on 2023-04-21 |
+        <p>Last updated on 2024-09-11 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/01-sql-basic-queries.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -417,17 +417,19 @@ but we needed it in kg instead of g we would use</p>
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
-<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span>, weight<span class="op">/</span><span class="dv">1000</span></span>
+<pre class="sourceCode sql" tabindex="0"><code class="sourceCode sql"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="kw">SELECT</span> <span class="dt">year</span>, <span class="dt">month</span>, <span class="dt">day</span>, weight <span class="op">/</span> <span class="dv">1000</span></span>
 <span id="cb7-2"><a href="#cb7-2" tabindex="-1"></a><span class="kw">FROM</span> surveys;</span></code></pre>
 </div>
 <p>When we run the query, the expression <code>weight / 1000</code> is
-evaluated for each row and appended to that row, in a new column. If we
-used the <code>INTEGER</code> data type for the weight field then
-integer division would have been done, to obtain the correct results in
-that case divide by <code>1000.0</code>. Expressions can use any fields,
-any arithmetic operators (<code>+</code>, <code>-</code>,
-<code>*</code>, and <code>/</code>) and a variety of built-in functions.
-For example, we could round the values to make them easier to read.</p>
+evaluated for each row and appended in a new column to the table
+returned by the query. Note that the new column only exists in the query
+results—the surveys table itself is not changed. If we used the
+<code>INTEGER</code> data type for the weight field then integer
+division would have been done, to obtain the correct results in that
+case divide by <code>1000.0</code>. Expressions can use any fields, any
+arithmetic operators (<code>+</code>, <code>-</code>, <code>*</code>,
+and <code>/</code>) and a variety of built-in functions. For example, we
+could round the values to make them easier to read.</p>
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
 </h3>
@@ -796,8 +798,8 @@ understandable.</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/01-sql-basic-queries.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/01-sql-basic-queries.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2023-04-21",
-  "datePublished": "2024-09-10"
+  "dateModified": "2024-09-11",
+  "datePublished": "2024-09-11"
 }
 
   </script><script>
