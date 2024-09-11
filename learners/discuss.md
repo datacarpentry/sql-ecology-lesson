@@ -29,7 +29,7 @@ title: Discussion
 - Names should adhere to certain standards (general tips):
 
   - Names should not contain spaces (for example, nameofdata)
-  - Names should not start with numbers, rather add numbers at the end of the name (for example, name$)
+  - Names should not start with numbers, rather add numbers at the end of the name (for example, name5)
   - Names should be full words, not abbreviations (for example, doctor)
   - Underscores can separate words (for example, name\_of\_data)
   - Data types are not names (for example, integer\_data instead of integer)
