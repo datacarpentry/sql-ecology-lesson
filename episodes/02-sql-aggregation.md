@@ -226,8 +226,13 @@ Write a query that returns, from the `species` table, the number of
 
 ## Solution
 
+This query counts the number of species records that contain each value of the `taxa` field and names that result `species_count`.
+The `GROUP BY` clause means the query will create an aggregated table with one row for each taxa.
+Only those `taxa` values that have more than ten records will be included because of the `HAVING` clause.
+This filtering is applied _after_ grouping has been done.
+
 ```sql
-SELECT taxa, COUNT(*) AS n
+SELECT taxa, COUNT(*) AS species_count
 FROM species
 GROUP BY taxa
 HAVING n > 10;
