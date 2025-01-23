@@ -232,7 +232,7 @@ Only those `taxa` values that have more than ten records will be included becaus
 This filtering is applied _after_ grouping has been done.
 
 ```sql
-SELECT taxa, COUNT(*) AS species_count
+SELECT taxa, COUNT(*) AS taxa_count
 FROM species
 GROUP BY taxa
 HAVING n > 10;
