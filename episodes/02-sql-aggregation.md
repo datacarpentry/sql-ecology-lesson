@@ -235,7 +235,7 @@ This filtering is applied _after_ grouping has been done.
 SELECT taxa, COUNT(*) AS taxa_count
 FROM species
 GROUP BY taxa
-HAVING n > 10;
+HAVING taxa_count > 10;
 ```
 
 :::::::::::::::::::::::::
