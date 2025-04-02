@@ -41,6 +41,22 @@ Sort results using `ASC` for ascending order or `DESC` for descending order:
 
     SELECT * FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC;
 
+Data Types
+----------
+
+Different databases offer different choices for the data type definition.
+
+The following table shows some of the common names of data types between the various database platforms:
+
+| Data type                                             | Access                                                                                                   | SQLServer                                                               | Oracle           | MySQL         | PostgreSQL    | SQLite  |
+| :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- | :--------------- | :------------ | :------------ | :------ |
+| boolean                                               | Yes/No                                                                                                   | Bit                                                                     | Byte             | N/A           | Boolean       | Integer |
+| integer                                               | Number (integer)                                                                                         | Int                                                                     | Number           | Int / Integer | Int / Integer | Integer |
+| float                                                 | Number (single)                                                                                          | Float / Real                                                            | Number           | Float         | Numeric       | Real    |
+| currency                                              | Currency                                                                                                 | Money                                                                   | N/A              | N/A           | Money         | Real    |
+| string (fixed)                                        | N/A                                                                                                      | Char                                                                    | Char             | Char          | Char          | Text    |
+| string (variable)                                     | Text (\<256) / Memo (65k+)                                                                               | Varchar                                                                 | Varchar2         | Varchar       | Varchar       | Text    |
+| binary object	OLE Object Memo	Binary (fixed up to 8K) | Varbinary (\<8K)                                                                                         | Image (\<2GB)	Long                                                 | Raw	Blob    | Text	Binary   | Varbinary    | Blob    | 
 
 Missing Data
 ------------

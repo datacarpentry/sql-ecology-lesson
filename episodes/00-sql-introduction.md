@@ -237,12 +237,12 @@ You can also use this same approach to append new fields to an existing table.
 
 SQLite has four data types, shown in the table below.
 
-| Data type                                             | Description                                                                                              | 
-| ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
-| TEXT                                                  | Character string                                                                                         | 
-| BLOB                                                  | Raw binary data                                                                                          | 
-| INTEGER                                               | Integer numerical (signed positive or negative)                                                          | 
-| REAL                                                  | Approximate numerical                                                                                    | 
+| Data type                                             | Description                                                                                                                                | 
+| ----------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- | 
+| TEXT                                                  | Text string                                                                                                                                | 
+| INTEGER                                               | Integer numerical (signed positive or negative)                                                                                            | 
+| REAL                                                  | Approximate numerical                                                                                                                      | 
+| BLOB                                                  | Multipurpose datatype with limited functionality that is generally used for data which does not fit into any of the other three categories |
 
 In addition to these four data types, SQLite has a NULL value for missing data. We will talk more about dealing with missing data in Episode 3.
 
