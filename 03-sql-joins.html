@@ -371,7 +371,7 @@ to.</p>
 from the first table plus the columns from the second table. For the
 above statement, the output will be a table that has the following
 column names:</p>
-<table style="width:100%;" class="table"><colgroup><col width="5%"><col width="45%"><col width="1%"><col width="5%"><col width="4%"><col width="5%"><col width="1%"><col width="8%"><col width="3%"><col width="5%"><col width="5%"><col width="4%"><col width="3%"></colgroup><thead><tr class="header"><th>record_id</th>
+<table style="width:100%;" class="table"><colgroup><col width="5%"><col width="45%"><col width="1%"><col width="5%"><col width="4%"><col width="5%"><col width="1%"><col width="8%"><col width="3%"><col width="5%"><col width="5%"><col width="4%"><col width="3%"></colgroup><thead><tr><th>record_id</th>
 <th>month</th>
 <th>day</th>
 <th>year</th>
@@ -384,7 +384,7 @@ column names:</p>
 <th>genus</th>
 <th>species</th>
 <th>taxa</th>
-</tr></thead><tbody><tr class="odd"><td>…</td>
+</tr></thead><tbody><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
@@ -397,7 +397,7 @@ column names:</p>
 <td></td>
 <td></td>
 <td></td>
-</tr><tr class="even"><td>96</td>
+</tr><tr><td>96</td>
 <td>8</td>
 <td>20</td>
 <td>1997</td>
@@ -410,7 +410,7 @@ column names:</p>
 <td>Dipodomys</td>
 <td>merriami</td>
 <td>Rodent</td>
-</tr><tr class="odd"><td>…</td>
+</tr><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
@@ -437,7 +437,7 @@ common column is <code>species_id</code>.</p>
 <span id="cb2-4"><a href="#cb2-4" tabindex="-1"></a><span class="kw">USING</span> (species_id);</span></code></pre>
 </div>
 <p>The output will only have one <strong>species_id</strong> column</p>
-<table class="table"><colgroup><col width="5%"><col width="46%"><col width="1%"><col width="5%"><col width="4%"><col width="5%"><col width="1%"><col width="8%"><col width="3%"><col width="5%"><col width="5%"><col width="4%"></colgroup><thead><tr class="header"><th>record_id</th>
+<table class="table"><colgroup><col width="5%"><col width="46%"><col width="1%"><col width="5%"><col width="4%"><col width="5%"><col width="1%"><col width="8%"><col width="3%"><col width="5%"><col width="5%"><col width="4%"></colgroup><thead><tr><th>record_id</th>
 <th>month</th>
 <th>day</th>
 <th>year</th>
@@ -449,7 +449,7 @@ common column is <code>species_id</code>.</p>
 <th>genus</th>
 <th>species</th>
 <th>taxa</th>
-</tr></thead><tbody><tr class="odd"><td>…</td>
+</tr></thead><tbody><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
@@ -461,7 +461,7 @@ common column is <code>species_id</code>.</p>
 <td></td>
 <td></td>
 <td></td>
-</tr><tr class="even"><td>96</td>
+</tr><tr><td>96</td>
 <td>8</td>
 <td>20</td>
 <td>1997</td>
@@ -473,7 +473,7 @@ common column is <code>species_id</code>.</p>
 <td>Dipodomys</td>
 <td>merriami</td>
 <td>Rodent</td>
-</tr><tr class="odd"><td>…</td>
+</tr><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
@@ -499,27 +499,27 @@ their actual species names.</p>
 <span id="cb3-3"><a href="#cb3-3" tabindex="-1"></a><span class="kw">JOIN</span> species</span>
 <span id="cb3-4"><a href="#cb3-4" tabindex="-1"></a><span class="kw">ON</span> surveys.species_id <span class="op">=</span> species.species_id;</span></code></pre>
 </div>
-<table class="table"><colgroup><col width="8%"><col width="73%"><col width="2%"><col width="8%"><col width="7%"></colgroup><thead><tr class="header"><th>year</th>
+<table class="table"><colgroup><col width="8%"><col width="73%"><col width="2%"><col width="8%"><col width="7%"></colgroup><thead><tr><th>year</th>
 <th>month</th>
 <th>day</th>
 <th>genus</th>
 <th>species</th>
-</tr></thead><tbody><tr class="odd"><td>…</td>
+</tr></thead><tbody><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
 <td></td>
-</tr><tr class="even"><td>1977</td>
+</tr><tr><td>1977</td>
 <td>7</td>
 <td>16</td>
 <td>Neotoma</td>
 <td>albigula</td>
-</tr><tr class="odd"><td>1977</td>
+</tr><tr><td>1977</td>
 <td>7</td>
 <td>16</td>
 <td>Dipodomys</td>
 <td>merriami</td>
-</tr><tr class="even"><td>…</td>
+</tr><tr><td>…</td>
 <td></td>
 <td></td>
 <td></td>
@@ -894,45 +894,45 @@ is useful for “nulling out” specific values.</p>
 </div>
 <p>Some more functions which are common to SQL databases are listed in
 the table below:</p>
-<table class="table"><colgroup><col width="10%"><col width="89%"></colgroup><thead><tr class="header"><th>Function</th>
+<table class="table"><colgroup><col width="10%"><col width="89%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>ABS(n)</code></td>
+</tr></thead><tbody><tr><td><code>ABS(n)</code></td>
 <td>Returns the absolute (positive) value of the numeric expression
 <em>n</em>
 </td>
-</tr><tr class="even"><td><code>COALESCE(x1, ..., xN)</code></td>
+</tr><tr><td><code>COALESCE(x1, ..., xN)</code></td>
 <td>Returns the first of its parameters that is not NULL</td>
-</tr><tr class="odd"><td><code>LENGTH(s)</code></td>
+</tr><tr><td><code>LENGTH(s)</code></td>
 <td>Returns the length of the string expression <em>s</em>
 </td>
-</tr><tr class="even"><td><code>LOWER(s)</code></td>
+</tr><tr><td><code>LOWER(s)</code></td>
 <td>Returns the string expression <em>s</em> converted to lowercase</td>
-</tr><tr class="odd"><td><code>NULLIF(x, y)</code></td>
+</tr><tr><td><code>NULLIF(x, y)</code></td>
 <td>Returns NULL if <em>x</em> is equal to <em>y</em>, otherwise returns
 <em>x</em>
 </td>
-</tr><tr class="even"><td>
+</tr><tr><td>
 <code>ROUND(n)</code> or <code>ROUND(n, x)</code>
 </td>
 <td>Returns the numeric expression <em>n</em> rounded to <em>x</em>
 digits after the decimal point (0 by default)</td>
-</tr><tr class="odd"><td><code>TRIM(s)</code></td>
+</tr><tr><td><code>TRIM(s)</code></td>
 <td>Returns the string expression <em>s</em> without leading and
 trailing whitespace characters</td>
-</tr><tr class="even"><td><code>UPPER(s)</code></td>
+</tr><tr><td><code>UPPER(s)</code></td>
 <td>Returns the string expression <em>s</em> converted to uppercase</td>
 </tr></tbody></table><p>Finally, some useful functions which are particular to SQLite are
 listed in the table below:</p>
-<table class="table"><colgroup><col width="10%"><col width="89%"></colgroup><thead><tr class="header"><th>Function</th>
+<table class="table"><colgroup><col width="10%"><col width="89%"></colgroup><thead><tr><th>Function</th>
 <th>Description</th>
-</tr></thead><tbody><tr class="odd"><td><code>RANDOM()</code></td>
+</tr></thead><tbody><tr><td><code>RANDOM()</code></td>
 <td>Returns a random integer between -9223372036854775808 and
 +9223372036854775807.</td>
-</tr><tr class="even"><td><code>REPLACE(s, f, r)</code></td>
+</tr><tr><td><code>REPLACE(s, f, r)</code></td>
 <td>Returns the string expression <em>s</em> in which every occurrence
 of <em>f</em> has been replaced with <em>r</em>
 </td>
-</tr><tr class="odd"><td>
+</tr><tr><td>
 <code>SUBSTR(s, x, y)</code> or <code>SUBSTR(s, x)</code>
 </td>
 <td>Returns the portion of the string expression <em>s</em> starting at
@@ -1147,7 +1147,7 @@ of <code>NULL</code>, which can help in joins</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.5" class="external-link">sandpaper (0.18.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
