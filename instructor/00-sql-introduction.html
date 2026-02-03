@@ -556,61 +556,61 @@ also).</li>
 <li>Finally, click <strong>OK</strong> one more time to confirm the
 operation. Then click the <strong>Write Changes</strong> button to save
 the database.</li>
-</ol><table style="width:100%;" class="table"><colgroup><col width="21%"><col width="42%"><col width="29%"><col width="6%"></colgroup><thead><tr class="header"><th>Field</th>
+</ol><table style="width:100%;" class="table"><colgroup><col width="21%"><col width="42%"><col width="29%"><col width="6%"></colgroup><thead><tr><th>Field</th>
 <th align="left">Data Type</th>
 <th>Motivation</th>
 <th>Table(s)</th>
-</tr></thead><tbody><tr class="odd"><td>day</td>
+</tr></thead><tbody><tr><td>day</td>
 <td align="left">INTEGER</td>
 <td>Having data as numeric allows for meaningful arithmetic and
 comparisons</td>
 <td>surveys</td>
-</tr><tr class="even"><td>genus</td>
+</tr><tr><td>genus</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>species</td>
-</tr><tr class="odd"><td>hindfoot_length</td>
+</tr><tr><td>hindfoot_length</td>
 <td align="left">REAL</td>
 <td>Field contains measured numeric data</td>
 <td>surveys</td>
-</tr><tr class="even"><td>month</td>
+</tr><tr><td>month</td>
 <td align="left">INTEGER</td>
 <td>Having data as numeric allows for meaningful arithmetic and
 comparisons</td>
 <td>surveys</td>
-</tr><tr class="odd"><td>plot_id</td>
+</tr><tr><td>plot_id</td>
 <td align="left">INTEGER</td>
 <td>Field contains numeric data</td>
 <td>plots, surveys</td>
-</tr><tr class="even"><td>plot_type</td>
+</tr><tr><td>plot_type</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>plots</td>
-</tr><tr class="odd"><td>record_id</td>
+</tr><tr><td>record_id</td>
 <td align="left">INTEGER</td>
 <td>Field contains numeric data</td>
 <td>surveys</td>
-</tr><tr class="even"><td>sex</td>
+</tr><tr><td>sex</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>surveys</td>
-</tr><tr class="odd"><td>species_id</td>
+</tr><tr><td>species_id</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>species, surveys</td>
-</tr><tr class="even"><td>species</td>
+</tr><tr><td>species</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>species</td>
-</tr><tr class="odd"><td>taxa</td>
+</tr><tr><td>taxa</td>
 <td align="left">TEXT</td>
 <td>Field contains text data</td>
 <td>species</td>
-</tr><tr class="even"><td>weight</td>
+</tr><tr><td>weight</td>
 <td align="left">REAL</td>
 <td>Field contains measured numerical data</td>
 <td>surveys</td>
-</tr><tr class="odd"><td>year</td>
+</tr><tr><td>year</td>
 <td align="left">INTEGER</td>
 <td>Allows for meaningful arithmetic and comparisons</td>
 <td>surveys</td>
@@ -640,57 +640,57 @@ assign it a data type.</li>
 </ol></div>
 <div class="section level3">
 <h3 id="datatypes">Data types<a class="anchor" aria-label="anchor" href="#datatypes"></a></h3>
-<table class="table"><colgroup><col width="33%"><col width="66%"></colgroup><thead><tr class="header"><th>Data type</th>
+<table class="table"><colgroup><col width="33%"><col width="66%"></colgroup><thead><tr><th>Data type</th>
 <th align="left">Description</th>
-</tr></thead><tbody><tr class="odd"><td>CHARACTER(n)</td>
+</tr></thead><tbody><tr><td>CHARACTER(n)</td>
 <td align="left">Character string. Fixed-length n</td>
-</tr><tr class="even"><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
+</tr><tr><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
 <td align="left">Character string. Variable length. Maximum length
 n</td>
-</tr><tr class="odd"><td>BINARY(n)</td>
+</tr><tr><td>BINARY(n)</td>
 <td align="left">Binary string. Fixed-length n</td>
-</tr><tr class="even"><td>BOOLEAN</td>
+</tr><tr><td>BOOLEAN</td>
 <td align="left">Stores TRUE or FALSE values</td>
-</tr><tr class="odd"><td>VARBINARY(n) or BINARY VARYING(n)</td>
+</tr><tr><td>VARBINARY(n) or BINARY VARYING(n)</td>
 <td align="left">Binary string. Variable length. Maximum length n</td>
-</tr><tr class="even"><td>INTEGER(p)</td>
+</tr><tr><td>INTEGER(p)</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="odd"><td>SMALLINT</td>
+</tr><tr><td>SMALLINT</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="even"><td>INTEGER</td>
+</tr><tr><td>INTEGER</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="odd"><td>BIGINT</td>
+</tr><tr><td>BIGINT</td>
 <td align="left">Integer numerical (no decimal).</td>
-</tr><tr class="even"><td>DECIMAL(p,s)</td>
+</tr><tr><td>DECIMAL(p,s)</td>
 <td align="left">Exact numerical, precision p, scale s.</td>
-</tr><tr class="odd"><td>NUMERIC(p,s)</td>
+</tr><tr><td>NUMERIC(p,s)</td>
 <td align="left">Exact numerical, precision p, scale s. (Same as
 DECIMAL)</td>
-</tr><tr class="even"><td>FLOAT(p)</td>
+</tr><tr><td>FLOAT(p)</td>
 <td align="left">Approximate numerical, mantissa precision p. A floating
 number in base 10 exponential notation.</td>
-</tr><tr class="odd"><td>REAL</td>
+</tr><tr><td>REAL</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="even"><td>FLOAT</td>
+</tr><tr><td>FLOAT</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="odd"><td>DOUBLE PRECISION</td>
+</tr><tr><td>DOUBLE PRECISION</td>
 <td align="left">Approximate numerical</td>
-</tr><tr class="even"><td>DATE</td>
+</tr><tr><td>DATE</td>
 <td align="left">Stores year, month, and day values</td>
-</tr><tr class="odd"><td>TIME</td>
+</tr><tr><td>TIME</td>
 <td align="left">Stores hour, minute, and second values</td>
-</tr><tr class="even"><td>TIMESTAMP</td>
+</tr><tr><td>TIMESTAMP</td>
 <td align="left">Stores year, month, day, hour, minute, and second
 values</td>
-</tr><tr class="odd"><td>INTERVAL</td>
+</tr><tr><td>INTERVAL</td>
 <td align="left">Composed of a number of integer fields, representing a
 period of time, depending on the type of interval</td>
-</tr><tr class="even"><td>ARRAY</td>
+</tr><tr><td>ARRAY</td>
 <td align="left">A set-length and ordered collection of elements</td>
-</tr><tr class="odd"><td>MULTISET</td>
+</tr><tr><td>MULTISET</td>
 <td align="left">A variable-length and unordered collection of
 elements</td>
-</tr><tr class="even"><td>XML</td>
+</tr><tr><td>XML</td>
 <td align="left">Stores XML data</td>
 </tr></tbody></table></div>
 <div class="section level3">
@@ -699,49 +699,49 @@ elements</td>
 definition.</p>
 <p>The following table shows some of the common names of data types
 between the various database platforms:</p>
-<table class="table"><colgroup><col width="19%"><col width="38%"><col width="26%"><col width="5%"><col width="4%"><col width="4%"></colgroup><thead><tr class="header"><th align="left">Data type</th>
+<table class="table"><colgroup><col width="19%"><col width="38%"><col width="26%"><col width="5%"><col width="4%"><col width="4%"></colgroup><thead><tr><th align="left">Data type</th>
 <th align="left">Access</th>
 <th align="left">SQLServer</th>
 <th align="left">Oracle</th>
 <th align="left">MySQL</th>
 <th align="left">PostgreSQL</th>
-</tr></thead><tbody><tr class="odd"><td align="left">boolean</td>
+</tr></thead><tbody><tr><td align="left">boolean</td>
 <td align="left">Yes/No</td>
 <td align="left">Bit</td>
 <td align="left">Byte</td>
 <td align="left">N/A</td>
 <td align="left">Boolean</td>
-</tr><tr class="even"><td align="left">integer</td>
+</tr><tr><td align="left">integer</td>
 <td align="left">Number (integer)</td>
 <td align="left">Int</td>
 <td align="left">Number</td>
 <td align="left">Int / Integer</td>
 <td align="left">Int / Integer</td>
-</tr><tr class="odd"><td align="left">float</td>
+</tr><tr><td align="left">float</td>
 <td align="left">Number (single)</td>
 <td align="left">Float / Real</td>
 <td align="left">Number</td>
 <td align="left">Float</td>
 <td align="left">Numeric</td>
-</tr><tr class="even"><td align="left">currency</td>
+</tr><tr><td align="left">currency</td>
 <td align="left">Currency</td>
 <td align="left">Money</td>
 <td align="left">N/A</td>
 <td align="left">N/A</td>
 <td align="left">Money</td>
-</tr><tr class="odd"><td align="left">string (fixed)</td>
+</tr><tr><td align="left">string (fixed)</td>
 <td align="left">N/A</td>
 <td align="left">Char</td>
 <td align="left">Char</td>
 <td align="left">Char</td>
 <td align="left">Char</td>
-</tr><tr class="even"><td align="left">string (variable)</td>
+</tr><tr><td align="left">string (variable)</td>
 <td align="left">Text (&lt;256) / Memo (65k+)</td>
 <td align="left">Varchar</td>
 <td align="left">Varchar2</td>
 <td align="left">Varchar</td>
 <td align="left">Varchar</td>
-</tr><tr class="odd"><td align="left">binary object OLE Object Memo Binary (fixed up to
+</tr><tr><td align="left">binary object OLE Object Memo Binary (fixed up to
 8K)</td>
 <td align="left">Varbinary (&lt;8K)</td>
 <td align="left">Image (&lt;2GB) Long</td>
@@ -803,7 +803,7 @@ vocabulary, but they are all based on the same ideas.</li>
         <p>Materials licensed under <a href="LICENSE.html">CC-BY 4.0</a> by the authors</p>
 
         <p>Template licensed under <a href="https://creativecommons.org/licenses/by-sa/4.0/" class="external-link">CC-BY 4.0</a> by <a href="https://carpentries.org/" class="external-link">The Carpentries</a></p>
-        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/0.18.5" class="external-link">sandpaper (0.18.5)</a>, <a href="https://github.com/carpentries/pegboard/tree/0.7.9" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/1.0.9" class="external-link">varnish (1.0.9)</a></p>
+        <p>Built with <a href="https://github.com/carpentries/sandpaper/tree/" class="external-link">sandpaper (0.18.1)</a>, <a href="https://github.com/carpentries/pegboard/tree/" class="external-link">pegboard (0.7.9)</a>, and <a href="https://github.com/carpentries/varnish/tree/" class="external-link">varnish (1.0.9)</a></p>
 		</div>
 		</footer></div> <!-- / div.container -->
 	<div id="to-top">
