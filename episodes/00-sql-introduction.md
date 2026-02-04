@@ -112,8 +112,13 @@ which is stored as one of its fields.
 Records may also contain keys that refer to records in other tables,
 which enables us to combine information from two or more sources.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
+The *relational* concept is connected with organizing information across multiple tables in the database.
+The *relationships* between tables in a database can be established (or even enforced) in different ways, through the use of keys and other constraints.
+In many small datasets we have only a few tables and we don't have to think about cross-references within datasets.
+The idea of *relational data* becomes more and more important as the amount and complexity of data grows. This provides the motivation for using relational databases: to organize data through related keys.
+
 
 ## Databases
 
