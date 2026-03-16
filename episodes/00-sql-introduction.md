@@ -198,24 +198,22 @@ follow these instructions:
 7. Press **OK**, you should subsequently get a message that the table was imported.
 8. Back on the Database Structure tab, you should now see the table listed. Right click on the table name and choose **Modify Table**, or click on the **Modify Table** button just under the tabs and above the table list.
 9. Click **Save** if asked to save all pending changes.
-10. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also).
+10. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below.
 11. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
-| Field                                                 | Data Type                                                                                                | Motivation                                                              | Table(s)         | 
-| ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------- |
-| day                                                   | INTEGER                                                                                                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          | 
-| genus                                                 | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| hindfoot\_length                                       | REAL                                                                                                     | Field contains measured numeric data                                    | surveys          | 
-| month                                                 | INTEGER                                                                                                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          | 
-| plot\_id                                               | INTEGER                                                                                                  | Field contains numeric data                                             | plots, surveys   | 
-| plot\_type                                             | TEXT                                                                                                     | Field contains text data                                                | plots            | 
-| record\_id                                             | INTEGER                                                                                                  | Field contains numeric data                                             | surveys          | 
-| sex                                                   | TEXT                                                                                                     | Field contains text data                                                | surveys          | 
-| species\_id                                            | TEXT                                                                                                     | Field contains text data                                                | species, surveys | 
-| species                                               | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| taxa                                                  | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| weight                                                | REAL                                                                                                     | Field contains measured numerical data                                  | surveys          | 
-| year                                                  | INTEGER                                                                                                  | Allows for meaningful arithmetic and comparisons                        | surveys          | 
+#### surveys
+
+| Field            | Data Type | Motivation                                       | Also in          |
+| ---              | :---      | ---                                              | ---------------- |
+| record\_id       | INTEGER   | Field contains numeric data                      |                  |
+| month            | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| day              | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| year             | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| plot\_id         | INTEGER   | Field contains numeric data                      | plots            |
+| species\_id      | TEXT      | Field contains text data                         | species          |
+| sex              | TEXT      | Field contains text data                         |                  |
+| hindfoot\_length | REAL      | Field contains measured numeric data             |                  |
+| weight           | REAL      | Field contains measured numerical data           |                  |
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -223,6 +221,22 @@ follow these instructions:
 
 - Import the `plots` and `species` tables
   
+#### plots
+
+| Field      | Data Type | Motivation                  | Also in          |
+| ---        | :---      | ---                         | ---------------- |
+| plot\_id   | INTEGER   | Field contains numeric data | surveys          |
+| plot\_type | TEXT      | Field contains text data    |                  |
+
+#### species
+
+| Field       | Data Type | Motivation               | Also in         |
+| ---         | :---      | ---                      | ---------------- |
+| species\_id | TEXT      | Field contains text data | surveys          |
+| genus       | TEXT      | Field contains text data |                  |
+| species     | TEXT      | Field contains text data |                  |
+| taxa        | TEXT      | Field contains text data |                  |
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
