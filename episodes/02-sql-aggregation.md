@@ -181,7 +181,7 @@ Aliasing table names can be helpful when working with queries that involve multi
 
 ## The `HAVING` keyword
 
-In the previous episode, we have seen the keyword `WHERE`, allowing to
+In the previous episode, we have seen the keyword `WHERE`, allowing us to
 filter the results according to some criteria. SQL offers a mechanism to
 filter the results based on **aggregate functions**, through the `HAVING` keyword.
 
