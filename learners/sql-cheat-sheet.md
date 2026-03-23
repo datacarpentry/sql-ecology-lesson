@@ -41,22 +41,49 @@ Sort results using `ASC` for ascending order or `DESC` for descending order:
 
     SELECT * FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC;
 
-Data Types
-----------
+Data Types across Database Platforms
+------------------------------------
 
-Different databases offer different choices for the data type definition.
+Different database systems use different names for data types. Please refer to the documentation of your specific database software.
 
-The following table shows some of the common names of data types between the various database platforms:
+| Data type                                             | Description                                                                                              |
+| ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
+| CHAR(n)                                               | Character string. Fixed-length n                                                                         |
+| VARCHAR(n) or CHARACTER VARYING(n)                    | Character string. Variable length. Maximum length n                                                      |
+| BINARY(n)                                             | Binary string. Fixed-length n                                                                            |
+| BOOLEAN                                               | Stores TRUE or FALSE values                                                                              |
+| VARBINARY(n) or BINARY VARYING(n)                     | Binary string. Variable length. Maximum length n                                                         |
+| INTEGER(p)                                            | Integer numerical (no decimal).                                                                          |
+| SMALLINT                                              | Integer numerical (no decimal).                                                                          |
+| INTEGER                                               | Integer numerical (no decimal).                                                                          |
+| BIGINT                                                | Integer numerical (no decimal).                                                                          |
+| DECIMAL(p,s)                                          | Exact numerical, precision p, scale s.                                                                   |
+| NUMERIC(p,s)                                          | Exact numerical, precision p, scale s. (Same as DECIMAL)                                                 |
+| FLOAT(p)                                              | Approximate numerical, mantissa precision p. A floating number in base 10 exponential notation.          |
+| REAL                                                  | Approximate numerical                                                                                    |
+| FLOAT                                                 | Approximate numerical                                                                                    |
+| DOUBLE PRECISION                                      | Approximate numerical                                                                                    |
+| DATE                                                  | Stores year, month, and day values                                                                       |
+| TIME                                                  | Stores hour, minute, and second values                                                                   |
+| DATETIME or TIMESTAMP                                 | Stores year, month, day, hour, minute, and second values                                                 |
+| INTERVAL                                              | Composed of a number of integer fields, representing a period of time, depending on the type of interval |
+| ARRAY                                                 | A set-length and ordered collection of elements                                                          |
+| MULTISET                                              | A variable-length and unordered collection of elements                                                   |
+| XML                                                   | Stores XML data                                                                                          |
 
-| Data type                                             | Access                                                                                                   | SQLServer                                                               | Oracle           | MySQL         | PostgreSQL    | SQLite  |
-| :---------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | :---------------------------------------------------------------------- | :--------------- | :------------ | :------------ | :------ |
-| boolean                                               | Yes/No                                                                                                   | Bit                                                                     | Byte             | N/A           | Boolean       | Integer |
-| integer                                               | Number (integer)                                                                                         | Int                                                                     | Number           | Int / Integer | Int / Integer | Integer |
-| float                                                 | Number (single)                                                                                          | Float / Real                                                            | Number           | Float         | Numeric       | Real    |
-| currency                                              | Currency                                                                                                 | Money                                                                   | N/A              | N/A           | Money         | Real    |
-| string (fixed)                                        | N/A                                                                                                      | Char                                                                    | Char             | Char          | Char          | Text    |
-| string (variable)                                     | Text (\<256) / Memo (65k+)                                                                               | Varchar                                                                 | Varchar2         | Varchar       | Varchar       | Text    |
-| binary object	OLE Object Memo	Binary (fixed up to 8K) | Varbinary (\<8K)                                                                                         | Image (\<2GB)	Long                                                 | Raw	Blob    | Text	Binary   | Varbinary    | Blob    | 
+The following table shows some of the common names of data types used with various database platforms:
+
+| Data type           | SQLite  | Access                         | SQLServer                     | Oracle           | MySQL         | PostgreSQL    |
+| :-------------------| :-------| :----------------------------- | :---------------------------- | :--------------- | :------------ | :-------------|
+| boolean             | INTEGER | YES/NO                         | BIT                           | BYTE             | N/A           | BOOLEAN       |
+| integer             | INTEGER | NUMBER (Integer)               | INT                           | NUMBER           | INT / INTEGER | INTEGER       |
+| float               | REAL    | NUMBER (Single / Double)       | FLOAT / REAL                  | NUMBER           | FLOAT         | NUMERIC /REAL |
+| currency            | REAL    | CURRENCY                       | MONEY                         | N/A              | N/A           | MONEY         |
+| string (fixed)      | TEXT    | N/A                            | CHAR                          | CHAR             | CHAR          | CHAR          |
+| string (variable)   | TEXT    | TEXT (\<256) / LONG TEXT (65+) | VARCHAR                       | VARCHAR2         | VARCHAR       | VARCHAR       |
+| binary data         | BLOB    | BINARY / VARBINARY (\<8K)      | IMAGE (\<2GB)                 | RAW / BLOB       | BLOB / BINARY | BYTEA         |
+
+Binary data is data with no specfic type (BLOB stands for _Binary Large OBject_) and is typically stored in the database exactly as given by the user.
 
 Missing Data
 ------------

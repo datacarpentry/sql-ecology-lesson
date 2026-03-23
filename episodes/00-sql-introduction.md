@@ -201,28 +201,28 @@ follow these instructions:
 10. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also).
 11. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
-| Field                                                 | Data Type                                                                                                | Motivation                                                              | Table(s)         | 
-| ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------- | ---------------- |
-| day                                                   | INTEGER                                                                                                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          | 
-| genus                                                 | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| hindfoot\_length                                       | REAL                                                                                                     | Field contains measured numeric data                                    | surveys          | 
-| month                                                 | INTEGER                                                                                                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          | 
-| plot\_id                                               | INTEGER                                                                                                  | Field contains numeric data                                             | plots, surveys   | 
-| plot\_type                                             | TEXT                                                                                                     | Field contains text data                                                | plots            | 
-| record\_id                                             | INTEGER                                                                                                  | Field contains numeric data                                             | surveys          | 
-| sex                                                   | TEXT                                                                                                     | Field contains text data                                                | surveys          | 
-| species\_id                                            | TEXT                                                                                                     | Field contains text data                                                | species, surveys | 
-| species                                               | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| taxa                                                  | TEXT                                                                                                     | Field contains text data                                                | species          | 
-| weight                                                | REAL                                                                                                     | Field contains measured numerical data                                  | surveys          | 
-| year                                                  | INTEGER                                                                                                  | Allows for meaningful arithmetic and comparisons                        | surveys          | 
+| Field                                                 | Data Type                | Motivation                                                              | Table(s)         |
+| ----------------------------------------------------- | :----------------------- | ----------------------------------------------------------------------- | ---------------- |
+| day                                                   | INTEGER                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          |
+| genus                                                 | TEXT                     | Field contains text data                                                | species          |
+| hindfoot\_length                                      | REAL                     | Field contains measured numeric data                                    | surveys          |
+| month                                                 | INTEGER                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          |
+| plot\_id                                              | INTEGER                  | Field contains numeric data                                             | plots, surveys   |
+| plot\_type                                            | TEXT                     | Field contains text data                                                | plots            |
+| record\_id                                            | INTEGER                  | Field contains numeric data                                             | surveys          |
+| sex                                                   | TEXT                     | Field contains text data                                                | surveys          |
+| species\_id                                           | TEXT                     | Field contains text data                                                | species, surveys |
+| species                                               | TEXT                     | Field contains text data                                                | species          |
+| taxa                                                  | TEXT                     | Field contains text data                                                | species          |
+| weight                                                | REAL                     | Field contains measured numerical data                                  | surveys          |
+| year                                                  | INTEGER                  | Allows for meaningful arithmetic and comparisons                        | surveys          |
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
 ### Challenge
 
 - Import the `plots` and `species` tables
-  
+
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -237,12 +237,12 @@ You can also use this same approach to append new fields to an existing table.
 
 SQLite has four data types, shown in the table below.
 
-| Data type                                             | Description                                                                                                                                | 
-| ----------------------------------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------- | 
-| TEXT                                                  | Text string                                                                                                                                | 
-| INTEGER                                               | Integer numerical (signed positive or negative)                                                                                            | 
-| REAL                                                  | Approximate numerical                                                                                                                      | 
-| BLOB                                                  | Multipurpose datatype with limited functionality that is generally used for data which does not fit into any of the other three categories |
+| Data type          | Description                                                                                                           |
+| ------------------ | :-------------------------------------------------------------------------------------------------------------------- |
+| TEXT               | Text string                                                                                                           |
+| INTEGER            | Integer (positive or negative whole number)                                                                           |
+| REAL               | Approximate numerical value (floating point number)                                                                   |
+| BLOB               | General data with no specfic type stored in the database exactly as given (stands for _Binary Large OBject_)          |
 
 In addition to these four data types, SQLite has a NULL value for missing data. We will talk more about dealing with missing data in Episode 3.
 
