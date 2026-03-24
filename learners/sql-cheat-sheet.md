@@ -48,20 +48,19 @@ Different database systems use different names for data types. Please refer to t
 
 | Data type                                             | Description                                                                                              |
 | ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
-| CHAR(n)                                               | Character string. Fixed-length n                                                                         |
+| CHARACTER(n) or CHAR(n)                               | Character string. Fixed-length n                                                                         |
 | VARCHAR(n) or CHARACTER VARYING(n)                    | Character string. Variable length. Maximum length n                                                      |
 | BINARY(n)                                             | Binary string. Fixed-length n                                                                            |
 | BOOLEAN                                               | Stores TRUE or FALSE values                                                                              |
 | VARBINARY(n) or BINARY VARYING(n)                     | Binary string. Variable length. Maximum length n                                                         |
-| INTEGER(p)                                            | Integer numerical (no decimal).                                                                          |
-| SMALLINT                                              | Integer numerical (no decimal).                                                                          |
-| INTEGER                                               | Integer numerical (no decimal).                                                                          |
-| BIGINT                                                | Integer numerical (no decimal).                                                                          |
-| DECIMAL(p,s)                                          | Exact numerical, precision p, scale s.                                                                   |
-| NUMERIC(p,s)                                          | Exact numerical, precision p, scale s. (Same as DECIMAL)                                                 |
-| FLOAT(p)                                              | Approximate numerical, mantissa precision p. A floating number in base 10 exponential notation.          |
-| REAL                                                  | Approximate numerical                                                                                    |
-| FLOAT                                                 | Approximate numerical                                                                                    |
+| INTEGER                                               | Integer numerical (no decimal)                                                                           |
+| SMALLINT                                              | Integer numerical (no decimal)                                                                           |
+| INTEGER                                               | Integer numerical (no decimal)                                                                           |
+| BIGINT                                                | Integer numerical (no decimal)                                                                           |
+| NUMERIC(p,s) or DECIMAL(p,s) or NUMBER(p,s)           | Exact numerical, precision p (significant digits), scale s (digits in the fraction part).                |
+| FLOAT(p)                                              | Approximate numerical (a floating point number) with p mantissa precision bits                           |
+| REAL                                                  | Approximate numerical, same as FLOAT(p) but p will depend on the database system                         |
+| FLOAT                                                 | Approximate numerical, using the default value of p for the database system                              |
 | DOUBLE PRECISION                                      | Approximate numerical                                                                                    |
 | DATE                                                  | Stores year, month, and day values                                                                       |
 | TIME                                                  | Stores hour, minute, and second values                                                                   |
@@ -73,17 +72,25 @@ Different database systems use different names for data types. Please refer to t
 
 The following table shows some of the common names of data types used with various database platforms:
 
-| Data type           | SQLite  | Access                         | SQLServer                     | Oracle           | MySQL         | PostgreSQL    |
+| Data type           | SQLite  | Access (not SQL)               | SQLServer                     | Oracle           | MySQL         | PostgreSQL    |
 | :-------------------| :-------| :----------------------------- | :---------------------------- | :--------------- | :------------ | :-------------|
-| boolean             | INTEGER | YES/NO                         | BIT                           | BYTE             | N/A           | BOOLEAN       |
-| integer             | INTEGER | NUMBER (Integer)               | INT                           | NUMBER           | INT / INTEGER | INTEGER       |
-| float               | REAL    | NUMBER (Single / Double)       | FLOAT / REAL                  | NUMBER           | FLOAT         | NUMERIC /REAL |
-| currency            | REAL    | CURRENCY                       | MONEY                         | N/A              | N/A           | MONEY         |
+| boolean             | INTEGER | Yes/No                         | BIT                           | INTEGER          | INTEGER       | BOOLEAN       |
+| integer             | INTEGER | Number (Integer)               | INT                           | NUMBER           | INT / INTEGER | INTEGER       |
+| float               | REAL    | Number (Single / Double)       | FLOAT / REAL                  | NUMBER           | FLOAT         | NUMERIC /REAL |
+| currency            | REAL    | Currency                       | MONEY                         | N/A              | N/A           | MONEY         |
 | string (fixed)      | TEXT    | N/A                            | CHAR                          | CHAR             | CHAR          | CHAR          |
-| string (variable)   | TEXT    | TEXT (\<256) / LONG TEXT (65+) | VARCHAR                       | VARCHAR2         | VARCHAR       | VARCHAR       |
-| binary data         | BLOB    | BINARY / VARBINARY (\<8K)      | IMAGE (\<2GB)                 | RAW / BLOB       | BLOB / BINARY | BYTEA         |
+| string (variable)   | TEXT    | Short (\<255 char) / Long Text | VARCHAR                       | VARCHAR2         | VARCHAR       | VARCHAR       |
+| binary data         | BLOB    | Attachment                     | BINARY / IMAGE (\<2GB)        | RAW / BLOB       | BLOB / BINARY | BYTEA         |
 
 Binary data is data with no specfic type (BLOB stands for _Binary Large OBject_) and is typically stored in the database exactly as given by the user.
+
+Further information can be found at these references:
+- [SQLite](https://sqlite.org/datatype3.html)
+- [SQLServer](https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
+- [Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlqr/Data-Types.html)
+- [MySQL](https://dev.mysql.com/doc/refman/9.6/en/data-types.html)
+- [PostgreSQL](https://www.postgresql.org/docs/current/datatype.html)
+
 
 Missing Data
 ------------

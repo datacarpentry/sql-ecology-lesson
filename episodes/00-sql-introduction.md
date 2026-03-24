@@ -242,7 +242,7 @@ SQLite has four data types, shown in the table below.
 | TEXT               | Text string                                                                                                           |
 | INTEGER            | Integer (positive or negative whole number)                                                                           |
 | REAL               | Approximate numerical value (floating point number)                                                                   |
-| BLOB               | General data with no specfic type stored in the database exactly as given (stands for _Binary Large OBject_)          |
+| BLOB               | General data with no specfic type, stored in the database exactly as given (stands for _Binary Large OBject_)          |
 
 In addition to these four data types, SQLite has a NULL value for missing data. We will talk more about dealing with missing data in Episode 3.
 
