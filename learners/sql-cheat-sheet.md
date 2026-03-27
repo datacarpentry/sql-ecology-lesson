@@ -41,6 +41,56 @@ Sort results using `ASC` for ascending order or `DESC` for descending order:
 
     SELECT * FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC;
 
+Data Types across Database Platforms
+------------------------------------
+
+Different database systems use different names for data types. Please refer to the documentation of your specific database software.
+
+| Data type                                             | Description                                                                                              |
+| ----------------------------------------------------- | :------------------------------------------------------------------------------------------------------- |
+| CHARACTER(n) or CHAR(n)                               | Character string. Fixed-length n                                                                         |
+| VARCHAR(n) or CHARACTER VARYING(n)                    | Character string. Variable length. Maximum length n                                                      |
+| BINARY(n)                                             | Binary string. Fixed-length n                                                                            |
+| BOOLEAN                                               | Stores TRUE or FALSE values                                                                              |
+| VARBINARY(n) or BINARY VARYING(n)                     | Binary string. Variable length. Maximum length n                                                         |
+| INTEGER                                               | Integer numerical (no decimal)                                                                           |
+| SMALLINT                                              | Integer numerical (no decimal)                                                                           |
+| INTEGER                                               | Integer numerical (no decimal)                                                                           |
+| BIGINT                                                | Integer numerical (no decimal)                                                                           |
+| NUMERIC(p,s) or DECIMAL(p,s) or NUMBER(p,s)           | Exact numerical, precision p (significant digits), scale s (digits in the fraction part).                |
+| FLOAT(p)                                              | Approximate numerical (a floating point number) with p mantissa precision bits                           |
+| REAL                                                  | Approximate numerical, same as FLOAT(p) but p will depend on the database system                         |
+| FLOAT                                                 | Approximate numerical, using the default value of p for the database system                              |
+| DOUBLE PRECISION                                      | Approximate numerical                                                                                    |
+| DATE                                                  | Stores year, month, and day values                                                                       |
+| TIME                                                  | Stores hour, minute, and second values                                                                   |
+| DATETIME or TIMESTAMP                                 | Stores year, month, day, hour, minute, and second values                                                 |
+| INTERVAL                                              | Composed of a number of integer fields, representing a period of time, depending on the type of interval |
+| ARRAY                                                 | A set-length and ordered collection of elements                                                          |
+| MULTISET                                              | A variable-length and unordered collection of elements                                                   |
+| XML                                                   | Stores XML data                                                                                          |
+
+The following table shows some of the common names of data types used with various database platforms:
+
+| Data type           | SQLite  | Access (not SQL)               | SQLServer                     | Oracle           | MySQL         | PostgreSQL    |
+| :-------------------| :-------| :----------------------------- | :---------------------------- | :--------------- | :------------ | :-------------|
+| boolean             | INTEGER | Yes/No                         | BIT                           | INTEGER          | INTEGER       | BOOLEAN       |
+| integer             | INTEGER | Number (Integer)               | INT                           | NUMBER           | INT / INTEGER | INTEGER       |
+| float               | REAL    | Number (Single / Double)       | FLOAT / REAL                  | NUMBER           | FLOAT         | NUMERIC /REAL |
+| currency            | REAL    | Currency                       | MONEY                         | N/A              | N/A           | MONEY         |
+| string (fixed)      | TEXT    | N/A                            | CHAR                          | CHAR             | CHAR          | CHAR          |
+| string (variable)   | TEXT    | Short (\<255 char) / Long Text | VARCHAR                       | VARCHAR2         | VARCHAR       | VARCHAR       |
+| binary data         | BLOB    | Attachment                     | BINARY / IMAGE (\<2GB)        | RAW / BLOB       | BLOB / BINARY | BYTEA         |
+
+Binary data is data with no specfic type (BLOB stands for _Binary Large OBject_) and is typically stored in the database exactly as given by the user.
+
+Further information can be found at these references:
+- [SQLite](https://sqlite.org/datatype3.html)
+- [SQLServer](https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql)
+- [Oracle](https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlqr/Data-Types.html)
+- [MySQL](https://dev.mysql.com/doc/refman/9.6/en/data-types.html)
+- [PostgreSQL](https://www.postgresql.org/docs/current/datatype.html)
+
 
 Missing Data
 ------------
