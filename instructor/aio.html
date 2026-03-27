@@ -342,7 +342,7 @@
         
 <section id="aio-00-sql-introduction"><p>Content from <a href="00-sql-introduction.html">Introducing Databases and SQL</a></p>
 <hr>
-<p>Last updated on 2024-09-11 |
+<p>Last updated on 2026-03-27 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -633,10 +633,10 @@ the database.</li>
 </ol>
 <table style="width:100%;" class="table">
 <colgroup>
-<col width="21%">
-<col width="42%">
-<col width="29%">
-<col width="6%">
+<col width="32%">
+<col width="14%">
+<col width="43%">
+<col width="9%">
 </colgroup>
 <thead><tr>
 <th>Field</th>
@@ -759,10 +759,11 @@ assign it a data type.</li>
 <div class="section level3">
 <h3 id="datatypes">Data types<a class="anchor" aria-label="anchor" href="#datatypes"></a>
 </h3>
+<p>SQLite has four data types, shown in the table below.</p>
 <table class="table">
 <colgroup>
-<col width="33%">
-<col width="66%">
+<col width="13%">
+<col width="86%">
 </colgroup>
 <thead><tr>
 <th>Data type</th>
@@ -770,186 +771,28 @@ assign it a data type.</li>
 </tr></thead>
 <tbody>
 <tr>
-<td>CHARACTER(n)</td>
-<td align="left">Character string. Fixed-length n</td>
-</tr>
-<tr>
-<td>VARCHAR(n) or CHARACTER VARYING(n)</td>
-<td align="left">Character string. Variable length. Maximum length
-n</td>
-</tr>
-<tr>
-<td>BINARY(n)</td>
-<td align="left">Binary string. Fixed-length n</td>
-</tr>
-<tr>
-<td>BOOLEAN</td>
-<td align="left">Stores TRUE or FALSE values</td>
-</tr>
-<tr>
-<td>VARBINARY(n) or BINARY VARYING(n)</td>
-<td align="left">Binary string. Variable length. Maximum length n</td>
-</tr>
-<tr>
-<td>INTEGER(p)</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr>
-<tr>
-<td>SMALLINT</td>
-<td align="left">Integer numerical (no decimal).</td>
+<td>TEXT</td>
+<td align="left">Text string</td>
 </tr>
 <tr>
 <td>INTEGER</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr>
-<tr>
-<td>BIGINT</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr>
-<tr>
-<td>DECIMAL(p,s)</td>
-<td align="left">Exact numerical, precision p, scale s.</td>
-</tr>
-<tr>
-<td>NUMERIC(p,s)</td>
-<td align="left">Exact numerical, precision p, scale s. (Same as
-DECIMAL)</td>
-</tr>
-<tr>
-<td>FLOAT(p)</td>
-<td align="left">Approximate numerical, mantissa precision p. A floating
-number in base 10 exponential notation.</td>
+<td align="left">Integer (positive or negative whole number)</td>
 </tr>
 <tr>
 <td>REAL</td>
-<td align="left">Approximate numerical</td>
+<td align="left">Approximate numerical value (floating point
+number)</td>
 </tr>
 <tr>
-<td>FLOAT</td>
-<td align="left">Approximate numerical</td>
-</tr>
-<tr>
-<td>DOUBLE PRECISION</td>
-<td align="left">Approximate numerical</td>
-</tr>
-<tr>
-<td>DATE</td>
-<td align="left">Stores year, month, and day values</td>
-</tr>
-<tr>
-<td>TIME</td>
-<td align="left">Stores hour, minute, and second values</td>
-</tr>
-<tr>
-<td>TIMESTAMP</td>
-<td align="left">Stores year, month, day, hour, minute, and second
-values</td>
-</tr>
-<tr>
-<td>INTERVAL</td>
-<td align="left">Composed of a number of integer fields, representing a
-period of time, depending on the type of interval</td>
-</tr>
-<tr>
-<td>ARRAY</td>
-<td align="left">A set-length and ordered collection of elements</td>
-</tr>
-<tr>
-<td>MULTISET</td>
-<td align="left">A variable-length and unordered collection of
-elements</td>
-</tr>
-<tr>
-<td>XML</td>
-<td align="left">Stores XML data</td>
+<td>BLOB</td>
+<td align="left">General data with no specfic type, stored in the
+database exactly as given (stands for <em>Binary Large OBject</em>)</td>
 </tr>
 </tbody>
 </table>
-</div>
-<div class="section level3">
-<h3 id="datatypediffs">SQL Data Type Quick Reference<a class="anchor" aria-label="anchor" href="#datatypediffs"></a>
-</h3>
-<p>Different databases offer different choices for the data type
-definition.</p>
-<p>The following table shows some of the common names of data types
-between the various database platforms:</p>
-<table class="table">
-<colgroup>
-<col width="19%">
-<col width="38%">
-<col width="26%">
-<col width="5%">
-<col width="4%">
-<col width="4%">
-</colgroup>
-<thead><tr>
-<th align="left">Data type</th>
-<th align="left">Access</th>
-<th align="left">SQLServer</th>
-<th align="left">Oracle</th>
-<th align="left">MySQL</th>
-<th align="left">PostgreSQL</th>
-</tr></thead>
-<tbody>
-<tr>
-<td align="left">boolean</td>
-<td align="left">Yes/No</td>
-<td align="left">Bit</td>
-<td align="left">Byte</td>
-<td align="left">N/A</td>
-<td align="left">Boolean</td>
-</tr>
-<tr>
-<td align="left">integer</td>
-<td align="left">Number (integer)</td>
-<td align="left">Int</td>
-<td align="left">Number</td>
-<td align="left">Int / Integer</td>
-<td align="left">Int / Integer</td>
-</tr>
-<tr>
-<td align="left">float</td>
-<td align="left">Number (single)</td>
-<td align="left">Float / Real</td>
-<td align="left">Number</td>
-<td align="left">Float</td>
-<td align="left">Numeric</td>
-</tr>
-<tr>
-<td align="left">currency</td>
-<td align="left">Currency</td>
-<td align="left">Money</td>
-<td align="left">N/A</td>
-<td align="left">N/A</td>
-<td align="left">Money</td>
-</tr>
-<tr>
-<td align="left">string (fixed)</td>
-<td align="left">N/A</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-</tr>
-<tr>
-<td align="left">string (variable)</td>
-<td align="left">Text (&lt;256) / Memo (65k+)</td>
-<td align="left">Varchar</td>
-<td align="left">Varchar2</td>
-<td align="left">Varchar</td>
-<td align="left">Varchar</td>
-</tr>
-<tr>
-<td align="left">binary object OLE Object Memo Binary (fixed up to
-8K)</td>
-<td align="left">Varbinary (&lt;8K)</td>
-<td align="left">Image (&lt;2GB) Long</td>
-<td align="left">Raw Blob</td>
-<td align="left">Text Binary</td>
-<td align="left">Varbinary</td>
-</tr>
-</tbody>
-</table>
+<p>In addition to these four data types, SQLite has a NULL value for
+missing data. We will talk more about dealing with missing data in
+Episode 3.</p>
 <div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
@@ -2221,7 +2064,7 @@ weight of every individual captured at the site</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2289,7 +2132,7 @@ query?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2323,7 +2166,7 @@ column.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2376,7 +2219,7 @@ descending number of individuals in each plot.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2412,7 +2255,7 @@ descending number of individuals in each plot.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2470,7 +2313,7 @@ values in the <code>hindfoot_length</code> column.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2502,7 +2345,7 @@ species, assuming that unknown lengths are 30 (as above).</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2550,7 +2393,7 @@ genus in each plot, assuming that unknown species are all of the genus
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2683,7 +2526,7 @@ longest genus name down to shortest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2745,7 +2588,7 @@ species?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Proposed solutions: </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Solution:</li>
@@ -2903,8 +2746,8 @@ of <code>NULL</code>, which can help in joins</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/aio.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/aio.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2026-03-24",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-27",
+  "datePublished": "2026-03-27"
 }
 
   </script><script>

@@ -288,7 +288,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>SQL Cheat Sheet</h1>
-        <p>Last updated on 2023-10-19 |
+        <p>Last updated on 2026-03-27 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/learners/sql-cheat-sheet.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -348,6 +348,126 @@
 </h3>
 <pre class="sourceCode sh" tabindex="0"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" tabindex="-1"></a><span class="ex">SELECT</span> <span class="pp">*</span> FROM table_name ORDER BY column_name_1 ASC, column_name_2 DESC<span class="kw">;</span></span></code></pre>
 </div>
+</section><section><h2 class="section-heading" id="data-types-across-database-platforms">Data Types across Database Platforms<a class="anchor" aria-label="anchor" href="#data-types-across-database-platforms"></a></h2>
+<hr class="half-width"><p>Different database systems use different names for data types. Please
+refer to the documentation of your specific database software.</p>
+<table class="table"><colgroup><col width="33%"><col width="66%"></colgroup><thead><tr><th>Data type</th>
+<th align="left">Description</th>
+</tr></thead><tbody><tr><td>CHARACTER(n) or CHAR(n)</td>
+<td align="left">Character string. Fixed-length n</td>
+</tr><tr><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
+<td align="left">Character string. Variable length. Maximum length
+n</td>
+</tr><tr><td>BINARY(n)</td>
+<td align="left">Binary string. Fixed-length n</td>
+</tr><tr><td>BOOLEAN</td>
+<td align="left">Stores TRUE or FALSE values</td>
+</tr><tr><td>VARBINARY(n) or BINARY VARYING(n)</td>
+<td align="left">Binary string. Variable length. Maximum length n</td>
+</tr><tr><td>INTEGER</td>
+<td align="left">Integer numerical (no decimal)</td>
+</tr><tr><td>SMALLINT</td>
+<td align="left">Integer numerical (no decimal)</td>
+</tr><tr><td>INTEGER</td>
+<td align="left">Integer numerical (no decimal)</td>
+</tr><tr><td>BIGINT</td>
+<td align="left">Integer numerical (no decimal)</td>
+</tr><tr><td>NUMERIC(p,s) or DECIMAL(p,s) or NUMBER(p,s)</td>
+<td align="left">Exact numerical, precision p (significant digits),
+scale s (digits in the fraction part).</td>
+</tr><tr><td>FLOAT(p)</td>
+<td align="left">Approximate numerical (a floating point number) with p
+mantissa precision bits</td>
+</tr><tr><td>REAL</td>
+<td align="left">Approximate numerical, same as FLOAT(p) but p will
+depend on the database system</td>
+</tr><tr><td>FLOAT</td>
+<td align="left">Approximate numerical, using the default value of p for
+the database system</td>
+</tr><tr><td>DOUBLE PRECISION</td>
+<td align="left">Approximate numerical</td>
+</tr><tr><td>DATE</td>
+<td align="left">Stores year, month, and day values</td>
+</tr><tr><td>TIME</td>
+<td align="left">Stores hour, minute, and second values</td>
+</tr><tr><td>DATETIME or TIMESTAMP</td>
+<td align="left">Stores year, month, day, hour, minute, and second
+values</td>
+</tr><tr><td>INTERVAL</td>
+<td align="left">Composed of a number of integer fields, representing a
+period of time, depending on the type of interval</td>
+</tr><tr><td>ARRAY</td>
+<td align="left">A set-length and ordered collection of elements</td>
+</tr><tr><td>MULTISET</td>
+<td align="left">A variable-length and unordered collection of
+elements</td>
+</tr><tr><td>XML</td>
+<td align="left">Stores XML data</td>
+</tr></tbody></table><p>The following table shows some of the common names of data types used
+with various database platforms:</p>
+<table class="table"><colgroup><col width="15%"><col width="6%"><col width="23%"><col width="22%"><col width="12%"><col width="10%"><col width="10%"></colgroup><thead><tr><th align="left">Data type</th>
+<th align="left">SQLite</th>
+<th align="left">Access (not SQL)</th>
+<th align="left">SQLServer</th>
+<th align="left">Oracle</th>
+<th align="left">MySQL</th>
+<th align="left">PostgreSQL</th>
+</tr></thead><tbody><tr><td align="left">boolean</td>
+<td align="left">INTEGER</td>
+<td align="left">Yes/No</td>
+<td align="left">BIT</td>
+<td align="left">INTEGER</td>
+<td align="left">INTEGER</td>
+<td align="left">BOOLEAN</td>
+</tr><tr><td align="left">integer</td>
+<td align="left">INTEGER</td>
+<td align="left">Number (Integer)</td>
+<td align="left">INT</td>
+<td align="left">NUMBER</td>
+<td align="left">INT / INTEGER</td>
+<td align="left">INTEGER</td>
+</tr><tr><td align="left">float</td>
+<td align="left">REAL</td>
+<td align="left">Number (Single / Double)</td>
+<td align="left">FLOAT / REAL</td>
+<td align="left">NUMBER</td>
+<td align="left">FLOAT</td>
+<td align="left">NUMERIC /REAL</td>
+</tr><tr><td align="left">currency</td>
+<td align="left">REAL</td>
+<td align="left">Currency</td>
+<td align="left">MONEY</td>
+<td align="left">N/A</td>
+<td align="left">N/A</td>
+<td align="left">MONEY</td>
+</tr><tr><td align="left">string (fixed)</td>
+<td align="left">TEXT</td>
+<td align="left">N/A</td>
+<td align="left">CHAR</td>
+<td align="left">CHAR</td>
+<td align="left">CHAR</td>
+<td align="left">CHAR</td>
+</tr><tr><td align="left">string (variable)</td>
+<td align="left">TEXT</td>
+<td align="left">Short (&lt;255 char) / Long Text</td>
+<td align="left">VARCHAR</td>
+<td align="left">VARCHAR2</td>
+<td align="left">VARCHAR</td>
+<td align="left">VARCHAR</td>
+</tr><tr><td align="left">binary data</td>
+<td align="left">BLOB</td>
+<td align="left">Attachment</td>
+<td align="left">BINARY / IMAGE (&lt;2GB)</td>
+<td align="left">RAW / BLOB</td>
+<td align="left">BLOB / BINARY</td>
+<td align="left">BYTEA</td>
+</tr></tbody></table><p>Binary data is data with no specfic type (BLOB stands for <em>Binary
+Large OBject</em>) and is typically stored in the database exactly as
+given by the user.</p>
+<p>Further information can be found at these references: - <a href="https://sqlite.org/datatype3.html" class="external-link">SQLite</a> - <a href="https://learn.microsoft.com/en-us/sql/t-sql/data-types/data-types-transact-sql" class="external-link">SQLServer</a>
+- <a href="https://docs.oracle.com/en/database/oracle/oracle-database/19/sqlqr/Data-Types.html" class="external-link">Oracle</a>
+- <a href="https://dev.mysql.com/doc/refman/9.6/en/data-types.html" class="external-link">MySQL</a>
+- <a href="https://www.postgresql.org/docs/current/datatype.html" class="external-link">PostgreSQL</a></p>
 </section><section><h2 class="section-heading" id="missing-data">Missing Data<a class="anchor" aria-label="anchor" href="#missing-data"></a></h2>
 <hr class="half-width"><p>Use <code>NULL</code> to represent missing data.</p>
 <p><code>NULL</code> is neither true nor false. Operations involving
@@ -494,8 +614,8 @@ and foreign key relationships and other constraints.</p>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/sql-cheat-sheet.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/sql-cheat-sheet.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2023-10-19",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-27",
+  "datePublished": "2026-03-27"
 }
 
   </script><script>

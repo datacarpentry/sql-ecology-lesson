@@ -300,7 +300,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducing Databases and SQL</h1>
-        <p>Last updated on 2024-09-11 |
+        <p>Last updated on 2026-03-27 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -554,7 +554,7 @@ also).</li>
 <li>Finally, click <strong>OK</strong> one more time to confirm the
 operation. Then click the <strong>Write Changes</strong> button to save
 the database.</li>
-</ol><table style="width:100%;" class="table"><colgroup><col width="21%"><col width="42%"><col width="29%"><col width="6%"></colgroup><thead><tr><th>Field</th>
+</ol><table style="width:100%;" class="table"><colgroup><col width="32%"><col width="14%"><col width="43%"><col width="9%"></colgroup><thead><tr><th>Field</th>
 <th align="left">Data Type</th>
 <th>Motivation</th>
 <th>Table(s)</th>
@@ -638,115 +638,23 @@ assign it a data type.</li>
 </ol></div>
 <div class="section level3">
 <h3 id="datatypes">Data types<a class="anchor" aria-label="anchor" href="#datatypes"></a></h3>
-<table class="table"><colgroup><col width="33%"><col width="66%"></colgroup><thead><tr><th>Data type</th>
+<p>SQLite has four data types, shown in the table below.</p>
+<table class="table"><colgroup><col width="13%"><col width="86%"></colgroup><thead><tr><th>Data type</th>
 <th align="left">Description</th>
-</tr></thead><tbody><tr><td>CHARACTER(n)</td>
-<td align="left">Character string. Fixed-length n</td>
-</tr><tr><td>VARCHAR(n) or CHARACTER VARYING(n)</td>
-<td align="left">Character string. Variable length. Maximum length
-n</td>
-</tr><tr><td>BINARY(n)</td>
-<td align="left">Binary string. Fixed-length n</td>
-</tr><tr><td>BOOLEAN</td>
-<td align="left">Stores TRUE or FALSE values</td>
-</tr><tr><td>VARBINARY(n) or BINARY VARYING(n)</td>
-<td align="left">Binary string. Variable length. Maximum length n</td>
-</tr><tr><td>INTEGER(p)</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr><tr><td>SMALLINT</td>
-<td align="left">Integer numerical (no decimal).</td>
+</tr></thead><tbody><tr><td>TEXT</td>
+<td align="left">Text string</td>
 </tr><tr><td>INTEGER</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr><tr><td>BIGINT</td>
-<td align="left">Integer numerical (no decimal).</td>
-</tr><tr><td>DECIMAL(p,s)</td>
-<td align="left">Exact numerical, precision p, scale s.</td>
-</tr><tr><td>NUMERIC(p,s)</td>
-<td align="left">Exact numerical, precision p, scale s. (Same as
-DECIMAL)</td>
-</tr><tr><td>FLOAT(p)</td>
-<td align="left">Approximate numerical, mantissa precision p. A floating
-number in base 10 exponential notation.</td>
+<td align="left">Integer (positive or negative whole number)</td>
 </tr><tr><td>REAL</td>
-<td align="left">Approximate numerical</td>
-</tr><tr><td>FLOAT</td>
-<td align="left">Approximate numerical</td>
-</tr><tr><td>DOUBLE PRECISION</td>
-<td align="left">Approximate numerical</td>
-</tr><tr><td>DATE</td>
-<td align="left">Stores year, month, and day values</td>
-</tr><tr><td>TIME</td>
-<td align="left">Stores hour, minute, and second values</td>
-</tr><tr><td>TIMESTAMP</td>
-<td align="left">Stores year, month, day, hour, minute, and second
-values</td>
-</tr><tr><td>INTERVAL</td>
-<td align="left">Composed of a number of integer fields, representing a
-period of time, depending on the type of interval</td>
-</tr><tr><td>ARRAY</td>
-<td align="left">A set-length and ordered collection of elements</td>
-</tr><tr><td>MULTISET</td>
-<td align="left">A variable-length and unordered collection of
-elements</td>
-</tr><tr><td>XML</td>
-<td align="left">Stores XML data</td>
-</tr></tbody></table></div>
-<div class="section level3">
-<h3 id="datatypediffs">SQL Data Type Quick Reference<a class="anchor" aria-label="anchor" href="#datatypediffs"></a></h3>
-<p>Different databases offer different choices for the data type
-definition.</p>
-<p>The following table shows some of the common names of data types
-between the various database platforms:</p>
-<table class="table"><colgroup><col width="19%"><col width="38%"><col width="26%"><col width="5%"><col width="4%"><col width="4%"></colgroup><thead><tr><th align="left">Data type</th>
-<th align="left">Access</th>
-<th align="left">SQLServer</th>
-<th align="left">Oracle</th>
-<th align="left">MySQL</th>
-<th align="left">PostgreSQL</th>
-</tr></thead><tbody><tr><td align="left">boolean</td>
-<td align="left">Yes/No</td>
-<td align="left">Bit</td>
-<td align="left">Byte</td>
-<td align="left">N/A</td>
-<td align="left">Boolean</td>
-</tr><tr><td align="left">integer</td>
-<td align="left">Number (integer)</td>
-<td align="left">Int</td>
-<td align="left">Number</td>
-<td align="left">Int / Integer</td>
-<td align="left">Int / Integer</td>
-</tr><tr><td align="left">float</td>
-<td align="left">Number (single)</td>
-<td align="left">Float / Real</td>
-<td align="left">Number</td>
-<td align="left">Float</td>
-<td align="left">Numeric</td>
-</tr><tr><td align="left">currency</td>
-<td align="left">Currency</td>
-<td align="left">Money</td>
-<td align="left">N/A</td>
-<td align="left">N/A</td>
-<td align="left">Money</td>
-</tr><tr><td align="left">string (fixed)</td>
-<td align="left">N/A</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-<td align="left">Char</td>
-</tr><tr><td align="left">string (variable)</td>
-<td align="left">Text (&lt;256) / Memo (65k+)</td>
-<td align="left">Varchar</td>
-<td align="left">Varchar2</td>
-<td align="left">Varchar</td>
-<td align="left">Varchar</td>
-</tr><tr><td align="left">binary object OLE Object Memo Binary (fixed up to
-8K)</td>
-<td align="left">Varbinary (&lt;8K)</td>
-<td align="left">Image (&lt;2GB) Long</td>
-<td align="left">Raw Blob</td>
-<td align="left">Text Binary</td>
-<td align="left">Varbinary</td>
-</tr></tbody></table><div id="keypoints1" class="callout keypoints">
+<td align="left">Approximate numerical value (floating point
+number)</td>
+</tr><tr><td>BLOB</td>
+<td align="left">General data with no specfic type, stored in the
+database exactly as given (stands for <em>Binary Large OBject</em>)</td>
+</tr></tbody></table><p>In addition to these four data types, SQLite has a NULL value for
+missing data. We will talk more about dealing with missing data in
+Episode 3.</p>
+<div id="keypoints1" class="callout keypoints">
 <div class="callout-square">
 <i class="callout-icon" data-feather="key"></i>
 </div>
@@ -823,8 +731,8 @@ vocabulary, but they are all based on the same ideas.</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/00-sql-introduction.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/00-sql-introduction.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2024-09-11",
-  "datePublished": "2026-03-24"
+  "dateModified": "2026-03-27",
+  "datePublished": "2026-03-27"
 }
 
   </script><script>
