@@ -181,7 +181,7 @@ Aliasing table names can be helpful when working with queries that involve multi
 
 ## The `HAVING` keyword
 
-In the previous episode, we have seen the keyword `WHERE`, allowing to
+In the previous episode, we have seen the keyword `WHERE`, allowing us to
 filter the results according to some criteria. SQL offers a mechanism to
 filter the results based on **aggregate functions**, through the `HAVING` keyword.
 
@@ -226,11 +226,16 @@ Write a query that returns, from the `species` table, the number of
 
 ## Solution
 
+This query counts the number of times each value (Bird, Rabbit, Reptile or Rodent) in the `taxa` field occurs, defining a new field named `taxa_count` to hold the result.
+The `GROUP BY` clause means the query will create an aggregated table with one row for each taxa.
+Only those `taxa` values that have more than ten records will be included because of the `HAVING` clause.
+This filtering is applied _after_ grouping has been done.
+
 ```sql
-SELECT taxa, COUNT(*) AS n
+SELECT taxa, COUNT(*) AS taxa_count
 FROM species
 GROUP BY taxa
-HAVING n > 10;
+HAVING taxa_count > 10;
 ```
 
 :::::::::::::::::::::::::

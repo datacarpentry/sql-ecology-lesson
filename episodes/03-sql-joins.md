@@ -24,7 +24,7 @@ To combine data from two tables we use an SQL `JOIN` clause, which comes after
 the `FROM` clause.
 
 Database tables are used to organize and group data by common characteristics or principles.  
-Often, we need to combine elements from separate tables into a single tables or queries for analysis and visualization.
+Often, we need to combine elements from separate tables into a single table or queries for analysis and visualization.
 A JOIN is a means for combining columns from multiple tables by using values common to each.
 
 The JOIN keyword combined with ON is used to combine fields from separate tables.
@@ -443,7 +443,7 @@ Have a look at the following questions; these questions are written in plain Eng
 
 1. How many plots from each type are there?
 
-2. How many specimens are of each sex are there for each year, including those whose sex is unknown?
+2. How many specimens of each sex are there for each year, including those whose sex is unknown?
 
 3. How many specimens of each species were captured in each type of plot, excluding specimens of unknown species?
 
