@@ -342,7 +342,7 @@
         
 <section id="aio-00-sql-introduction"><p>Content from <a href="00-sql-introduction.html">Introducing Databases and SQL</a></p>
 <hr>
-<p>Last updated on 2026-03-27 |
+<p>Last updated on 2026-03-31 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 <p>Estimated time: <i aria-hidden="true" data-feather="clock"></i> 65 minutes</p>
@@ -624,106 +624,81 @@ just under the tabs and above the table list.</li>
 <li>Click <strong>Save</strong> if asked to save all pending
 changes.</li>
 <li>In the center panel of the window that appears, set the data types
-for each field using the suggestions in the table below (this includes
-fields from the <code>plots</code> and <code>species</code> tables
-also).</li>
+for each field using the suggestions in the table below.</li>
 <li>Finally, click <strong>OK</strong> one more time to confirm the
 operation. Then click the <strong>Write Changes</strong> button to save
 the database.</li>
 </ol>
-<table style="width:100%;" class="table">
+<div class="section level4">
+<h4 id="surveys">surveys<a class="anchor" aria-label="anchor" href="#surveys"></a>
+</h4>
+<table class="table">
 <colgroup>
-<col width="32%">
-<col width="14%">
-<col width="43%">
-<col width="9%">
+<col width="11%">
+<col width="15%">
+<col width="11%">
+<col width="61%">
 </colgroup>
 <thead><tr>
 <th>Field</th>
 <th align="left">Data Type</th>
 <th>Motivation</th>
-<th>Table(s)</th>
+<th>Also in</th>
 </tr></thead>
 <tbody>
-<tr>
-<td>day</td>
-<td align="left">INTEGER</td>
-<td>Having data as numeric allows for meaningful arithmetic and
-comparisons</td>
-<td>surveys</td>
-</tr>
-<tr>
-<td>genus</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr>
-<tr>
-<td>hindfoot_length</td>
-<td align="left">REAL</td>
-<td>Field contains measured numeric data</td>
-<td>surveys</td>
-</tr>
-<tr>
-<td>month</td>
-<td align="left">INTEGER</td>
-<td>Having data as numeric allows for meaningful arithmetic and
-comparisons</td>
-<td>surveys</td>
-</tr>
-<tr>
-<td>plot_id</td>
-<td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td>plots, surveys</td>
-</tr>
-<tr>
-<td>plot_type</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>plots</td>
-</tr>
 <tr>
 <td>record_id</td>
 <td align="left">INTEGER</td>
 <td>Field contains numeric data</td>
-<td>surveys</td>
+<td></td>
 </tr>
 <tr>
-<td>sex</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>surveys</td>
+<td>month</td>
+<td align="left">INTEGER</td>
+<td>Allows for meaningful arithmetic and comparisons</td>
+<td></td>
 </tr>
 <tr>
-<td>species_id</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species, surveys</td>
-</tr>
-<tr>
-<td>species</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr>
-<tr>
-<td>taxa</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr>
-<tr>
-<td>weight</td>
-<td align="left">REAL</td>
-<td>Field contains measured numerical data</td>
-<td>surveys</td>
+<td>day</td>
+<td align="left">INTEGER</td>
+<td>Allows for meaningful arithmetic and comparisons</td>
+<td></td>
 </tr>
 <tr>
 <td>year</td>
 <td align="left">INTEGER</td>
 <td>Allows for meaningful arithmetic and comparisons</td>
-<td>surveys</td>
+<td></td>
+</tr>
+<tr>
+<td>plot_id</td>
+<td align="left">INTEGER</td>
+<td>Field contains numeric data</td>
+<td>plots</td>
+</tr>
+<tr>
+<td>species_id</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td>species</td>
+</tr>
+<tr>
+<td>sex</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr>
+<tr>
+<td>hindfoot_length</td>
+<td align="left">REAL</td>
+<td>Field contains measured numeric data</td>
+<td></td>
+</tr>
+<tr>
+<td>weight</td>
+<td align="left">REAL</td>
+<td>Field contains measured numerical data</td>
+<td></td>
 </tr>
 </tbody>
 </table>
@@ -738,11 +713,88 @@ comparisons</td>
 <ul>
 <li>Import the <code>plots</code> and <code>species</code> tables</li>
 </ul>
+<div class="section level4">
+<h4 id="plots">plots<a class="anchor" aria-label="anchor" href="#plots"></a>
+</h4>
+<table class="table">
+<colgroup>
+<col width="11%">
+<col width="15%">
+<col width="11%">
+<col width="61%">
+</colgroup>
+<thead><tr>
+<th>Field</th>
+<th align="left">Data Type</th>
+<th>Motivation</th>
+<th>Also in</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>plot_id</td>
+<td align="left">INTEGER</td>
+<td>Field contains numeric data</td>
+<td>surveys</td>
+</tr>
+<tr>
+<td>plot_type</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section level4">
+<h4 id="species">species<a class="anchor" aria-label="anchor" href="#species"></a>
+</h4>
+<table class="table">
+<colgroup>
+<col width="11%">
+<col width="15%">
+<col width="11%">
+<col width="61%">
+</colgroup>
+<thead><tr>
+<th>Field</th>
+<th align="left">Data Type</th>
+<th>Motivation</th>
+<th>Also in</th>
+</tr></thead>
+<tbody>
+<tr>
+<td>species_id</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td>surveys</td>
+</tr>
+<tr>
+<td>genus</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr>
+<tr>
+<td>species</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr>
+<tr>
+<td>taxa</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 </div>
 </div>
 </div>
 <p>You can also use this same approach to append new fields to an
 existing table.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="adding-fields-to-existing-tables">Adding fields to existing tables<a class="anchor" aria-label="anchor" href="#adding-fields-to-existing-tables"></a>
@@ -970,7 +1022,7 @@ weight in mg.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1051,7 +1103,7 @@ weight (in kg).</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1168,7 +1220,7 @@ the surveys table, sorted with the largest weights at the top.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb21">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1245,7 +1297,7 @@ line, and see how more legible the query becomes!</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb23">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2064,7 +2116,7 @@ weight of every individual captured at the site</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb5">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2132,7 +2184,7 @@ query?</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Show me the solution </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb8">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2166,7 +2218,7 @@ column.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Show me the solution </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb9">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2219,7 +2271,7 @@ descending number of individuals in each plot.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb11">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2255,7 +2307,7 @@ descending number of individuals in each plot.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution5" aria-expanded="false" aria-controls="collapseSolution5">
   <h4 class="accordion-header" id="headingSolution5"> Show me the solution </h4>
 </button>
-<div id="collapseSolution5" class="accordion-collapse collapse" aria-labelledby="headingSolution5" data-bs-parent="#accordionSolution5">
+<div id="collapseSolution5" class="accordion-collapse collapse" data-bs-parent="#accordionSolution5" aria-labelledby="headingSolution5">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb12">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2313,7 +2365,7 @@ values in the <code>hindfoot_length</code> column.</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution6" aria-expanded="false" aria-controls="collapseSolution6">
   <h4 class="accordion-header" id="headingSolution6"> Show me the solution </h4>
 </button>
-<div id="collapseSolution6" class="accordion-collapse collapse" aria-labelledby="headingSolution6" data-bs-parent="#accordionSolution6">
+<div id="collapseSolution6" class="accordion-collapse collapse" data-bs-parent="#accordionSolution6" aria-labelledby="headingSolution6">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb14">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2345,7 +2397,7 @@ species, assuming that unknown lengths are 30 (as above).</li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution7" aria-expanded="false" aria-controls="collapseSolution7">
   <h4 class="accordion-header" id="headingSolution7"> Show me the solution </h4>
 </button>
-<div id="collapseSolution7" class="accordion-collapse collapse" aria-labelledby="headingSolution7" data-bs-parent="#accordionSolution7">
+<div id="collapseSolution7" class="accordion-collapse collapse" data-bs-parent="#accordionSolution7" aria-labelledby="headingSolution7">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb15">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2393,7 +2445,7 @@ genus in each plot, assuming that unknown species are all of the genus
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution8" aria-expanded="false" aria-controls="collapseSolution8">
   <h4 class="accordion-header" id="headingSolution8"> Show me the solution </h4>
 </button>
-<div id="collapseSolution8" class="accordion-collapse collapse" aria-labelledby="headingSolution8" data-bs-parent="#accordionSolution8">
+<div id="collapseSolution8" class="accordion-collapse collapse" data-bs-parent="#accordionSolution8" aria-labelledby="headingSolution8">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb17">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2526,7 +2578,7 @@ longest genus name down to shortest.</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution9" aria-expanded="false" aria-controls="collapseSolution9">
   <h4 class="accordion-header" id="headingSolution9"> Show me the solution </h4>
 </button>
-<div id="collapseSolution9" class="accordion-collapse collapse" aria-labelledby="headingSolution9" data-bs-parent="#accordionSolution9">
+<div id="collapseSolution9" class="accordion-collapse collapse" data-bs-parent="#accordionSolution9" aria-labelledby="headingSolution9">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb19">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -2588,7 +2640,7 @@ species?</p></li>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution10" aria-expanded="false" aria-controls="collapseSolution10">
   <h4 class="accordion-header" id="headingSolution10"> Proposed solutions: </h4>
 </button>
-<div id="collapseSolution10" class="accordion-collapse collapse" aria-labelledby="headingSolution10" data-bs-parent="#accordionSolution10">
+<div id="collapseSolution10" class="accordion-collapse collapse" data-bs-parent="#accordionSolution10" aria-labelledby="headingSolution10">
 <div class="accordion-body">
 <ol style="list-style-type: decimal">
 <li>Solution:</li>

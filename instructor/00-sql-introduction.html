@@ -300,7 +300,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducing Databases and SQL</h1>
-        <p>Last updated on 2026-03-27 |
+        <p>Last updated on 2026-03-31 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -550,70 +550,52 @@ just under the tabs and above the table list.</li>
 <li>Click <strong>Save</strong> if asked to save all pending
 changes.</li>
 <li>In the center panel of the window that appears, set the data types
-for each field using the suggestions in the table below (this includes
-fields from the <code>plots</code> and <code>species</code> tables
-also).</li>
+for each field using the suggestions in the table below.</li>
 <li>Finally, click <strong>OK</strong> one more time to confirm the
 operation. Then click the <strong>Write Changes</strong> button to save
 the database.</li>
-</ol><table style="width:100%;" class="table"><colgroup><col width="32%"><col width="14%"><col width="43%"><col width="9%"></colgroup><thead><tr><th>Field</th>
+</ol><div class="section level4">
+<h4 id="surveys">surveys<a class="anchor" aria-label="anchor" href="#surveys"></a></h4>
+<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
 <th align="left">Data Type</th>
 <th>Motivation</th>
-<th>Table(s)</th>
-</tr></thead><tbody><tr><td>day</td>
+<th>Also in</th>
+</tr></thead><tbody><tr><td>record_id</td>
 <td align="left">INTEGER</td>
-<td>Having data as numeric allows for meaningful arithmetic and
-comparisons</td>
-<td>surveys</td>
-</tr><tr><td>genus</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr><tr><td>hindfoot_length</td>
-<td align="left">REAL</td>
-<td>Field contains measured numeric data</td>
-<td>surveys</td>
+<td>Field contains numeric data</td>
+<td></td>
 </tr><tr><td>month</td>
 <td align="left">INTEGER</td>
-<td>Having data as numeric allows for meaningful arithmetic and
-comparisons</td>
-<td>surveys</td>
-</tr><tr><td>plot_id</td>
+<td>Allows for meaningful arithmetic and comparisons</td>
+<td></td>
+</tr><tr><td>day</td>
 <td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td>plots, surveys</td>
-</tr><tr><td>plot_type</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>plots</td>
-</tr><tr><td>record_id</td>
-<td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td>surveys</td>
-</tr><tr><td>sex</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>surveys</td>
-</tr><tr><td>species_id</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species, surveys</td>
-</tr><tr><td>species</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr><tr><td>taxa</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr><tr><td>weight</td>
-<td align="left">REAL</td>
-<td>Field contains measured numerical data</td>
-<td>surveys</td>
+<td>Allows for meaningful arithmetic and comparisons</td>
+<td></td>
 </tr><tr><td>year</td>
 <td align="left">INTEGER</td>
 <td>Allows for meaningful arithmetic and comparisons</td>
-<td>surveys</td>
+<td></td>
+</tr><tr><td>plot_id</td>
+<td align="left">INTEGER</td>
+<td>Field contains numeric data</td>
+<td>plots</td>
+</tr><tr><td>species_id</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td>species</td>
+</tr><tr><td>sex</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr><tr><td>hindfoot_length</td>
+<td align="left">REAL</td>
+<td>Field contains measured numeric data</td>
+<td></td>
+</tr><tr><td>weight</td>
+<td align="left">REAL</td>
+<td>Field contains measured numerical data</td>
+<td></td>
 </tr></tbody></table><div id="challenge-1" class="callout discussion">
 <div class="callout-square">
 <i class="callout-icon" data-feather="message-circle"></i>
@@ -623,11 +605,50 @@ comparisons</td>
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <ul><li>Import the <code>plots</code> and <code>species</code> tables</li>
-</ul></div>
+</ul><div class="section level4">
+<h4 id="plots">plots<a class="anchor" aria-label="anchor" href="#plots"></a></h4>
+<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
+<th align="left">Data Type</th>
+<th>Motivation</th>
+<th>Also in</th>
+</tr></thead><tbody><tr><td>plot_id</td>
+<td align="left">INTEGER</td>
+<td>Field contains numeric data</td>
+<td>surveys</td>
+</tr><tr><td>plot_type</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr></tbody></table></div>
+<div class="section level4">
+<h4 id="species">species<a class="anchor" aria-label="anchor" href="#species"></a></h4>
+<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
+<th align="left">Data Type</th>
+<th>Motivation</th>
+<th>Also in</th>
+</tr></thead><tbody><tr><td>species_id</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td>surveys</td>
+</tr><tr><td>genus</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr><tr><td>species</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr><tr><td>taxa</td>
+<td align="left">TEXT</td>
+<td>Field contains text data</td>
+<td></td>
+</tr></tbody></table></div>
+</div>
 </div>
 </div>
 <p>You can also use this same approach to append new fields to an
 existing table.</p>
+</div>
 </div>
 <div class="section level3">
 <h3 id="adding-fields-to-existing-tables">Adding fields to existing tables<a class="anchor" aria-label="anchor" href="#adding-fields-to-existing-tables"></a></h3>
@@ -733,7 +754,7 @@ vocabulary, but they are all based on the same ideas.</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2026-03-27",
+  "dateModified": "2026-03-31",
   "datePublished": "2026-03-31"
 }
 
