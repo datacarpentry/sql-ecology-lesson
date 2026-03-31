@@ -204,7 +204,7 @@ follow these instructions:
 #### surveys
 
 | Field            | Data Type | Motivation                                       | Also in          |
-| ---              | :---      | ---                                              | ---------------- |
+| :--------------- | :--------:| :----------------------------------------------- | :--------------- |
 | record\_id       | INTEGER   | Field contains numeric data                      |                  |
 | month            | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
 | day              | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
@@ -221,22 +221,27 @@ follow these instructions:
 
 - Import the `plots` and `species` tables
 
+:::::::::::::::  solution
+
+### Solution
+
 #### plots
 
 | Field      | Data Type | Motivation                  | Also in          |
-| ---        | :---      | ---                         | ---------------- |
+| :--------- | :-------: | :-------------------------- | :--------------- |
 | plot\_id   | INTEGER   | Field contains numeric data | surveys          |
 | plot\_type | TEXT      | Field contains text data    |                  |
 
 #### species
 
-| Field       | Data Type | Motivation               | Also in         |
-| ---         | :---      | ---                      | ---------------- |
-| species\_id | TEXT      | Field contains text data | surveys          |
-| genus       | TEXT      | Field contains text data |                  |
-| species     | TEXT      | Field contains text data |                  |
-| taxa        | TEXT      | Field contains text data |                  |
+| Field       | Data Type | Motivation                 | Also in          |
+| :---------- | :-------: | :------------------------- | :--------------- |
+| species\_id | TEXT      | Field contains text data   | surveys          |
+| genus       | TEXT      | Field contains text data   |                  |
+| species     | TEXT      | Field contains text data   |                  |
+| taxa        | TEXT      | Field contains text data   |                  |
 
+:::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
