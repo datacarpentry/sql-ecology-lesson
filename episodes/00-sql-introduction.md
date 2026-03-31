@@ -114,11 +114,6 @@ which enables us to combine information from two or more sources.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
-The *relational* concept is connected with organizing information across multiple tables in the database.
-The *relationships* between tables in a database can be established (or even enforced) in different ways, through the use of keys and other constraints.
-In many small datasets we have only a few tables and we don't have to think about cross-references within datasets.
-The idea of *relational data* becomes more and more important as the amount and complexity of data grows. This provides the motivation for using relational databases: to organize data through related keys.
-
 
 ## Databases
 
@@ -130,8 +125,14 @@ Using a relational database serves several purposes.
   - This means there's no risk of accidentally changing data when you analyze it.
   - If we get new data we can rerun the query.
 - It's fast, even for large amounts of data.
-- It improves quality control of data entry (type constraints and use of forms in MS Access, Filemaker, Oracle Application Express etc.)
-- The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
+- It improves quality control of data entry.
+  - Restrictions on what is valid data within a table can be enforced in different ways, such as
+  the use of data types, cross-references and other relationships between tables.
+- The concepts used in querying relational databases help us understanding how to do similar things in other programming languages such as R or Python.
+
+In many small datasets we have only a few tables and we don't have to think about too many cross-references, or *keys*, between tables.
+Shared keys between tables becomes increasingly important as the volume and complexity of data grows.
+One motivation for using relational databases is being able to organize data using keys that must consistently refer to other tables.
 
 ### Database Management Systems
 
@@ -181,8 +182,8 @@ To summarize:
 - One field per type of information
 - No redundant information
   - Split into separate tables with one table per class of information
-  - Needs an identifier in common between tables – shared column - to
-    reconnect (known as a *foreign key*).
+  - Needs an identifier in common between tables – a shared column - to
+    reconnect the information (known as a *foreign key* constraint).
 
 ### Import
 
