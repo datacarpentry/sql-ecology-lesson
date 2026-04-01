@@ -300,7 +300,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducing Databases and SQL</h1>
-        <p>Last updated on 2026-03-31 |
+        <p>Last updated on 2026-04-01 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -556,93 +556,104 @@ operation. Then click the <strong>Write Changes</strong> button to save
 the database.</li>
 </ol><div class="section level4">
 <h4 id="surveys">surveys<a class="anchor" aria-label="anchor" href="#surveys"></a></h4>
-<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
-<th align="left">Data Type</th>
-<th>Motivation</th>
-<th>Also in</th>
-</tr></thead><tbody><tr><td>record_id</td>
-<td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td></td>
-</tr><tr><td>month</td>
-<td align="left">INTEGER</td>
-<td>Allows for meaningful arithmetic and comparisons</td>
-<td></td>
-</tr><tr><td>day</td>
-<td align="left">INTEGER</td>
-<td>Allows for meaningful arithmetic and comparisons</td>
-<td></td>
-</tr><tr><td>year</td>
-<td align="left">INTEGER</td>
-<td>Allows for meaningful arithmetic and comparisons</td>
-<td></td>
-</tr><tr><td>plot_id</td>
-<td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td>plots</td>
-</tr><tr><td>species_id</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>species</td>
-</tr><tr><td>sex</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td></td>
-</tr><tr><td>hindfoot_length</td>
-<td align="left">REAL</td>
-<td>Field contains measured numeric data</td>
-<td></td>
-</tr><tr><td>weight</td>
-<td align="left">REAL</td>
-<td>Field contains measured numerical data</td>
-<td></td>
-</tr></tbody></table><div id="challenge-1" class="callout discussion">
+<table class="table"><colgroup><col width="17%"><col width="11%"><col width="53%"><col width="17%"></colgroup><thead><tr><th align="left">Field</th>
+<th align="center">Data Type</th>
+<th align="left">Motivation</th>
+<th align="left">Also in</th>
+</tr></thead><tbody><tr><td align="left">record_id</td>
+<td align="center">INTEGER</td>
+<td align="left">Field contains numeric data</td>
+<td align="left"></td>
+</tr><tr><td align="left">month</td>
+<td align="center">INTEGER</td>
+<td align="left">Allows for meaningful arithmetic and comparisons</td>
+<td align="left"></td>
+</tr><tr><td align="left">day</td>
+<td align="center">INTEGER</td>
+<td align="left">Allows for meaningful arithmetic and comparisons</td>
+<td align="left"></td>
+</tr><tr><td align="left">year</td>
+<td align="center">INTEGER</td>
+<td align="left">Allows for meaningful arithmetic and comparisons</td>
+<td align="left"></td>
+</tr><tr><td align="left">plot_id</td>
+<td align="center">INTEGER</td>
+<td align="left">Field contains numeric data</td>
+<td align="left">plots</td>
+</tr><tr><td align="left">species_id</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left">species</td>
+</tr><tr><td align="left">sex</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left"></td>
+</tr><tr><td align="left">hindfoot_length</td>
+<td align="center">REAL</td>
+<td align="left">Field contains measured numeric data</td>
+<td align="left"></td>
+</tr><tr><td align="left">weight</td>
+<td align="center">REAL</td>
+<td align="left">Field contains measured numerical data</td>
+<td align="left"></td>
+</tr></tbody></table><div id="challenge-1" class="callout challenge">
 <div class="callout-square">
-<i class="callout-icon" data-feather="message-circle"></i>
+<i class="callout-icon" data-feather="zap"></i>
 </div>
-<span class="callout-header">Discussion</span>
+<span class="callout-header">Challenge</span>
 <div id="challenge-1" class="callout-inner">
 <h3 class="callout-title">Challenge</h3>
 <div class="callout-content">
 <ul><li>Import the <code>plots</code> and <code>species</code> tables</li>
-</ul><div class="section level4">
+</ul></div>
+</div>
+</div>
+<div id="accordionSolution1" class="accordion challenge-accordion accordion-flush">
+<div class="accordion-item">
+<button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
+  <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
+</button>
+<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div class="accordion-body">
+<div class="section level4">
 <h4 id="plots">plots<a class="anchor" aria-label="anchor" href="#plots"></a></h4>
-<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
-<th align="left">Data Type</th>
-<th>Motivation</th>
-<th>Also in</th>
-</tr></thead><tbody><tr><td>plot_id</td>
-<td align="left">INTEGER</td>
-<td>Field contains numeric data</td>
-<td>surveys</td>
-</tr><tr><td>plot_type</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td></td>
+<table class="table"><colgroup><col width="16%"><col width="14%"><col width="43%"><col width="25%"></colgroup><thead><tr><th align="left">Field</th>
+<th align="center">Data Type</th>
+<th align="left">Motivation</th>
+<th align="left">Also in</th>
+</tr></thead><tbody><tr><td align="left">plot_id</td>
+<td align="center">INTEGER</td>
+<td align="left">Field contains numeric data</td>
+<td align="left">surveys</td>
+</tr><tr><td align="left">plot_type</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left"></td>
 </tr></tbody></table></div>
 <div class="section level4">
 <h4 id="species">species<a class="anchor" aria-label="anchor" href="#species"></a></h4>
-<table class="table"><colgroup><col width="11%"><col width="15%"><col width="11%"><col width="61%"></colgroup><thead><tr><th>Field</th>
-<th align="left">Data Type</th>
-<th>Motivation</th>
-<th>Also in</th>
-</tr></thead><tbody><tr><td>species_id</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td>surveys</td>
-</tr><tr><td>genus</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td></td>
-</tr><tr><td>species</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td></td>
-</tr><tr><td>taxa</td>
-<td align="left">TEXT</td>
-<td>Field contains text data</td>
-<td></td>
+<table class="table"><colgroup><col width="17%"><col width="14%"><col width="41%"><col width="25%"></colgroup><thead><tr><th align="left">Field</th>
+<th align="center">Data Type</th>
+<th align="left">Motivation</th>
+<th align="left">Also in</th>
+</tr></thead><tbody><tr><td align="left">species_id</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left">surveys</td>
+</tr><tr><td align="left">genus</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left"></td>
+</tr><tr><td align="left">species</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left"></td>
+</tr><tr><td align="left">taxa</td>
+<td align="center">TEXT</td>
+<td align="left">Field contains text data</td>
+<td align="left"></td>
 </tr></tbody></table></div>
+</div>
 </div>
 </div>
 </div>
@@ -754,8 +765,8 @@ vocabulary, but they are all based on the same ideas.</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2026-03-31",
-  "datePublished": "2026-03-31"
+  "dateModified": "2026-04-01",
+  "datePublished": "2026-04-01"
 }
 
   </script><script>
