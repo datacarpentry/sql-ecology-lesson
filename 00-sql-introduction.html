@@ -512,14 +512,36 @@ columns</li>
 value, i.e., not containing parts we might want to work with
 separately.</li>
 <li>One field per type of information</li>
-<li>No redundant information
-<ul><li>Split into separate tables with one table per class of
+<li>No redundant information</li>
+<li>Split into separate tables with one table per class of
 information</li>
 <li>Needs an identifier in common between tables – a shared column - to
-reconnect the information (known as a <em>foreign key</em>
-constraint).</li>
-</ul></li>
-</ul></div>
+reconnect data (known as a <em>foreign key</em>).</li>
+</ul><div id="sql-vs.-nosql" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="sql-vs.-nosql" class="callout-inner">
+<h3 class="callout-title">SQL vs. NoSQL</h3>
+<div class="callout-content">
+<p>SQL is not the only tool for managing and analyzing large amounts of
+data. As described above, SQL databases store data in tables using a
+rigid schema. This works well for many applications, but larger, more
+complex projects may benefit from the more flexible approach provided by
+NoSQL databases. A common application for NoSQL databases is storing
+documents and files.</p>
+<p>NoSQL databases are diverse, employing a variety of data structures
+tailored to specific use cases, but in general provide a scalable way to
+store, search, and establish relationships within large datasets that
+cannot easily be represented by a rigid, tabular schema. A more thorough
+discussion of the differences between SQL and NoSQL is beyond the scope
+of this lesson, but curious readers can start with <a href="https://www.mongodb.com/nosql-explained/nosql-vs-sql" class="external-link">this
+comparison</a> by MongoDB, a NoSQL database vendor.</p>
+</div>
+</div>
+</div>
+</div>
 <div class="section level3">
 <h3 id="import">Import<a class="anchor" aria-label="anchor" href="#import"></a></h3>
 <p>Before we get started with writing our own queries, we’ll create our

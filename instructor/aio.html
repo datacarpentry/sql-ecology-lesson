@@ -578,16 +578,36 @@ columns</li>
 value, i.e., not containing parts we might want to work with
 separately.</li>
 <li>One field per type of information</li>
-<li>No redundant information
-<ul>
+<li>No redundant information</li>
 <li>Split into separate tables with one table per class of
 information</li>
 <li>Needs an identifier in common between tables – a shared column - to
-reconnect the information (known as a <em>foreign key</em>
-constraint).</li>
+reconnect data (known as a <em>foreign key</em>).</li>
 </ul>
-</li>
-</ul>
+<div id="sql-vs.-nosql" class="callout">
+<div class="callout-square">
+<i class="callout-icon" data-feather="bell"></i>
+</div>
+<span class="callout-header">Callout</span>
+<div id="sql-vs.-nosql" class="callout-inner">
+<h3 class="callout-title">SQL vs. NoSQL</h3>
+<div class="callout-content">
+<p>SQL is not the only tool for managing and analyzing large amounts of
+data. As described above, SQL databases store data in tables using a
+rigid schema. This works well for many applications, but larger, more
+complex projects may benefit from the more flexible approach provided by
+NoSQL databases. A common application for NoSQL databases is storing
+documents and files.</p>
+<p>NoSQL databases are diverse, employing a variety of data structures
+tailored to specific use cases, but in general provide a scalable way to
+store, search, and establish relationships within large datasets that
+cannot easily be represented by a rigid, tabular schema. A more thorough
+discussion of the differences between SQL and NoSQL is beyond the scope
+of this lesson, but curious readers can start with <a href="https://www.mongodb.com/nosql-explained/nosql-vs-sql" class="external-link">this
+comparison</a> by MongoDB, a NoSQL database vendor.</p>
+</div>
+</div>
+</div>
 </div>
 <div class="section level3">
 <h3 id="import">Import<a class="anchor" aria-label="anchor" href="#import"></a>
@@ -1441,7 +1461,7 @@ weights between 5 and 10?</p>
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution1" aria-expanded="false" aria-controls="collapseSolution1">
   <h4 class="accordion-header" id="headingSolution1"> Show me the solution </h4>
 </button>
-<div id="collapseSolution1" class="accordion-collapse collapse" aria-labelledby="headingSolution1" data-bs-parent="#accordionSolution1">
+<div id="collapseSolution1" class="accordion-collapse collapse" data-bs-parent="#accordionSolution1" aria-labelledby="headingSolution1">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb4">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1494,7 +1514,7 @@ to aggregate the data. If we want to group by multiple fields, we give
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution2" aria-expanded="false" aria-controls="collapseSolution2">
   <h4 class="accordion-header" id="headingSolution2"> Solution of 1 </h4>
 </button>
-<div id="collapseSolution2" class="accordion-collapse collapse" aria-labelledby="headingSolution2" data-bs-parent="#accordionSolution2">
+<div id="collapseSolution2" class="accordion-collapse collapse" data-bs-parent="#accordionSolution2" aria-labelledby="headingSolution2">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb6">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1512,7 +1532,7 @@ to aggregate the data. If we want to group by multiple fields, we give
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution3" aria-expanded="false" aria-controls="collapseSolution3">
   <h4 class="accordion-header" id="headingSolution3"> Solution of 2 and 3 </h4>
 </button>
-<div id="collapseSolution3" class="accordion-collapse collapse" aria-labelledby="headingSolution3" data-bs-parent="#accordionSolution3">
+<div id="collapseSolution3" class="accordion-collapse collapse" data-bs-parent="#accordionSolution3" aria-labelledby="headingSolution3">
 <div class="accordion-body">
 <div class="codewrapper sourceCode" id="cb7">
 <h3 class="code-label">SQL<i aria-hidden="true" data-feather="chevron-left"></i><i aria-hidden="true" data-feather="chevron-right"></i>
@@ -1637,7 +1657,7 @@ number of <code>species</code> in each <code>taxa</code>, only for the
 <button class="accordion-button solution-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSolution4" aria-expanded="false" aria-controls="collapseSolution4">
   <h4 class="accordion-header" id="headingSolution4"> Show me the solution </h4>
 </button>
-<div id="collapseSolution4" class="accordion-collapse collapse" aria-labelledby="headingSolution4" data-bs-parent="#accordionSolution4">
+<div id="collapseSolution4" class="accordion-collapse collapse" data-bs-parent="#accordionSolution4" aria-labelledby="headingSolution4">
 <div class="accordion-body">
 <p>This query counts the number of times each value (Bird, Rabbit,
 Reptile or Rodent) in the <code>taxa</code> field occurs, defining a new
