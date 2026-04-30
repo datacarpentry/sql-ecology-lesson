@@ -192,7 +192,7 @@ To summarize:
 SQL is not the only tool for managing and analyzing large amounts of data.
 As described above, SQL databases store data in tables using a rigid schema.
 This works well for many applications, but larger, more complex projects may
-benefit from the more flexible approach provided by NoSQL databases.
+benefit from the more flexible approach provided by NoSQL databases. A common application for NoSQL databases is storing documents and files.
 
 NoSQL databases are diverse, employing a variety of data structures tailored
 to specific use cases, but in general provide a scalable way to store, search,
