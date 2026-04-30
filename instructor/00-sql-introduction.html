@@ -296,7 +296,7 @@
       </div>
       <hr></nav><main id="main-content" class="main-content"><div class="container lesson-content">
         <h1>Introducing Databases and SQL</h1>
-        <p>Last updated on 2026-04-01 |
+        <p>Last updated on 2026-04-30 |
 
         <a href="https://github.com/datacarpentry/sql-ecology-lesson/edit/main/episodes/00-sql-introduction.md" class="external-link">Edit this page <i aria-hidden="true" data-feather="edit"></i></a></p>
 
@@ -446,12 +446,21 @@ analyze it.</li>
 <li>If we get new data we can rerun the query.</li>
 </ul></li>
 <li>It’s fast, even for large amounts of data.</li>
-<li>It improves quality control of data entry (type constraints and use
-of forms in MS Access, Filemaker, Oracle Application Express etc.)</li>
-<li>The concepts of relational database querying are core to
-understanding how to do similar things using programming languages such
-as R or Python.</li>
-</ul></div>
+<li>It improves quality control of data entry.
+<ul><li>Restrictions on what is valid data within a table can be enforced in
+different ways, such as the use of data types, cross-references and
+other relationships between tables.</li>
+</ul></li>
+<li>The concepts used in querying relational databases help us
+understanding how to do similar things in other programming languages
+such as R or Python.</li>
+</ul><p>In many small datasets we have only a few tables and we don’t have to
+think about too many cross-references, or <em>keys</em>, between tables.
+Shared keys between tables becomes increasingly important as the volume
+and complexity of data grows. One motivation for using relational
+databases is being able to organize data using keys that must
+consistently refer to other tables.</p>
+</div>
 <div class="section level3">
 <h3 id="database-management-systems">Database Management Systems<a class="anchor" aria-label="anchor" href="#database-management-systems"></a></h3>
 <p>There are different database management systems to work with
@@ -508,8 +517,9 @@ separately.</li>
 <li>No redundant information
 <ul><li>Split into separate tables with one table per class of
 information</li>
-<li>Needs an identifier in common between tables – shared column - to
-reconnect (known as a <em>foreign key</em>).</li>
+<li>Needs an identifier in common between tables – a shared column - to
+reconnect the information (known as a <em>foreign key</em>
+constraint).</li>
 </ul></li>
 </ul></div>
 <div class="section level3">
@@ -761,8 +771,8 @@ vocabulary, but they are all based on the same ideas.</li>
   "url": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "identifier": "https://datacarpentry.github.io/sql-ecology-lesson/instructor/00-sql-introduction.html",
   "dateCreated": "2015-02-10",
-  "dateModified": "2026-04-01",
-  "datePublished": "2026-04-28"
+  "dateModified": "2026-04-30",
+  "datePublished": "2026-04-30"
 }
 
   </script><script>
