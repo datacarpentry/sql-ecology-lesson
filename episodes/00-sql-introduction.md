@@ -112,8 +112,8 @@ which is stored as one of its fields.
 Records may also contain keys that refer to records in other tables,
 which enables us to combine information from two or more sources.
 
-
 ::::::::::::::::::::::::::::::::::::::::::::::::::
+
 
 ## Databases
 
@@ -125,8 +125,14 @@ Using a relational database serves several purposes.
   - This means there's no risk of accidentally changing data when you analyze it.
   - If we get new data we can rerun the query.
 - It's fast, even for large amounts of data.
-- It improves quality control of data entry (type constraints and use of forms in MS Access, Filemaker, Oracle Application Express etc.)
-- The concepts of relational database querying are core to understanding how to do similar things using programming languages such as R or Python.
+- It improves quality control of data entry.
+  - Restrictions on what is valid data within a table can be enforced in different ways, such as
+  the use of data types, cross-references and other relationships between tables.
+- The concepts used in querying relational databases help us understanding how to do similar things in other programming languages such as R or Python.
+
+In many small datasets we have only a few tables and we don't have to think about too many cross-references, or *keys*, between tables.
+Shared keys between tables becomes increasingly important as the volume and complexity of data grows.
+One motivation for using relational databases is being able to organize data using keys that must consistently refer to other tables.
 
 ### Database Management Systems
 
@@ -175,17 +181,26 @@ To summarize:
   containing parts we might want to work with separately.
 - One field per type of information
 - No redundant information
-  - Split into separate tables with one table per class of information
-  - Needs an identifier in common between tables – shared column - to
-    reconnect (known as a *foreign key*).
+- Split into separate tables with one table per class of information
+- Needs an identifier in common between tables – a shared column - to
+ reconnect data (known as a *foreign key*).
 	
 :::::::::::::::::::::::::::::::::::::::::  callout
 
 ### SQL vs. NoSQL
 
-SQL is not the only tool for managing and analyzing large amounts of data. As described above, SQL databases store data in tables using a rigid schema. This works well for many applications, but larger, more complex projects may benefit from the more flexible approach provided by NoSQL databases. 
+SQL is not the only tool for managing and analyzing large amounts of data.
+As described above, SQL databases store data in tables using a rigid schema.
+This works well for many applications, but larger, more complex projects may
+benefit from the more flexible approach provided by NoSQL databases.
 
-NoSQL databases are diverse, employing a variety of data structures tailored to specific use cases, but in general provide a scalable way to store, search, and establish relationships within large datasets that cannot easily be represented by a rigid, tabular schema. A more thorough discussion of the differences between SQL and NoSQL is beyond the scope of this lesson, but curious readers can start with [this comparison](https://www.mongodb.com/nosql-explained/nosql-vs-sql) by MongoDB, a NoSQL database vendor.
+NoSQL databases are diverse, employing a variety of data structures tailored
+to specific use cases, but in general provide a scalable way to store, search,
+and establish relationships within large datasets that cannot easily be
+represented by a rigid, tabular schema.
+A more thorough discussion of the differences between SQL and NoSQL
+is beyond the scope of this lesson, but curious readers can start with
+[this comparison](https://www.mongodb.com/nosql-explained/nosql-vs-sql) by MongoDB, a NoSQL database vendor.
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
@@ -208,24 +223,22 @@ follow these instructions:
 7. Press **OK**, you should subsequently get a message that the table was imported.
 8. Back on the Database Structure tab, you should now see the table listed. Right click on the table name and choose **Modify Table**, or click on the **Modify Table** button just under the tabs and above the table list.
 9. Click **Save** if asked to save all pending changes.
-10. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below (this includes fields from the `plots` and `species` tables also).
+10. In the center panel of the window that appears, set the data types for each field using the suggestions in the table below.
 11. Finally, click **OK** one more time to confirm the operation. Then click the **Write Changes** button to save the database.
 
-| Field                                                 | Data Type                | Motivation                                                              | Table(s)         |
-| ----------------------------------------------------- | :----------------------- | ----------------------------------------------------------------------- | ---------------- |
-| day                                                   | INTEGER                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          |
-| genus                                                 | TEXT                     | Field contains text data                                                | species          |
-| hindfoot\_length                                      | REAL                     | Field contains measured numeric data                                    | surveys          |
-| month                                                 | INTEGER                  | Having data as numeric allows for meaningful arithmetic and comparisons | surveys          |
-| plot\_id                                              | INTEGER                  | Field contains numeric data                                             | plots, surveys   |
-| plot\_type                                            | TEXT                     | Field contains text data                                                | plots            |
-| record\_id                                            | INTEGER                  | Field contains numeric data                                             | surveys          |
-| sex                                                   | TEXT                     | Field contains text data                                                | surveys          |
-| species\_id                                           | TEXT                     | Field contains text data                                                | species, surveys |
-| species                                               | TEXT                     | Field contains text data                                                | species          |
-| taxa                                                  | TEXT                     | Field contains text data                                                | species          |
-| weight                                                | REAL                     | Field contains measured numerical data                                  | surveys          |
-| year                                                  | INTEGER                  | Allows for meaningful arithmetic and comparisons                        | surveys          |
+#### surveys
+
+| Field            | Data Type | Motivation                                       | Also in          |
+| :--------------- | :--------:| :----------------------------------------------- | :--------------- |
+| record\_id       | INTEGER   | Field contains numeric data                      |                  |
+| month            | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| day              | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| year             | INTEGER   | Allows for meaningful arithmetic and comparisons |                  |
+| plot\_id         | INTEGER   | Field contains numeric data                      | plots            |
+| species\_id      | TEXT      | Field contains text data                         | species          |
+| sex              | TEXT      | Field contains text data                         |                  |
+| hindfoot\_length | REAL      | Field contains measured numeric data             |                  |
+| weight           | REAL      | Field contains measured numerical data           |                  |
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -233,6 +246,27 @@ follow these instructions:
 
 - Import the `plots` and `species` tables
 
+:::::::::::::::  solution
+
+### Solution
+
+#### plots
+
+| Field      | Data Type | Motivation                  | Also in          |
+| :--------- | :-------: | :-------------------------- | :--------------- |
+| plot\_id   | INTEGER   | Field contains numeric data | surveys          |
+| plot\_type | TEXT      | Field contains text data    |                  |
+
+#### species
+
+| Field       | Data Type | Motivation                 | Also in          |
+| :---------- | :-------: | :------------------------- | :--------------- |
+| species\_id | TEXT      | Field contains text data   | surveys          |
+| genus       | TEXT      | Field contains text data   |                  |
+| species     | TEXT      | Field contains text data   |                  |
+| taxa        | TEXT      | Field contains text data   |                  |
+
+:::::::::::::::::::::::::
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
