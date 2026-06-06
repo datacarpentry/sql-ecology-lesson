@@ -3,8 +3,10 @@
 
 # Data Carpentry SQL Lesson for Ecologists
 
-This repository contains the Data Carpentry SQL material based on ecological
-data. Please see our [contribution guidelines](CONTRIBUTING.md) for information
+⌖ [Find the Lesson here.](http://datacarpentry.github.io/sql-ecology-lesson)
+
+This repository contains the Data Carpentry SQL lesson using an ecological
+dataset. Please see our [contribution guidelines](CONTRIBUTING.md) for information
 on how to contribute updates, bug fixes, or other corrections.
 
 ## Maintainers
@@ -12,10 +14,10 @@ on how to contribute updates, bug fixes, or other corrections.
 ### Current maintainers
 
 - James Foster ([@jd-foster](https://github.com/jd-foster))
-- Adam Mansur ([@adamancer](https://github.com/adamancer))
 
 ### Past maintainers
 
+- Adam Mansur ([@adamancer](https://github.com/adamancer))
 - Katy Felkner ([@katyfelkner](https://github.com/katyfelkner))
 - Christina Koch ([@ChristinaLK](https://github.com/ChristinaLK))
 - Paula Andrea Martinez ([@orchid00](https://github.com/orchid00))
